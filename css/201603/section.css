@@ -95,7 +95,7 @@
 
 .locations{text-align:left;margin-top:30px;}
 .locations h2{margin-bottom:20px;color:#999;font-size:40px;}
-.locations ul{margin-left:20px;}
+.locations ul{margin-left: 0;}
 
 /*.locations h3 {color:#c5151f;}*/
 .locations .highlight, 

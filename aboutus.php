@@ -145,7 +145,7 @@ if($_SESSION['language']=='Hebrew')
 		
 		<h3>About <b>Pashut</b>LeHaskir.com</h3>
 		<div class="col-md-4">
-			<img src="images/pa.jpg" width="350" align="left" />
+			<img src="images/pa.jpg" width="" align="left" style="max-width: 100%" />
 		</div>
 		
 		<div class="col-md-8">

@@ -17,7 +17,7 @@
 	<div class="container-fluid footer-links">
 		<div class="row">
 			<div class="col-md-2 col-xs-12">
-				<img src="images/logo_footer.png" width="175">
+				<img src="images/logo_footer.png" class="footer-logo" width="175">
 			</div>
 			<div class="col-md-10 col-xs-12">
 				<ul class="list-inline">

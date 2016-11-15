@@ -1917,7 +1917,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	<div class="container-fluid ll-signup-area top">
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 227px; background-size: 100%; background-repeat: no-repeat;">
+			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
 				<div class="img_a center">
 					<a href="faq.php">
 						שאלות נפוצות
@@ -1943,7 +1943,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			</style>
 			
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="text-align:right!important; background-image: url('images/2016/plh-homepage_rentpaybanner.png'); min-height: 227px; background-size: 100% ; background-repeat: no-repeat;">
+			<div class="ft col-md-12" style="text-align:right!important; background-image: url('images/2016/plh-homepage_rentpaybanner.png'); min-height: 255px; background-size: cover ; background-repeat: no-repeat;">
 				<div class="ld" style="text-align:right!important;">
 					<h2>בעלי קניין</h2>
 					<p>מחירון להשכרה בחינם.</p>
@@ -1955,7 +1955,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="padding-right: 20px; background-image: url('images/2016/plh-homepage_brokeragebanner.png'); min-height: 227px; background-size: 100%; background-repeat: no-repeat;">
+			<div class="ft col-md-12" style="padding-right: 20px; background-image: url('images/2016/plh-homepage_brokeragebanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
 				<ul style="text-align:right!important;">
 					<li style="text-align:right!important;">אין עמלות סוכן</li>
 					<li style="text-align:right!important;"><span style="color:red;">בעלי הקניין קבלו תשלום באמצעות כל אחת מרשומות!</span></li>

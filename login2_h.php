@@ -171,8 +171,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	</div>
 
 	<div class="base-wrapper">
-		<div class="col-md-4">
-            <div class="gridModule" style="height:488px;">
+		<div class="col-sm-12 col-md-4">
+            <div class="gridModule" style="height:470px;">
 				<div class="header">התחבר</div>
 				<div class="body">
 					<form name="loginForm" id="loginForm" action="login.php" method="post" onsubmit="return _CF_checkloginForm(this)">
@@ -189,11 +189,11 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				</div>
 			</div>
 		</div>
-		<div class="col-md-8">
+		<div class="col-sm-12 col-md-8">
         	<div class="centerModule">
         		
                 
-                <div class="gridModule" style="width:85%;">
+                <div class="gridModule col-sm-6 col-md-12" style="margin-bottom: 10px;">
 					<div class="header">לחברי - שכחת ססמה</div>
 					<div class="body">
 						
@@ -208,8 +208,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					</div>
 					<div class="clearboth"></div>
                 </div>
-                <Br />
-                <div class="gridModule" style="width:85%;">
+                <div class="gridModule col-sm-6 col-md-12">
 					<div class="header">בעלי הבית - שכחת ססמה</div>
 					<div class="body">
 						
