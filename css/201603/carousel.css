@@ -1,0 +1,219 @@
+
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+ 
+}
+.carousel-caption{text-shadow:none;display:none;}
+.carousel-links {
+  display:none;
+  position:absolute;
+  z-index: 10;
+  right: 17%;
+  left: auto;
+  padding-bottom: 0px;
+  overflow: hidden;
+  width: 200px;
+  text-align: right;
+  bottom:38px;
+  background:#3d4d65;
+  padding:10px;
+  text-align:center;
+  color:#FFF;
+  font-weight:bold;
+}
+
+.carousel-links  .popular-areas-link {color: #FFF;}
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  left: 18%;
+  right: auto;
+  padding-bottom: 0px;
+  overflow: hidden;
+  width: 550px;
+  height:100px;
+  text-align: left;
+  bottom:20px;
+}
+
+.carousel-caption .image-wrapper {
+	float: left;
+	width: 120px;
+}
+.carousel-caption .image-wrapper img {
+	width: 120px;
+}
+
+.carousel-caption .text-wrapper {
+	float: left;	
+	font-size: 18px;
+	margin-left:20px;
+	margin-top:25px;
+}
+
+.carousel-caption .text-wrapper a{
+	color: #0e0e0e;
+}
+
+.carousel-caption h2 {
+	margin:0 0 10px 0;
+	font-size:24px;
+}
+
+.carousel-caption .text-wrapper p{
+	color: #FFF;
+}
+ 
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 50vh;
+  
+}
+.carousel-inner {
+	overflow:visible;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+
+.carousel-search {
+  position:relative;	
+  z-index: 10;
+  margin: 60px auto 0 auto;
+  width: 800px;
+  text-align: center;
+ 
+}
+.carousel-search .search-box{ 
+  background: #FFF;
+  border-radius:0;
+  padding:20px 40px;
+  position:relative;
+  height:356px;
+ }
+ 
+ .carousel-search .search-box .text-search{position:absolute;bottom:0;left:0;background:#3d4d65;width:100%;padding:0px 0 10px 0;height:85px;}
+ .carousel-search .search-box .text-search .text{width:220px;padding-left:5px;}
+ .carousel-search .search-box .text-search .search-sm{border:none;background: #bababa;color:#3d4d65;width:180px;margin:20px auto 0 auto;font-weight:bold;}
+ 
+ .carousel-search .line{margin-bottom:15px;}
+ .carousel-search select {padding:10px 10px;}
+ 
+.carousel-search input,
+.carousel-search select {border:1px solid #cad3df; border-radius: 0; height:46px;font-size:16px; background: #eceff4; color: #3d4d65; -webkit-appearance:none;}
+
+.carousel-search .right-pad{margin-right:1%;}
+.carousel-search select.medium{width:20%;}
+.carousel-search select.small{width:38%;}
+.carousel-search select.inter{width:29%;}
+.carousel-search .search{border:none;background: #ee2324;color:#FFF;width:250px;margin:20px auto 0 auto;}
+
+.carousel-search h2{margin:0 0 10px 0;font-size:32px;font-weight:normal;color:#3d4d65;}
+.carousel-search h4{color:#3d4d65;margin-bottom:30px;}
+.carousel-search h2 strong{color:#ee2324;}
+
+input::-webkit-input-placeholder {
+color: #3d4d65 !important;
+}
+ 
+input:-moz-placeholder { /* Firefox 18- */
+color: #3d4d65 !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #3d4d65 !important;  
+}
+ 
+input:-ms-input-placeholder {  
+color: #3d4d65 !important;  
+}
+
+.carousel-control.left,
+.carousel-control.right{background: none;z-index: 4;display:none;}
+
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+	top: 91%;
+}
+.glyphicon-chevron-left { background: url(/images/2016/left-arrow_dark.png) no-repeat; width: 19px; height: 34px;  }
+.glyphicon-chevron-left:before{content: none;}
+.glyphicon-chevron-right { background: url(/images/2016/right-arrow_dark.png) no-repeat; width: 19px; height: 34px;  }
+.glyphicon-chevron-right:before{content: none;}
+.carousel-inner .carousel-red-layer {position:absolute; bottom: 0; left:0; width: 100%; height: 19%; z-index: 2; background: url(/images/2016/white-trans.png) repeat; display:none;  }
+
+/* RESPONSIVE CSS
+-------------------------------------------------- *;
+
+/* Smartphones (portrait and landscape) ----------- */
+@media (min-width : 320px) and (max-width : 767px){
+/* Styles */
+	.carousel-caption {display: none;}
+	.carousel .item {height: 300px;}
+	.carousel-search .line{margin-bottom:5px;}
+	.carousel-search{left:0;width:280px;}
+	.carousel-search .search-box {height:325px;}
+	.carousel-search h2{margin:0px 0 10px 0;font-size:20px;}
+	.carousel-search h4{display:none;}
+	.carousel-links{display:none;z-index:11;background:none;top:400px;overflow:visible;right:23%;}
+	.carousel-links .popular-areas-link{color:#428bca;text-decoration:underline;}
+	.carousel-search select.inter{width:30%;}
+	.popular-areas h1{font-size:18px;}
+	.carousel-search select.medium{margin-bottom: 10px;width:44% !important;}
+	.carousel-search .search {margin-top: 10px;}
+	.carousel-inner .carousel-red-layer{display:none;}
+	.glyphicon-chevron-left, 
+	.glyphicon-chevron-right{background: none;}
+	.carousel-search .search-box{padding:20px 0;}
+	.carousel-search .search-box .text-search .text{width:155px;font-size:15px;}
+	.carousel-search .search-box .text-search .search-sm{width:110px;}
+	
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media (min-width : 768px) and (max-width : 790px)  {
+/* Styles */
+	.carousel-search{width:712px;}
+	.carousel .item {height: 50vh;}
+	
+}
+
+/* Desktops and laptops ----------- */
+@media (min-width : 994px) {
+/* Styles */
+	.carousel-caption {display: none;}
+	.carousel .item {height: 50vh;}
+}
+
+@media (min-height : 700px) and (max-height : 900px) {
+	.carousel-inner .carousel-red-layer {height:22%;}
+	.carousel .item {height: 60vh;}
+}
+
+
+/* Desktops and laptops ----------- */
+@media (min-width : 1050px) {
+/* Styles */
+	.carousel .item {height: 80vh;}
+	
+}
+
+
+/* Desktops and laptops ----------- */
+@media (min-width : 1363px) {
+/* Styles */
+	.carousel .item {height: 50vh;}
+	
+}
+
+

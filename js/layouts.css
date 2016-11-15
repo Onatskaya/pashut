@@ -1,0 +1,42 @@
+#frame_wrapper { width: 970px; margin: 0 auto; text-align: center;  }
+#page_border { width: 970px; padding: 0 0 10px 0; background: url(../images/pagebg_970x5.jpg) repeat-y top center;  }
+#page_wrapper { position: relative; padding: 0 6px; width: 958px; text-align: left; min-height: 830px; }
+
+.oneColumnLayout { margin: 0 0 20px 70px; text-align: left;}
+.spanColumn { padding: 5px; clear: both; }
+
+.twoColumnLayout { margin: 0 0 20px 0; }
+.twoColumnLayout .leftColumn { float: left; width: 275px; margin: 5px 10px 5px 9px; _margin: 5px 3px; overflow: hidden; }
+.twoColumnLayout .centerColumn { float: left; width: 646px; margin: 5px 10px 5px 8px; _margin: 5px 0px 5px 5px; }
+
+.twoColumnEqualLayout { margin: 0 0 20px 70px; }
+.twoColumnEqualLayout .leftColumn { float: left; width: 460px; margin: 5px 10px 5px 9px; _margin: 5px; }
+.twoColumnEqualLayout .centerColumn { float: left; width: 460px; margin: 5px 10px 5px 8px; }
+
+.twoColumnSmRtLayout { margin: 0 0 20px 70px; }
+.twoColumnSmRtLayout .leftColumn { float: left; width: 646px; _width: 640px; margin: 5px 10px 5px 9px; _margin: 5px; }
+.twoColumnSmRtLayout .centerColumn { float: left; width: 275px; margin: 5px 10px 5px 8px; _margin: 5px; }
+
+.twoColumnSmLtLayout { margin: 0 0 20px 70px; }
+.twoColumnSmLtLayout .leftColumn { float: left; width: 220px; margin: 5px 10px 5px 9px; _margin: 5px; }
+.twoColumnSmLtLayout .centerColumn { float: left; width: 700px; margin: 5px 10px 5px 8px; _margin: 5px; }
+
+.threeColumnLayout { margin: 0 0 20px 70px; }
+.threeColumnLayout .leftColumn { float: left; width: 275px; margin: 5px 0px 5px 9px; _margin: 5px; }
+.threeColumnLayout .centerColumn { float: left; width: 425px; margin: 5px 10px; _margin: 5px; }
+.threeColumnLayout .rightColumn { float: left; width: 220px; margin: 5px 0; }
+
+.threeColumnSmLtLayout { margin: 0 0 20px 70px; }
+.threeColumnSmLtLayout .leftColumn { float: left; width: 220px; margin: 5px 0px 5px 9px; _margin: 5px; }
+.threeColumnSmLtLayout .centerColumn { float: left; width: 425px; margin: 5px 10px; _margin: 5px; }
+.threeColumnSmLtLayout .rightColumn { float: left; width: 275px; margin: 5px 0; }
+
+.googleMapListing { width: 900px; width: 600px; }
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media (min-width : 320px) and (max-width : 767px){
+	.twoColumnLayout .leftColumn { display: none;}
+	.twoColumnLayout .centerColumn { float: left; width: auto; margin: 5px 10px 5px 8px; _margin: 5px 0px 5px 5px; }
+	.googleMapListing { width: 290px; height: 500px; }
+} 

@@ -1,0 +1,104 @@
+<?php
+include("../functions/function.php");
+
+$pid=$_POST['pid'];
+unset($_POST['pid']);
+// print_r($pid);die;
+
+if(!isset($_POST['refrigerator']))
+{
+	$_POST['refrigerator']=0;
+}
+if(!isset($_POST['air_conditioner']))
+{
+	$_POST['air_conditioner']=0;
+}
+if(!isset($_POST['yard']))
+{
+	$_POST['yard']=0;
+}
+if(!isset($_POST['stove']))
+{
+	$_POST['stove']=0;
+}
+
+if(!isset($_POST['wallheater']))
+{
+	$_POST['wallheater']=0;
+}
+if(!isset($_POST['elevator']))
+{
+	$_POST['elevator']=0;
+}
+if(!isset($_POST['dishwasher']))
+{
+	$_POST['dishwasher']=0;
+}
+if(!isset($_POST['laundry']))
+{
+	$_POST['laundry']=0;
+}
+if(!isset($_POST['pool']))
+{
+	$_POST['pool']=0;
+}
+if(!isset($_POST['microwave']))
+{
+	$_POST['microwave']=0;
+}
+if(!isset($_POST['wd']))
+{
+	$_POST['wd']=0;
+}
+if(!isset($_POST['spa']))
+{
+	$_POST['spa']=0;
+}
+if(!isset($_POST['central_air']))
+{
+	$_POST['central_air']=0;
+}
+if(!isset($_POST['wd_hookups']))
+{
+	$_POST['wd_hookups']=0;
+}
+if(!isset($_POST['accessiblee']))
+{
+	$_POST['accessiblee']=0;
+}
+if(!isset($_POST['central_heat']))
+{
+	$_POST['central_heat']=0;
+}
+if(!isset($_POST['balcony']))
+{
+	$_POST['balcony']=0;
+}
+if(!isset($_POST['controlled_access']))
+{
+	$_POST['controlled_access']=0;
+}
+if(!isset($_POST['balcony']))
+{
+	$_POST['balcony']=0;
+}
+if(!isset($_POST['fireplace']))
+{
+	$_POST['fireplace']=0;
+}
+if(!isset($_POST['patio']))
+{
+	$_POST['patio']=0;
+}
+if(!isset($_POST['quiet_nhood']))
+{
+	$_POST['quiet_nhood']=0;
+}
+
+
+$where['post_id']=$pid;
+
+update('post',$_POST,$where);
+echo "<script>setTimeout(function(){window.location.href='edit_post.php?pid=$pid'},2000);</script><h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Amenities is Updated Successfully!</h4>";
+
+?>

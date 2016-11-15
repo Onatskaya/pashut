@@ -1,0 +1,2836 @@
+.none,
+.hide {
+    display: none
+}
+.show {
+    display: block
+}
+.clearboth {
+    overflow: hidden;
+    height: 1px;
+    display: block
+}
+.bold,
+.strong {
+    font-weight: bold
+}
+.line {
+    margin: 0 0 20px 0
+}
+.bottom-padding {
+    margin-bottom: 15px
+}
+.feature-divider {
+    border: 1px solid #e1e1e1
+}
+body {
+    font-family: "Lato";
+    background: url(/images/new/footer-bg.png) no-repeat bottom center, url(/images/new/WsrBackground.jpg) no-repeat top center
+}
+a {
+    font-family: "Lato"
+}
+.btn_submit {
+    padding: 10px 20px;
+    background: #0074e4;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #07571c;
+    color: #FFF;
+    border-radius: 3px
+}
+.btn_submit:hover {
+    text-decoration: none;
+    background: #1b5098;
+    color: #FFF
+}
+.btn_cancel {
+    padding: 10px 20px;
+    background: #DDD;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #CCC;
+    color: #AAA;
+    border-radius: 3px;
+    margin-right: 10px
+}
+.spanColumn {
+    text-align: left;
+    margin: 20px 0
+}
+.fleft {
+    float: left
+}
+.fright {
+    float: right
+}
+hr {
+    border-top: 1px solid #CCC
+}
+.alert-box {
+    background: #DB4A51;
+    padding: 10px;
+    color: #FFF;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 0 0 20px 0
+}
+.alert-box.success,
+.alertBox_green {
+    background: #7BD579;
+    color: #000;
+    margin: 55px 0 10px 0;
+    font-size: 16px
+}
+.alert-box.success h2,
+.alert-box.success h3,
+.alertBox_green h2 {
+    font-size: 16px;
+    padding: 10px;
+    margin: 0
+}
+.alertBox_green .headerLink {
+    display: none
+}
+.alert-box img {
+    display: block;
+    float: left;
+    margin: 5px 5px 0 0
+}
+input.text,
+select {
+    border: 2px solid #b7b7b7;
+    border-radius: 5px;
+    height: 40px;
+    width: auto
+}
+input.checkbox,
+input.radio {
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
+select.small,
+select.half,
+input.half {
+    width: 45%
+}
+select.tiny,
+input.tiny {
+    width: 22%
+}
+.textarea {
+    border: 2px solid #b7b7b7;
+    border-radius: 5px;
+    height: 100px;
+    width: 100%
+}
+.marg_top_5 {
+    margin-top: 5px
+}
+.alertBox_greenExtend {
+    background: #7BD579;
+    color: #000;
+    margin: 55px 0 10px 0;
+    font-size: 16px;
+    width: 100%;
+    height: 50px
+}
+.join-banner {
+    display: block;
+    background: #0074e4;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    padding: 10px 55px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase
+}
+.join-banner.small {
+    font-size: 28px;
+    padding: 7px 30px
+}
+.join-banner:hover {
+    background: #1b5098;
+    text-decoration: none;
+    color: #FFF
+}
+.list-link {
+    display: inline-block;
+    padding: 15px 25px
+}
+.gridModule .body .row input.btn_login {
+    width: 126px
+}
+.gridModule .header,
+.gridModule .body {
+    background: #F8F8F8
+}
+.center-mod .ListingListModule .header {
+    width: auto
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu.open {
+    display: block
+}
+ul.nav li.dropdown:hover > a {
+    color: #EEE
+}
+ul.nav li.dropdown:hover > a:hover {
+    text-decoration: none
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu a {
+    color: #EEE;
+    text-decoration: none
+}
+ul.nav li.dropdown:hover > ul.dropdown-menu a:hover {
+    color: #EEE;
+    text-decoration: underline
+}
+.navbar .title {
+    display: none
+}
+.navbar-default {
+    background: url(/images/new/top-nav-bg.jpg) repeat-x bottom left #534741
+}
+.navbar-toggle {
+    margin-top: 5px
+}
+.navbar {
+    border: none;
+    margin: 0;
+    min-height: 42px;
+    height: 42px
+}
+.navbar li {
+    margin-right: 15px
+}
+.navbar li.home em {
+    display: inline-block;
+    background: url(/images/new/nav-icons.png) no-repeat 0 0;
+    width: 19px;
+    height: 19px;
+    margin: 0 3px 0 0;
+    position: relative;
+    top: 3px
+}
+.navbar li.post em {
+    display: inline-block;
+    background: url(/images/new/nav-icons.png) no-repeat -26px 0;
+    width: 20px;
+    height: 19px;
+    margin: 0 3px 0 0;
+    position: relative;
+    top: 3px
+}
+.navbar li.find em {
+    display: inline-block;
+    background: url(/images/new/nav-icons.png) no-repeat -53px 0;
+    width: 12px;
+    height: 19px;
+    margin: 0 3px 0 0;
+    position: relative;
+    top: 3px
+}
+.navbar li.moving em {
+    display: inline-block;
+    background: url(/images/new/nav-icons.png) no-repeat -69px 0;
+    width: 35px;
+    height: 19px;
+    margin: 0 5px 0 0;
+    position: relative;
+    top: 3px
+}
+.navbar li.login em {
+    display: inline-block;
+    background: url(/images/new/nav-icons.png) no-repeat -110px 0;
+    width: 17px;
+    height: 19px;
+    margin: 0 5px 0 0;
+    position: relative;
+    top: 3px
+}
+.navbar li.login a {
+    color: #FFF
+}
+.navbar li.join {
+    background: #a68e82;
+    border-bottom: 2px solid #FFF
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #EEE
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #EEE;
+    text-decoration: underline
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li {
+    border-bottom: none
+}
+.navbar-nav li.welcome {
+    color: #EEE;
+    font-size: 18px
+}
+.navbar-default .navbar-nav .logout {
+    position: relative;
+    top: -5px
+}
+.navbar-default .navbar-nav .logout a {
+    color: #514640;
+    font-size: 11px;
+    background: #EEE;
+    border-radius: 10px;
+    margin: 12px 0 0 10px;
+    padding: 5px 10px
+}
+.navbar-default .navbar-nav .logout a:hover {
+    color: #514640;
+    background: #EEE;
+    text-decoration: underline
+}
+.navbar-default .navbar-nav .internal a {
+    color: #090;
+    font-size: 11px;
+    margin: 12px 0 0 10px
+}
+.navbar-default .navbar-nav>li.join>a {
+    color: #FFF;
+    font-weight: bold
+}
+.navbar-default .navbar-nav>li>a {
+    display: inline-block;
+    color: #EEE;
+    padding: 10px 5px
+}
+.navbar-default .navbar-nav>li>a:hover {
+    text-decoration: underline;
+    color: #EEE
+}
+.navbar-default .navbar-collapse>li>a {
+    width: 100%
+}
+.navbar-default .navbar-collapse {
+    background: #534741;
+    border: 0;
+    padding: 0 15px
+}
+.navbar-default .navbar-collapse a {
+    text-decoration: none
+}
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    background: #1c1411;
+    color: #EEE
+}
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+    background: #777;
+    color: #e12b1d
+}
+.dropdown-menu {
+    background: #1c1411
+}
+.dropdown.open .dropdown-menu a {
+    color: #EEE
+}
+.dropdown.open .dropdown-menu a:hover,
+.dropdown.open .dropdown-menu a:focus {
+    color: #e12b1d
+}
+.navbar .dropdown-menu li {
+    margin-right: 0
+}
+.hero {
+    padding-top: 15px;
+    margin-top: 42px;
+    background: url(/images/new/nav-bg.jpg) repeat-x;
+    width: 100%;
+    height: 134px;
+    position: relative
+}
+.hero .shadow {
+    background: url(/images/new/nav-shadow.png) repeat-x;
+    width: 100%;
+    height: 27px;
+    position: absolute;
+    bottom: -27px;
+    z-index: 2
+}
+.hero .logo {
+    background: url(/images/2016/WSR-logo.png) no-repeat 0 0;
+    background-size: 90%;
+    width: 500px;
+    height: 99px;
+    margin: 10px 30px 0 0
+}
+.hero .join-banner {
+    float: left
+}
+.hero ul {
+    margin: 0 0 -5px 0
+}
+.hero .deal-banner {
+    float: left;
+    display: block;
+    background: url(/images/new/home-dollar-deal.png) no-repeat 0 0;
+    width: 121px;
+    height: 124px;
+    margin: -9px 15px 0
+}
+.hero .twitter {
+    background: url(/images/new/social-icons.png) no-repeat 0 0;
+    width: 32px;
+    height: 29px;
+    margin-right: 10px
+}
+.hero .facebook {
+    background: url(/images/new/social-icons.png) no-repeat -43px 0;
+    width: 32px;
+    height: 29px;
+    margin-right: 10px
+}
+.hero .mobile {
+    background: url(/images/new/social-icons.png) no-repeat -87px 0;
+    width: 101px;
+    height: 29px;
+    margin-right: 10px
+}
+.hero .counters {
+    color: #FFF;
+    text-align: right
+}
+.hero .counters .line {
+    margin: 0 0 5px 0
+}
+.hero .counters .title {
+    margin-right: 3px
+}
+.hero .counters .numbers {
+    font-weight: bold
+}
+.mobile-join-now {
+    display: none;
+    text-align: center;
+    margin: 10px 0 5px 0
+}
+.main-join-banner {
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    background: url(/images/new/home-join-now.png) no-repeat 0 0;
+    width: 292px;
+    height: 63px
+}
+.footer {
+    background: #f6f6f6;
+    text-align: center;
+    position: relative;
+    top: 260px;
+    padding-bottom: 10px
+}
+.footer .footer-links {
+    font-size: 12px;
+    color: #CCC;
+    text-align: right
+}
+.footer .footer-links a {
+    color: #CCC;
+    font-size: 14px;
+    text-align: right
+}
+.footer .highlight-section {
+    padding-top: 20px
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .footer {
+        top: 300px
+    }
+}
+.site_info h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0px 5px 0px;
+    color: #DE1A21
+}
+.site_info p {
+    padding: 0px;
+    margin: 0px 0px 0px 0px
+}
+.quicklinks {
+    margin: 20px auto 10px auto
+}
+.quicklinks .header {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    color: #DE1A21
+}
+.quicklinks span {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: Arial;
+    margin-right: 10px;
+    margin-right: 9px !ie
+}
+.quicklinks a,
+.quicklinks a:active,
+.quicklinks a:visited {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    color: #0063dc;
+    text-decoration: none
+}
+.quicklinks span a:hover {
+    text-decoration: underline
+}
+.quicklinks .links {
+    margin: 5px 0 0 0
+}
+.quicklinks .links span {
+    margin: 0 8px 0 0
+}
+#slidedown-content {
+    background: url(/images/new/login-section-bg.jpg) no-repeat;
+    background-size: cover;
+    height: 134px;
+    text-align: center
+}
+#slidedown-content #login-content {
+    padding-top: 40px
+}
+#slidedown-content #login-content .separator {
+    margin: 10px 0
+}
+#slidedown-content #login-content.fb {
+    padding-top: 5px
+}
+#slidedown-content #login-content.fb .separator {
+    margin: 7px 0
+}
+#slidedown-content h2 {
+    margin: 0;
+    padding: 0 30px 0 0;
+    display: inline-block;
+    height: 50px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #000;
+    border-right: 1px dotted #000
+}
+#slidedown-content label {
+    margin: 0 10px 0 25px;
+    font-size: 18px;
+    font-weight: normal
+}
+#slidedown-content input.text {
+    border-radius: 5px;
+    width: 150px;
+    height: 39px;
+    border: 1px solid #CCC;
+    margin-right: 20px
+}
+#slidedown-content .submit {
+    margin: 0 0 0 15px
+}
+.clipboard_iframe {
+    height: 1px;
+    overflow: hidden;
+    border: 0px
+}
+.clipboard_overlay {
+    position: absolute;
+    display: none;
+    z-index: 2;
+    padding: 15px;
+    height: 250px;
+    width: 450px;
+    left: 200px;
+    top: 300px;
+    background: #aaa;
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+    border: 1px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000
+}
+.clipboard_overlay img.clipboard_img {
+    float: left
+}
+.clipboard_overlay .header {
+    float: left;
+    width: 350px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0
+}
+.clipboard_overlay .clipDiv_listing {
+    border: 1px solid #b5b5b5;
+    height: 72px;
+    width: 340px;
+    background-color: white;
+    float: left;
+    padding: 3px
+}
+.clipboard_overlay .text_area {
+    width: 445px;
+    height: 50px;
+    margin-bottom: 10px
+}
+#clipSubmitBtn a,
+#clipSubmitBtn a:visited {
+    text-decoration: none;
+    color: white;
+    font-weight: bold
+}
+.listing-details h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    border-bottom: 1px solid #000;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 20px 0 20px 0
+}
+.listing-details h1 .deal-banner {
+    position: absolute;
+    top: -27px;
+    right: 170px;
+    background: url(/images/new/dollar-per-day-banner.png) no-repeat 0 0;
+    width: 116px;
+    height: 116px
+}
+.listing-details h2 {
+    font-size: 14px;
+    border-bottom: 4px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 5px
+}
+.listing-details h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #888;
+    padding-bottom: 5px;
+    margin-bottom: 5px
+}
+.listing-details .bigText {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px
+}
+.listing-details .medText {
+    font-size: 18px;
+    font-weight: bold
+}
+.listing-details .section1 {
+    overflow: hidden
+}
+.listing-details .listing-content {
+    margin: 0 0 10px 0
+}
+.listing-details .section1 .left-col {
+    width: 370px;
+    float: left
+}
+.listing-details .section1 .center-col {
+    width: 345px;
+    float: left
+}
+.listing-details .section1 .right-col {
+    width: 277px;
+    float: right
+}
+.listing-details .section2 {
+    overflow: hidden;
+    margin: 20px 0 70px 0
+}
+.listing-details .section2 .left-col {
+    width: 700px;
+    float: left
+}
+.listing-details .section2 .right-col {
+    width: 280px;
+    float: right
+}
+.listing-details .icons {
+    overflow: hidden;
+    margin: 20px 0
+}
+.listing-details .icons ul li {
+    list-style: none;
+    margin-left: 0px;
+    float: left;
+    margin-right: 10px
+}
+.listing-details .ld-banner {
+    margin: 40px 0 60px 0;
+    padding-top: 40px;
+    border-top: 8px solid #000
+}
+.listing-details .actionLinks {
+    margin: 0 0 20px 0;
+    overflow: hidden
+}
+.listing-details .mapQuestLink {
+    padding: 5px;
+    border-radius: 2px;
+    background: #434343;
+    color: #FFF;
+    border: 1px solid #000;
+    border-bottom: 2px solid #000;
+    margin-right: 10px
+}
+.listing-details .gMapLink {
+    padding: 5px;
+    border-radius: 2px;
+    background: #ff7e00;
+    color: #FFF;
+    border: 1px solid #ff3c00;
+    border-bottom: 2px solid #ff3c00
+}
+.listing-details .signupLink {
+    float: left;
+    margin: 5px 15px 0 0;
+    padding: 10px 10px;
+    border-radius: 2px;
+    background: #0074e4;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase
+}
+.listing-details .messageLink,
+.listing-details .favLink {
+    float: left;
+    margin: 5px 15px 0 0;
+    padding: 15px 10px;
+    border-radius: 2px;
+    background: #777;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none
+}
+.listing-details .listing-map {
+    margin-top: 0px
+}
+.listing-details .listing-info {
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    color: #888
+}
+.listing-details .listing-info .row {
+    padding: 10px 5px
+}
+.listing-details .listing-info .row strong {
+    display: block
+}
+.listing-details .listing-info .row.odd {
+    background: #ebebeb
+}
+.listing-details .address-info {
+    padding-left: 30px;
+    border-radius: 5px;
+    color: #888
+}
+.listing-details .address-info ul {
+    margin: 0 0 0 20px;
+    padding: 0
+}
+.listing-details .listing-info .report-rented {
+    font-size: 11px;
+    font-weight: bold;
+    color: red
+}
+.quickview {
+    width: 700px
+}
+.res-modal {
+    margin: 0 auto;
+    max-width: 840px;
+    min-width: 250px;
+    width: 80% !important;
+    left: 0 !important;
+    right: 0 !important
+}
+.ui-widget-overlay {
+    background-image: none
+}
+.ui-dialog-titlebar {
+    display: none
+}
+.ui-widget-content {
+    background: #FFF
+}
+.member-links {
+    margin: 20px 0 20px 20px;
+    padding: 0
+}
+.selection-bar {
+    overflow: hidden;
+    margin: 0 0 20px 0
+}
+.layout-selection {
+    margin: 0 0 0 0;
+    float: left
+}
+.layout-selection li {
+    color: #1885f0;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 5px;
+    cursor: pointer
+}
+.layout-selection li.selected {
+    color: #333
+}
+.layout-selection li img {
+    margin: -3px 2px 0 0
+}
+.pagination {
+    float: right;
+    padding: 2px;
+    margin: 10px 0
+}
+.pagination-top {
+    margin: 0
+}
+.pagination-bottom {
+    clear: both
+}
+.pagination ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 12px
+}
+.pagination li {
+    list-style-type: none;
+    display: inline;
+    padding-bottom: 1px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0px 1px
+}
+.pagination a,
+.pagination a:visited {
+    padding: 3px 8px;
+    border: 1px solid #DE1A21;
+    text-decoration: none;
+    color: #DE1A21
+}
+.pagination a:hover,
+.pagination a:active {
+    border: 1px solid #DE1A21;
+    color: #FFF;
+    background-color: #DE1A21
+}
+.pagination a.currentpage {
+    background-color: #DE1A21;
+    color: #FFFFFF;
+    _color: #FFFFFF;
+    border-color: #DE1A21;
+    font-weight: bold;
+    cursor: default
+}
+.pagination a.disablelink,
+.pagination a.disablelink:hover {
+    background-color: white;
+    cursor: default;
+    color: #929292;
+    border-color: #929292;
+    font-weight: normal !important
+}
+.pagination a.prevnext {
+    font-weight: bold
+}
+.walkscore {
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 15px
+}
+.member .walkscore {
+    margin-bottom: -10px
+}
+.walkscore .body {
+    margin-left: 0px
+}
+.walkscore .top {
+    padding: 10px 0;
+    background: #000;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+}
+.walkscore .middle {
+    padding: 5px;
+    background: #ebebeb;
+    font-weight: bold;
+    font-size: 18px
+}
+.walkscore .middle .large {
+    font-size: 60px
+}
+.walkscore .bottom {
+    padding: 10px 0;
+    background: #d9d9d9;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px
+}
+.soundscore {
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 15px
+}
+.member .soundscore {
+    margin-bottom: -10px
+}
+.soundscore .body {
+    margin-left: 0px
+}
+.soundscore .top {
+    padding: 10px 0;
+    background: #000;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+}
+.soundscore .middle {
+    padding: 5px;
+    background: #ebebeb;
+    font-weight: bold;
+    font-size: 18px
+}
+.soundscore .middle .large {
+    font-size: 60px
+}
+.soundscore .bottom {
+    padding: 10px 0;
+    background: #d9d9d9;
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px
+}
+.home-banner {
+    margin: 30px auto 20px auto;
+    position: relative;
+    background: url(/images/new/home-green-banner.jpg) no-repeat center center;
+    width: 100%;
+    height: 90px
+}
+.home-banner .btn-get-started {
+    position: absolute;
+    text-indent: -9999px;
+    bottom: 22px;
+    left: 42%;
+    background: url(/images/new/btn-get-started.png) no-repeat;
+    width: 292px;
+    height: 69px
+}
+.contact-banner {
+    margin: 20px auto;
+    text-align: center
+}
+.circle-area {
+    background: #f8f8f8
+}
+.circle-area h2 {
+    font-size: 40px;
+    color: #777;
+    margin: 30px 0 20px 0
+}
+.circle-area h3 {
+    font-size: 17px;
+    color: #999;
+    margin: 10px 0 25px 0
+}
+.circle-area h3 strong {
+    margin: 10px 0 0 0;
+    display: block;
+    font-size: 40px;
+    color: #0074e4
+}
+.circle-area h3 a:hover {
+    text-decoration: underline;
+    color: #0074e4
+}
+.textsearch-area {
+    margin: 10px 0 30px 0;
+    text-align: center
+}
+.textsearch-area .header {
+    font-size: 34px
+}
+.textsearch-area input.text {
+    width: 200px;
+    margin: 15px 8px 0 8px;
+    font-size: 30px;
+    height: 60px
+}
+.textsearch-area .search {
+    position: relative;
+    top: 20px
+}
+.fetaured-listings {
+    background: #f8f8f8;
+    padding-bottom: 20px
+}
+.fetaured-listings h2 {
+    font-size: 40px;
+    color: #777;
+    margin: 20px 0 20px 0
+}
+.fetaured-listings h2 .deal-banner {
+    position: absolute;
+    top: -27px;
+    right: 70px;
+    background: url(/images/new/dollar-per-day-banner.png) no-repeat 0 0;
+    width: 116px;
+    height: 116px
+}
+.fetaured-listings .content-wrapper:hover {
+    border: 1px solid #DE1A21
+}
+.ft-mod .content-wrapper {
+    border: 1px solid transparent;
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 230px;
+    color: #FFF;
+    line-height: 30px;
+    margin-bottom: 10px
+}
+.ft-mod .content-wrapper .top-rib {
+    position: absolute;
+    top: 5%;
+    right: -2%;
+    width: 90%;
+    height: 30px;
+    background: #ed1b24;
+    border-bottom: 1px solid #ff3f00;
+    padding-left: 10px;
+    opacity: 0.75;
+    text-shadow: 1px 1px #222
+}
+.ft-mod .content-wrapper .bottom-rib {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    background: none;
+    padding-left: 10px;
+    text-shadow: 1px 1px #222;
+    font-size: 16px;
+    font-weight: bold
+}
+.news-section {
+    margin-top: 20px
+}
+.news-section h2 {
+    color: #777;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0px
+}
+.news-section h3 a {
+    font-size: 24px;
+    margin-top: 0
+}
+.news-section p {
+    color: #AAA
+}
+.news-section a {
+    color: #ed4a4b;
+    text-decoration: none
+}
+.news-section img {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin: 20px 10px 5px 0;
+    height: 100px
+}
+.popular-areas {
+    position: relative;
+    z-index: 2;
+    color: #AAA;
+    margin: 0 auto 20px auto
+}
+.popular-areas h1 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #777
+}
+.popular-areas a {
+    display: block;
+    color: #ed4a4b;
+    margin-bottom: 5px
+}
+.popular-areas .area-links {
+    margin-top: 67px
+}
+.popular-areas p {
+    line-height: 25px;
+    font-size: 16px
+}
+.tenantscreening {
+    text-align: left;
+    margin-top: 30px;
+    color: #777
+}
+.tenantscreening h2 {
+    font-weight: normal;
+    font-size: 48px;
+    color: #ed4a4b;
+    margin-bottom: 20px
+}
+.tenantscreening h3 {
+    font-size: 20px
+}
+.tenantscreening .mod1 {
+    background: #DDD;
+    padding: 10px;
+    color: #777;
+    border-radius: 5px
+}
+.tenantscreening .mod1 .header {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-size: 18px
+}
+.tenantscreening .mod1 strong {
+    font-size: 16px
+}
+.tenantscreening ul {
+    margin-left: 0px
+}
+.tenantscreening ul li {
+    margin: 0 0 10px 0
+}
+.tenantscreening .register {
+    display: block;
+    border-radius: 5px;
+    margin-top: 27px;
+    background: #ed4a4b;
+    color: #FFF;
+    padding: 12px 40px;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+    font-size: 28px;
+    border-bottom: 2px solid #7b2e02
+}
+.tenantscreening .register .line1 {
+    font-size: 16px
+}
+.tenantscreening strong {
+    font-size: 18px;
+    text-decoration: none
+}
+.tenantscreening b {
+    color: #ed4a4b
+}
+.rentdoc {
+    text-align: left;
+    margin-top: 30px
+}
+.rentdoc h2 {
+    font-weight: normal;
+    font-size: 40px;
+    color: #ed4a4b;
+    margin-bottom: 20px
+}
+.rentdoc ul {
+    margin-left: 20px;
+    list-style-image: url('/images/new/checkmark.jpg')
+}
+.rentdoc ul li {
+    margin-left: 20px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #AAA
+}
+.rentdoc label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal
+}
+.rentdoc input,
+.rentdoc textarea {
+    display: inline;
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%;
+    display: inline;
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%
+}
+.rentdoc textarea {
+    height: 100px
+}
+.rentdoc .btn-submit {
+    border: none;
+    margin-top: 27px;
+    background: #0074e4;
+    color: #FFF;
+    padding: 18px 40px;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 2px solid #7b2e02;
+    box-shadow: 0 0 5px 5px #DDD
+}
+.rentdoc .contact-info {
+    margin-top: 33px;
+    font-size: 23px;
+    color: #ed4a4b;
+    font-weight: bold
+}
+.rentdoc .contact-info div {
+    margin-bottom: 5px
+}
+.rentdoc .row {
+    margin: 0 0 20px 0
+}
+.llsignup {
+    text-align: left;
+    margin-top: 30px
+}
+.llsignup .mod-row {
+    margin-bottom: 20px
+}
+.llsignup h2 {
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 5px solid #000;
+    color: #000;
+    margin-bottom: 20px;
+    padding-bottom: 10px
+}
+.llsignup h3 {
+    font-weight: normal;
+    font-size: 30px;
+    color: #AAA;
+    margin-bottom: 20px
+}
+.llsignup h4 {
+    font-weight: bold;
+    font-size: 22px;
+    color: #AAA;
+    margin-bottom: 20px
+}
+.llsignup ul {
+    margin-left: 25px;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px
+}
+.llsignup ul strong {
+    color: #ed4a4b
+}
+.llsignup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal
+}
+.llsignup input,
+.llsignup select {
+    display: inline;
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%
+}
+.llsignup input.small {
+    width: 28%;
+    margin-right: 4px
+}
+.llsignup .row {
+    margin: 0px;
+    margin-bottom: 20px
+}
+.llsignup .row.highlight {
+    background: #EEE;
+    padding: 8px 0px;
+    border-radius: 5px;
+    overflow: hidden
+}
+.llsignup .row.highlight label {
+    float: left;
+    font-size: 36px;
+    color: #AAA
+}
+.llsignup .row.highlight select {
+    margin-top: 10px;
+    float: left
+}
+.llsignup .success {
+    color: #090
+}
+.llsignup .error {
+    color: red
+}
+.llsignup .line {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #AAA
+}
+.llsignup .checkbox {
+    position: relative;
+    top: 0px;
+    height: 15px;
+    margin-right: 5px
+}
+.llsignup input#join-wsr {
+    border: none;
+    margin-top: 12px;
+    background: #0074e4;
+    color: #FFF;
+    padding: 20px 40px;
+    width: auto;
+    height: auto;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid #7b2e02;
+    box-shadow: 0 0 5px 5px #DDD
+}
+.llsignup #check-username {
+    color: #ed4a4b;
+    font-size: 11px;
+    text-decoration: underline
+}
+.signup {
+    text-align: left;
+    margin-top: 20px
+}
+.signup #fb-login-section h3 {
+    color: #090;
+    text-align: left
+}
+.signup #fb-login-section .separator {
+    margin-top: 20px
+}
+.signup .md-box {
+    padding: 10px 20px;
+    background: #EFEFEF;
+    border-radius: 5px;
+    margin-bottom: 20px
+}
+.signup .regular .plan {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden
+}
+.signup .regular .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    text-align: center;
+    background: #0074e4
+}
+.signup .regular .dual-plan .circle {
+    background: #0074e4
+}
+.signup .regular .gold-plan .circle {
+    background: #F0B700;
+    border: 2px solid #F8DE06;
+    box-shadow: 0px 1px 3px #F8DE06 inset, 0px 0px 8px rgba(255, 255, 110, 0.6)
+}
+.signup .regular .single-plan {
+    border: 2px solid #0074e4;
+    background: #FFF;
+    height: 277px;
+    padding-top: 75px;
+    font-size: 18px
+}
+.signup .regular .dual-plan {
+    border: 2px solid #1b5098;
+    background: #FFF;
+    margin-bottom: 10px
+}
+.signup .regular .gold-plan {
+    background: #F0B705
+}
+.signup .regular .plan input {
+    float: left;
+    width: 5%;
+    margin: 12% 0 0 2%
+}
+.signup .regular h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px
+}
+.signup .regular label {
+    cursor: pointer;
+    position: relative;
+    left: 3%;
+    width: 93%;
+    margin: 3% 0 0
+}
+.signup .regular .dual-plan label {
+    margin-bottom: 2%
+}
+.signup .regular .subtext {
+    font-size: 11px
+}
+.signup .special {
+    color: #090;
+    margin: 0 0 5px 15px;
+    font-size: 11px
+}
+.signup .regular .title {
+    font-size: 16px;
+    margin-top: 15px
+}
+.signup .regular .rate {
+    font-size: 38px;
+    color: #FFF;
+    line-height: 38px
+}
+.signup .regular .left-section {
+    color: #FFF;
+    float: left;
+    width: 21%;
+    text-align: center
+}
+.signup .regular .right-section {
+    color: #534741;
+    font-weight: bold;
+    float: left;
+    width: 64%;
+    margin: 0 0 0 5%
+}
+.signup .regular .gold-plan .right-section {
+    color: #FFF
+}
+.signup .regular .single-plan .right-section {
+    margin-top: -8%
+}
+.signup .regular ul {
+    margin-left: 25px
+}
+.signup .regular li {
+    margin: 0 0 0 0
+}
+.signup .regular .rate .condition {
+    font-size: 20px
+}
+.signup .gold {
+    position: relative
+}
+.signup .gold .plan {
+    position: relative
+}
+.signup .gold .plan input {
+    position: absolute;
+    top: 17%;
+    left: 4%;
+    z-index: 2
+}
+.signup .gold h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f2c84b;
+    border-bottom: 8px solid #f2c84b;
+    padding-bottom: 10px
+}
+.signup .gold label {
+    cursor: pointer;
+    width: 100%
+}
+.signup .gold .top-section {
+    background: #fae8b4;
+    text-align: center;
+    padding: 5px 0;
+    color: #734002;
+    font-weight: normal
+}
+.signup .gold .title {
+    font-size: 32px
+}
+.signup .gold .rate {
+    font-size: 50px
+}
+.signup .gold .middle-section {
+    padding: 0;
+    background: #f3ca53;
+    color: #744108
+}
+.signup .gold .bottom-section {
+    text-align: center;
+    background: #e59d15;
+    color: #FFF;
+    font-size: 30px;
+    padding: 12px 0;
+    font-size: 30px
+}
+.signup .gold ul {
+    margin: 0
+}
+.signup .gold li {
+    margin: 0 0 0 0;
+    font-weight: normal;
+    border-bottom: 1px solid #744108;
+    padding: 8px 10px 8px 35px;
+    list-style: none;
+    background: url(/images/new/join-checkmark.png) no-repeat;
+    background-position: 10px 10px
+}
+.signup .info {
+    margin-top: 10px
+}
+.signup .info h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 10px
+}
+.signup .info {
+    color: #777
+}
+.signup .info td {
+    padding: 10px
+}
+.signup .info label {
+    display: block
+}
+.signup .info input,
+.signup .info select {
+    display: inline;
+    border: 2px solid #CCC;
+    border-radius: 5px;
+    height: 35px;
+    width: 100%
+}
+.signup .info .gift-info {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1b5098
+}
+.signup .info .gift-info input {
+    width: 20px;
+    height: auto
+}
+.signup .info input.phone-box {
+    width: 20%
+}
+.signup .info input.phone-box2 {
+    width: 37%
+}
+.signup .info select.cc {
+    width: 40%
+}
+.signup .info input.checkbox,
+.signup .info input.radio {
+    height: 15px;
+    width: 15px;
+    margin-right: 3px;
+    position: relative;
+    top: 6px
+}
+.signup .info input.error {
+    border: 1px solid red
+}
+.signup .info label.error {
+    color: red
+}
+.signup .info label.success {
+    color: green
+}
+.signup .info .phone label.error {
+    display: none
+}
+.signup .info input#join-wsr {
+    border: none;
+    margin-top: 12px;
+    background: #0074e4;
+    color: #FFF;
+    padding: 20px 40px;
+    width: auto;
+    height: auto;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid #1b5098;
+    box-shadow: 0 0 5px 5px #DDD
+}
+.signup .info a#check-username {
+    color: #7A8B8B
+}
+.signup .info p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #a3a3a3
+}
+.signup .info p strong {
+    font-size: 16px
+}
+
+.signup .info .agreement-header, .signup .info .preferences-header{
+    padding: 10px;
+    background: #0074e4;
+    border-bottom: 2px solid #1b5098;
+    color: #FFF;
+    width: 280px;
+    border-radius: 5px;
+    margin-top: 0
+}
+.signup .info .agreement-header a {
+    color: #FFF;
+    text-decoration: none
+}
+.signup .info .block {
+    margin-bottom: 20px
+}
+.signup .info .accordsuffix {
+    margin-left: 5px
+}
+.signup.latest .logo-wrapper {
+    width: 553px;
+    overflow: hidden;
+    margin: 0 auto
+}
+.signup.latest #plans h1 {
+    color: #374355;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 25px auto
+}
+.signup.latest .nav-tabs>li.active>a,
+.signup.latest .nav-tabs>li>a:hover,
+.signup.latest .nav-tabs>li>a:focus {
+    background: #3b72ed;
+    border: none;
+    color: #FFF;
+    border-radius: 0;
+    font-weight: normal;
+    font-size: 18px
+}
+.signup.latest .nav-tabs>li.active>a:after,
+.signup.latest .nav-tabs>li>a:after {
+    border-top: 16px solid #3b72ed
+}
+.signup.latest .nav-tabs>li>a {
+    border: none;
+    background: #eceff4;
+    color: #8493a8;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 0;
+    padding: 15px;
+    width: 360px
+}
+.signup.latest .regular ul {
+    width: auto
+}
+.signup.latest .regular li {
+    margin-right: 5px
+}
+.signup.latest #plans  h3.header {
+    color: #374355;
+    font-size: 16px;
+    margin: 30px 0
+}
+
+.signup.latest  #plans  h3{margin:5px 0;}
+
+.signup.latest  #plans .contract {color:#3b72ed;text-decoration:underline;}
+
+.signup.latest  #plans .cvv{width:37%;}
+
+.signup.latest #plans .plan {
+    border: none;
+    border-radius: 0;
+    box-shadow: 3px 3px 15px #aaa;
+    margin: 0 45px;
+    background: none;
+    padding: 0
+}
+.signup.latest #plans .plan .top-level {
+    background: #bababa;
+    text-align: center;
+    color: #FFF;
+    padding: 40px 0 40px 0
+}
+.signup.latest #plans .plan .top-level .radiobutton {
+    visibility: hidden
+}
+.signup.latest #plans .plan .bottom-level {
+    text-align: center;
+    color: #54657e
+}
+.signup.latest #plans .plan .dollar {
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 65px;
+    float: none;
+    position: relative;
+    left: -12px
+}
+.signup.latest #plans .plan .timeframe {
+    line-height: 22px;
+    font-size: 18px
+}
+.signup.latest #plans .plan .radiobutton input {
+    margin-left: 0
+}
+.signup.latest #plans .plan .hd1 {
+    font-size: 18px;
+    margin-bottom: 20px
+}
+.signup.latest #plans .plan .hd2 {
+    font-size: 40px
+}
+.signup.latest #plans .plan .hd3 {
+    font-size: 16px;
+    color: #54657e
+}
+.signup.latest #plans .plan .btn-primary-cta {
+    border-radius: 0;
+    background: #3b72ed;
+    font-size: 15px;
+    color: #FFF;
+    width: auto;
+    padding: 10px 40px
+}
+.signup.latest #plans .plan .cta {
+    margin: 20px auto
+}
+.signup.latest #plans .plan .savings {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0 10px 0
+}
+.signup.latest #plans .plan.special .detail {
+    background: none
+}
+.signup.latest #plans .plan.special .top-level {
+    background: #ee2324
+}
+.signup.latest #plans .plan.special .btn-primary-cta {
+    background: #ee2324;
+    border: none
+}
+.signup.latest #plans .plan.special .savings {
+    color: #ee2324
+}
+.signup.latest #plans .plan.selected {
+    box-shadow: 3px 3px 15px #3b72ed
+}
+.signup.latest #plans .plan.selected .detail {
+    background: none
+}
+.signup.latest #plans .plan.selected .btn-primary-cta {
+    background: #3b72ed;
+    border: none
+}
+.signup.latest #plans .plan.special .offer-badge {
+    background: url(/images/best-value-badge.png) no-repeat;
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    width: 86px;
+    height: 91px
+}
+.signup.latest #features {
+    background: #FFF
+}
+.signup.latest #features table {
+    width: 100%;
+    margin: 0
+}
+.signup.latest #features h2 {
+    left: auto;
+    top: auto;
+    margin: 0 0 10px 0;
+    width: 100%;
+    background: #54657e;
+    text-align: center;
+    font-size: 26px;
+    padding: 20px;
+    height: auto
+}
+.signup.latest #features h2:before,
+.signup.latest #features h2:after {
+    border: none;
+    right: auto
+}
+.signup.latest #features th {
+    padding: 10px;
+    color: #54657e;
+    font-size: 16px;
+    background: #eceff4
+}
+.signup.latest #features th.basic {
+    color: #54657e;
+    background: #eceff4
+}
+.signup.latest #features th.totalconnect {
+    color: #54657e;
+    background: #eceff4
+}
+.signup.latest #features tr {
+    border-top: none;
+    color: #54657e
+}
+.signup.latest #features td.basic {
+    color: #54657e;
+    background: none
+}
+.signup.latest #features td.totalconnect {
+    color: #54657e;
+    background: none
+}
+.signup.latest #features td.free {
+    border-left: none
+}
+.signup.latest #features td b {
+    color: #54657e
+}
+.signup.latest #features td,
+.signup.latest #features th {
+    border: 1px solid #ddd
+}
+.signup.latest .fb-login-section {
+    margin: 20px auto
+}
+.signup.latest .fb-login img {
+    width: 300px
+}
+.signup.latest .md-box {
+    background: #FFF
+}
+.signup.latest .info input,
+.signup.latest .info select {
+    border-radius: 0;
+    background: #eceff4;
+    border: 1px solid #CCC;
+    padding: 5px;
+    height: 40px
+}
+.signup.latest .info input.valid{background:url(/images/ok.png) no-repeat right; background-size:12%;}
+.signup.latest .info input.error{background:url(/images/error.png) no-repeat right; background-size:12%;}
+.signup.latest .info input.cvv.valid, .signup.latest .info input.phone-box.valid{background:none;}
+.signup.latest .info .agreement-header,
+.signup.latest .info .preferences-header {
+    background: #04be5b;
+    color: #FFF;
+    border: none;
+    border-radius: 0;
+    padding: 10px 5px
+}
+.signup.latest .info .preferences-header{width:200px;}
+.signup.latest #plans h3 a {
+    color: #FFF
+}
+.signup.latest .info input#join-wsr {
+    box-shadow: none;
+    border: none;
+    background: #3b72ed;
+    font-size: 26px
+}
+.signup.latest .info input:hover#join-wsr {
+    background: #1b72ed
+}
+.signup.latest .info h2 {
+    font-size: 24px;
+    margin-bottom: 0
+}
+.signup.latest .info .gift-info {
+    color: #374355;
+    font-size: 14px
+}
+.signup.latest #plans .row.bottom-padding {
+    padding-bottom: 20px
+}
+.signup.latest .info input.checkbox,
+.signup.latest .info input.radio {
+    width: 20px !important;
+    height: 20px !important
+}
+.signup.latest.extend-membership ul {
+    width: 750px
+}
+.signup.latest.upgrade ul {
+    width: 370px
+}
+.download-apps {
+    margin: 25px auto auto
+}
+.download-apps h2 {
+    color: #959595;
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 20px
+}
+.download-apps h3 {
+    color: #ed4a4b;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px
+}
+.download-apps p {
+    color: #959595;
+    font-size: 16px
+}
+.download-apps .form {
+    margin: 10px auto 20px auto
+}
+.download-apps .text {
+    border-radius: 5px;
+    width: 80px;
+    border: 1px solid #CCC;
+    height: 35px
+}
+.download-apps .subtext {
+    color: #959595;
+    font-size: 11px;
+    font-weight: bold
+}
+.download-apps .apps {
+    margin: 30px 0 0 0
+}
+.download-apps .apps img {
+    margin-right: 15px
+}
+.download-apps .submit {
+    background: #0074e4;
+    border: none;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 5px
+}
+.search-results {
+    text-align: left;
+    margin: 30px 0;
+    position: relative
+}
+.search-results h2 {
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    border-bottom: 8px solid #464646;
+    padding-bottom: 10px;
+    margin-bottom: 20px
+}
+.search-results h2 .sort-section {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px
+}
+.search-results h2 .sort-section a {
+    font-size: 12px
+}
+.search-results .highlight {
+    font-size: 24px;
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 10px
+}
+.search-results .highlight em {
+    color: #ec1a23
+}
+.search-results .listing-wrapper {
+    margin-bottom: 20px;
+    height: 360px;
+    overflow: hidden
+}
+.search-results .listing-wrapper.hover .text-wrapper {
+    background: #EEE
+}
+.search-results .image-wrapper {
+    position: relative;
+    border: 1px solid #CCC;
+    border-radius: 3px
+}
+.search-results .image-wrapper img {
+    background-size: cover;
+    height: 165px;
+    width: 100%
+}
+.search-results .image-wrapper .photo-count {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    z-index: 2
+}
+.search-results .image-wrapper .detail-link {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    background: #FFF;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-bottom: 1px solid #750009;
+    font-size: 11px
+}
+.search-results .image-wrapper .detail-link a {
+    color: #e71f2a
+}
+.search-results .image-wrapper .rentpay-link {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 2;
+    background: url(/images/rentpay_results-badge.jpg) no-repeat;
+    width: 90px;
+    height: 28px;
+    text-indent: -9999px;
+    cursor: pointer
+}
+.search-results .favorite-link {
+    display: inline-block;
+   
+    margin: 0 8px 0;
+    cursor: pointer
+}
+.search-results .favorite-link img {
+    width: 36px;
+    height: 27px
+}
+.search-results .remove-link {
+    display: inline-block;
+    float: right;
+    margin: 0 0 0 6px;
+    cursor: pointer
+}
+.search-results .text-wrapper {
+    position: relative;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    border-top: none;
+    color: #999
+}
+.search-results .text-wrapper .top-section {
+    border-bottom: 1px solid #CCC;
+    padding: 5px 10px
+}
+.search-results .text-wrapper .middle-section {
+    border-bottom: 1px solid #CCC;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #000
+}
+.search-results .featured .text-wrapper .middle-section {
+    background: #ffcd03
+}
+.search-results .text-wrapper .bottom-section {
+    padding: 10px
+}
+.search-results .area-text {
+    color: #000;
+    font-weight: bold
+}
+.search-results .price-text{color:#000;font-weight:bold;font-size:15px;display:inline-block;float:right;}
+.search-results .title-text {
+    overflow: hidden;
+    max-height: 38px
+}
+.search-results .contact-text {
+    display: none;
+    font-weight: normal;
+    margin: 10px 0 0
+}
+.search-results .desc-text {
+    display: none;
+    font-weight: normal;
+    margin: 10px 0 0
+}
+.search-results .available-text {
+    color: #999;
+    font-weight: bold;
+    overflow: hidden
+}
+.search-results .property-text {
+    font-weight: bold
+}
+.search-results .avail-text {
+    text-align: left;
+    display: inline-block
+}
+.search-results .join-text a {
+    color: #0074e4;
+    text-decoration: none;
+    font-size: 13px
+}
+.search-results .join-text a:hover {
+    color: #00A000;
+    text-decoration: none
+}
+.search-results .quick-text {
+   
+    display: inline-block
+}
+.search-results .quick-text a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #999
+}
+.clipboard-list .search-results .quick-text {
+    display: none
+}
+.clipboard-list .search-results .remove-link {
+    display: none
+}
+.search-results .bottom-section img {
+    width: 25px;
+    height: auto
+}
+.search-results .bottom-section img.pricereduced,
+.search-results .bottom-section img.new {
+    width: 75px
+}
+.search-results .ad-results {
+    display: none;
+    position: relative;
+    left: 20px
+}
+.search-results .remove-fav-link {
+    float: right;
+    display: inline-block
+}
+.search-results .search-filters {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 51%;
+    z-index: 3
+}
+.search-results .search-filters .col {
+    display: inline
+}
+.search-results .search-filters input,
+.search-results .search-filters select {
+    width: 27%;
+    height: 40px;
+    border: 1px solid #CCC;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+    background: #EEE;
+    padding: 10px 5px
+}
+.search-results .search-filters select.med {
+    width: 14%;
+    margin-right: 0
+}
+.search-results .search-filters select.pad {
+    margin-right: 5px
+}
+.search-results .search-filters input.submit {
+    width: auto;
+    height: auto;
+    border: none;
+    margin-top: -5px;
+    background: none;
+    padding: 0
+}
+.list.search-results .listing-wrapper.hover .text-wrapper {
+    background: transparent
+}
+.list.search-results .listing-wrapper.hover {
+    background: #FFFF99
+}
+.list.search-results .listing-wrapper {
+    width: 64%;
+    height: auto;
+    padding: 10px 10px 5px;
+    background: #EEE
+}
+.list.full-width.search-results .listing-wrapper {
+    width: 100%
+}
+.list.search-results .image-wrapper {
+    float: left;
+    width: 26%
+}
+.list.search-results .image-wrapper .favorite-link img {
+    width: 36px;
+    height: 27px
+}
+.list.search-results .text-wrapper {
+    float: left;
+    width: 72%;
+    border: none
+}
+.list.search-results .listing-wrapper.featured {
+    background: #ffcd03
+}
+.list.search-results .text-wrapper .middle-section {
+    border: none
+}
+.list.search-results .text-wrapper .top-section {
+    border: none;
+    padding-top: 0
+}
+.list.search-results .title-text {
+    height: auto
+}
+.list.search-results .contact-text {
+    display: block
+}
+.list.search-results .desc-text {
+    display: block
+}
+.list .pagination {
+    float: left
+}
+.list .pagination-top {
+    float: right
+}
+body.nolayout {
+    background: none
+}
+.nolayout .photo_viewer.large .image_holder {
+    width: 420px
+}
+.nolayout .photo_viewer.large .image_holder .crop {
+    width: 420px;
+    height: auto
+}
+.nolayout .photo_viewer.large .image_holder .crop img {
+    width: 420px
+}
+.nolayout .ld-banner {
+    display: none
+}
+.nolayout .contact-banner {
+    display: none
+}
+.nolayout h1 {
+    display: none
+}
+.nolayout .listing-content {
+    margin-top: 10px
+}
+#loading-message {
+    text-align: center;
+    font-weight: bold
+}
+#loading-message img {
+    margin-right: 10px
+}
+#content {
+    position: relative
+}
+.table-guest-emails td {
+    padding: 10px
+}
+.mb-search {
+    display: none
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    html,
+    body {
+        overflow-x: hidden
+    }
+    body {
+        background: none
+    }
+    .listing-details .listing-content {
+        margin: 22px 0 10px 0
+    }
+    .footer-wrapper {
+        display: none
+    }
+    .hero .logo {
+        background: url(/images/new/header-logo-small.png) no-repeat 0 0;
+        margin: 25px 0 0 -10px;
+        background-size: 52%
+    }
+    .hero {
+        display: none
+    }
+    .contact-banner {
+        display: none
+    }
+    .home-banner {
+        display: none
+    }
+    .mobile-join-now {
+        display: block
+    }
+    .join-banner.small {
+        font-size: 16px
+    }
+    .googleSpace {
+        padding: 10px
+    }
+    .textsearch-area .header {
+        font-size: 24px
+    }
+    .list-link {
+        font-size: 28px;
+        padding: 15px 20px
+    }
+    .bodySitemap {
+        line-height: 25px
+    }
+    .navbar .navbar-collapse li {
+        border-bottom: 1px solid #c7b299;
+        text-align: left
+    }
+    .navbar .navbar-collapse li em {
+        display: none
+    }
+    .navbar .navbar-collapse li.last {
+        border: none
+    }
+    .navbar .navbar-collapse li.join {
+        background: none
+    }
+    .navbar .navbar-collapse li.join a {
+        color: #c7b299
+    }
+    .navbar .title {
+        display: block;
+        float: left;
+        font-weight: bold;
+        font-size: 14px;
+        margin: 8px 0 0 8px;
+        color: #c7b299
+    }
+    .listing-details .signupLink {
+        margin-left: 0;
+        font-size: 16px;
+        text-align: center
+    }
+    .ll-get-started {
+        display: none
+    }
+    .rg-search {
+        display: none
+    }
+    .mb-search {
+        display: block;
+        position: relative;
+        top: 10px;
+        color: #000;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 5px 10px;
+        font-size: 16px;
+        background: #CCC;
+        border: none;
+        border-radius: 8px
+    }
+    .circle-area h2 {
+        font-size: 22px;
+        line-height: 24px;
+        margin: 10px 0 10px 0
+    }
+    .circle-area img {
+        width: 90%
+    }
+    .circle-area h3 {
+        font-size: 15px
+    }
+    .circle-area h3 strong {
+        font-size: 30px
+    }
+    .fetaured-listings h2 {
+        font-size: 24px;
+        line-height: 25px
+    }
+    .fetaured-listings .deal-banner {
+        display: none
+    }
+    .signup .regular .plan {
+        margin-bottom: 10px
+    }
+    .signup .regular .single-plan {
+        font-size: 12px
+    }
+    .signup .regular .dual-plan input,
+    .signup .regular .gold-plan input {
+        margin-top: 110px
+    }
+    .signup .regular .dual-plan .left-section,
+    .signup .regular .gold-plan .left-section {
+        margin-top: 75px
+    }
+    .signup .regular .left-section {
+        width: 28%
+    }
+    .signup .regular .circle {
+        height: 80px;
+        border-radius: 80px
+    }
+    .signup .regular .title {
+        margin-top: 15px;
+        font-size: 16px
+    }
+    .signup .regular .rate {
+        line-height: 28px;
+        font-size: 20px
+    }
+    .signup .info .gift-info {
+        font-size: 12px;
+        margin: 0 0 10px 0
+    }
+    .ft-mod .content-wrapper {
+        height: 210px;
+        font-size: 10px
+    }
+    .ft-mod .content-wrapper .top-rib {
+        width: 90%
+    }
+    .ft-mod .content-wrapper .top-rib .bathroom-info {
+        display: none
+    }
+    .search-section h2 {
+        font-size: 24px;
+        line-height: 25px
+    }
+    .search-section a {
+        font-size: 11px
+    }
+    .footer {
+        background: #FFF;
+        top: 0px
+    }
+    .footer .highlight-section,
+    .footer .disclaimer {
+        display: none
+    }
+    .footer .footer-links,
+    .footer .footer-links a {
+        font-size: 11px;
+        text-align: left
+    }
+    .signup .row {
+        margin-right: 0
+    }
+    .signup .regular h2 {
+        font-size: 28px;
+        margin-top: 35px;
+        color: #534741
+    }
+    .signup .regular label {
+        margin-bottom: 15px
+    }
+    .signup .gold h2 {
+        font-size: 30px;
+        margin-top: 10px
+    }
+    .signup .gold label {
+        margin-bottom: 15px
+    }
+    .signup .info h2 {
+        font-size: 26px;
+        color: #534741
+    }
+    .signup .info .preferences-header {
+        width: 240px;
+        font-size: 20px
+    }
+    .signup .info .agreement-header {
+        width: 280px;
+        font-size: 20px
+    }
+    .signup .info .pad {
+        margin-bottom: 5px
+    }
+    .signup .info .agreement-header {
+        width: 235px
+    }
+    .signup #join-wsr {
+        margin-top: 15px
+    }
+    #search-results {
+        margin-top: 65px
+    }
+    .search-results h2,
+    .search-results .highlight {
+        font-size: 18px
+    }
+    #loading-message {
+        margin-top: 80px
+    }
+    .search-results .search-filters {
+        top: 75px;
+        left: 16px;
+        width: 100%
+    }
+    .search-results .search-filters input,
+    .search-results .search-filters select {
+        width: 24%;
+        font-size: 11px;
+        height: 30px;
+        margin-right: 0;
+        padding: 0
+    }
+    .search-results .search-filters select.med {
+        width: 15%
+    }
+    .search-results .search-filters input.submit {
+        width: 36px;
+        margin: 0
+    }
+    .list.search-results .listing-wrapper {
+        width: 100%
+    }
+    .list.search-results .image-wrapper {
+        width: 100%;
+        margin-bottom: 5px;
+        text-align: center
+    }
+    .list.search-results .image-wrapper img {
+        height: auto
+    }
+    .list.search-results .text-wrapper {
+        width: 100%
+    }
+    .selection-bar {
+        display: none
+    }
+    #slidedown-content {
+        height: 215px
+    }
+    #slidedown-content h2 {
+        display: none
+    }
+    #slidedown-content span {
+        display: block;
+        margin-bottom: 10px
+    }
+    #slidedown-content #login-content {
+        padding-top: 10px
+    }
+    #slidedown-content label {
+        margin: 0 0px 0 5px;
+        font-size: 14px
+    }
+    #slidedown-content input.text {
+        width: 120px;
+        height: 35px;
+        margin-right: 5px
+    }
+    #slidedown-content .submit {
+        margin: 10px auto 0 41%;
+        display: block
+    }
+    .download-apps .iphone img {
+        display: none
+    }
+    .download-apps .text {
+        width: 78px
+    }
+    .download-apps .apps img {
+        width: 112px
+    }
+    .fetaured-listings {
+        margin-top: 10px
+    }
+    #carousel,
+    .search-results .quick-text {
+        display: none
+    }
+    div#fb-login-section img {
+        width: 200px;
+        margin-top: 35px
+    }
+    .llsignup h2 {
+        margin-top: 45px
+    }
+    .tenantscreening ul {
+        margin-left: 0px
+    }
+    .search-results h2 {
+        border-bottom: 0;
+        margin-bottom: 0
+    }
+    .search-results h2 .sort-section {
+        display: block;
+        margin-top: 10px;
+        position: relative;
+        right: auto;
+        bottom: auto
+    }
+    .alert-box {
+        margin: 40px 0 0 0;
+        padding: 5px
+    }
+    .alert-box h2 {
+        font-size: 11px;
+        margin: 0
+    }
+    .signup.latest .nav-tabs>li>a {
+        width: 315px;
+        margin-bottom: 5px
+    }
+    .signup.latest .nav-tabs>li.active>a:after,
+    .signup.latest .nav-tabs>li>a:after {
+        border-top: none
+    }
+    .signup.latest #plans .plan {
+        margin: 0 0 20px 0
+    }
+    .signup.latest #plans .plan .hd1 {
+        margin-top: 20px
+    }
+    .signup.latest #plans .plan .hd2 {
+        font-size: 28px
+    }
+    .signup.latest #plans .plan .cta {
+        margin-top: 0px
+    }
+    .signup.latest #features h2,
+    .signup.latest #features th {
+        font-size: 14px
+    }
+    .signup.latest .info input#join-wsr {
+        font-size: 20px
+    }
+    .signup.latest .logo-wrapper {
+        width: auto
+    }
+    .signup.latest #plans h1 {
+        font-size: 19px
+    }
+    .signup.latest #features h2 {
+        padding: 10px
+    }
+    .signup.latest.extend-membership ul {
+        width: auto
+    }
+}
+@media (min-width: 320px) and (max-width: 370px) {
+    .signup.latest .nav-tabs>li>a {
+        width: 263px
+    }
+    .signup.latest #features th {
+        font-size: 11px
+    }
+    .signup.latest #features h2 {
+        font-size: 13px
+    }
+}
+@media (min-width: 768px) and (max-width: 800px) {
+    .signup.latest #plans .plan {
+        margin: 0 0 20px 0
+    }
+	.signup.latest.upgrade ul {
+		width: 230px
+	}
+    .signup.latest .nav-tabs>li>a {
+        width: 220px;
+        font-size: 16px
+    }
+    .footer-wrapper {
+        display: none
+    }
+    .hero .join-banner {
+        display: none
+    }
+    .contact-banner {
+        display: none
+    }
+    .home-banner {
+        display: none
+    }
+    .ft-mod .content-wrapper {
+        height: 180px
+    }
+    .navbar-default .navbar-nav>li>a {
+        font-size: 12px
+    }
+    .download-apps .iphone img {
+        display: none
+    }
+    .download-apps .text {
+        width: 80px
+    }
+    .signup .row {
+        margin-right: 0
+    }
+    .signup #join-wsr {
+        margin-top: 15px
+    }
+    .signup .gold {
+        top: 20px
+    }
+    .signup .top-padding {
+        margin-top: 40px
+    }
+    .footer .highlight-section .col-md-4 {
+        display: none
+    }
+    .circle-area h3 {
+        font-size: 15px
+    }
+    .circle-area h3 strong {
+        font-size: 30px
+    }
+    .hero .counters {
+        display: none
+    }
+    #search-results {
+        margin-top: 78px
+    }
+    .search-results .search-filters {
+        top: 92px;
+        left: 16px;
+        width: 100%
+    }
+    #loading-message {
+        margin-top: 80px
+    }
+    .list.search-results .listing-wrapper {
+        width: 100%
+    }
+    .list.search-results .image-wrapper {
+        width: 31%
+    }
+    .list.search-results .text-wrapper {
+        width: 68%
+    }
+    #slidedown-content h2 {
+        padding: 0 10px 0 0;
+        height: 35px;
+        font-size: 22px
+    }
+    #slidedown-content label {
+        margin: 0 10px 0 5px;
+        font-size: 14px
+    }
+    #slidedown-content input.text {
+        width: 130px;
+        height: 35px;
+        margin-right: 5px
+    }
+    #slidedown-content .submit {
+        margin: 0 0 0 5px
+    }
+    #carousel {
+        display: none
+    }
+}
+@media (min-width: 965px) {
+    .signup.latest .nav-tabs>li>a {
+        width: 295px
+    }
+    .signup.latest #plans .plan {
+        margin: 0 35px
+    }
+    .navbar {
+        font-size: 12px
+    }
+    .footer-wrapper {
+        display: block
+    }
+    .hero .join-banner {
+        display: block
+    }
+    .contact-banner {
+        display: block
+    }
+    .circle-area h3 {
+        font-size: 15px
+    }
+    .circle-area h3 strong {
+        font-size: 30px
+    }
+    .footer .highlight-section .col-md-4 {
+        display: block
+    }
+    .list.search-results .listing-wrapper {
+        width: 100%
+    }
+    .list.search-results .image-wrapper {
+        width: 23%
+    }
+    .list.search-results .text-wrapper {
+        width: 76%
+    }
+    .hero .counters {
+        display: none
+    }
+}
+@media (min-width: 1200px) {
+    .signup.latest .nav-tabs>li>a {
+        width: 360px
+    }
+    .signup.latest #plans .plan {
+        margin: 0 45px
+    }
+    .navbar {
+        font-size: 13px
+    }
+    .list.search-results .listing-wrapper {
+        width: 64%
+    }
+    .list.search-results .image-wrapper {
+        width: 26%
+    }
+    .list.search-results .text-wrapper {
+        width: 72%
+    }
+    .list.search-results .image-wrapper img {
+        height: auto;
+        width: 210px
+    }
+    .list.search-results .image-wrapper .crop {
+        overflow: hidden;
+        height: 210px
+    }
+    .search-results .listing-wrapper {
+        height: 488px
+    }
+    .search-results .image-wrapper img {
+        height: 236px
+    }
+    .member .walkscore .body {
+        margin-left: 37px
+    }
+    .footer .highlight-section .col-md-4 {
+        display: block
+    }
+    .circle-area h3 {
+        font-size: 17px
+    }
+    .circle-area h3 strong {
+        font-size: 40px
+    }
+    .hero .counters {
+        display: block
+    }
+}

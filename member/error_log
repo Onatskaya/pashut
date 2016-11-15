@@ -1,0 +1,18 @@
+[04-Jul-2016 17:24:57 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/laabhaacoin/public_html/pashutlehaskir/functions/function.php:193) in /home/laabhaacoin/public_html/pashutlehaskir/member/payments.php on line 88
+[04-Jul-2016 17:26:19 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/laabhaacoin/public_html/pashutlehaskir/functions/function.php:193) in /home/laabhaacoin/public_html/pashutlehaskir/member/payments.php on line 89
+[19-Oct-2016 15:39:34 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[19-Oct-2016 15:39:38 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[19-Oct-2016 15:39:40 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[19-Oct-2016 15:55:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[19-Oct-2016 15:55:31 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[19-Oct-2016 19:58:12 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[19-Oct-2016 19:58:14 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[20-Oct-2016 16:23:40 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[20-Oct-2016 16:23:44 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[21-Oct-2016 14:59:02 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[21-Oct-2016 14:59:28 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[07-Nov-2016 17:59:47 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[07-Nov-2016 18:00:00 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[07-Nov-2016 18:00:11 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[07-Nov-2016 18:00:13 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[07-Nov-2016 18:00:23 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
