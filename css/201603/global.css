@@ -39,7 +39,8 @@ select.tiny,input.tiny{width:22%;}
 .list-link{display:inline-block;padding:15px 25px;}
 
 .gridModule {border:none;box-shadow: -4px 3px 40px #CCC;}
-.gridModule .body .row input{border:1px solid #cad3df;height:45px;background:#eceff4;color:#3d4d65;width:300px;padding:10px;}
+.gridModule .body .row input{border:1px solid #cad3df;height:45px;background:#eceff4;color:#3d4d65;width: 100%; max-width:300px;padding:10px; }
+#loginForm input { display: block; margin: auto; }
 .gridModule .body .row input.btn_login{width:126px;background:#EE2324;color:#FFF;width:200px;margin:20px 0 0;font-weight:bold;display:block;} 
 .gridModule .body .row {margin:0 0 10px 0;}
 .gridModule .header{font-size:20px;color:#3d4d65;}
@@ -687,7 +688,7 @@ body.nolayout {background:none;}
 	.signup.latest.extend-membership ul{width:auto;}
 	
 }
-.ll-signup-area .col-md-12 img {width: 100%;}
+.ll-signup-area .col-md-12 img {max-width: 100%!important; height: auto;}
 
 @media (min-width : 320px) and (max-width : 370px) {
 	.signup.latest .nav-tabs>li>a{width:263px;}
@@ -1257,9 +1258,9 @@ body.nolayout {background:none;}
 .flexslider .featured-badge {
     background: rgba(0, 0, 0, 0) url("/images/2016/icons/featured-banner.png") no-repeat scroll 0 0;
     height: 145px;
-    left: 70px;
+    left: -10px;
     position: absolute;
-    top: 9px;
+    top: -10px;
     width: 145px;
     z-index: 2;
 }
@@ -1385,9 +1386,9 @@ body.nolayout {background:none;}
 .flexslider .featured-badge {
     background: rgba(0, 0, 0, 0) url("../../images/2016/icons/featured-banner.png") no-repeat scroll 0 0;
     height: 145px;
-    left: 70px;
+    left: -10px;
     position: absolute;
-    top: 9px;
+    top: -10px;
     width: 145px;
     z-index: 2;
 }
@@ -1753,3 +1754,7 @@ ul.flex-direction-nav .flex-next{background: url("../../images/next.png");backgr
 ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transparent !important;text-indent: 198px !important;height: 64px;}
 
 /*..............style.............*/
+
+.footer-logo { max-width: 100%; }
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover { opacity: 0!important; }

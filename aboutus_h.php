@@ -144,7 +144,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<div class="row">
 		<div class="col-md-4">
 		<h3>אודות "פשוט להשכיר"</h3>
-			<img src="images/pa.jpg" width="350" align="left" />
+			<img src="images/pa.jpg" width="350" align="left" <style="max-width: 100%">
+				
+			</style> />
 		</div>
 		
 		<div class="col-md-8">

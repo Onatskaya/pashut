@@ -1915,7 +1915,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	<div class="container-fluid ll-signup-area top">
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_brokeragebanner.png'); min-height: 227px; background-size: 100%; background-repeat: no-repeat;">
+			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_brokeragebanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
 				<ul>
 					<li>No Agent Fees</li>
 					<li ><span style="color:red;">Property Owners Get Paid With Each Listing! </span></li>
@@ -1947,7 +1947,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			</style>
 			
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_rentpaybanner.png'); min-height: 227px; background-size: 100% ; background-repeat: no-repeat;">
+			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_rentpaybanner.png'); min-height: 255px; background-size: cover ; background-repeat: no-repeat;">
 				<div class="ld">
 					<h2>Property Owners</h2>
 					<p>List Your Rental for FREE.</p>
@@ -1960,7 +1960,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		</div>
 
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 227px; background-size: 100%; background-repeat: no-repeat;">
+			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
 				<div class="img_a center">
 					<a href="faq.php">
 						FAQ'S

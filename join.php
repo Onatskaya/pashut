@@ -628,15 +628,15 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					</div>  
 				</div> -->
 				<div class="row bottom-padding">					
-					<div class="col-md-3 col-sm-3 pad">
+					<div class="col-md-3 col-sm-4 pad">
 						<label id="label_fname">First Name *</label>
 						<input name="first_name" id="first_name" maxlength="50" type="text">
 					</div>
-					<div class="col-md-3 col-sm-3 pad">
+					<div class="col-md-3 col-sm-4 pad">
 						<label id="label_lname">Last Name *</label>
 						<input name="last_name" id="last_name" maxlength="50" type="text">
 					</div>					
-					<div class="col-md-3 col-sm-3 phone pad">
+					<div class="col-md-3 col-sm-4 phone pad">
 						<label id="label_phone">Phone Number</label>
 						(<input class="phone-box" name="mem_phone_a" maxlength="3" onfocus="this.select()" type="text"> )
 						<input class="phone-box" name="mem_phone_b" maxlength="3" onfocus="this.select()" type="text">
@@ -645,33 +645,33 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				</div>
 				<span id="dual-data"></span>
 				<div class="row bottom-padding">	
-					<div class="col-md-3 col-sm-3 pad">
+					<div class="col-md-3 col-sm-4 pad">
 						<label>Credit Card Number*</label>
 						<input name="credit_card_no" id="credit_card_no" maxlength="16" type="text">
 					</div>
 					<input name="creditcard_type_id" id="creditcard_type_id" value="" type="hidden">
 					
-					<div class="col-md-3 col-sm-3 pad">
+					<div class="col-md-3 col-sm-4 pad">
 						<label>Expiration Date *</label>
 						<select name="credit_card_exp_mo" class="cc"><option selected="selected" value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select> - <select name="credit_card_exp_yr" class="cc"><option selected="selected" value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option></select>
 					</div>	
-					<div class="col-md-3 col-sm-3 pad">
+					<div class="col-md-3 col-sm-4 pad">
 						<label>CVV* </label>
 						<input name="credit_card_cvs" class="cvv" maxlength="4" type="text">
 					</div>
 				</div>
 				<div class="row bottom-padding">	
-					<div class="col-md-3 col-sm-3 pad">
+					<div class="col-md-3 col-sm-4 pad">
 						<label>Zipcode*</label>
 						<input name="mem_zipcode" maxlength="10" type="text">
 					</div>
-					<div id="username" class="col-md-3 col-sm-3 pad">
+					<div id="username" class="col-md-3 col-sm-4 pad">
 						<label>Username / Email *</label>
 						<input name="username" id="username" maxlength="100" type="text">
 						<div id="response"></div>
 						<a href="#" id="check-username">check username availability</a>
 					</div>
-					<div id="password" class="col-md-3 col-sm-3 pad">
+					<div id="password" class="col-md-3 col-sm-4 pad">
 						<label>Password *</label>
 						<input autocomplete="off" name="password" id="password" value="" maxlength="25" type="password">
 					</div>
@@ -692,7 +692,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					<strong></strong>
 				</div>
 				<strong>
-					<div class="col-md-12">
+					<div class="col-xs-12 col-sm-4 col-sm-offset-4">
 						<input type="submit">
 					</div>
 				</strong>
