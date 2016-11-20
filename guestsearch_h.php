@@ -747,7 +747,7 @@ if(isset($_GET['city']))
                     border-radius: 0;
                 }
                 .select2-container--default .select2-selection--single .select2-selection__rendered {
-                    height: 46px;
+                    height: 44px;
                     background: #eceff4;
                     font-size: 16px;
                     color: #3d4d65;
