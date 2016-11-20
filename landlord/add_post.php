@@ -97,7 +97,7 @@ $obj_post= mysqli_query($conn,$que_post);
 
 
 
-    <div class="container ll-dash post-listing">
+    <div class="ll-dash post-listing">
     		<!-- <div class="col-md-3 left-col">
     			
     			<div class="line">

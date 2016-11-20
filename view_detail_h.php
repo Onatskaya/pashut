@@ -190,18 +190,18 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		
 	<div class="container">
 
-<div class="container locations">
+<div class="locations">
 	<div class="col-md-5" align="center"></div>
 	
 	
 	<div class="col-md-12" align="center">
 
-		<div class="listing-details container">
+		<div class="listing-details">
 				
 				
-		<div class="container listing-content">		
+		<div class="listing-content">		
 				
-		<div class="col-md-8">
+		<div class="col-md-8 col-xs-12">
 			<!-- <div class="row">
 				<div class="container-fluid search-results photo">
 					<div class="search-filters">	
@@ -628,7 +628,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 								
 							
 					
-						<div class="col-md-4">
+						<div class="col-md-4 col-xs-12">
 							<div class="hidden-xs hidden-sm">	
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">חזרה לעמוד הקודם</a>	
 								<?php
@@ -735,7 +735,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			
 							</div>
 					</div>
-					<div class="container"></div>
 					<script src="https://open.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluubn16an0%2Cbg%3Do5-90axuz"></script>
 					
 				</div> <!-- End listing-detail div -->
