@@ -47,7 +47,7 @@ $obj_post= mysqli_query($conn,$que_post);
 	<div class="container locations">
 		<!-- <h3 style="background-color:#3D4D65;color:#fff;text-align:center;">Listing</h3> -->
 		<center><h2>Property</h2></center>
-		
+
 			<div class="row">
 				<table id="myTable" class="table table-striped dataTable table-bordered">                       
 				    <thead>
@@ -59,7 +59,7 @@ $obj_post= mysqli_query($conn,$que_post);
 			               <th class="col-md-2">Structure Type</th>
 			               <th class="col-md-1">Image</th>
 			               <th class="col-md-2">Status</th>
-			               <th class="col-md-1">Action</th>
+			               <th class="col-md-1">Actions</th>
 				        </tr>
 				    </thead>
 				    <tbody>
@@ -69,13 +69,17 @@ $obj_post= mysqli_query($conn,$que_post);
 				    		{  ?>
 						        <tr>
 						            <td><?php echo $n; ?></td>
-						            <td><?php echo $data_post['name'];?></td>
+						            <td class="js-prop-name"><?php echo $data_post['name'];?></td>
 						            <td><?php echo $data_post['email'];?></td>
 						            <td><?php echo $data_post['city'];?></td>
 						            <td><?php echo $data_post['structure_type'];?></td>
 						            <td><img src="../home_images/<?php echo $data_post['main_image'];?>" height="60" width="60"></td>
 						        	 <td><?php include('property_status.php');?></td>
-						        	<td><a href="view_post_detail.php?pid=<?php echo $data_post['post_id'];?>" class="btn btn-danger">View Detail</a> </td>
+						        	<td>
+                                        <a href="view_post_detail.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-eye-open"></a>
+                                        <a href="edit_post.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-pencil"></a>
+                                        <a href="delete_post.php?pid=<?php echo $data_post['post_id'];?>" data-href="delete_post.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
+                                    </td>
 						        </tr>
 						        	
 				    		<?php 
@@ -122,7 +126,10 @@ $obj_post= mysqli_query($conn,$que_post);
 <script src="../js/new/jquery.cycle.all.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="../js/bootstrap.min.js"></script>		
+<script src="../js/bootstrap.min.js"></script>
+
+<script src="../js/bootstrap-confirmation.js"></script>
+
 <script src="../js/fb_login.js"></script>	
 <script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>	
 <script src="../js/default.js" type="text/javascript" language="javascript"></script>	
@@ -135,6 +142,7 @@ $obj_post= mysqli_query($conn,$que_post);
 <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 
 <script type="text/javascript">
+
  jQuery( document ).ready(function( $ ) {
     $('#myTable').dataTable({ "bSort": false});
 });

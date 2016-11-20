@@ -58,7 +58,7 @@ $obj_landlord= mysqli_query($conn,$que_landlord);
 			               <th class="col-md-2">Username</th>
 			               <th class="col-md-2">City</th>
 			               <th class="col-md-2">Account Type</th>
-			               <th class="col-md-1">Action</th>
+			               <th class="col-md-1">Actions</th>
 				        </tr>
 				    </thead>
 				    <tbody>
@@ -72,7 +72,10 @@ $obj_landlord= mysqli_query($conn,$que_landlord);
 						            <td><?php echo $data_landlord['username'];?></td>
 						            <td><?php echo $data_landlord['mem_city'];?></td>
 						            <td><?php echo $data_landlord['ll_type'];?></td>
-						        	<td><a href="view_landlord_detail.php?lid=<?php echo $data_landlord['member_id'];?>" class="btn btn-danger">View Detail</a> </td>
+						        	<td>
+                                        <a href="view_landlord_detail.php?lid=<?php echo $data_landlord['member_id'];?>" data-href="view_landlord_detail.php?lid=<?php echo $data_landlord['member_id'];?>" class="glyphicon glyphicon-eye-open"></a>
+                                        <a href="delete_landloard.php?lid=<?php echo $data_landlord['member_id'];?>" data-href="delete_landloard.php?lid=<?php echo $data_landlord['member_id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
+                                    </td>
 						        </tr>
 						        	
 				    		<?php 
@@ -126,7 +129,8 @@ $obj_landlord= mysqli_query($conn,$que_landlord);
 <script src="../js/new/jquery.cycle.all.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="../js/bootstrap.min.js"></script>		
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap-confirmation.js"></script>
 <script src="../js/fb_login.js"></script>	
 <script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>	
 <script src="../js/default.js" type="text/javascript" language="javascript"></script>	

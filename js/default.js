@@ -30,7 +30,25 @@ $('.btn_submit_prop').click(function() {
 	$form.submit();
 	return false;
 });
-	
+
+
+/**
+ * Remove property.
+ */
+$('.js-property-remove').confirmation({
+    onConfirm: function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/admin/' + this.href,
+            type: 'DELETE',
+            success: function(result) {
+                if( result.length ){
+                    location.reload();
+                }
+            }
+        });
+    }
+});
 
 function login(form)
 {
