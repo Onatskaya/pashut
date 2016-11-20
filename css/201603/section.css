@@ -1,3 +1,7 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 .member-dash{text-align:left;}
 .member-dash input[type=checkbox]{position:relative;}
 .member-dash h2, .ll-dash h2{font-size:44px; color: #e12b1f;margin:30px 0 30px 20px;}
@@ -370,6 +374,10 @@
 
 /* Smartphones (portrait and landscape) ----------- */
 @media (min-width : 320px) and (max-width : 767px){
+	.table_type_4 {
+		width: 180px!important;
+		overflow-x: hidden;
+	}
 /* Styles */
 	.nw-mod{height:auto;}
 	.ListingListModule .header .location{position:relative;top:0;right:0;}
@@ -381,6 +389,7 @@
 	.dash-top-section{margin-top:45px;}
 	.dash-top-section{border-right:none;}
 	.member-dash .message-mod, .ll-dash .message-mod{border:none;}
+	.center-mod { padding: 0; }
 	.center-mod .v-separator{border:none;}
 	.center-mod .header{width:73px;font-size:12px;}
 	.center-mod .left .row{font-size:12px;}
@@ -419,7 +428,7 @@
 	.message-compose .center-mod .fright{float:none;}
 	.table_type_1 td.field{text-align:left;}
 	.table_type_1 td.field textarea.large{width:208px;}
-	.locations{margin-left:-30px;}
+	
 	
 	.post-listing .center-mod input.quater{width:65px;}
 	.post-listing .center-mod select.quater{width:49px;}

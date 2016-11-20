@@ -203,6 +203,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 						
 				<!-- Latest compiled and minified CSS -->
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 				<link href="css/201603/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 				<link rel="stylesheet" href="css/bootstrap.min.css">
 				<!-- Custom styles for this template -->
@@ -220,11 +221,13 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			
 			
 			<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
+            
 </head>
 
 <style type="text/css">
     .search-results .search-filters {
-        width: 100%;
+        width: 90%;
+        overflow: hidden;
     }
     .s_field{
         display: none;
@@ -369,7 +372,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                     <option value="30000">₪30000</option>
     								
     						</select>
-    						<span class="">-</span>
+    						<span class="selectDesh">-</span>
     						<select class="med pad" name="priceHigh">
     							<option value="0">To</option>
     							
@@ -710,7 +713,47 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 
 		 
-	
+	<style>
+            .select2-container {
+                    margin-bottom: 5px;
+                }
+                .select2-container--default .select2-selection--single {
+                    height: 46px;
+                    border: 1px solid #cad3df;
+                    border-radius: 0;
+                }
+                .select2-container--default .select2-selection--single .select2-selection__rendered {
+                    height: 46px;
+                    background: #eceff4;
+                    font-size: 16px;
+                    color: #3d4d65;
+                    line-height: 3;
+                }
+                .select2-container--default .select2-selection--single .select2-selection__arrow {
+                    height: 46px;
+                }
+                @media (min-width : 320px) and (max-width : 767px) {
+                    .select2.select2-container.select2-container--default {
+                        width: 100%!important;
+                        display: block;
+                        float: left;
+                    }
+                    .select2-container--default .select2-selection--single {
+                        width: 100%;
+                        display: block;
+                        float: left;
+                    }
+                    select[name="priceLow"] + span.select2.select2-container.select2-container--default,
+                    select[name="priceHigh"] + span.select2.select2-container.select2-container--default {
+                        width: 48%!important;
+                    }
+                    .selectDesh {
+                        width: 4%;
+                        display: block;
+                        float: left;
+                    }
+                }
+            </style>
 	
 	<!-- Bootstrap core JavaScript
 	
@@ -726,7 +769,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<!-- Placed at the end of the document so the pages load faster -->
 	
 <script src="js/jquery.min.js"></script>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+      $('select').select2({minimumResultsForSearch: Infinity});
+    </script>
 
 	
 	<script src="js/new/jquery-ui-1.10.4/jquery-ui-1.10.4.js"></script>
