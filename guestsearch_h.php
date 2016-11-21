@@ -229,7 +229,7 @@ if(isset($_GET['city']))
 			overflow: hidden;
 		}
 		.s_field{
-			display: none;
+			display: none !important;
 		}
 	</style> 
 	<style>
@@ -470,8 +470,8 @@ if(isset($_GET['city']))
 								?>
     						</select>
     					</div>
-                        <div class="col">
-                            <select name="bedroom" style="width:24%;" class="medium right-pad s_field">
+                        <div class="col s_field">
+                            <select name="bedroom" style="width:24%;" class="medium right-pad">
                                 <option value="">חדרי שינה בחר</option>
                                     <?php
                                     while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
@@ -480,7 +480,7 @@ if(isset($_GET['city']))
                                 <?php }
                                     ?>
                             </select>
-                            <select name="bathroom" style="width:14%;" class="medium right-pad s_field">
+                            <select name="bathroom" style="width:14%;" class="medium right-pad">
                                 <option value="">בחלק מחדרי הרחצה</option>
                                   <?php
                                      while($data_bath=mysqli_fetch_assoc($obj_bath))
@@ -490,7 +490,7 @@ if(isset($_GET['city']))
                                      ?> 
                                
                             </select>&nbsp;
-                            <select name="square_footage" style="width:14%;" class="medium right-pad s_field">
+                            <select name="square_footage" style="width:14%;" class="medium right-pad">
                                 <option value="">מטר בחר</option>
                                   <?php
                                      for($i=1;$i<=200;$i++)
@@ -501,7 +501,7 @@ if(isset($_GET['city']))
                                
                             </select>
                             <!-- <input type="text" placeholder="Enter meters" style="width:14%;" name="square_footage" class="s_field"> -->
-                            <select name="furnished" style="width:24%;" class="medium right-pad s_field">
+                            <select name="furnished" style="width:24%;" class="medium right-pad">
                                 <option value="">בחר מרוהט</option>
                                  <?php
                                     while($data_fur=mysqli_fetch_assoc($obj_fur))
@@ -518,7 +518,7 @@ if(isset($_GET['city']))
                             
                             <input type="submit" align="absmiddle" value="חפש" class="search" name="search-submit" style="margin-top: 1%;">
                         <?php
-                        if(isset($_SESSION['member_logged']))
+                        if(!isset($_SESSION['member_logged']))
                         { ?>
                             <a href="#" align="absmiddle" class="btn btn-danger" style="background-color:#EE2324; padding:12px 14px;font-size: 16px; margin-left: 78%;" id="adv_search">חיפוש מתקדם</a>
                             
@@ -838,7 +838,7 @@ if(isset($_GET['city']))
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#adv_search').click(function(){
-                    $('.s_field').show();
+                    $('.col').removeClass('s_field');
                     $('#adv_search').hide();
                 });
             });

@@ -230,7 +230,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
         overflow: hidden;
     }
     .s_field{
-        display: none;
+        display: none !important;
     }
 </style>     
 	
@@ -449,8 +449,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                             ?>
     						</select>
     					</div>
-                        <div class="col">
-                            <select name="bedroom" style="width:24%;" class="medium right-pad s_field">
+                        <div class="col s_field">
+                            <select name="bedroom" style="width:24%;" class="medium right-pad">
                                 <option value="">Select Bedrooms</option>
                                     <?php
                                     while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
@@ -459,7 +459,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                 <?php }
                                     ?>
                             </select>
-                            <select name="bathroom" style="width:14%;" class="medium right-pad s_field">
+                            <select name="bathroom" style="width:14%;" class="medium right-pad">
                                 <option value="">Select Bathrooms</option>
                                   <?php
                                      while($data_bath=mysqli_fetch_assoc($obj_bath))
@@ -469,7 +469,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                      ?> 
                                
                             </select>&nbsp;
-                            <select name="square_footage" style="width:14%;" class="medium right-pad s_field">
+                            <select name="square_footage" style="width:14%;" class="medium right-pad">
                                 <option value="">Select Meters</option>
                                   <?php
                                      for($i=1;$i<=200;$i++)
@@ -480,7 +480,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                
                             </select>
                             <!-- <input type="text" placeholder="Enter meters" style="width:14%;" name="square_footage" class="s_field"> -->
-                            <select name="furnished" style="width:24%;" class="medium right-pad s_field">
+                            <select name="furnished" style="width:24%;" class="medium right-pad">
                                 <option value="">Select Furnished</option>
                                 <?php
                                     while($data_fur=mysqli_fetch_assoc($obj_fur))
@@ -821,7 +821,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#adv_search').click(function(){
-                    $('.s_field').show();
+//                    $('.s_field').show();
+                    $('.col').removeClass('s_field');
                     $('#adv_search').hide();
                 });
             });
