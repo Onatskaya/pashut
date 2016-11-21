@@ -615,13 +615,13 @@ html {
 
 
 
-.select2-container--default .select2-selection--single {
+#propForm .select2-container--default .select2-selection--single {
 	height: 40px!important;
 	border: 2px solid #b7b7b7!important;
 }
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+#propForm .select2-container--default .select2-selection--single .select2-selection__arrow {
 	height: 40px!important;
 }
-.select2-container .select2-selection--single .select2-selection__rendered {
+#propForm .select2-container .select2-selection--single .select2-selection__rendered {
 	line-height: 40px!important;
 }
