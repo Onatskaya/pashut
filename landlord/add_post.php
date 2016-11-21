@@ -76,7 +76,8 @@ $obj_post= mysqli_query($conn,$que_post);
 		<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
 		<meta name="robots" content="index,follow" />
 		<meta name="GOOGLEBOT" content="index,follow" />		
-		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>		       
+		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />		       
 </head>
 
 
@@ -363,9 +364,9 @@ $obj_post= mysqli_query($conn,$que_post);
                             Alt Contact Phone:
                         </td>
                         <td class="">
-                            <input type="text" class="numberonly text quater" name="alt_contact_a"  maxlength="3">
-                            <input type="text" class="numberonly text quater" name="alt_contact_b" value="" maxlength="3">
-                            <input type="text" class="numberonly text quater" name="alt_contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
+                            <input type="text" class="numberonly text quater input" name="alt_contact_a"  maxlength="3">
+                            <input type="text" class="numberonly text quater input" name="alt_contact_b" value="" maxlength="3">
+                            <input type="text" class="numberonly text quater input" name="alt_contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
                             &nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="" maxlength="10">
                         </td>
                     </tr>
@@ -374,9 +375,9 @@ $obj_post= mysqli_query($conn,$que_post);
     					Contact Fax:
     				</td>
     				<td class="field">
-                        <input type="text" class="numberonly text quater smalltext" name="contact_fax_a" maxlength="3">
-    					<input type="text" class="numberonly text quater smalltext" name="contact_fax_b"  value="" maxlength="3" > 
-    					<input type="text" class="numberonly text quater" name="contact_fax_c" value="" maxlength="4" >
+                        <input type="text" class="numberonly text quater smalltext input" name="contact_fax_a" maxlength="3">
+    					<input type="text" class="numberonly text quater smalltext input" name="contact_fax_b"  value="" maxlength="3" > 
+    					<input type="text" class="numberonly text quater input" name="contact_fax_c" value="" maxlength="4" >
                     </td>
     			</tr>
     			<tr valign="top">
@@ -689,7 +690,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                Featured Listing:
                                             </td>
                                             <td class="field">
-                                                <input type="checkbox" name="featured_listing" id="fl" value="Yes" class="small" style="position:relative;top:5px;" >
+                                                <input type="checkbox" name="featured_listing" id="fl" value="Yes" class="small" style="position:relative;top:-3px;" >
                                             </td>
                                         </tr>
                                         
@@ -1265,107 +1266,107 @@ $obj_post= mysqli_query($conn,$que_post);
     				<td colspan="2">
     					<div class="row">
     						
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_refrigerator" class="small" style="position:relative;top:5px;" name="refrigerator" value="yes" >
     								&nbsp;<label for="label_refrigerator">Refrigerator</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_air_conditioner" class="small" style="position:relative;top:5px;" name="air_conditioner" value="yes" >
     								&nbsp;<label for="label_air_conditioner">Air Conditioner</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_yard" class="small" style="position:relative;top:5px;" name="yard" value="yes" >
     								&nbsp;<label for="label_yard">Yard</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_stove" class="small" style="position:relative;top:5px;" name="stove" value="yes" >
     								&nbsp;<label for="label_stove">Stove</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_wallheater" class="small" style="position:relative;top:5px;" name="wallheater" value="yes" >
     								&nbsp;<label for="label_wallheater">Wall Heater</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_elevator" class="small" style="position:relative;top:5px;" name="elevator" value="yes" >
     								&nbsp;<label for="label_elevator">Elevator</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_dishwasher" class="small" style="position:relative;top:5px;" name="dishwasher" value="yes" >
     								&nbsp;<label for="label_dishwasher">Dishwasher</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_laundry" class="small" style="position:relative;top:5px;" name="laundry" value="yes" >
     								&nbsp;<label for="label_laundry">Laundry on premises</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_pool" class="small" style="position:relative;top:5px;" name="pool" value="yes" >
     								&nbsp;<label for="label_pool">Pool</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_microwave" class="small" style="position:relative;top:5px;" name="microwave" value="yes" >
     								&nbsp;<label for="label_microwave">Microwave</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_wd" class="small" style="position:relative;top:5px;" name="wd" value="yes" >
     								&nbsp;<label for="label_wd">Washer and Dryer in Unit</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_spa" class="small" style="position:relative;top:5px;" name="spa" value="yes" >
     								&nbsp;<label for="label_spa">Spa/Jacuzzi</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_central_air" class="small" style="position:relative;top:5px;" name="central_air" value="yes" >
     								&nbsp;<label for="label_central_air">Central Air</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_wd_hookups" class="small" style="position:relative;top:5px;" name="wd_hookups" value="yes" >
     								&nbsp;<label for="label_wd_hookups">Washer and Dryer Hookups</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_accessible" class="small" style="position:relative;top:5px;" name="accessiblee" value="yes" >
     								&nbsp;<label for="label_accessible">Wheelchair Accessible</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_central_heat" class="small" style="position:relative;top:5px;" name="central_heat" value="yes" >
     								&nbsp;<label for="label_central_heat">Central Heat</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_balcony" class="small" style="position:relative;top:5px;" name="balcony" value="yes" >
     								&nbsp;<label for="label_balcony">Balcony</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_controlled_access" class="small" style="position:relative;top:5px;" name="controlled_access" value="yes" >
     								&nbsp;<label for="label_controlled_access">Controlled Access Building</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_fireplace" class="small" style="position:relative;top:5px;" name="fireplace" value="yes" >
     								&nbsp;<label for="label_fireplace">Fireplace</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_patio" class="small" style="position:relative;top:5px;" name="patio" value="yes" >
     								&nbsp;<label for="label_patio">Patio</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_quiet_nhood" class="small" style="position:relative;top:5px;" name="quiet_nhood" value="yes" >
     								&nbsp;<label for="label_quiet_nhood">Quiet Neighborhood</label>
     							</div>
@@ -1693,6 +1694,10 @@ $obj_post= mysqli_query($conn,$que_post);
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	 <script type="text/javascript" src="../js/jquery.min.js"></script>      
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+      $('select').select2({minimumResultsForSearch: Infinity});
+    </script>
     <script src="../js/new/jquery-ui-1.10.4/jquery-ui-1.10.4.js"></script>
     <script src="../js/new/jquery.cycle.all.js"></script>
 

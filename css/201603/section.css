@@ -140,7 +140,7 @@ html {
 .textid-mod input.text{border:1px solid #CCC;border-radius: 5px; width: 160px;height:40px;background:#FFF;margin:0px auto 20px auto;display:block;}
 .textid-mod .submit{padding:5px 20px; background:#FFF; border-radius: 5px; border:none;position:relative;border-bottom: 2px solid #7c0001;color:#e95257;font-weight:bold;}
 
-.post-listing input, .post-listing select{width:auto;}
+.post-listing input, .post-listing select{width:auto; margin: 5px;}
 .post-listing td{padding:5px 0;}
 
 .rec-mod h1{font-size: 34px; font-weight:normal; margin:0; color:#FFF; border-top-left-radius: 5px; border-top-right-radius: 5px; background: #A31B2A; padding:15px;}
@@ -496,9 +496,9 @@ html {
 	#plans .plan.special .other,
 	#plans .plan .other{margin-top:18px;}
 	#features td:first-child{width:385px;}
-/* ----------------------------------------ADD-POST PAGE---------------------------------------------------------------- */
+----------------------------------------ADD-POST PAGE----------------------------------------------------------------
 		.ui-autocomplete-input, .input input {
-			width: 100%!important;
+			width: 120%!important;
 		}
 
 		.map-wrapper {
@@ -513,13 +513,21 @@ html {
 		}
 		.post-listing td {
 			display: block;
+			padding: 0 10px;
+		}
+		.smallgray,
+		.marg_top_5 {
+			width: 90%;
+		}
+		.post-listing td div div {
+			padding: 0;
 		}
 		.center-mod table input.smalltext,
 		.post-listing .center-mod input.quater {
 			width: 50px;
 		}
 		.post-listing input {
-			width: 220px;
+			width: 210px;
 			font-size: 12px;
 		}
 		.post-listing input[type="radio"],
@@ -527,7 +535,35 @@ html {
 			width: auto!important;
 			margin: 4px 5px 0;
 		}
-
+		.check {
+			width: 100%!important;
+			overflow: hidden;
+		}
+		.marg_right_20.fleft {
+			float: none;
+		}
+		.marg_right_20.fleft input {
+			display: block;
+			margin: auto;
+		}
+		.exitingListingBlock {
+			padding: 10px;
+		}
+/* ------------------HERBEW FORM------------------ */
+		.herbew-form .map-wrapper {
+			float: right;
+		}
+		.herbew-form .input {
+			float: right;
+		}
+		.herbew-form .col-md-6 table td,
+		.herbew-form .col-md-4 table td,
+		.herbew-form .radio-bl td {
+			padding: 0;
+		}
+		.herbew-form .no-pad {
+			padding: 0 10px 0 0;
+		}
 /* -------------------------------------------------------------------------------------------------------- */
 }
 
@@ -579,3 +615,13 @@ html {
 
 
 
+.select2-container--default .select2-selection--single {
+	height: 40px!important;
+	border: 2px solid #b7b7b7!important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 40px!important;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+	line-height: 40px!important;
+}
