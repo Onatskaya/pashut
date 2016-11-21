@@ -318,10 +318,10 @@ $obj_post= mysqli_query($conn,$que_post);
                                     </div>
                                 </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-xs-12 col-md-6">
                                     <div class='map-wrapper'>
                                         <div id="map"></div>
-                                        <div id="legend">You can drag and drop the marker to the correct location</div>
+                                        <div id="legend"><p>You can drag and drop the marker to the correct location</p></div>
                                     </div>
                                 </div>
                         </div>
@@ -406,7 +406,7 @@ $obj_post= mysqli_query($conn,$que_post);
 
     			<tr valign="top">
     				<td colspan="2">
-    					<div class="container">	
+    					<div class="">	
     						<div class="col-md-4">					
     						
     								<table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -972,8 +972,8 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
-                            <div class="col-md-4">                  
+                        <div class=""> 
+                            <div class="col-xs-12 col-md-4">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
                                     <tr valign="top">
@@ -1518,7 +1518,7 @@ $obj_post= mysqli_query($conn,$que_post);
     				
     				<tr valign="top" class="sign-request-wrapper">
     					<td colspan="2">
-    						<div style="font-size: 18px; float: left; width: 500px;">
+    						<div style="font-size: 18px; float: left; width: auto;">
     							
     															
     								

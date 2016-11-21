@@ -496,8 +496,48 @@ html {
 	#plans .plan.special .other,
 	#plans .plan .other{margin-top:18px;}
 	#features td:first-child{width:385px;}
-		
+/* ----------------------------------------ADD-POST PAGE---------------------------------------------------------------- */
+		.ui-autocomplete-input, .input input {
+			width: 100%!important;
+		}
+
+		.map-wrapper {
+			margin: 0!important;
+			width: 230px;
+		}
+		#map {
+			width: 228px!important;
+		}
+		.table_type_4 tr {
+			width: 230px!important;
+		}
+		.post-listing td {
+			display: block;
+		}
+		.center-mod table input.smalltext,
+		.post-listing .center-mod input.quater {
+			width: 50px;
+		}
+		.post-listing input {
+			width: 220px;
+			font-size: 12px;
+		}
+		.post-listing input[type="radio"],
+		.post-listing input[type="checkbox"] {
+			width: auto!important;
+			margin: 4px 5px 0;
+		}
+
+/* -------------------------------------------------------------------------------------------------------- */
 }
+
+
+
+
+
+
+
+
 
 /* iPads (portrait and landscape) ----------- */
 @media (min-width : 768px) and (max-width : 800px)  {
