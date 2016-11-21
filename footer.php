@@ -14,7 +14,7 @@
 		</div>
 	</div> -->
 					
-	<div class="navbar-fixed-bottom container-fluid footer-links">
+	<div class="container-fluid footer-links">
 		<div class="row">
 			<div class="col-md-2 col-xs-12">
 				<img src="images/logo_footer.png" class="footer-logo" width="175">
