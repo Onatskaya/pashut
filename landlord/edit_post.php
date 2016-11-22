@@ -122,7 +122,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
     <!-- Carousel
     ================================================== -->
-    	<div class="container">
+    	<div class="container edit-post-page">
 
 
 
@@ -131,7 +131,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
 
 
-    <div class="container ll-dash post-listing">
+    <div class="ll-dash post-listing">
     		<!-- <div class="col-md-3 left-col">
     			
     			<div class="line">
@@ -265,12 +265,12 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     				    <br>
                         <div class="row">
                             <label class="col-md-2">Current Location :</label>
-                            <div class="col-md-6">
+                            <div class="col-xs-12 col-md-6">
                                 <div class="listing-map">                                   
-                                    <div style="width: 280px; height: 230px; margin: 0px auto 15px; position: relative;">
+                                    <div class="top-map" style="width: auto; height: 230px; margin: 0px auto 15px; position: relative;">
                                         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-                                        <div style='overflow:hidden;height:230px;width:280px;'>
-                                            <div id='gmap_canvas' style='height:230px;width:280px;'></div>
+                                        <div style='overflow:hidden;height:230px;width:auto;'>
+                                            <div id='gmap_canvas' style='height:230px;width:auto;'></div>
                                             <div>
                                                 <small><a href="http://embedgooglemaps.com">                                    
                                                 embed google maps                           
@@ -295,71 +295,71 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             <input type="hidden" id="greatituteee" value="<?php echo $data_post['property_lng']; ?>">
                             <input type="hidden" id="zomeee" value="<?php echo $data_post['property_zoom']; ?>">
                             
-							  <div class="col-md-6">
+							  <div class="col-xs-12 col-md-6 edit-form">
                                     <div class='input input-positioned'>
                                         <div class="row">
                                             <label class="col-md-4">Address : </label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="addresspicker_map" />   
                                             </div>  
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">Locality: </label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="locality" disabled=disabled> 
                                             </div>
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">District: </label>
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="administrative_area_level_2" disabled=disabled> 
                                             </div>
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">State/Province: </label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="administrative_area_level_1" disabled=disabled>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">Country:  </label>
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="country" disabled=disabled>
                                             </div>  
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">Postal Code: </label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="postal_code" disabled=disabled>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">Lat:</label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input type="text" name="property_lat" id="lat" class="form-control" readonly=""> 
                                             </div>
                                         </div>  
                                         <div class="row">
                                             <label class="col-md-4">Lng:</label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input type="text" name="property_lng" id="lng" class="form-control" readonly="">
                                             </div> 
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">Zoom:</label>
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input type="text" name="property_zoom" id="zoom" class="form-control" readonly="">
                                             </div> 
                                         </div>
                                         <div class="row">
                                             <label class="col-md-4">Type:</label> 
-                                            <div class="col-md-6">
+                                            <div class="col-xs-12 col-md-6">
                                                 <input id="type" disabled=disabled />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-xs-12 col-md-6">
                                     <div class='map-wrapper'>
                                         <div id="map"></div>
                                         <div id="legend">You can drag and drop the marker to the correct location</div>
@@ -403,7 +403,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                         <input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_a" id="contact_a"  maxlength="3" value="<?php echo $data_post['contact_a']; ?>">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" maxlength="3" value="<?php echo $data_post['contact_b']; ?>">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c" maxlength="4" value="<?php echo $data_post['contact_c']; ?>"><span style="font-size:16px;color:#C30">*</span>
-    					&nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d" maxlength="10" value="<?php echo $data_post['contact_d']; ?>">
+    					<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d" maxlength="10" value="<?php echo $data_post['contact_d']; ?>">
                     </td>
     			</tr>
     	         <tr valign="top">
@@ -411,10 +411,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             Alt Contact Phone:
                         </td>
                         <td class="">
-                            <input type="text" class="numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
-                            <input type="text" class="numberonly text quater" name="alt_contact_b" value="<?php echo $data_post['alt_contact_b']; ?>" maxlength="3">
-                            <input type="text" class="numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-                            &nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="<?php echo $data_post['alt_contact_d']; ?>" maxlength="10">
+                            <input type="text" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
+                            <input type="text" class="input numberonly text quater" name="alt_contact_b" value="<?php echo $data_post['alt_contact_b']; ?>" maxlength="3">
+                            <input type="text" class="input numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
+                            <span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="<?php echo $data_post['alt_contact_d']; ?>" maxlength="10">
                         </td>
                     </tr>
     			<tr valign="top">
@@ -422,9 +422,9 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     					Contact Fax:
     				</td>
     				<td class="field">
-                        <input type="text" class="numberonly text quater smalltext" name="contact_fax_a" maxlength="3" value="<?php echo $data_post['contact_fax_a']; ?>">
-    					<input type="text" class="numberonly text quater smalltext" name="contact_fax_b"  value="<?php echo $data_post['contact_fax_b']; ?>" maxlength="3" > 
-    					<input type="text" class="numberonly text quater" name="contact_fax_c" value="<?php echo $data_post['contact_fax_c']; ?>" maxlength="4" >
+                        <input type="text" class="input numberonly text quater smalltext" name="contact_fax_a" maxlength="3" value="<?php echo $data_post['contact_fax_a']; ?>">
+    					<input type="text" class="input numberonly text quater smalltext" name="contact_fax_b"  value="<?php echo $data_post['contact_fax_b']; ?>" maxlength="3" > 
+    					<input type="text" class="input numberonly text quater" name="contact_fax_c" value="<?php echo $data_post['contact_fax_c']; ?>" maxlength="4" >
                     </td>
     			</tr>
     			<tr valign="top">
@@ -462,7 +462,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
     			<tr valign="top">
     				<td colspan="2">
-    					<div class="container">	
+    					<div class="">	
                             <form action="update_post.php" method="post" enctype="multipart/form-data" id="vacancy_feature">
     						    <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
                                 <div class="col-md-4">					
@@ -756,7 +756,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                         
     								</table>
     							</div>
-    							<div class="col-md-6">
+    							<div class="col-xs-12 col-md-6">
     								<table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
     									<tr valign="top">
     										<td class="medsubheader" >
@@ -891,7 +891,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                                Full Address:
                                             </td>
                                             <td class="field">
-                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:300px;height:62px;"><?php echo $data_post['address']; ?></textarea>
+                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;"><?php echo $data_post['address']; ?></textarea>
                                                 <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
@@ -974,7 +974,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 
                 <tr valign="top" id="fl_box" style="display:none;">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-12">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1053,7 +1053,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="row">                  
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
                                     <tr valign="top">
@@ -1175,14 +1175,14 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                             Images <?php echo $n; ?>
                                             <input type="hidden" name="iid" value="<?php echo $data_img['image_id'] ?>">
                                         </td>
-                                        <td class="field">
+                                        <td class="field" align="center">
                                            <img src="../home_images/<?php echo $data_img['image'];?>" height="80" width="90">
                                         </td>
                                         <td class="field" align="center">
-                                          <a href="edit_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>"  class="btn btn-info">Update</a>
+                                          <a href="edit_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>"  class="btn btn-info link-input">Update</a>
                                         </td>
                                         <td class="field">
-                                           <a href="delete_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+                                           <a href="delete_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger link-input">Delete</a>
                                         </td>
                                     </tr>
                                     <br>
@@ -1196,7 +1196,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             </div>
                             <br>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-xs-12 col-md-6">
                                         <form action="update_add_image.php" method="POST" enctype="multipart/form-data" id="image_add">
                                             <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                                             <div class="row">
@@ -1238,7 +1238,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <form action="update_time.php" method="POST">
                                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                             <div class="col-md-4">                  
@@ -1444,107 +1444,107 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     					<div class="row">
     						<form action="update_amenities.php" method="POST" >
                                  <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_refrigerator" class="small" style="position:relative;top:5px;" name="refrigerator" value="yes" <?php if($data_post['refrigerator']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_refrigerator">Refrigerator</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_air_conditioner" class="small" style="position:relative;top:5px;" name="air_conditioner" value="yes" <?php if($data_post['air_conditioner']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_air_conditioner">Air Conditioner</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_yard" class="small" style="position:relative;top:5px;" name="yard" value="yes" <?php if($data_post['yard']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_yard">Yard</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_stove" class="small" style="position:relative;top:5px;" name="stove" value="yes" <?php if($data_post['stove']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_stove">Stove</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_wallheater" class="small" style="position:relative;top:5px;" name="wallheater" value="yes" <?php if($data_post['wallheater']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_wallheater">Wall Heater</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_elevator" class="small" style="position:relative;top:5px;" name="elevator" value="yes" <?php if($data_post['elevator']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_elevator">Elevator</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_dishwasher" class="small" style="position:relative;top:5px;" name="dishwasher" value="yes" <?php if($data_post['dishwasher']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_dishwasher">Dishwasher</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_laundry" class="small" style="position:relative;top:5px;" name="laundry" value="yes" <?php if($data_post['laundry']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_laundry">Laundry on premises</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_pool" class="small" style="position:relative;top:5px;" name="pool" value="yes" <?php if($data_post['pool']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_pool">Pool</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_microwave" class="small" style="position:relative;top:5px;" name="microwave" value="yes" <?php if($data_post['microwave']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_microwave">Microwave</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_wd" class="small" style="position:relative;top:5px;" name="wd" value="yes" <?php if($data_post['wd']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_wd">Washer and Dryer in Unit</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_spa" class="small" style="position:relative;top:5px;" name="spa" value="yes" <?php if($data_post['spa']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_spa">Spa/Jacuzzi</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_central_air" class="small" style="position:relative;top:5px;" name="central_air" value="yes" <?php if($data_post['central_air']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_central_air">Central Air</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_wd_hookups" class="small" style="position:relative;top:5px;" name="wd_hookups" value="yes" <?php if($data_post['wd_hookups']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_wd_hookups">Washer and Dryer Hookups</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_accessible" class="small" style="position:relative;top:5px;" name="accessiblee" value="yes" <?php if($data_post['accessiblee']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_accessible">Wheelchair Accessible</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_central_heat" class="small" style="position:relative;top:5px;" name="central_heat" value="yes" <?php if($data_post['central_heat']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_central_heat">Central Heat</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_balcony" class="small" style="position:relative;top:5px;" name="balcony" value="yes" <?php if($data_post['balcony']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_balcony">Balcony</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_controlled_access" class="small" style="position:relative;top:5px;" name="controlled_access" value="yes" <?php if($data_post['controlled_access']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_controlled_access">Controlled Access Building</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_fireplace" class="small" style="position:relative;top:5px;" name="fireplace" value="yes" <?php if($data_post['fireplace']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_fireplace">Fireplace</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_patio" class="small" style="position:relative;top:5px;" name="patio" value="yes" <?php if($data_post['patio']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_patio">Patio</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:26%;">
+    							<div class="col-md-4 check" style="width:26%;">
     								<input type="checkbox" id="label_quiet_nhood" class="small" style="position:relative;top:5px;" name="quiet_nhood" value="yes" <?php if($data_post['quiet_nhood']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_quiet_nhood">Quiet Neighborhood</label>
     							</div>
@@ -1570,7 +1570,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
         					Vacancy Heading:
         				</td>
         				<td class="field">
-        					<input type="text" class="input validate[required] text mb" style="width:430px;" name="short_descp" maxlength="100" value="<?php echo $data_post['short_descp'];?>" ><span style="font-size:16px;color:#C30">*</span> 
+        					<input type="text" class="input validate[required] text mb" style="width:auto;" name="short_descp" maxlength="100" value="<?php echo $data_post['short_descp'];?>" ><span style="font-size:16px;color:#C30">*</span> 
         		            <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
         	            </td>
         			</tr>
@@ -1581,7 +1581,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
         					Vacancy Details: 
         				</td>
         				<td class="field">
-        					<textarea name="full_descp" class="mb" style="width:430px;height:150px;" ><?php echo $data_post['full_descp'];?></textarea>
+        					<textarea name="full_descp" class="mb" style="width:auto;height:150px;" ><?php echo $data_post['full_descp'];?></textarea>
         					<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
         	               <br><span style="color: red;font-size:11px;"><strong>NO PHONE NUMBERS, ADDRESS, WEBSITE OR LANDLORD CONTACT ALLOWED IN THIS BOX.</strong></span>
         				</td>
@@ -1749,7 +1749,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                         <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
         				<tr valign="top" class="sign-request-wrapper">
         					<td colspan="2">
-        						<div style="font-size: 18px; float: left; width: 500px;">
+        						<div style="font-size: 18px; float: left; width: auto;">
         							
         															
         								
@@ -1758,7 +1758,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
         							
         							 &nbsp;<b>Free <span style="color:red;">FOR RENT</span> Sign</b> - We will place a large "FOR RENT" sign (like the one at right) outside your property. Please use the "Driver Instructions" field below to provide any instructions to our driver. <br />
         							<br /><b>Driver Instructions:</b> <span class="smallgray">(e.g. - Place Sign in the front yard)</span><br />
-        							<textarea class="mb" name="driver_instr" style="width:470px;height:100px;"><?php echo $data_post['driver_instr']; ?></textarea>
+        							<textarea class="mb" name="driver_instr" style="width:auto;height:100px;"><?php echo $data_post['driver_instr']; ?></textarea>
         						</div>
         						<div style="float: left; width: 130px;">
         							<!-- <img src="http://static.westsiderentals.com/images/sign_m.gif" style="border: 1px solid black;"> -->
