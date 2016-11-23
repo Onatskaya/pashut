@@ -154,11 +154,11 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	
 	<body  class="guest" >
-	
+
 	
 	<!-- Google Tag Manager -->
 
-
+    <div class="main-wrapper">
 
 
 	
@@ -2106,10 +2106,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	        </script>
 	    </div>
 
-
-	 
-			
-			
+	</div><!-- End main-wrapper -->
 	</body>
 </html>
 
