@@ -235,6 +235,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 </style>     
 	
 	<body  class="guest" >
+    <div class="main-wrapper">
 	
 	
 	<!-- Google Tag Manager -->
@@ -700,7 +701,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     			
     	
     </div>
-	
+	</div>
 	
 		<!-- FOOTER -->
 		<?php
