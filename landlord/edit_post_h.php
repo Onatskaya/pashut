@@ -130,7 +130,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
     <!-- Carousel
     ================================================== -->
-    	<div class="container">
+    	<div class="container edit-post-page">
 
 
 
@@ -139,7 +139,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
 
 
-    <div class="container ll-dash post-listing">
+    <div class="ll-dash post-listing">
     		<!-- <div class="col-md-3 left-col">
     			
     			<div class="line">
@@ -280,10 +280,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             <div class="col-md-4"></div>
                             <div class="col-md-6">
                                 <div class="listing-map">                                   
-                                    <div style="width: 280px; height: 230px; margin: 0px auto 15px; position: relative;">
+                                    <div style="width: auto; height: 230px; margin: 0px auto 15px; position: relative;">
                                         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-                                        <div style='overflow:hidden;height:230px;width:280px;'>
-                                            <div id='gmap_canvas' style='height:230px;width:280px;'></div>
+                                        <div style='overflow:hidden;height:230px;width:auto;'>
+                                            <div id='gmap_canvas' style='height:230px;width:auto;'></div>
                                             <div>
                                                 <small><a href="http://embedgooglemaps.com">                                    
                                                 embed google maps                           
@@ -316,8 +316,8 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                         <div id="legend">אתה יכול לגרור ולשחרר את הסמן למיקום הנכון</div>
                                     </div>
                                 </div>
-								<div class="col-md-5">
-                                    <div class='input input-positioned'>
+								<div class="col-xs-12 col-md-5 edit-form">
+                                    <div class='input-positioned'>
                                         <div class="row">
                                             <div class="col-md-2"></div>
 											<div class="col-md-6">
@@ -434,7 +434,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_a" id="contact_a"  maxlength="3" value="<?php echo $data_post['contact_a']; ?>">
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" maxlength="3" value="<?php echo $data_post['contact_b']; ?>">
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c" maxlength="4" value="<?php echo $data_post['contact_c']; ?>"><span style="font-size:16px;color:#C30">*</span>
-									&nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d" maxlength="10" value="<?php echo $data_post['contact_d']; ?>">
+									<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="input numberonly text smalltext" name="contact_d" maxlength="10" value="<?php echo $data_post['contact_d']; ?>">
 								</td>
 							</tr>
 							 <tr valign="top">
@@ -442,10 +442,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 										לתקשר אלטרנטיבי :
 									</td>
 									<td class="">
-										<input type="text" class="numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
+										<input type="text" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
 										<input type="text" class="numberonly text quater" name="alt_contact_b" value="<?php echo $data_post['alt_contact_b']; ?>" maxlength="3">
-										<input type="text" class="numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-										&nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="<?php echo $data_post['alt_contact_d']; ?>" maxlength="10">
+										<input type="text" class="input numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
+										<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="input numberonly text smalltext" name="alt_contact_d"  value="<?php echo $data_post['alt_contact_d']; ?>" maxlength="10">
 									</td>
 								</tr>
 							<tr valign="top">
@@ -453,9 +453,9 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 									פַקס:
 								</td>
 								<td class="field">
-									<input type="text" class="numberonly text quater smalltext" name="contact_fax_a" maxlength="3" value="<?php echo $data_post['contact_fax_a']; ?>">
-									<input type="text" class="numberonly text quater smalltext" name="contact_fax_b"  value="<?php echo $data_post['contact_fax_b']; ?>" maxlength="3" > 
-									<input type="text" class="numberonly text quater" name="contact_fax_c" value="<?php echo $data_post['contact_fax_c']; ?>" maxlength="4" >
+									<input type="text" class="input numberonly text quater smalltext" name="contact_fax_a" maxlength="3" value="<?php echo $data_post['contact_fax_a']; ?>">
+									<input type="text" class="input numberonly text quater smalltext" name="contact_fax_b"  value="<?php echo $data_post['contact_fax_b']; ?>" maxlength="3" > 
+									<input type="text" class="input numberonly text quater" name="contact_fax_c" value="<?php echo $data_post['contact_fax_c']; ?>" maxlength="4" >
 								</td>
 							</tr>
 							<tr valign="top">
@@ -479,8 +479,8 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 				</tr>	
                 <tr valign="top">
                     <td class="field" colspan="2">
-                        <div class="col-md-2 col-md-offset-5">
-                            <input type="submit" class="btn btn-info" value="עדכון">
+                        <div class="col-md-3 col-md-offset-3">
+                            <input type="submit" class="btn btn-info" name="submit_feature" value="עדכון">
                          </div>
                     </td>
                 </tr>
@@ -496,7 +496,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
     			<tr valign="top">
     				<td colspan="2">
-    					<div class="container">	
+    					<div class="">	
                             <form action="update_post.php" method="post" enctype="multipart/form-data" id="vacancy_feature">
     						    <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
                                
@@ -637,7 +637,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                                כתובת מלאה:
                                             </td>
                                             <td class="field">
-                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:300px;height:62px;"><?php echo $data_post['address']; ?></textarea>
+                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;"><?php echo $data_post['address']; ?></textarea>
                                                 <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
@@ -1011,7 +1011,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 
                 <tr valign="top" id="fl_box" style="display:none;">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-12">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1090,7 +1090,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="row">                  
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
                                     <tr valign="top">
@@ -1217,10 +1217,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                            <img src="../home_images/<?php echo $data_img['image'];?>" height="80" width="90">
                                         </td>
                                         <td class="field" align="center">
-                                          <a href="edit_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>"  class="btn btn-info">עדכון</a>
+                                          <a href="edit_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>"  class="btn btn-info  link-input">עדכון</a>
                                         </td>
                                         <td class="field">
-                                           <a href="delete_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">לִמְחוֹק</a>
+                                           <a href="delete_image_r.php?iid=<?php echo $data_img['image_id'];?>&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger  link-input">לִמְחוֹק</a>
                                         </td>
                                     </tr>
                                     <br>
@@ -1276,7 +1276,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <form action="update_time.php" method="POST">
                                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                             <div class="col-md-offset-8 col-md-4">                  
@@ -1482,121 +1482,121 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     					<div class="row">
     						<form action="update_amenities.php" method="POST" >
                                  <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_refrigerator" class="small" style="position:relative;top:5px;" name="refrigerator" value="yes" <?php if($data_post['refrigerator']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_refrigerator">מְקָרֵר</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_air_conditioner" class="small" style="position:relative;top:5px;" name="air_conditioner" value="yes" <?php if($data_post['air_conditioner']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_air_conditioner">מזגן</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_yard" class="small" style="position:relative;top:5px;" name="yard" value="yes" <?php if($data_post['yard']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_yard">חָצֵר</label>
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
 								
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_stove" class="small" style="position:relative;top:5px;" name="stove" value="yes" <?php if($data_post['stove']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_stove">תַנוּר</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_wallheater" class="small" style="position:relative;top:5px;" name="wallheater" value="yes" <?php if($data_post['wallheater']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_wallheater">מחמם סטריט</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_elevator" class="small" style="position:relative;top:5px;" name="elevator" value="yes" <?php if($data_post['elevator']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_elevator">מַעֲלִית</label>
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
 								
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_dishwasher" class="small" style="position:relative;top:5px;" name="dishwasher" value="yes" <?php if($data_post['dishwasher']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_dishwasher">מדיח כלים</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_laundry" class="small" style="position:relative;top:5px;" name="laundry" value="yes" <?php if($data_post['laundry']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_laundry">מכבסה בחצרי</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_pool" class="small" style="position:relative;top:5px;" name="pool" value="yes" <?php if($data_post['pool']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_pool">פּוּל</label>
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
 								
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_microwave" class="small" style="position:relative;top:5px;" name="microwave" value="yes" <?php if($data_post['microwave']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_microwave">מיקרוגל</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_wd" class="small" style="position:relative;top:5px;" name="wd" value="yes" <?php if($data_post['wd']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_wd">מכונת כביסה ומייבש ביחידה</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_spa" class="small" style="position:relative;top:5px;" name="spa" value="yes" <?php if($data_post['spa']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_spa">ספא / ג'קוזי</label>
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
 								
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_central_air" class="small" style="position:relative;top:5px;" name="central_air" value="yes" <?php if($data_post['central_air']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_central_air">מיזוג אוויר מרכזי</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_wd_hookups" class="small" style="position:relative;top:5px;" name="wd_hookups" value="yes" <?php if($data_post['wd_hookups']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_wd_hookups">מכונת כביסה קונסולת שיער</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_accessible" class="small" style="position:relative;top:5px;" name="accessiblee" value="yes" <?php if($data_post['accessiblee']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_accessible">נגיש לכסא גלגלים</label>
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
 								
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_central_heat" class="small" style="position:relative;top:5px;" name="central_heat" value="yes" <?php if($data_post['central_heat']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_central_heat">הסקה מרכזית</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_balcony" class="small" style="position:relative;top:5px;" name="balcony" value="yes" <?php if($data_post['balcony']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_balcony">מִרפֶּסֶת</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_controlled_access" class="small" style="position:relative;top:5px;" name="controlled_access" value="yes" <?php if($data_post['controlled_access']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_controlled_access">בניין גישה מבוקרת</label>
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
 								
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_fireplace" class="small" style="position:relative;top:5px;" name="fireplace" value="yes" <?php if($data_post['fireplace']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_fireplace">אָח</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_patio" class="small" style="position:relative;top:5px;" name="patio" value="yes" <?php if($data_post['patio']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_patio">מבואה</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_quiet_nhood" class="small" style="position:relative;top:5px;" name="quiet_nhood" value="yes" <?php if($data_post['quiet_nhood']=='yes'){ echo 'checked'; } ?> >
     								&nbsp;<label for="label_quiet_nhood">בשכונה שקטה</label>
     							</div>
@@ -1625,7 +1625,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 										<span >פנויות כותרת :</span>
 									</td>
 									<td class="field">
-										<input type="text" class="input validate[required] text mb" style="width:430px;" name="short_descp" maxlength="100" value="<?php echo $data_post['short_descp'];?>" ><span style="font-size:16px;color:#C30">*</span> 
+										<input type="text" class="input validate[required] text mb" style="width:auto;" name="short_descp" maxlength="100" value="<?php echo $data_post['short_descp'];?>" ><span style="font-size:16px;color:#C30">*</span> 
 										<img src="../images/info.gif" border="0" align="absmiddle" class=""/>
 									</td>
 								</tr>
@@ -1636,7 +1636,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 										<span >פנויות פרטים:</span> 
 									</td>
 									<td class="field">
-										<textarea name="full_descp" class="mb" style="width:430px;height:150px;" ><?php echo $data_post['full_descp'];?></textarea>
+										<textarea name="full_descp" class="mb" style="width:auto;height:150px;" ><?php echo $data_post['full_descp'];?></textarea>
 										<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
 									   <br><span style="color: red;font-size:11px;"><strong>אין מספרי טלפון , כתובת , אתר או בעל בית לתקשר מותרי קופסא זו .</strong></span>
 									</td>
@@ -1808,7 +1808,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                         <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
         				<tr valign="top" class="sign-request-wrapper">
         					<td colspan="2" style="float:right">
-        						<div style="font-size: 18px; float: left; width: 500px;">
+        						<div style="font-size: 18px; float: left; width: auto;">
         							
         															
         								
@@ -1817,7 +1817,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
         							
         							 &nbsp;<b>חופשי <span style="color:red;">להשכרה</span> סִימָן</b> - נו נוסיף גדול " להשכרה" סימן ( כמו אחד מימין) מחוץ הנכס שלך . השתמש בשדה "הוראות התקן " למטה כדי לספק את כל הוראות לנהג שלנו . <br />
     							<br /><b>הוראות התקן :</b> <span class="smallgray">(למשל - היכנס מקום בחצר הקדמית )</span><br />
-        							<textarea class="mb" name="driver_instr" style="width:470px;height:100px;"><?php echo $data_post['driver_instr']; ?></textarea>
+        							<textarea class="mb" name="driver_instr" style="width:auto;height:100px;"><?php echo $data_post['driver_instr']; ?></textarea>
         						</div>
         						<div style="float: left; width: 130px;">
         							<!-- <img src="http://static.westsiderentals.com/images/sign_m.gif" style="border: 1px solid black;"> -->

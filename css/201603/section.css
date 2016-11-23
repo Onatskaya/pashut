@@ -500,7 +500,6 @@ html {
 		.ui-autocomplete-input, .input input {
 			width: 120%!important;
 		}
-
 		.map-wrapper {
 			margin: 0!important;
 			width: 230px;
@@ -526,9 +525,14 @@ html {
 		.post-listing .center-mod input.quater {
 			width: 50px;
 		}
-		.post-listing input {
+		.post-listing input,
+		a.link-input {
 			width: 210px;
 			font-size: 12px;
+		}
+		a.link-input {
+			display: block;
+			margin: 2px auto;
 		}
 		.post-listing input[type="radio"],
 		.post-listing input[type="checkbox"] {
@@ -549,6 +553,30 @@ html {
 		.exitingListingBlock {
 			padding: 10px;
 		}
+
+
+		.edit-post-page .table_type_4 {
+			width: 100%!important;
+		}
+		.edit-post-page .map-wrapper,
+		.edit-post-page #map {
+			width: 100%!important;
+		}
+		.edit-post-page .center-mod table input.smalltext,
+		.edit-post-page .post-listing .center-mod input.quater {
+			width: 40px;
+		}
+		.edit-form .input input {
+			width: 100%!important;
+		}
+		.edit-form .center-mod table input.smalltext,
+		.edit-form .post-listing .center-mod input.quater {
+			width: 40px;
+		}
+		/* .top-map {
+			margin: 0!important;
+			width: 240px!important;
+		} */
 /* ------------------HERBEW FORM------------------ */
 		.herbew-form .map-wrapper {
 			float: right;
