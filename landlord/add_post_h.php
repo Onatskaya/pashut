@@ -75,7 +75,8 @@ $obj_post= mysqli_query($conn,$que_post);
 		<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
 		<meta name="robots" content="index,follow" />
 		<meta name="GOOGLEBOT" content="index,follow" />		
-		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>		       
+		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />		       
 		<style>
 			input{
 				float:right!important;
@@ -104,7 +105,7 @@ $obj_post= mysqli_query($conn,$que_post);
 
 
 
-    <div class="container ll-dash post-listing">
+    <div class="ll-dash post-listing">
     		<!-- <div class="col-md-3 left-col">
     			
     			<div class="line">
@@ -256,7 +257,7 @@ $obj_post= mysqli_query($conn,$que_post);
     		</div>
     		
 
-    		<form action="save_post.php" method="post" name="propForm" id="propForm" enctype="multipart/form-data">
+    		<form action="save_post.php" method="post" name="propForm" id="propForm" class="herbew-form" enctype="multipart/form-data">
     			   		
 
     		      <table class="table_type_4" cellspacing="0" cellpadding="0" border="0">
@@ -266,15 +267,14 @@ $obj_post= mysqli_query($conn,$que_post);
     					<div class="smallgray">אנא הכנס את הכתובת הפנויה שלך למטה ולמפות אותו על ידי לחיצה על הקישור " מפה זה ! " . זה יעזור לנו למצוא מפות תכונות שימושיות אחרות עבור המשרה הפנויה שלך .</div>
     				    <div>
                                 
-                                <div class="col-md-3">
-                                </div>
-								<div class="col-md-4">
-                                    <div class='map-wrapper'>
+                                
+								<div class="col-xs-12 col-md-6">
+                                    <div class='map-wrapper' style="float: right;">
                                         <div id="map"></div>
                                         <div id="legend">אתה יכול לגרור ולשחרר את הסמן למיקום הנכון</div>
                                     </div>
                                 </div>
-								 <div class="col-md-5">
+								 <div class="col-xs-12 col-md-6">
                                 <div class='input input-positioned'>
                                     <div class="row">
                                         <div class="col-md-2">
@@ -389,29 +389,29 @@ $obj_post= mysqli_query($conn,$que_post);
     				<td class="subheader">
     					טלפון ליצירת קשר:
     				</td>
-    				<td class="">
+    				<td class="no-pad small-marg">
                         <input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_a" id="contact_a"  maxlength="3">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" value="" maxlength="3">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-    					&nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d"  value="" maxlength="10">
+    					<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d"  value="" maxlength="10">
                     </td>
     			</tr>
     	         <tr valign="top">
                         <td class="subheader">
                             מספר לתקשר אלטרנטיבי :
                         </td>
-                        <td class="">
+                        <td class="no-pad small-marg">
                             <input type="text" class="numberonly text quater" name="alt_contact_a"  maxlength="3">
                             <input type="text" class="numberonly text quater" name="alt_contact_b" value="" maxlength="3">
                             <input type="text" class="numberonly text quater" name="alt_contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-                            &nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="" maxlength="10">
+                            <span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="" maxlength="10">
                         </td>
                     </tr>
     			<tr valign="top">
     				<td class="subheader">
     					פַקס:
     				</td>
-    				<td class="field">
+    				<td class="field small-marg">
                         <input type="text" class="numberonly text quater smalltext" name="contact_fax_a" maxlength="3">
     					<input type="text" class="numberonly text quater smalltext" name="contact_fax_b"  value="" maxlength="3" > 
     					<input type="text" class="numberonly text quater" name="contact_fax_c" value="" maxlength="4" >
@@ -444,7 +444,7 @@ $obj_post= mysqli_query($conn,$que_post);
 
     			<tr valign="top">
     				<td colspan="2">
-    					<div class="container">	
+    					<div class="">	
     						<div class="col-md-2">
     						</div>
 							<div class="col-md-6">
@@ -576,7 +576,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                כתובת מלאה:
                                             </td>
                                             <td class="field">
-                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:300px;height:62px;" ></textarea>
+                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;" ></textarea>
                                                 <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
@@ -927,7 +927,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                               רישום מומלץ :
                                             </td>
                                             <td class="field">
-                                                <input type="checkbox" name="featured_listing" id="fl" value="Yes" class="small" style="position:relative;top:5px;" >
+                                                <input type="checkbox" name="featured_listing" id="fl" value="Yes" class="small" style="position:relative;top:-3px;" >
                                             </td>
                                         </tr>
                                         
@@ -940,7 +940,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 
                 <tr valign="top" id="fl_box" style="display:none;">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-12">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1013,7 +1013,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-2">
 							</div>
                             <div class="col-md-6">
@@ -1107,7 +1107,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-sm-offset-8 col-md-4">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1307,121 +1307,121 @@ $obj_post= mysqli_query($conn,$que_post);
     				<td colspan="2">
     					<div class="row">
 							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_refrigerator" class="small" style="position:relative;top:5px;" name="refrigerator" value="yes" >
     								&nbsp;<label for="label_refrigerator">מְקָרֵר</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_air_conditioner" class="small" style="position:relative;top:5px;" name="air_conditioner" value="yes" >
     								&nbsp;<label for="label_air_conditioner">מַזגַן אֲוִיר</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_yard" class="small" style="position:relative;top:5px;" name="yard" value="yes" >
     								&nbsp;<label for="label_yard">יָארד</label>
     							</div>
     							
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_stove" class="small" style="position:relative;top:5px;" name="stove" value="yes" >
     								&nbsp;<label for="label_stove">תַנוּר</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_wallheater" class="small" style="position:relative;top:5px;" name="wallheater" value="yes" >
     								&nbsp;<label for="label_wallheater">מחמם סטריט</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_elevator" class="small" style="position:relative;top:5px;" name="elevator" value="yes" >
     								&nbsp;<label for="label_elevator">מַעֲלִית</label>
     							</div>
     							
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_dishwasher" class="small" style="position:relative;top:5px;" name="dishwasher" value="yes" >
     								&nbsp;<label for="label_dishwasher">מדיח כלים</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_laundry" class="small" style="position:relative;top:5px;" name="laundry" value="yes" >
     								&nbsp;<label for="label_laundry">מכבסה בחצרי</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_pool" class="small" style="position:relative;top:5px;" name="pool" value="yes" >
     								&nbsp;<label for="label_pool">פּוּל</label>
     							</div>
     							
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_microwave" class="small" style="position:relative;top:5px;" name="microwave" value="yes" >
     								&nbsp;<label for="label_microwave">מיקרוגל</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_wd" class="small" style="position:relative;top:5px;" name="wd" value="yes" >
     								&nbsp;<label for="label_wd">מכונת כביסה ומייבש ביחידה</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_spa" class="small" style="position:relative;top:5px;" name="spa" value="yes" >
     								&nbsp;<label for="label_spa">ספא / ג'קוזי</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     							</div>
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_central_air" class="small" style="position:relative;top:5px;" name="central_air" value="yes" >
     								&nbsp;<label for="label_central_air">מיזוג אוויר מרכזי</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_wd_hookups" class="small" style="position:relative;top:5px;" name="wd_hookups" value="yes" >
     								&nbsp;<label for="label_wd_hookups">מכונת כביסה קונסולת שיער</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_accessible" class="small" style="position:relative;top:5px;" name="accessiblee" value="yes" >
     								&nbsp;<label for="label_accessible">נגיש לכסא גלגלים</label>
     							</div>
     							
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_central_heat" class="small" style="position:relative;top:5px;" name="central_heat" value="yes" >
     								&nbsp;<label for="label_central_heat">הסקה מרכזית</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_balcony" class="small" style="position:relative;top:5px;" name="balcony" value="yes" >
     								&nbsp;<label for="label_balcony">מִרפֶּסֶת</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_controlled_access" class="small" style="position:relative;top:5px;" name="controlled_access" value="yes" >
     								&nbsp;<label for="label_controlled_access">בניין גישה מבוקרת</label>
     							</div>
     							
-								<div class="col-md-4" style="width:25%;">
+								<div class="col-md-4 check" style="width:25%;">
     							</div>
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_fireplace" class="small" style="position:relative;top:5px;" name="fireplace" value="yes" >
     								&nbsp;<label for="label_fireplace">אָח</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_patio" class="small" style="position:relative;top:5px;" name="patio" value="yes" >
     								&nbsp;<label for="label_patio">מבואה</label>
     							</div>
     							
-    							<div class="col-md-4" style="width:25%;">
+    							<div class="col-md-4 check" style="width:25%;">
     								<input type="checkbox" id="label_quiet_nhood" class="small" style="position:relative;top:5px;" name="quiet_nhood" value="yes" >
     								&nbsp;<label for="label_quiet_nhood">בשכונה שקטה</label>
     							</div>
@@ -1552,7 +1552,7 @@ $obj_post= mysqli_query($conn,$que_post);
     						<input type="radio" name="post_date_confirm" value="yes" id="post_now" class="input validate[required] noborder" >	פרסם את הרישום הזה עכשיו<br />
     						<br />
     						<div style="float:right;">
-    							<table>
+    							<table class="radio-bl">
 									<tr>
 										<td>
 											<input type="radio" name="post_date_confirm" value="no" id="post_later1" class="input validate[required] noborder">
@@ -1583,7 +1583,7 @@ $obj_post= mysqli_query($conn,$que_post);
     				
     				<tr valign="top" class="sign-request-wrapper">
     					<td colspan="2">
-    						<div style="font-size: 18px;  width: 500px;">
+    						<div style="font-size: 18px;  width: auto;">
     							
     															
     								
@@ -1758,6 +1758,10 @@ $obj_post= mysqli_query($conn,$que_post);
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	 <script type="text/javascript" src="../js/jquery.min.js"></script>      
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+      $('select').select2({minimumResultsForSearch: Infinity});
+    </script>
     <script src="../js/new/jquery-ui-1.10.4/jquery-ui-1.10.4.js"></script>
     <script src="../js/new/jquery.cycle.all.js"></script>
 

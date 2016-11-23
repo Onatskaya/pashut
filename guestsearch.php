@@ -207,6 +207,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 				<link rel="stylesheet" href="css/bootstrap.min.css">
 				<!-- Custom styles for this template -->
+                <link href="css/201603/base.css" rel="stylesheet">
 				<link href="css/201603/global.css" rel="stylesheet">
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
@@ -230,20 +231,24 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
         overflow: hidden;
     }
     .s_field{
-        display: none;
+        display: none !important;
     }
+
+
+	/*html, body { margin:0;padding:0;width:100%;height:100%;}*/
+	/*.search-results {*/
+		/*position: relative !important;*/
+		/*min-height: 100% !important%;*/
+	/*}*/
+	/** html .search-results { height: 100% !important;}*/
+	/*.footer { position: relative;margin-top: -60px;width: 100%;clear: both;z-index: 0;padding: 0;min-height: 60px;}*/
 </style>     
 	
 	<body  class="guest" >
-	
-	
 	<!-- Google Tag Manager -->
 
 <!-- End Google Tag Manager --> 
 
-
-	
-		
 		<div id="slidedown-content" data-status="hide" class="none">
 			<div id="login-content" class="fb">
 				<form action="login.php" name="loginForm" method="post">
@@ -449,8 +454,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                             ?>
     						</select>
     					</div>
-                        <div class="col">
-                            <select name="bedroom" style="width:24%;" class="medium right-pad s_field">
+                        <div class="col s_field">
+                            <select name="bedroom" style="width:24%;" class="medium right-pad">
                                 <option value="">Select Bedrooms</option>
                                     <?php
                                     while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
@@ -459,7 +464,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                 <?php }
                                     ?>
                             </select>
-                            <select name="bathroom" style="width:14%;" class="medium right-pad s_field">
+                            <select name="bathroom" style="width:14%;" class="medium right-pad">
                                 <option value="">Select Bathrooms</option>
                                   <?php
                                      while($data_bath=mysqli_fetch_assoc($obj_bath))
@@ -469,7 +474,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                      ?> 
                                
                             </select>&nbsp;
-                            <select name="square_footage" style="width:14%;" class="medium right-pad s_field">
+                            <select name="square_footage" style="width:14%;" class="medium right-pad">
                                 <option value="">Select Meters</option>
                                   <?php
                                      for($i=1;$i<=200;$i++)
@@ -480,7 +485,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                
                             </select>
                             <!-- <input type="text" placeholder="Enter meters" style="width:14%;" name="square_footage" class="s_field"> -->
-                            <select name="furnished" style="width:24%;" class="medium right-pad s_field">
+                            <select name="furnished" style="width:24%;" class="medium right-pad">
                                 <option value="">Select Furnished</option>
                                 <?php
                                     while($data_fur=mysqli_fetch_assoc($obj_fur))
@@ -536,7 +541,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     		</li>		
     	</ul>
 
-    	
+
+		<?php if( $data_search2 ):?>
     		<div class="pagination pagination-top">			
     			<ul>				
     				
@@ -556,6 +562,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     				
     			</ul>				
     		</div>
+		<?php endif; ?>
     	
     </div>
 
@@ -669,25 +676,27 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
     
 
-    	<div class="pagination pagination-bottom">			
-    		<ul>				
-    			
-    					<li><a class="currentpage" data-pageid="1" href="#">1</a></li>
-    				
-    					<li><a data-pageid="2" href="#" class="prevnext">2</a></li>
-    				
-    					<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
-    				
-    					<li><a data-pageid="4" href="#" class="prevnext">4</a></li>
-    				
-    					<li><a data-pageid="5" href="#" class="prevnext">5</a></li>
-    				
-    					<li><a data-pageid="6" href="#" class="prevnext">6</a></li>
-    				
-    				<li><a data-pageid="62" href="#" class="prevnext">Last &gt;&gt;</a></li>
-    			
-    		</ul>				
-    	</div>
+		<?php if( $data_search2 ):?>
+			<div class="pagination pagination-bottom">
+				<ul>
+
+							<li><a class="currentpage" data-pageid="1" href="#">1</a></li>
+
+							<li><a data-pageid="2" href="#" class="prevnext">2</a></li>
+
+							<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
+
+							<li><a data-pageid="4" href="#" class="prevnext">4</a></li>
+
+							<li><a data-pageid="5" href="#" class="prevnext">5</a></li>
+
+							<li><a data-pageid="6" href="#" class="prevnext">6</a></li>
+
+						<li><a data-pageid="62" href="#" class="prevnext">Last &gt;&gt;</a></li>
+
+				</ul>
+			</div>
+		<?php endif; ?>
     </div>
     		<div class="ad-results">
     			<div class="line"><img src="#"></div>
@@ -700,8 +709,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     			
     	
     </div>
-	
-	
+
 		<!-- FOOTER -->
 		<?php
             include('footer.php');
@@ -723,7 +731,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                     border-radius: 0;
                 }
                 .select2-container--default .select2-selection--single .select2-selection__rendered {
-                    height: 46px;
+                    height: 44px;
                     background: #eceff4;
                     font-size: 16px;
                     color: #3d4d65;
@@ -821,7 +829,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#adv_search').click(function(){
-                    $('.s_field').show();
+//                    $('.s_field').show();
+                    $('.col').removeClass('s_field');
                     $('#adv_search').hide();
                 });
             });

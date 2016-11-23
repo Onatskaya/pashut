@@ -118,7 +118,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					border-radius: 0;
 				}
 				.select2-container--default .select2-selection--single .select2-selection__rendered {
-					height: 46px;
+					height: 44px;
 					background: #eceff4;
 					font-size: 16px;
 					color: #3d4d65;
@@ -132,6 +132,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					.select2-container--default .select2-selection--single .select2-selection__rendered,
 					.select2-container--default .select2-selection--single .select2-selection__arrow {
 						height: 40px;
+					}
+					.select2-container--default .select2-selection--single .select2-selection__rendered {
+						height: 38px;
 					}
 					.carousel-search .search {
 						margin-top: 0;
@@ -147,6 +150,12 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                         right: -3px!important;
                     }
 				}
+
+
+
+
+
+
 			</style>
 			
         
@@ -154,11 +163,11 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	
 	<body  class="guest" >
-	
+
 	
 	<!-- Google Tag Manager -->
 
-
+    <div class="main-wrapper">
 
 
 	
@@ -2106,10 +2115,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	        </script>
 	    </div>
 
-
-	 
-			
-			
+	</div><!-- End main-wrapper -->
 	</body>
 </html>
 

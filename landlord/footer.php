@@ -1,4 +1,5 @@
-<div class="container-fluid footer">					
+<div class="clearfixt"></div>
+<div class="container-fluid footer">
 	<div class="container-fluid footer-links">
 		<div class="row">
 			<div class="col-md-2 col-xs-12">
