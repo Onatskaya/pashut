@@ -302,7 +302,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                         </div>
                         <br>
 
-                        <form action="update_location.php" method="post" name="propForm" enctype="multipart/form-data">
+                        <form action="update_location.php" method="post" name="propForm" class="herbew-form" enctype="multipart/form-data">
                         <div>
                             <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                             <input type="hidden" id="latituteee" value="<?php echo $data_post['property_lat']; ?>">
@@ -317,7 +317,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                     </div>
                                 </div>
 								<div class="col-xs-12 col-md-5 edit-form">
-                                    <div class='input-positioned'>
+                                    <div class='input input-positioned'>
                                         <div class="row">
                                             <div class="col-md-2"></div>
 											<div class="col-md-6">
@@ -393,7 +393,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             </div>
                             <br>&nbsp;
                             <div class="row" align="center">
-                                <div class="col-sm-2 col-sm-offset-5">
+                                <div class="col-sm-3 col-sm-offset-3">
 									<input type="submit" class="btn btn-info " value="עדכון">
 								</div>
 							</div>
@@ -430,7 +430,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 								<td class="subheader">
 									טלפון ליצירת קשר:
 								</td>
-								<td class="">
+								<td class="small-marg">
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_a" id="contact_a"  maxlength="3" value="<?php echo $data_post['contact_a']; ?>">
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" maxlength="3" value="<?php echo $data_post['contact_b']; ?>">
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c" maxlength="4" value="<?php echo $data_post['contact_c']; ?>"><span style="font-size:16px;color:#C30">*</span>
@@ -441,7 +441,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 									<td class="subheader">
 										לתקשר אלטרנטיבי :
 									</td>
-									<td class="">
+									<td class="small-marg">
 										<input type="text" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
 										<input type="text" class="numberonly text quater" name="alt_contact_b" value="<?php echo $data_post['alt_contact_b']; ?>" maxlength="3">
 										<input type="text" class="input numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
@@ -452,7 +452,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 								<td class="subheader">
 									פַקס:
 								</td>
-								<td class="field">
+								<td class="field small-marg">
 									<input type="text" class="input numberonly text quater smalltext" name="contact_fax_a" maxlength="3" value="<?php echo $data_post['contact_fax_a']; ?>">
 									<input type="text" class="input numberonly text quater smalltext" name="contact_fax_b"  value="<?php echo $data_post['contact_fax_b']; ?>" maxlength="3" > 
 									<input type="text" class="input numberonly text quater" name="contact_fax_c" value="<?php echo $data_post['contact_fax_c']; ?>" maxlength="4" >
@@ -1234,11 +1234,11 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             </div>
                             <br>
                                 <div class="row">
-                                    <div class="col-md-offset-6 col-md-6">
+                                    <div class="col-md-12">
                                         <form action="update_add_image.php" method="POST" enctype="multipart/form-data" id="image_add">
                                             <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
                                             <div class="row">
-                                                <div class="col-md-8">
+                                                <div class="col-md-8 col-md-offset-4">
                                                     <table class="table table-bordered table-hover" id="tab_logicc">
                                                     <tbody>
                                                         <tr id='addrr<?php echo $n-1; ?>'>
@@ -1254,11 +1254,13 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                                     </table>
                                                     <a id="add_roww" value='<?php echo $n;?>' class="btn btn-default pull-left">הוספת תמונה</a><a id='delete_roww' class="pull-right btn btn-default">מחק תמונה</a>
                                                 </div>
-                                                <label class="col-md-4">הוסף תמונות נוספות</label>
+                                                <label class="col-md-4 col-md-offset-8">הוסף תמונות נוספות</label>
                                             </div>
                                             <br>
                                             <div class="row" align="center">
-                                                <input type="submit" value="לְהוֹסִיף" class="btn btn-info">
+                                                <div class="col-sm-3 col-sm-offset-3">
+                                                    <input type="submit" value="לְהוֹסִיף" class="btn btn-info">
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -1279,7 +1281,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                         <div class=""> 
                             <form action="update_time.php" method="POST">
                                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                            <div class="col-md-offset-8 col-md-4">                  
+                            <div class="col-md-12">                  
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
                                     <tr valign="top">
                                         <td class="medsubheader">
@@ -1458,12 +1460,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                           </select>
                                         </td>
                                     </tr>
-                                    <tr valign="top">
-                                        <td class="field" colspan="2">
-                                            <input type="submit" class="btn btn-info" align="center" value="עדכון">
-                                        </td>
-                                    </tr>
                                 </table>
+                                <div class="col-sm-3 col-sm-offset-3">
+                                    <input type="submit" class="btn btn-info" align="center" value="עדכון">
+                                </div>
                             </div>
                              </form>    
                         </div>
@@ -1601,7 +1601,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     								&nbsp;<label for="label_quiet_nhood">בשכונה שקטה</label>
     							</div>
                                 
-    							<div class="col-md-2 col-md-offset-5">
+    							<div class="col-md-3 col-md-offset-3">
                                      <input type="submit" class="btn btn-info" value="עדכון">
                                 </div>
                             </form>    
@@ -1646,7 +1646,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 					</td>
                     <tr valign="top">
                         <td class="subheader" colspan="2">
-                            <div class="col-md-2 col-md-offset-5">
+                            <div class="col-md-3 col-md-offset-3">
                                 <input type="submit" class="btn btn-info" value="עדכון">
                             </div>
                         </td>

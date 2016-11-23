@@ -389,7 +389,7 @@ $obj_post= mysqli_query($conn,$que_post);
     				<td class="subheader">
     					טלפון ליצירת קשר:
     				</td>
-    				<td class="no-pad">
+    				<td class="no-pad small-marg">
                         <input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_a" id="contact_a"  maxlength="3">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" value="" maxlength="3">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
@@ -400,7 +400,7 @@ $obj_post= mysqli_query($conn,$que_post);
                         <td class="subheader">
                             מספר לתקשר אלטרנטיבי :
                         </td>
-                        <td class="no-pad">
+                        <td class="no-pad small-marg">
                             <input type="text" class="numberonly text quater" name="alt_contact_a"  maxlength="3">
                             <input type="text" class="numberonly text quater" name="alt_contact_b" value="" maxlength="3">
                             <input type="text" class="numberonly text quater" name="alt_contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
@@ -411,7 +411,7 @@ $obj_post= mysqli_query($conn,$que_post);
     				<td class="subheader">
     					פַקס:
     				</td>
-    				<td class="field">
+    				<td class="field small-marg">
                         <input type="text" class="numberonly text quater smalltext" name="contact_fax_a" maxlength="3">
     					<input type="text" class="numberonly text quater smalltext" name="contact_fax_b"  value="" maxlength="3" > 
     					<input type="text" class="numberonly text quater" name="contact_fax_c" value="" maxlength="4" >
@@ -940,7 +940,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 
                 <tr valign="top" id="fl_box" style="display:none;">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-12">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1107,7 +1107,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-sm-offset-8 col-md-4">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">

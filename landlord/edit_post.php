@@ -367,8 +367,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                 </div>
                             </div>
                             <br>&nbsp;
-                            <div class="row" align="center">
-                                <input type="submit" class="btn btn-info" value="Update">
+                            <div class="row" align="center" style="clear: both;">
+                                <div class="col-md-3 col-md-offset-2">
+                                    <input type="submit" class="btn btn-info" value="Update">
+                                </div>
                             </div>
 
                         </form>
@@ -1241,7 +1243,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                         <div class=""> 
                             <form action="update_time.php" method="POST">
                                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                            <div class="col-md-4">                  
+                            <div class="col-md-12">                  
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
                                     <tr valign="top">
                                         <td class="medsubheader">
@@ -1420,12 +1422,10 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                           </select>
                                         </td>
                                     </tr>
-                                    <tr valign="top">
-                                        <td class="field" colspan="2">
-                                            <input type="submit" class="btn btn-info" align="center" value="Update">
-                                        </td>
-                                    </tr>
                                 </table>
+                                <div class="col-md-3 col-md-offset-3">
+                                    <input type="submit" class="btn btn-info" align="center" value="Update">
+                                </div>
                             </div>
                              </form>    
                         </div>
@@ -1589,7 +1589,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
                     <tr valign="top">
                         <td class="subheader" colspan="2">
-                            <div class="col-md-3 col-md-offset-2">
+                            <div class="col-md-3 col-md-offset-3">
                                 <input type="submit" class="btn btn-info" value="Update">
                             </div>
                         </td>
@@ -1732,7 +1732,9 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     			</tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <input type="submit" class="btn btn-info" value="Update">
+                        <div class="col-md-3 col-md-offset-3">
+                            <input type="submit" class="btn btn-info" value="Update">
+                        </div>
                     </td>
                 </tr>
 
