@@ -207,6 +207,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 				<link rel="stylesheet" href="css/bootstrap.min.css">
 				<!-- Custom styles for this template -->
+                <link href="css/201603/base.css" rel="stylesheet">
 				<link href="css/201603/global.css" rel="stylesheet">
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
@@ -232,19 +233,22 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     .s_field{
         display: none !important;
     }
+
+
+	/*html, body { margin:0;padding:0;width:100%;height:100%;}*/
+	/*.search-results {*/
+		/*position: relative !important;*/
+		/*min-height: 100% !important%;*/
+	/*}*/
+	/** html .search-results { height: 100% !important;}*/
+	/*.footer { position: relative;margin-top: -60px;width: 100%;clear: both;z-index: 0;padding: 0;min-height: 60px;}*/
 </style>     
 	
 	<body  class="guest" >
-    <div class="main-wrapper">
-	
-	
 	<!-- Google Tag Manager -->
 
 <!-- End Google Tag Manager --> 
 
-
-	
-		
 		<div id="slidedown-content" data-status="hide" class="none">
 			<div id="login-content" class="fb">
 				<form action="login.php" name="loginForm" method="post">
@@ -701,8 +705,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     			
     	
     </div>
-	</div>
-	
+
 		<!-- FOOTER -->
 		<?php
             include('footer.php');

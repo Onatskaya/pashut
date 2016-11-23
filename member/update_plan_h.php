@@ -69,7 +69,7 @@ if(mysqli_num_rows($obj_p))
 		  
 				<div class="navbar-header">
 				  
-					<span class="title"><a href="#"><img src="images/logo.png" width="175"></a></span>
+					<span class="title"><a href="#"><img src="../images/logo.png" width="175"></a></span>
 				  
 				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
 					<span class="sr-only"></span>
