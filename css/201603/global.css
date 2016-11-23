@@ -602,6 +602,7 @@ body.nolayout {background:none;}
 	.download-apps h3{font-size:18px;}
 	.download-apps p{width:auto;}
 	
+    .signup, .llsignup, .static-page {margin-top: 50px;}
 	.signup .regular .plan{margin-bottom:10px;}
 	.signup .regular .single-plan{font-size:12px;}
 	.signup .regular .single-plan .right-section{}
@@ -1780,3 +1781,11 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
 .footer-logo { max-width: 100%; }
 .flexslider:hover .flex-next:hover,
 .flexslider:hover .flex-prev:hover { opacity: 0!important; }
+
+
+@media (min-width : 320px) and (max-width : 767px){
+    .mod-row.form_page,
+    .form_page .col-md-12  input,
+    .form_page .col-md-12 textarea {width: 100%;}
+    .form_page .col-md-12 button {width: 50%;}
+}
