@@ -602,6 +602,9 @@ html {
 	.hero .deal-banner{display:none;}
 	
 	#plans .plan .flag:after{border-width:23px;}
+	.post-listing input {
+		width: 50px;
+	}
 	
 		
 }

@@ -1787,5 +1787,6 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
     .mod-row.form_page,
     .form_page .col-md-12  input,
     .form_page .col-md-12 textarea {width: 100%;}
-    .form_page .col-md-12 button {width: 50%;}
+    .form_page .col-md-12 button,
+    .llsignup input {width: 50%!important;}
 }

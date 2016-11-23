@@ -133,6 +133,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					.select2-container--default .select2-selection--single .select2-selection__arrow {
 						height: 40px;
 					}
+					.select2-container--default .select2-selection--single .select2-selection__rendered {
+						height: 38px;
+					}
 					.carousel-search .search {
 						margin-top: 0;
 					}
