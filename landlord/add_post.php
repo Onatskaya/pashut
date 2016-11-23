@@ -825,7 +825,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                Full Address:
                                             </td>
                                             <td class="field">
-                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:300px;height:62px;" ></textarea>
+                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;" ></textarea>
                                                 <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
@@ -900,7 +900,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 
                 <tr valign="top" id="fl_box" style="display:none;">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-12">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1066,7 +1066,7 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class="container"> 
+                        <div class=""> 
                             <div class="col-md-4">                  
                             
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
@@ -1387,7 +1387,7 @@ $obj_post= mysqli_query($conn,$que_post);
     					Vacancy Heading:
     				</td>
     				<td class="field">
-    					<input type="text" class="input validate[required] text mb" style="width:430px;" name="short_descp" maxlength="100" ><span style="font-size:16px;color:#C30">*</span> 
+    					<input type="text" class="input validate[required] text mb" style="width:auto;" name="short_descp" maxlength="100" ><span style="font-size:16px;color:#C30">*</span> 
     		            <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
     	            </td>
     			</tr>
@@ -1398,7 +1398,7 @@ $obj_post= mysqli_query($conn,$que_post);
     					Vacancy Details: 
     				</td>
     				<td class="field">
-    					<textarea name="full_descp" class="mb" style="width:430px;height:150px;" ></textarea>
+    					<textarea name="full_descp" class="mb" style="width:auto;height:150px;" ></textarea>
     					<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
     	               <br><span style="color: red;font-size:11px;"><strong>NO PHONE NUMBERS, ADDRESS, WEBSITE OR LANDLORD CONTACT ALLOWED IN THIS BOX.</STRONG></span>
     				</td>
@@ -1528,7 +1528,7 @@ $obj_post= mysqli_query($conn,$que_post);
     							
     							 &nbsp;<b>Free <span style="color:red;">FOR RENT</span> Sign</b> - We will place a large "FOR RENT" sign (like the one at right) outside your property. Please use the "Driver Instructions" field below to provide any instructions to our driver. <br />
     							<br /><b>Driver Instructions:</b> <span class="smallgray">(e.g. - Place Sign in the front yard)</span><br />
-    							<textarea class="mb" name="driver_instr" style="width:470px;height:100px;"></textarea>
+    							<textarea class="mb" name="driver_instr" style="width:auto;height:100px;"></textarea>
     						</div>
     						<div style="float: left; width: 130px;">
     							<!-- <img src="http://static.westsiderentals.com/images/sign_m.gif" style="border: 1px solid black;"> -->
