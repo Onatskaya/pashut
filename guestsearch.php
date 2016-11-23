@@ -541,7 +541,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     		</li>		
     	</ul>
 
-    	
+
+		<?php if( $data_search2 ):?>
     		<div class="pagination pagination-top">			
     			<ul>				
     				
@@ -561,6 +562,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     				
     			</ul>				
     		</div>
+		<?php endif; ?>
     	
     </div>
 
@@ -674,25 +676,27 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
     
 
-    	<div class="pagination pagination-bottom">			
-    		<ul>				
-    			
-    					<li><a class="currentpage" data-pageid="1" href="#">1</a></li>
-    				
-    					<li><a data-pageid="2" href="#" class="prevnext">2</a></li>
-    				
-    					<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
-    				
-    					<li><a data-pageid="4" href="#" class="prevnext">4</a></li>
-    				
-    					<li><a data-pageid="5" href="#" class="prevnext">5</a></li>
-    				
-    					<li><a data-pageid="6" href="#" class="prevnext">6</a></li>
-    				
-    				<li><a data-pageid="62" href="#" class="prevnext">Last &gt;&gt;</a></li>
-    			
-    		</ul>				
-    	</div>
+		<?php if( $data_search2 ):?>
+			<div class="pagination pagination-bottom">
+				<ul>
+
+							<li><a class="currentpage" data-pageid="1" href="#">1</a></li>
+
+							<li><a data-pageid="2" href="#" class="prevnext">2</a></li>
+
+							<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
+
+							<li><a data-pageid="4" href="#" class="prevnext">4</a></li>
+
+							<li><a data-pageid="5" href="#" class="prevnext">5</a></li>
+
+							<li><a data-pageid="6" href="#" class="prevnext">6</a></li>
+
+						<li><a data-pageid="62" href="#" class="prevnext">Last &gt;&gt;</a></li>
+
+				</ul>
+			</div>
+		<?php endif; ?>
     </div>
     		<div class="ad-results">
     			<div class="line"><img src="#"></div>
