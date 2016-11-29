@@ -998,6 +998,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                         <td class="field" align="center">
                                            <img src="../home_images/<?php echo $data_post['image1'];?>" height="80" width="90">
                                         </td>
+
                                          <td class="field">
                                             <input type="hidden" name="old_image1" value="<?php echo $data_post['image1']; ?>">
                                             <input type="file" name="image1" class="input validate[required]">

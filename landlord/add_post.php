@@ -227,23 +227,23 @@ $obj_post= mysqli_query($conn,$que_post);
     		
 
     		
-    		<div class="exitingListingBlock">
-    			<h3>Copy Details From Existing Vacancy</h3>
-    			<div>You can fill out vacancy details like location, features etc from existing vacancy. Choose a previously entered vacancy by selecting it from the drop down below and clicking <b>SELECT</b> button.</div>
-    			<br />  
-    
-    			<select id="existing_vacancy">
-    				<option value="">-Please Select-</option>
-                    <?php
-                    while($data_post=mysqli_fetch_assoc($obj_post))
-                    { ?>
-                        <option value="<?php echo $data_post['post_id']; ?>"><?php echo $data_post['name_en'];?></option>
-                  <?php  }
-                    ?>
-    			</select>
-    			<button style="color:#555;font-weight:bold;padding:7px 15px;" id="select_vacancy">SELECT</button>
-    			
-    		</div>
+<!--    		<div class="exitingListingBlock">-->
+<!--    			<h3>Copy Details From Existing Vacancy</h3>-->
+<!--    			<div>You can fill out vacancy details like location, features etc from existing vacancy. Choose a previously entered vacancy by selecting it from the drop down below and clicking <b>SELECT</b> button.</div>-->
+<!--    			<br />  -->
+<!--    -->
+<!--    			<select id="existing_vacancy">-->
+<!--    				<option value="">-Please Select-</option>-->
+<!--                    --><?php
+//                    while($data_post=mysqli_fetch_assoc($obj_post))
+//                    { ?>
+<!--                        <option value="--><?php //echo $data_post['post_id']; ?><!--">--><?php //echo $data_post['name_en'];?><!--</option>-->
+<!--                  --><?php // }
+//                    ?>
+<!--    			</select>-->
+<!--    			<button style="color:#555;font-weight:bold;padding:7px 15px;" id="select_vacancy">SELECT</button>-->
+<!--    			-->
+<!--    		</div>-->
     		
 
     		<form action="save_post.php" method="post" name="propForm" id="propForm" enctype="multipart/form-data">
@@ -357,19 +357,13 @@ $obj_post= mysqli_query($conn,$que_post);
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" value="" maxlength="3">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
     					&nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d"  value="" maxlength="10">
+
+						<input type="hidden" class="numberonly text quater input" name="alt_contact_a" value="" maxlength="3">
+						<input type="hidden" class="numberonly text quater input" name="alt_contact_b" value="" maxlength="3">
+						<input type="hidden" class="numberonly text quater input" name="alt_contact_c"  value="" maxlength="4">
                     </td>
     			</tr>
-    	         <tr valign="top">
-                        <td class="subheader">
-                            Alt Contact Phone:
-                        </td>
-                        <td class="">
-                            <input type="text" class="numberonly text quater input" name="alt_contact_a"  maxlength="3">
-                            <input type="text" class="numberonly text quater input" name="alt_contact_b" value="" maxlength="3">
-                            <input type="text" class="numberonly text quater input" name="alt_contact_c"  value="" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-                            &nbsp;&nbsp;<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="" maxlength="10">
-                        </td>
-                    </tr>
+
     			<tr valign="top">
     				<td class="subheader">
     					Contact Fax:
