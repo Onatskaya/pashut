@@ -1966,8 +1966,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	<div class="container-fluid ll-signup-area top">
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
-				<div class="img_a center">
+			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat; position: relative;">
+				<div class="centered-content">
 					<a href="faq.php">
 						שאלות נפוצות
 					</a>
@@ -2012,7 +2012,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					<li style="text-align:right!important;">רישומים טרום מאושר & תמונות</li>
 					<li style="text-align:right!important;">עודכן לפי שעה</li>
 				</ul>
-				<div class="img_a" style="text-align:right!important;">
+				<div class="img_a padd" style="text-align:right!important;">
 					<a href="sitemap.php">
 						קרא עוד
 					</a>
