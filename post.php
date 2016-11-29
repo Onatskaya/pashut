@@ -208,9 +208,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<input type="text" class="medium" size="30" maxlength="50" name="ll_city">
 						</div>
 						<div class="col-md-4">	
-							<label>State:</label>
+							<label>Country:</label>
 							<select name="ll_state" class="small">
-								<option >AL</option>
+								<option value="Israel" >Israel</option>
 							</select>
 						</div>
 						<div class="col-md-4">	
