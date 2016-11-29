@@ -1804,4 +1804,5 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
     .form_page .col-md-12 textarea {width: 100%;}
     .form_page .col-md-12 button,
     .llsignup input {width: 50%!important;}
+    .ll-signup-area.top .col-md-4:last-child {margin-top: 17px;
 }
