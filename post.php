@@ -75,6 +75,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 						
 				<!-- Latest compiled and minified CSS -->
+				<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 				<link href="css/201603/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 				<link rel="stylesheet" href="css/bootstrap.min.css">
 				<!-- Custom styles for this template -->
@@ -92,6 +93,15 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			
 			
 			<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
+			<style>
+				.select2-container--default .select2-selection--single {
+					border: 2px solid #CCC;
+					height: 35px;
+				}
+				.select2-container--default .select2-selection--single .select2-selection__arrow {
+					height: 35px;
+				}
+			</style>
 			
 			
         
@@ -198,9 +208,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<input type="text" class="medium" size="30" maxlength="50" name="ll_city">
 						</div>
 						<div class="col-md-4">	
-							<label>State:</label>
+							<label>Country:</label>
 							<select name="ll_state" class="small">
-								<option >AL</option>
+								<option value="Israel" >Israel</option>
 							</select>
 						</div>
 						<div class="col-md-4">	
@@ -341,7 +351,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<!-- Placed at the end of the document so the pages load faster -->
 	
 	<script src="js/jquery_003.js"></script>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+	<script type="text/javascript">
+	  $('select').select2({minimumResultsForSearch: Infinity});
+	</script>
 
 
 	

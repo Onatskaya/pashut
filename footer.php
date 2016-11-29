@@ -1,3 +1,4 @@
+<div class="clearfixt"></div>
 <div class="container-fluid footer">
 	<!-- <div class="container highlight-section">
 		<div class="col-md-8">
@@ -47,4 +48,4 @@
 	</div>
 	
 </div>
-<div id="fb-root"></div>
+<!--<div id="fb-root"></div>-->
