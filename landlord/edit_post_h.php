@@ -435,19 +435,15 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" maxlength="3" value="<?php echo $data_post['contact_b']; ?>">
 									<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c" maxlength="4" value="<?php echo $data_post['contact_c']; ?>"><span style="font-size:16px;color:#C30">*</span>
 									<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="input numberonly text smalltext" name="contact_d" maxlength="10" value="<?php echo $data_post['contact_d']; ?>">
+
+									<!-- Hide old Alt phone field  -->
+									<input type="hidden" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="">
+									<input type="hidden" class="numberonly text quater" name="alt_contact_b" value="" maxlength="3">
+									<input type="hidden" class="input numberonly text quater" name="alt_contact_c" value="" maxlength="4">
+									<input type="hidden" class="input numberonly text smalltext" name="alt_contact_d"  value="" maxlength="10">
+									<!-- End Hide old Alt phone field -->
 								</td>
 							</tr>
-							 <tr valign="top">
-									<td class="subheader">
-										לתקשר אלטרנטיבי :
-									</td>
-									<td class="small-marg">
-										<input type="text" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
-										<input type="text" class="numberonly text quater" name="alt_contact_b" value="<?php echo $data_post['alt_contact_b']; ?>" maxlength="3">
-										<input type="text" class="input numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-										<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="input numberonly text smalltext" name="alt_contact_d"  value="<?php echo $data_post['alt_contact_d']; ?>" maxlength="10">
-									</td>
-								</tr>
 							<tr valign="top">
 								<td class="subheader">
 									פַקס:

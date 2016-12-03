@@ -235,28 +235,6 @@ $obj_post= mysqli_query($conn,$que_post);
     			
     			<div class="center-mod">
     			
-    		
-
-    		
-    		<div class="exitingListingBlock">
-    			<h3>פרטים העתיקו מ פנוי קיימים</h3>
-    			<div>ניתן למלא את פרטים פנויים כמו מיקום , תכונות וכו 'מן הריקנות קיימת . <b>בחר</b> פנוי אחרון שהוזן על ידי בחירה מתוך הנפתח למטה והלחיצה על לחצן בחירה .</div>
-    			<br />  
-    
-    			<select id="existing_vacancy">
-    				<option value="">בבקשה תבחר</option>
-                    <?php
-                    while($data_post=mysqli_fetch_assoc($obj_post))
-                    { ?>
-                        <option value="<?php echo $data_post['post_id']; ?>"><?php echo $data_post['name_he'];?></option>
-                  <?php  }
-                    ?>
-    			</select>
-    			<button style="color:#555;font-weight:bold;padding:7px 15px;" id="select_vacancy">בחר</button>
-    			
-    		</div>
-    		
-
     		<form action="save_post.php" method="post" name="propForm" id="propForm" class="herbew-form" enctype="multipart/form-data">
     			   		
 

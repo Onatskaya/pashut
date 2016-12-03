@@ -49,6 +49,7 @@ while($data_time3=mysqli_fetch_assoc($obj_time))
 }
 
 
+
 $member_id=$_SESSION['member_id'];
 
 $que_unit="SELECT * FROM unit_tbl ";
@@ -65,6 +66,7 @@ $obj_parking=mysqli_query($conn,$que_parking);
 
 $que_bath="SELECT * FROM bath_tbl";
 $obj_bath=mysqli_query($conn,$que_bath);
+
 
 $que_bedroom="SELECT * FROM bedroom_tbl";
 $obj_bedroom=mysqli_query($conn,$que_bedroom);
@@ -84,9 +86,8 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     $data_city2[]=$data_city3;
 }
 
-
 ?>
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <html lang="en">
   <head>		
 		<title>Pashutlehaskir.com</title>
@@ -105,7 +106,8 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 		<link href="../css/201603/global.css" rel="stylesheet">
 		<link href="../css/201603/section.css" rel="stylesheet">
 		<link href="../css/201603/carousel.css" rel="stylesheet">
-	
+
+	  	<script src="http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk"></script>
 		<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 		<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
 		<meta name="robots" content="index,follow" />
@@ -126,9 +128,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
 
 
-    <link rel="stylesheet" href="/css/lightbox.css" type="text/css" />
-
-
+<!--    <link rel="stylesheet" href="/css/lightbox.css" type="text/css" />-->
 
 
     <div class="ll-dash post-listing">
@@ -195,7 +195,6 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     		
     		
     		<div class="col-md-12">
-    			
 
 
     <div class="dash-top-section-wrap row">
@@ -253,10 +252,6 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     </div>
     			
     			<div class="center-mod">
-   		
-
-    			   		
-
     		      <table class="table_type_4" cellspacing="0" cellpadding="0" border="0">
     			<tr valign="top">
     				<td colspan="2">
@@ -268,9 +263,8 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                             <div class="col-xs-12 col-md-6">
                                 <div class="listing-map">                                   
                                     <div class="top-map" style="width: auto; height: 230px; margin: 0px auto 15px; position: relative;">
-                                        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
                                         <div style='overflow:hidden;height:230px;width:auto;'>
-                                            <div id='gmap_canvas' style='height:230px;width:auto;'></div>
+                                            <div id='gmap_first_canvas' style='height:230px;width:auto;'></div>
                                             <div>
                                                 <small><a href="http://embedgooglemaps.com">                                    
                                                 embed google maps                           
@@ -281,7 +275,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                             </div>
                                             <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
                                         </div>
-                                        <?php echo "<script type='text/javascript'>function init_map(){var myOptions = {zoom:".$data_post['property_zoom'].",center:new google.maps.LatLng('".$data_post['property_lat']."','".$data_post['property_lng']."'),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(".$data_post['property_lat'].",".$data_post['property_lng'].")});infowindow = new google.maps.InfoWindow({content:'<strong>Location</strong><br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>"; ?>
+                                        <?php echo "<script type='text/javascript'>function init_map(){var myOptions = {zoom:".$data_post['property_zoom'].",center:new google.maps.LatLng('".$data_post['property_lat']."','".$data_post['property_lng']."'),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_first_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(".$data_post['property_lat'].",".$data_post['property_lng'].")});infowindow = new google.maps.InfoWindow({content:'<strong>Location</strong><br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>"; ?>
                                     </div>
                                 </div>
                             </div>
@@ -406,19 +400,15 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_b" id="contact_b" maxlength="3" value="<?php echo $data_post['contact_b']; ?>">
     					<input type="text" class="input validate[required,custom[number]] numberonly text quater" name="contact_c" id="contact_c" maxlength="4" value="<?php echo $data_post['contact_c']; ?>"><span style="font-size:16px;color:#C30">*</span>
     					<span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="contact_d" maxlength="10" value="<?php echo $data_post['contact_d']; ?>">
-                    </td>
+
+						<!-- Hide old Alt phone field  -->
+						<input type="hidden" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="">
+						<input type="hidden" class="input numberonly text quater" name="alt_contact_b" value="" maxlength="3">
+						<input type="hidden" class="input numberonly text quater" name="alt_contact_c" value="" maxlength="4">
+						<input type="hidden" class="numberonly text smalltext" name="alt_contact_d"  value="" maxlength="10">
+						<!-- End Hide old Alt phone field  -->
+					</td>
     			</tr>
-    	         <tr valign="top">
-                        <td class="subheader">
-                            Alt Contact Phone:
-                        </td>
-                        <td class="">
-                            <input type="text" class="input numberonly text quater" name="alt_contact_a"  maxlength="3" value="<?php echo $data_post['alt_contact_a']; ?>">
-                            <input type="text" class="input numberonly text quater" name="alt_contact_b" value="<?php echo $data_post['alt_contact_b']; ?>" maxlength="3">
-                            <input type="text" class="input numberonly text quater" name="alt_contact_c" value="<?php echo $data_post['alt_contact_c']; ?>" maxlength="4"><span style="font-size:16px;color:#C30">*</span>
-                            <span style="position:relative;top:4px;">Ext.</span> <input type="text" class="numberonly text smalltext" name="alt_contact_d"  value="<?php echo $data_post['alt_contact_d']; ?>" maxlength="10">
-                        </td>
-                    </tr>
     			<tr valign="top">
     				<td class="subheader">
     					Contact Fax:
@@ -1060,56 +1050,74 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                 <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
                                     <tr valign="top">
                                         <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_a">
-                                        <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-                                        <td class="medsubheader">
-                                           Front Image
-                                        </td>
-                                        <td class="field" align="center">
-                                            <img src="../home_images/<?php echo $data_post['main_image'];?>" height="80" width="90"> 
-                                        </td>
-                                         <td class="field">
-                                            <input type="hidden" name="old_main_image" value="<?php echo $data_post['main_image']; ?>">
-                                            <input type="file" name="main_image" class="input validate[required]">
-                                        </td>
-                                        <td class="field">
-                                            <input type="submit" class="btn btn-info" value="Update">
-                                        </td>
+											<input type="hidden" name="pid" value="<?php echo $post_id; ?>">
+											<td class="medsubheader">
+											   Front Image
+											</td>
+											<?php if( $data_post['main_image'] ): ?>
+												<td class="field" align="center">
+													<img src="../home_images/<?php echo $data_post['main_image'];?>" height="80" width="90">
+												</td>
+												<td class="field">
+													<a href="delete_image.php?img=main_image&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+												</td>
+											<?php else: ?>
+												<td class="field">
+													<input type="hidden" name="old_main_image" value="<?php echo $data_post['main_image']; ?>">
+													<input type="file" name="main_image" class="input validate[required]">
+												</td>
+												<td class="field" align="center">
+													<input type="submit" class="btn btn-info" value="Update">
+												</td>
+											<?php endif; ?>
                                         </form>
                                     </tr>
                                     <tr valign="top">
                                         <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_b">
-                                        <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-                                        <td class="medsubheader">
-                                           Image 1
-                                        </td>
-                                        <td class="field" align="center">
-                                           <img src="../home_images/<?php echo $data_post['image1'];?>" height="80" width="90">
-                                        </td>
-                                         <td class="field">
-                                            <input type="hidden" name="old_image1" value="<?php echo $data_post['image1']; ?>">
-                                            <input type="file" name="image1" class="input validate[required]">
-                                        </td>
-                                        <td class="field">
-                                            <input type="submit" class="btn btn-info" value="Update">
-                                        </td>
+											<input type="hidden" name="pid" value="<?php echo $post_id; ?>">
+											<td class="medsubheader">
+											   Image 1
+											</td>
+											<?php if( ! empty( $data_post['image1'] ) ) : ?>
+												<td class="field" align="center">
+													<img src="../home_images/<?php echo $data_post['image1'];?>" height="80" width="90">
+												</td>
+												<td class="field" align="center">
+													<a href="delete_image.php?img=image1&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+												</td>
+											<?php else: ?>
+												<td class="field">
+													<input type="hidden" name="old_image1" value="<?php echo $data_post['image1']; ?>">
+													<input type="file" name="image1" class="input validate[required]">
+												</td>
+												<td class="field">
+													<input type="submit" class="btn btn-info" value="Update">
+												</td>
+											<?php endif; ?>
                                         </form>
                                     </tr>
                                     <tr valign="top">
                                         <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_c">
-                                        <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-                                        <td class="medsubheader">
-                                           Image 2
-                                        </td>
-                                        <td class="field" align="center">
-                                           <img src="../home_images/<?php echo $data_post['image2'];?>" height="80" width="90">
-                                        </td>
-                                         <td class="field">
-                                            <input type="hidden" name="old_image2" value="<?php echo $data_post['image2']; ?>">
-                                            <input type="file" name="image2" class="input validate[required]">
-                                        </td>
-                                        <td class="field">
-                                            <input type="submit" class="btn btn-info" value="Update">
-                                        </td>
+											<input type="hidden" name="pid" value="<?php echo $post_id; ?>">
+											<td class="medsubheader">
+											   Image 2
+											</td>
+											<?php if( ! empty( $data_post['image2'] ) ) : ?>
+												<td class="field" align="center">
+													<img src="../home_images/<?php echo $data_post['image2'];?>" height="80" width="90">
+												</td>
+												<td class="field" align="center">
+													<a href="delete_image.php?img=image2&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+												</td>
+											<?php else: ?>
+												<td class="field">
+													<input type="hidden" name="old_image2" value="<?php echo $data_post['image2']; ?>">
+													<input type="file" name="image2" class="input validate[required]">
+												</td>
+												<td class="field">
+													<input type="submit" class="btn btn-info" value="Update">
+												</td>
+											<?php endif; ?>
                                         </form>
                                     </tr>
                                     <tr valign="top">
@@ -1118,16 +1126,22 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                         <td class="medsubheader">
                                            Image 3
                                         </td>
-                                        <td class="field" align="center">
-                                           <img src="../home_images/<?php echo $data_post['image3'];?>" height="80" width="90">
-                                        </td>
-                                         <td class="field">
-                                            <input type="hidden" name="old_image3" value="<?php echo $data_post['image3']; ?>">
-                                            <input type="file" name="image3" class="input validate[required]">
-                                        </td>
-                                        <td class="field">
-                                            <input type="submit" class="btn btn-info" value="Update">
-                                        </td>
+											<?php if( ! empty( $data_post['image3'] ) ) : ?>
+												<td class="field" align="center">
+													<img src="../home_images/<?php echo $data_post['image3'];?>" height="80" width="90">
+												</td>
+												<td class="field" align="center">
+													<a href="delete_image.php?img=image3&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+												</td>
+											<?php else: ?>
+												<td class="field">
+													<input type="hidden" name="old_image3" value="<?php echo $data_post['image3']; ?>">
+													<input type="file" name="image3" class="input validate[required]">
+												</td>
+												<td class="field">
+													<input type="submit" class="btn btn-info" value="Update">
+												</td>
+											<?php endif; ?>
                                         </form>
                                     </tr>
                                     <tr valign="top">
@@ -1136,34 +1150,46 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                                         <td class="medsubheader">
                                            Image 4
                                         </td>
-                                        <td class="field" align="center">
-                                           <img src="../home_images/<?php echo $data_post['image4'];?>" height="80" width="90">
-                                        </td>
-                                         <td class="field">
-                                            <input type="hidden" name="old_image4" value="<?php echo $data_post['image4']; ?>">
-                                            <input type="file" name="image4" class="input validate[required]">
-                                        </td>
-                                        <td class="field">
-                                            <input type="submit" class="btn btn-info" value="Update">
-                                        </td>
+										<?php if( ! empty( $data_post['image4'] ) ) : ?>
+											<td class="field" align="center">
+												<img src="../home_images/<?php echo $data_post['image4'];?>" height="80" width="90">
+											</td>
+											<td class="field" align="center">
+												<a href="delete_image.php?img=image4&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+											</td>
+										<?php else: ?>
+											<td class="field">
+												<input type="hidden" name="old_image4" value="<?php echo $data_post['image4']; ?>">
+												<input type="file" name="image4" class="input validate[required]">
+											</td>
+											<td class="field">
+												<input type="submit" class="btn btn-info" value="Update">
+											</td>
+										<?php endif; ?>
                                         </form>
                                     </tr>
                                     <tr valign="top">
                                         <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_f">
-                                        <input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-                                        <td class="medsubheader">
-                                           Image 5
-                                        </td>
-                                        <td class="field" align="center">
-                                           <img src="../home_images/<?php echo $data_post['image5'];?>" height="80" width="90">
-                                        </td>
-                                         <td class="field">
-                                            <input type="hidden" name="old_image5" value="<?php echo $data_post['image5']; ?>">
-                                            <input type="file" name="image5" class="input validate[required]">
-                                        </td>
-                                        <td class="field">
-                                            <input type="submit" class="btn btn-info" value="Update">
-                                        </td>
+											<input type="hidden" name="pid" value="<?php echo $post_id; ?>">
+											<td class="medsubheader">
+											   Image 5
+											</td>
+											<?php if( ! empty( $data_post['image5'] ) ) : ?>
+												<td class="field" align="center">
+													<img src="../home_images/<?php echo $data_post['image5'];?>" height="80" width="90">
+												</td>
+												<td class="field" align="center">
+													<a href="delete_image.php?img=image5&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+												</td>
+											<?php else: ?>
+												<td class="field">
+													<input type="hidden" name="old_image5" value="<?php echo $data_post['image5']; ?>">
+													<input type="file" name="image5" class="input validate[required]">
+												</td>
+												<td class="field" align="center">
+													<input type="submit" class="btn btn-info" value="Update">
+												</td>
+											<?php endif; ?>
                                         </form>
                                     </tr>
                                 <?php
@@ -2101,7 +2127,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
     <link rel="stylesheet" href="../themes/base/jquery.ui.all.css">
      <link rel="stylesheet" href="../css/demo.css">
-     <script src="http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false"></script>
+
 
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
