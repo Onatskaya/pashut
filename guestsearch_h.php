@@ -50,6 +50,11 @@ if(isset($_GET['city']))
         $que_search.=" AND furnished ='$furnished' ";
     }
 
+	// Featured search
+	if(isset($_SESSION['member_logged'] ) &&  (!empty($_REQUEST['featured_search']) && $_REQUEST['featured_search'] == 'Yes' ))
+	{
+		$que_search.=" AND featured_listing ='Yes' ";
+	}
 
 
     $que_search.="ORDER BY featured_listing DESC";
@@ -512,13 +517,17 @@ if(isset($_GET['city']))
 									}
                                 ?> 
                             </select>
+							<div class="medium right-pad">
+								<label for="featured_search">Featured search</label>
+								<input type="checkbox" name="featured_search" value="Yes">
+							</div>
                         </div>
                         <div class="col">
                             <input type="hidden" value="g" name="searchType">
                             
                             <input type="submit" align="absmiddle" value="חפש" class="search" name="search-submit" style="margin-top: 1%;">
                         <?php
-                        if(!isset($_SESSION['member_logged']))
+                        if(isset($_SESSION['member_logged']))
                         { ?>
                             <a href="#" align="absmiddle" class="btn btn-danger" style="background-color:#EE2324; padding:12px 14px;font-size: 16px; margin-left: 78%;" id="adv_search">חיפוש מתקדם</a>
                             
