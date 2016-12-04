@@ -463,6 +463,14 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<div class="hidden-xs hidden-sm">
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">חזרה לעמוד הקודם</a>				
 								<br><a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">צפייה מיידית</a>
+								<?php if( !empty($_SESSION['member_id']) && !empty($data['member_id']) && $_SESSION['member_id'] == $data['member_id'] ): ?>
+									<form id="add-to-featured" action="add_to_futured.php">
+										<a href="#" class="js-add-to-featured" data-toggle="tooltip" data-placement="left" title="Featured Listings: Upgrading your property to a featured listing creates higher visibility  and a surge in demand for your listing. Renters see featured listings on the top of their searches. Click the 'Upgrade' button below to purchase" >
+											<i class='glyphicon glyphicon-question-sign'></i>
+										</a>
+										<input type="submit" class="payrentLink" name="add-futured">
+									</form>
+								<?php endif; ?>
 								<div class="walkscore">
 										<div class="top">WALKSCORE</div>
 										<div class="body">
@@ -700,7 +708,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			// alert('hi');
+			$(".js-add-to-featured").tooltip({
+				placement: 'left'
+			});
+
 			$("#form_rent").validationEngine();
 		});
 		function checkHELLO(field, rules, i, options){
