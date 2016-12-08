@@ -74,7 +74,10 @@ $obj_member= mysqli_query($conn,$que_member);
 						            <td><?php echo $data_member['username'];?></td>
 						            <td><?php echo $data_member['mem_phone_a'];?>-<?php echo $data_member['mem_phone_b'];?>-<?php echo $data_member['mem_phone_c'];?></td>
 						            <td><?php  check_plan($data_member['membership_plan']); ?></td>
-						        	<td><a href="view_member_detail.php?lid=<?php echo $data_member['member_id'];?>" class="btn btn-danger">View Detail</a> </td>
+						        	<td>
+										<a href="view_member_detail.php?lid=<?php echo $data_member['member_id'];?>" class="glyphicon glyphicon-eye-open"></a>
+										<a href="delete_member.php?lid=<?php echo $data_member['member_id'];?>" data-href="delete_member.php?pid=<?php echo $data_member['member_id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
+									</td>
 						        </tr>
 						        	
 				    		<?php 

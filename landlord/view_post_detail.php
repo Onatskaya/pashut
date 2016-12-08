@@ -461,6 +461,14 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<div class="hidden-xs hidden-sm">
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">Back to Previous Page</a>				
 								<br><a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">Instant Viewing</a>
+								<?php if( !empty($_SESSION['member_id']) && !empty($data['member_id']) && $_SESSION['member_id'] == $data['member_id'] ): ?>
+									<form id="add-to-featured" action="add_to_futured.php">
+										<a href="#" class="js-add-to-featured" data-toggle="tooltip" data-placement="left" title="Featured Listings: Upgrading your property to a featured listing creates higher visibility  and a surge in demand for your listing. Renters see featured listings on the top of their searches. Click the 'Upgrade' button below to purchase" >
+												<i class='glyphicon glyphicon-question-sign'></i>
+										</a>
+										<input type="submit" class="payrentLink" name="add-futured">
+									</form>
+								<?php endif; ?>
 								<div class="walkscore">
 										<div class="top">WALKSCORE</div>
 										<div class="body">
@@ -564,22 +572,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				</div> <!-- End listing-detail div -->
 			</div>
 
-			<!-- <div class="container-fluid footer">
-				<div class="container highlight-section">
-					<div class="col-md-8">
-						<h2>AS SEEN IN </h2>
-						<img src="../images/2016/as-seen-banner.jpg">
-					</div>
-					<div class="col-md-4">
-						<a href="#"><img src="../images/2016/download-app-banner.jpg"></a>
-					</div>
-				</div>
-				<div class="container-fluid disclaimer">
-					<div class="col-md-12 col-xs-12  text-center">
-						Westside Rentals is bonded and the only non restricted fully licensed rental service under the California Bureau of Real Estate.
-					</div>
-				</div>													
-			</div> -->
 		</div>	
 	</div>
 </div> <!-- End main container div -->
@@ -698,7 +690,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			// alert('hi');
+			$(".js-add-to-featured").tooltip({
+				placement: 'left'
+			});
+
 			$("#form_rent").validationEngine();
 		});
 		function checkHELLO(field, rules, i, options){

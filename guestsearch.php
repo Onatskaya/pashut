@@ -50,9 +50,14 @@ if(isset($_GET['city']))
         $que_search.=" AND furnished ='$furnished' ";
     }
 
+	// Featured search
+	if(isset($_SESSION['member_logged'] ) &&  (!empty($_REQUEST['featured_search']) && $_REQUEST['featured_search'] == 'Yes' ))
+	{
+		$que_search.=" AND featured_listing ='Yes' ";
+	}
 
 
-    $que_search.="ORDER BY featured_listing DESC";
+	$que_search.="ORDER BY featured_listing DESC";
     // print_r($que_search);die;
     $obj_search=mysqli_query($conn,$que_search);
     if($rows=mysqli_num_rows($obj_search))
@@ -496,6 +501,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 									}
                                 ?> 
 							</select>
+							<div class="medium right-pad">
+								<label for="featured_search">Featured search</label>
+								<input type="checkbox" name="featured_search" value="Yes">
+							</div>
                         </div>
                         <br>
                         <div class="col">

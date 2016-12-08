@@ -1,13 +1,15 @@
 <?php
-include('../functions/function.php');
-include('check_login.php');
+include("../functions/function.php");
 
-$que_landlord="SELECT * FROM members WHERE member_type='landlord' ORDER BY member_id DESC ";
-// print_r($que_post);die;
-$obj_landlord= mysqli_query($conn,$que_landlord);
+$member_id= $_SESSION['member_id'];
+$image_id= $_GET['iid'];
+$post_id= $_GET['post_id'];
+
+$que="SELECT * FROM house_image WHERE image_id='$image_id' ";
+$obj= mysqli_query($conn,$que);
+$data= mysqli_fetch_assoc($obj);
 
 ?>
-
 <!DOCTYPE HTML> 
 <html lang="en">
   <head>		
@@ -46,64 +48,39 @@ $obj_landlord= mysqli_query($conn,$que_landlord);
     ================================================== -->
 <div class="container">
 	<div class="container locations">
-		<!-- <h4 style="background-color:#3D4D65;color:#fff;text-align:center;">Registered Landlord</h4> -->
-		<center><h2>Landlords</h2></center>
-		
-			<div class="row">
-				<table id="myTable" class="table table-striped dataTable table-bordered">                       
-				    <thead>
-				        <tr>
-			               <th class="col-md-1">S.No.</th>
-			               <th class="col-md-2">Name</th>
-			               <th class="col-md-2">Username</th>
-			               <th class="col-md-2">City</th>
-			               <th class="col-md-2">Account Type</th>
-			               <th class="col-md-1">Actions</th>
-				        </tr>
-				    </thead>
-				    <tbody>
-				    	<?php
-				    	$n=1;
-				    		while($data_landlord=mysqli_fetch_assoc($obj_landlord))
-				    		{  ?>
-						        <tr>
-						            <td><?php echo $n; ?></td>
-						            <td><?php echo $data_landlord['first_name'];?>&nbsp;<?php echo $data_landlord['last_name'];?></td>
-						            <td><?php echo $data_landlord['username'];?></td>
-						            <td><?php echo $data_landlord['mem_city'];?></td>
-						            <td><?php echo $data_landlord['ll_type'];?></td>
-						        	<td>
-                                        <a href="view_landlord_detail.php?lid=<?php echo $data_landlord['member_id'];?>" data-href="view_landlord_detail.php?lid=<?php echo $data_landlord['member_id'];?>" class="glyphicon glyphicon-eye-open"></a>
-                                        <a href="delete_landloard.php?lid=<?php echo $data_landlord['member_id'];?>" data-href="delete_landloard.php?lid=<?php echo $data_landlord['member_id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
-                                    </td>
-						        </tr>
-						        	
-				    		<?php 
-				    		$n++; 
-				    		}
-				    		?>
-				    </tbody>
-				</table>
-			</div>	
-		
-		
+		<div class="col-md-5" align="center"></div>
+		<div class="col-md-12" align="center">
+			<form action="update_image_r.php" method="POST" enctype="multipart/form-data" id="image_a">
+				<input type="hidden" name="post_id" value="<?php echo $post_id; ?>" >
+				<input type="hidden" name="image_id" value="<?php echo $image_id; ?>" >
+				<h2>Update Image</h2>
+				<div class="row">
+					<img src="../home_images/<?php echo $data['image'];?>" height="400" width="450">
+				</div>
+				<br>
+				<div class="row" align="center">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<input type="file" name="new_image" class="input validate[required] form-control">
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				<br>
+				<div class="row">
+					<input type="submit" class="btn btn-danger">
+				</div>
+			</form>
 
 
 
 
 
 
-
-
+		</div>
 	</div>
 </div> <!-- End main container div -->
 	
-	<br>
-	<br>
-	<br>
-	<br>
-
-
+	
 	<!-- FOOTER -->
 <?php
 	include("footer.php");
@@ -129,8 +106,7 @@ $obj_landlord= mysqli_query($conn,$que_landlord);
 <script src="../js/new/jquery.cycle.all.js"></script>
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/bootstrap-confirmation.js"></script>
+<script src="../js/bootstrap.min.js"></script>		
 <script src="../js/fb_login.js"></script>	
 <script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>	
 <script src="../js/default.js" type="text/javascript" language="javascript"></script>	
@@ -140,11 +116,17 @@ $obj_landlord= mysqli_query($conn,$que_landlord);
 	
 
 
-<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
-
+<link rel="stylesheet" href="../css/validationEngine.jquery.css">
+<script src="../js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
- jQuery( document ).ready(function( $ ) {
-    $('#myTable').dataTable({ "bSort": false});
-});
+	$(document).ready(function(){
+		// alert('hi');
+		$("#image_a").validationEngine();
+	});
+	function checkHELLO(field, rules, i, options){
+			if (field.val() != "HELLO") {
+			return options.allrules.validate2fields.alertText;
+			}
+	}
 </script>
