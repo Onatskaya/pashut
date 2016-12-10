@@ -629,7 +629,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							
 					
 						<div class="col-md-4 col-xs-12">
-							<div class="hidden-xs hidden-sm">	
+							<div class="">	
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">חזרה לעמוד הקודם</a>	
 								<?php
 								if(!isset($_SESSION['member_logged']))
@@ -650,7 +650,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 											</div><h3></h3></div>
 							</div> 
 			 
-							<div class="hidden-xs hidden-sm">				
+							<div class="">				
 								<div class="soundscore">
 									<div class="top">Soundscore : <span style="color: #EE583F" id="color_s"><?php $WHERE_SOUND['id']=$data['soundscore']; echo select('soundscore',$WHERE_SOUND)[0]['soundscore_he'];?></span></div>
 									<div class="body">

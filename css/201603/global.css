@@ -184,6 +184,10 @@ ul.nav li.dropdown:hover > ul.dropdown-menu a:hover{color:#EEE;text-decoration:u
 /*.listing-details .signupLink {float:left;margin:5px 15px 0 0;padding: 10px 10px; border-radius: 2px; background: #0074e4; color: #FFF;font-size:24px;font-weight:bold; text-decoration: none; text-transform: uppercase; }*/
 /*.listing-details .messageLink, .listing-details .favLink {float:left;margin:5px 15px 0 0; padding: 15px 10px; border-radius: 2px; background: #777; color: #FFF;font-size:18px;font-weight:bold; text-decoration: none; }*/
 .listing-details .listing-map{margin-top:0px;}
+@media (min-width : 320px) and (max-width : 767px){
+   .listing-details .listing-map > div,
+   .listing-details .listing-map > div > div { width: 100%!important; } 
+}
 /*.listing-details .listing-info{border:1px solid #CCC;border-radius:5px;color:#888;}*/
 .listing-details .listing-info .row{padding:10px 5px;}
 .listing-details .listing-info .row strong{display:block;}
@@ -1767,7 +1771,18 @@ body.nolayout {background:none;}
 .img_a.padd {bottom: 44px;position: absolute;}
 .img_a.center {text-align: center;padding: 69px 0 0;}
 .img_a.center a{font-size: 29px;}
-
+a[href="faq.php"] {
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    color: #fff;
+}
+.centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 /*.............sudhakar   19-07-2016...........*/
 
 body.guest{background:url(../../images/footer-bg.png) center bottom, url(../../images/plhBackground.jpg) center top;background-repeat: no-repeat;}
@@ -1789,4 +1804,5 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
     .form_page .col-md-12 textarea {width: 100%;}
     .form_page .col-md-12 button,
     .llsignup input {width: 50%!important;}
+    .ll-signup-area.top .col-md-4:last-child {margin-top: 17px;
 }

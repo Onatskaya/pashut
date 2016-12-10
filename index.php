@@ -1964,7 +1964,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					<li>Pre-Approved Listings & Photos</li>
 					<li>Updated Hourly</li>
 				</ul>
-				<div class="img_a">
+				<div class="img_a padd">
 					<a href="sitemap.php">
 						READ MORE
 					</a>
@@ -2001,8 +2001,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		</div>
 
 		<div class="col-md-4">
-			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
-				<div class="img_a center">
+			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_landlordsbanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat; position: relative;">
+				<div class="centered-content">
 					<a href="faq.php">
 						FAQ'S
 					</a>
