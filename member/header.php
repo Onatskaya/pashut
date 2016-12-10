@@ -1,8 +1,6 @@
 <?php
-
 $member_id= $_SESSION['member_id'];
 $today_date= date('Y-m-d');
-
 
 $que_s="SELECT * FROM members m
 		INNER JOIN plan_tbl p on m.member_id = p.member_id
@@ -22,7 +20,7 @@ $que_pc="SELECT * FROM members WHERE member_id='$member_id' AND member_status='E
 // print_r($que_pc);die;
 $obj_pc= mysqli_query($conn,$que_pc);
 $data_pc=mysqli_fetch_assoc($obj_pc);
-	
+
 ?>
 <div class="navbar-wrapper">
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -47,10 +45,10 @@ $data_pc=mysqli_fetch_assoc($obj_pc);
 							{ ?>
 								<li class="home"><em></em><a href="view_property.php">Search Property</a></li>
 							<?php }
-							else
-							{
-								echo "<script>setTimeout(function(){window.location.href='update_plan.php'},2000);</script><h4 style='z-index:99; background-color:#FF3366;width:50%; top:200px;; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Membership is Expire , Upgrade your plan</h4>";
-							}
+//							else
+//							{
+//								echo "<script>setTimeout(function(){window.location.href='update_plan.php'},2000);</script><h4 style='z-index:99; background-color:#FF3366;width:50%; top:200px;; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Membership is Expire , Upgrade your plan</h4>";
+//							}
 						?>
 						<li class="post"><em></em><a href="member_detail.php">Profile</a></li>
 						<li class="post"><em></em><a href="update_plan.php">Upgrade Plan</a></li>

@@ -1806,3 +1806,6 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
     .llsignup input {width: 50%!important;}
     .ll-signup-area.top .col-md-4:last-child {margin-top: 17px;
 }
+}
+.btn.btn-danger.upgrade{display:    block; margin: 40px auto 0px; width: 30%; }
+#expirateModal .modal-title, .modal-body > p {text-align: center}

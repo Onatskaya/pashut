@@ -27,10 +27,10 @@ if(mysqli_num_rows($obj_pc))
 {
 	echo '<script>window.location.href = "view_property.php";</script>';
 }
-else
-{
-	echo "<script>setTimeout(function(){window.location.href='update_plan.php'},2000);</script><h4 style='z-index:99; background-color:#FF3366;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Membership is Expire , Upgrade your plan</h4>";
-}	
+//else
+//{
+//	echo "<script>setTimeout(function(){window.location.href='update_plan.php'},2000);</script><h4 style='z-index:99; background-color:#FF3366;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Membership is Expire , Upgrade your plan</h4>";
+//}
 
 // print_r($que_s);die;
 

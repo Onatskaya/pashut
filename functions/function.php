@@ -189,5 +189,70 @@ function Send_SMS($mobileNumber,$message,$route='1')
 	return $output;
 }
 
-?>
+function check_member_plan( $conn ){
 
+	if( empty($_SESSION['member_id']) || empty( $_SESSION['member_logged'] ) )
+		return;
+
+	$today_date= date('Y-m-d');
+	$member_id = $_SESSION['member_id'];
+
+	$que_s="SELECT * FROM members m
+		INNER JOIN plan_tbl p on m.member_id = p.member_id
+		WHERE m.member_id='$member_id' AND m.order_id= p.order_id ";
+
+	$obj_s=mysqli_query($conn,$que_s);
+	$data_s= mysqli_fetch_assoc($obj_s);
+	if($data_s['end_date'] < $today_date){
+
+		if( $data_s['member_status'] == 'Enable' ){
+			$que_pt="UPDATE plan_tbl SET plan_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
+			$obj_pt= mysqli_query($conn,$que_pt);
+			$que_mm="UPDATE members SET member_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
+			$obj_mm= mysqli_query($conn,$que_mm);
+		}
+	}
+
+	if( $data_s['end_date'] < $today_date || $data_s['member_status'] == 'Disable' ){
+
+?>
+		<div class="modal fade" id="expirateModal" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">You Membership plan is Expire!</h4>
+					</div>
+					<div class="modal-body">
+						<p>Thank you for using PashutLehaskir.com. Your membership has expired. Please upgrade your account to continue searching forproperties.</p>
+                        <a href="<?php echo site_url(); ?>/join.php" class="btn btn-danger upgrade" >Upgrade</a>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" id="no" >Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#expirateModal').modal('show');
+
+                $("#expirateModal").on("hidden.bs.modal", function () {
+                    window.location.href = '<?php echo site_url(); ?>/join.php';
+                });
+            });
+        </script>
+	<?php
+	}
+}
+
+function site_url(){
+    if(isset($_SERVER['HTTPS'])){
+        $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+    }
+    else{
+        $protocol = 'http';
+    }
+    return $protocol . "://" . $_SERVER['SERVER_NAME'];
+}

@@ -173,3 +173,10 @@ if(mysqli_num_rows($obj_s))
     $('#myTable').dataTable({ "bSort": false});
 });
 </script>
+<?php
+    if(isset($_SESSION['member_logged'])) {
+        include 'member_init.php';
+    }
+?>
+</body>
+</html>

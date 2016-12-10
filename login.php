@@ -17,7 +17,7 @@ if(select('members',$WHERE))
 	
 	$WHERE1['username']=$username;
 	$WHERE1['AND password']=$password;	
-	$WHERE1['AND member_status']='Enable';
+//	$WHERE1['AND member_status']='Enable';
 	
 	if($row=select('members',$WHERE))	
 	{
