@@ -2114,7 +2114,11 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	            })(this);
 	        </script>
 	    </div>
-
+        <?php
+        if(isset($_SESSION['member_logged'])) {
+            include 'member/member_init.php';
+        }
+        ?>
 	</div><!-- End main-wrapper -->
 	</body>
 </html>

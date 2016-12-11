@@ -51,27 +51,28 @@ while($data_time3=mysqli_fetch_assoc($obj_time))
 
 
 ?>
-    
-    <!DOCTYPE HTML> 
+
+    <!DOCTYPE HTML>
 <html lang="en">
   <head>
 
-  	
- 
-		
+
+
+
 				<title>pashutlehaskir.com</title>
 				<link rel="shortcut icon" href="" />
 				<meta charset="utf-8">
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
-				
+
 				<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 				<meta http-equiv="expires" content="0" />
 				<meta http-equiv="Pragma" content="no-cache" />
 				<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
 
-				
+
        			<meta name="apple-itunes-app" content="app-id=509021914">
-   				
+	  			<script src="../js/jquery.min.js"></script>
+
 
 					<script type="text/javascript">
 setTimeout(function(){var a=document.createElement("script");
@@ -90,7 +91,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     p.src = '//rum-static.pingdom.net/prum.min.js';
     s.parentNode.insertBefore(p, s);
 })();
-</script> 
+</script>
 
 			<script type="text/javascript">
 			function movetoNext(current, nextFieldID) {
@@ -115,10 +116,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			</script>
 
 
-			
 
 
-						
+
+
 				<!-- Latest compiled and minified CSS -->
 				<link href="../css/201603/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 				<link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -126,55 +127,52 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="../css/201603/global.css" rel="stylesheet">
 				<link href="../css/201603/section.css" rel="stylesheet">
 				<link href="../css/201603/carousel.css" rel="stylesheet">
-			
+
 					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
-				
+
 					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
-				
+
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
-				
-			
-			
+
+
+
 			<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
 	</head>
-			
+
 
 	<style type="text/css">
 		.search-results .search-filters {
 		    position: relative;
 		    width: 100%;
 		}
-	</style>			
-        
+	</style>
 
-	
+
+
 	<body  class="guest" >
-	
-	
+
+
 	<!-- Google Tag Manager -->
 
-<!-- End Google Tag Manager --> 
+<!-- End Google Tag Manager -->
 
-
-	
-		
 		<div id="slidedown-content" data-status="hide" class="none">
 			<div id="login-content" class="fb">
 				<form action="../login.php" name="loginForm" method="post">
 					<span>
-						<label>Username</label> 
+						<label>Username</label>
 						<input type="text" name="username" class="text" size="10" maxlength="100" />
 					</span>
 					<span>
 						<label>Password</label>
 						<input type="password" autocomplete="off" class="text" name="password" size="10" maxlength="45" />
-					</span>	
+					</span>
 
-					
+
 					<input type="image" name="login" class="submit" src="../images/new/btn-login.png" align="absmiddle" />
-					
-					
+
+
 
 				</form>
 				<div class="separator">
@@ -183,34 +181,34 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<div class="fb-login-section">
 				<a href="#" class="fb-login"><img src="../images/fblogin.png"></a>
 				</div>
-			</div>		
+			</div>
 		</div>
-	
+
 		<?php
 		include('header.php');
 		?>
-	
-	
+
+
     <!-- Carousel
     ================================================== -->
-		
+
 	<div class="container">
 
 <div class="container locations">
 	<div class="col-md-5" align="center"></div>
-	
-	
+
+
 	<div class="col-md-12" align="center">
 
 		<div class="listing-details container">
-				
-				
-		<div class="container listing-content">		
-				
+
+
+		<div class="container listing-content">
+
 		<div class="col-md-8">
 			<!-- <div class="row">
 				<div class="container-fluid search-results photo">
-					<div class="search-filters">	
+					<div class="search-filters">
 						<form action="view_property.php" name="searchForm" method="GET">
 							<div class="search-filters-span">
 								<div class="col">
@@ -223,10 +221,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				                        ?>
 									</select>
 								</div>
-								<div class="col">	
+								<div class="col">
 										<select class="med" name="priceLow">
 											<option value="0">From</option>
-											
+
 												<option value="">₪0</option>
 				                                <option value="500">₪500</option>
 				                                <option value="1000">₪1000</option>
@@ -288,12 +286,12 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				                                <option value="29000">₪29000</option>
 				                                <option value="29500">₪29500</option>
 				                                <option value="30000">₪30000</option>
-												
+
 										</select>
 										<span class="">-</span>
 										<select class="med pad" name="priceHigh">
 											<option value="0">To</option>
-											
+
 													<option value="500">₪500</option>
 				                                    <option value="1000">₪1000</option>
 				                                    <option value="1500">₪1500</option>
@@ -354,10 +352,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				                                    <option value="29000">₪29000</option>
 				                                    <option value="29500">₪29500</option>
 				                                    <option value="30000">₪30000</option>
-											
+
 										</select>
 									</div>
-									<div class="col">										
+									<div class="col">
 										<select name="structure_type" style="width:32%;" class="medium right-pad">
 											<option>Apartments /Condos</option>
 											<option>Houses /Guest Houses</option>
@@ -372,10 +370,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 									</div>
 									<div class="col">
 										<input type="hidden" value="g" name="searchType">
-										
+
 										<input type="submit" align="absmiddle" value="SEARCH" class="search" name="search-submit">
 									</div>
-								</div>				
+								</div>
 						</form>
 					</div>
 				</div>
@@ -452,17 +450,17 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 						<li><a href="#" class="flex-next">Next</a></li>
 					</ul>
 				</div>
-				
-				
+
+
 
 			  <!-- FlexSlider -->
 			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 			  <script src="../js/WSRFlexslider.js" defer=""></script>
 
 			  <script type="text/javascript">
-			   
+
 			    $(window).load(function(){
-			      
+
 				  $('#carousel').flexslider({
 			        animation: "slide",
 			        controlNav: false,
@@ -472,7 +470,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			        itemMargin: 5,
 			        asNavFor: '#slider'
 			      });
-				  
+
 
 			      $('#slider').flexslider({
 			        animation: "slide",
@@ -486,16 +484,16 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			      });
 			    });
 			  </script>
-				
-			  
 
 
-				
+
+
+
 
 						</div>
-						 
-						
-						
+
+
+
 			<div class="listing-info">
 				<div class="row">
 					<div class="header">PROPERTY DETAILS</div>
@@ -513,10 +511,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<strong>Listing Number:</strong><?php echo $data['listing_number'];?>
 						</div>
 					</div>
-				</div>			
+				</div>
 				<div class="row even">
 					<div class="col-md-6">
-						<strong>Rent Price:</strong>₪&nbsp;<?php echo $data['rent'];?> 
+						<strong>Rent Price:</strong>₪&nbsp;<?php echo $data['rent'];?>
 					</div>
 					<div class="col-md-6">
 						<strong>Listing Type:</strong> <?php $WHERE_LTYPE['list_id']=$data['listing_type']; echo select('listing_type',$WHERE_LTYPE)[0]['listing_type'];?>
@@ -537,12 +535,12 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<span>
 								<?php
 								if($data['availability']<=date('Y-m-d'))
-								{	
+								{
 									echo "AVAILABLE - NOW!";
 								}
 								else
-								{ 
-								    echo "AVAILABLE - '".$data['availability']."' "; 
+								{
+								    echo "AVAILABLE - '".$data['availability']."' ";
 								}
 								?>
 							</span>
@@ -616,14 +614,14 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				</div> -->
 			</div>
 		</div>
-								
-								
 
-								
-							
+
+
+
+
 					<div class="col-md-4">
-							<div class="hidden-xs hidden-sm">	
-								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">Back to Previous Page</a>	
+							<div class="hidden-xs hidden-sm">
+								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">Back to Previous Page</a>
 								<?php
 								if(!isset($_SESSION['member_logged']))
 								{ ?>
@@ -641,20 +639,20 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 												</div>
 											</div>
 											</div><h3></h3></div>
-							</div> 
-			 
-							<div class="hidden-xs hidden-sm">				
+							</div>
+
+							<div class="hidden-xs hidden-sm">
 								<div class="soundscore">
 									<div class="top">Soundscore: <span style="color: #EE583F" id="color_s"><?php $WHERE_SOUND['id']=$data['soundscore']; echo select('soundscore',$WHERE_SOUND)[0]['soundscore'];?></span></div>
 									<div class="body">
 										<div class="middle">
-											<div class="medium">Vehicle Noise: 
+											<div class="medium">Vehicle Noise:
 												<span style="color: #EE583F !important" id="color_v"><?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; echo select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise'];?></span>
 											</div>
-											<div class="medium">Airport Noise: 
+											<div class="medium">Airport Noise:
 												<span style="color: #FFCB3F !important" id="color_a"><?php $WHERE_AIR['id']=$data['airport_noise']; echo select('airport_noise',$WHERE_AIR)[0]['airport_noise'];?></span>
 											</div>
-											<div class="medium">Businesses: 
+											<div class="medium">Businesses:
 												<span style="color: #EE583F !important" id="color_b"><?php $WHERE_BUIS['id']=$data['business_noise']; echo select('businesses',$WHERE_BUIS)[0]['businesses'];?></span>
 											</div>
 											<img width="220" border="0" src="../images/soundscore_module-gradient.png">
@@ -664,14 +662,14 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 										</div>
 									</div><h3></h3>
 								</div>
-								<div class="listing-map">									
+								<div class="listing-map">
 									<div style="width: 280px; height: 230px; margin: 0px auto 15px; position: relative;">
 										<script src='http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false'></script>
 										<div style='overflow:hidden;height:230px;width:280px;'>
 											<div id='gmap_canvas' style='height:230px;width:280px;'></div>
 											<div>
-												<small><a href="http://embedgooglemaps.com">									
-												embed google maps							
+												<small><a href="http://embedgooglemaps.com">
+												embed google maps
 												</a></small>
 											</div>
 											<div>
@@ -685,7 +683,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							</div>
 
 							<div class="address-info">
-									<div class="actionLinks">										
+									<div class="actionLinks">
 									<!-- <a href="#" class="applyLink">Apply Now</a>
 									<a href="#" class="payrentLink">Pay Rent Online</a> -->
 									<!-- <a href="#" class="messageLink"><img width="22" align="absmiddle" src="images/2016/icons/message-center_icon.png"> Send Message</a> -->
@@ -710,7 +708,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 											else
 											{ ?>
 												<a href="save_fav.php?pid=<?php echo $pid;?>"><img width="22" align="absmiddle" src="../images/2016/icons/heartselected-listingicon.png"> Add to Favorites</a>
-											<?php 
+											<?php
 											}
 										?>
 									</span>
@@ -726,12 +724,12 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 									include("amenities.php");
 									?>
 								</ul>
-			
+
 							</div>
 					</div>
 					<div class="container"></div>
 					<script src="https://open.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=Fmjtd%7Cluubn16an0%2Cbg%3Do5-90axuz"></script>
-					
+
 				</div> <!-- End listing-detail div -->
 			</div>
 
@@ -749,19 +747,19 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					<div class="col-md-12 col-xs-12  text-center">
 						Westside Rentals is bonded and the only non restricted fully licensed rental service under the California Bureau of Real Estate.
 					</div>
-				</div>													
+				</div>
 			</div> -->
-		</div>	
+		</div>
 	</div>
 </div> <!-- End main container div -->
-	
-	
+
+
 		<!-- FOOTER -->
 	<?php
 		include('footer.php');
 	?>
 
-		
+
 	<div class="modal fade" id="myModal" role="dialog">
 	    <div class="modal-dialog">
 	      <!-- Modal content-->
@@ -819,12 +817,12 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		          	<!-- <button type="button" class="btn btn-default" id="yes">Yes</button> -->
 		          	<button type="button" class="btn btn-default" data-dismiss="modal" id="no" >Close</button>
 		 			<!-- <input type="hidden" class="btn btn-success" name="id" id="id" value="<?php echo $pid; ?>"> -->
-		 			
+
 		        </div>
 	      	</div>
 	    </div>
-	</div>	
-			  
+	</div>
+
 
 	<div class="modal fade" id="confirm_modal" role="dialog">
 	    <div class="modal-dialog">
@@ -848,9 +846,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		        	 		<td><input type="text"  id="time_to" value="" readonly=""></td>
 		        	 	</tr>
 		        	 </table>
-		        	
+
 		          <p ><span id="p">Are you sure you want to view this property between these hours??</span></p>
-		          
+
 		        </div>
 		        <div class="modal-footer">
 		          	<button type="button" class="btn btn-default" id="yes_confirm">Yes</button>
@@ -860,48 +858,45 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		 		</div>
 	      	</div>
 	    </div>
-	</div>		
-	
+	</div>
 
 
-	
+
+
 	<!-- Bootstrap core JavaScript
-	
+
 	<!-- Placed at the end of the document so the pages load faster -->
-	
-	
-		
-		
-	
-	
+
+
+
+
+
+
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	
-<script src="../js/jquery.min.js"></script>
-	
 
-	
+
 	<script src="../js/new/jquery-ui-1.10.4/jquery-ui-1.10.4.js"></script>
 	<script src="../js/new/jquery.cycle.all.js"></script>
-	
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
-	
-	
-			
-	<script src="../js/fb_login.js"></script>	
-	<script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>	
-	<script src="../js/default.js" type="text/javascript" language="javascript"></script>	
+
+
+
+	<script src="../js/fb_login.js"></script>
+	<script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>
+	<script src="../js/default.js" type="text/javascript" language="javascript"></script>
 
 	<script src="../js/ddaaccordion.js" type="text/javascript" language="javascript"></script>
 
 
-	
+
 	<!-- Default JavaScript -->
 	<script src="../js/new/default.js"></script>
 
-	
+
 	<script type="text/javascript">
 	$(document).ready(function(){
 		var a=$("#color_s").text();
@@ -990,7 +985,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		}
 	});
 	</script>
-	
+
 	<script type="text/javascript">
 	$(document).ready(function(){
 	  $('body').on('click','.mt',function(){
@@ -1038,3 +1033,4 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	  	});
 
 	</script>
+	<?php include_once('member_init.php'); ?>

@@ -25,6 +25,7 @@ if(mysqli_num_rows($obj_img))
 	}
 }
 
+$events = get_viewing_time($pid);
 
 ?>
     
@@ -102,13 +103,15 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="../css/201603/global.css" rel="stylesheet">
 				<link href="../css/201603/section.css" rel="stylesheet">
 				<link href="../css/201603/carousel.css" rel="stylesheet">
+
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
-				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
-				
-					<meta name="robots" content="index,follow" />
-					<meta name="GOOGLEBOT" content="index,follow" />
+                <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+
+                <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+
+                <meta name="robots" content="index,follow" />
+                <meta name="GOOGLEBOT" content="index,follow" />
 				
 			
 			
@@ -592,49 +595,51 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		          <h4 class="modal-title">Property Viewing Time </h4>
 		        </div>
 		        <div class="modal-body">
+                    <div id="calendar"></div>
+
 		          <!-- <p ><span id="p">Are you sure, want to Delete this Reminder ?</span></p> -->
-		          <table class="table table-striped">
-		          	<tr>
-		          		<th>Day</th>
-		          		<th>Time From</th>
-		          		<th>Time To</th>
-		          	</tr>
-		          	<tr>
-		          		<td>Monday</td>
-		          		<td><?php echo $data['mon_time_frm'];?></td>
-		          		<td><?php echo $data['mon_time_to'];?></td>
-		          	</tr>
-		          	<tr>
-		          		<td>Tueday</td>
-		          		<td><?php echo $data['tue_time_frm'];?></td>
-		          		<td><?php echo $data['tue_time_to'];?></td>
-		          	</tr>
-		          	<tr>
-		          		<td>Wednesday</td>
-		          		<td><?php echo $data['wed_time_frm'];?></td>
-		          		<td><?php echo $data['wed_time_to'];?></td>
-		          	</tr>
-		          	<tr>
-		          		<td>Thursday</td>
-		          		<td><?php echo $data['thu_time_frm'];?></td>
-		          		<td><?php echo $data['thu_time_to'];?></td>
-		          	</tr>
-		          	<tr>
-		          		<td>Friday</td>
-		          		<td><?php echo $data['fri_time_frm'];?></td>
-		          		<td><?php echo $data['fri_time_to'];?></td>
-		          	</tr>
-		          	<tr>
-		          		<td>Saturday</td>
-		          		<td><?php echo $data['sat_time_frm'];?></td>
-		          		<td><?php echo $data['sat_time_to'];?></td>
-		          	</tr>
-		          	<tr>
-		          		<td>Sunday</td>
-		          		<td><?php echo $data['sun_time_frm'];?></td>
-		          		<td><?php echo $data['sun_time_to'];?></td>
-		          	</tr>
-		          </table>
+<!--		          <table class="table table-striped">-->
+<!--		          	<tr>-->
+<!--		          		<th>Day</th>-->
+<!--		          		<th>Time From</th>-->
+<!--		          		<th>Time To</th>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Monday</td>-->
+<!--		          		<td>--><?php //echo $data['mon_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['mon_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Tueday</td>-->
+<!--		          		<td>--><?php //echo $data['tue_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['tue_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Wednesday</td>-->
+<!--		          		<td>--><?php //echo $data['wed_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['wed_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Thursday</td>-->
+<!--		          		<td>--><?php //echo $data['thu_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['thu_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Friday</td>-->
+<!--		          		<td>--><?php //echo $data['fri_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['fri_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Saturday</td>-->
+<!--		          		<td>--><?php //echo $data['sat_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['sat_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          	<tr>-->
+<!--		          		<td>Sunday</td>-->
+<!--		          		<td>--><?php //echo $data['sun_time_frm'];?><!--</td>-->
+<!--		          		<td>--><?php //echo $data['sun_time_to'];?><!--</td>-->
+<!--		          	</tr>-->
+<!--		          </table>-->
 		        </div>
 		        <div class="modal-footer">
 		          	<!-- <button type="button" class="btn btn-default" id="yes">Yes</button> -->
@@ -688,6 +693,11 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<link rel="stylesheet" href="../css/validationEngine.jquery.css">
 	<script src="../js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Full Calendar -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$(".js-add-to-featured").tooltip({
@@ -716,6 +726,22 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		$('#prty_rnt').click(function(){
 			$('#renter_form').show();
 		});
+
+        $('#myModal').on('shown.bs.modal', function() {
+            var eventsList = <?php echo $events; ?>;
+            $('#calendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: false,
+                events: eventsList
+            });
+        })
+
 	});
 	</script>
 

@@ -51,6 +51,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 $que_post="SELECT * FROM post INNER JOIN structure_type on post.structure_type=structure_type.struct_id  WHERE member_id='$member_id' ";
 $obj_post= mysqli_query($conn,$que_post);
 
+$time_array = get_time_array();
 ?>
 <!DOCTYPE HTML> 
 <html lang="en">
@@ -77,7 +78,8 @@ $obj_post= mysqli_query($conn,$que_post);
 		<meta name="robots" content="index,follow" />
 		<meta name="GOOGLEBOT" content="index,follow" />		
 		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />		       
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 </head>
 
 
@@ -1060,192 +1062,203 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class=""> 
-                            <div class="col-md-4">                  
-                            
-                                <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                           Monday
-                                        </td>
-                                        <td class="field">
-                                            <select name="mon_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="mon_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                        
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                           Tuesday
-                                        </td>
-                                        <td class="field">
-                                            <select name="tue_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="tue_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                         </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Wednesday
-                                        </td>
-                                        <td class="field">
-                                          <select name="wed_time_frm">
-                                              <option value="">From</option>
-                                              <?php
-                                              foreach($data_time2 as $data_time)
-                                              { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                              <?php }
-                                              ?>
-                                          </select>
-                                            <select name="wed_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Thursday
-                                        </td>
-                                        <td class="field">
-                                            <select name="thu_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="thu_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Friday
-                                        </td>
-                                        <td class="field">
-                                            <select name="fri_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                           <select name="fri_time_to">
-                                               <option value="">To</option>
-                                               <?php
-                                               foreach($data_time2 as $data_time)
-                                               { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                               <?php }
-                                               ?>
-                                           </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Saturday
-                                        </td>
-                                        <td class="field">
-                                            <select name="sat_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                           <select name="sat_time_to">
-                                               <option value="">To</option>
-                                               <?php
-                                               foreach($data_time2 as $data_time)
-                                               { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                               <?php }
-                                               ?>
-                                           </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Sunday
-                                        </td>
-                                        <td class="field">
-                                            <select name="sun_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                          <select name="sun_time_to">
-                                              <option value="">To</option>
-                                              <?php
-                                              foreach($data_time2 as $data_time)
-                                              { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                              <?php }
-                                              ?>
-                                          </select>
-                                        </td>
-                                    </tr>
-
-                                 
-                                </table>
-                            </div>
-                        </div>
+                    <div id="calendar"></div>
+                    <input type="hidden" id="calendar_events_list" name="calendar_events" value="">
+                    <div id="eventContent" title="Event Details" style="display:none;">
+                        Start: <span id="startTime"></span><br>
+                        End: <span id="endTime"></span><br><br>
+                        <p id="eventInfo"></p>
+                        <a href="#" class="btn btn-danger" id="event-remove" data-eventid="false" >Remove</a>
+                    </div>
+                    <div id="js-event-confirm" title="Add Event" style="display:none;">
+                        <div class="modal-body"></div>
+                    </div><!-- /.modal -->
+<!--                        <div class=""> -->
+<!--                            <div class="col-md-4">                  -->
+<!--                            -->
+<!--                                <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">-->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                           Monday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                            <select name="mon_time_frm">-->
+<!--                                                <option value="">From</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                            <select name="mon_time_to">-->
+<!--                                                <option value="">To</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                        </td>-->
+<!--                                        -->
+<!--                                    </tr>-->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                           Tuesday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                            <select name="tue_time_frm">-->
+<!--                                                <option value="">From</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                            <select name="tue_time_to">-->
+<!--                                                <option value="">To</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                         </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                            Wednesday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                          <select name="wed_time_frm">-->
+<!--                                              <option value="">From</option>-->
+<!--                                              --><?php
+//                                              foreach($data_time2 as $data_time)
+//                                              { ?>
+<!--                                                <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                              --><?php //}
+//                                              ?>
+<!--                                          </select>-->
+<!--                                            <select name="wed_time_to">-->
+<!--                                                <option value="">To</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    -->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                            Thursday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                            <select name="thu_time_frm">-->
+<!--                                                <option value="">From</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                            <select name="thu_time_to">-->
+<!--                                                <option value="">To</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                            Friday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                            <select name="fri_time_frm">-->
+<!--                                                <option value="">From</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                           <select name="fri_time_to">-->
+<!--                                               <option value="">To</option>-->
+<!--                                               --><?php
+//                                               foreach($data_time2 as $data_time)
+//                                               { ?>
+<!--                                                <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                               --><?php //}
+//                                               ?>
+<!--                                           </select>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                            Saturday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                            <select name="sat_time_frm">-->
+<!--                                                <option value="">From</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                           <select name="sat_time_to">-->
+<!--                                               <option value="">To</option>-->
+<!--                                               --><?php
+//                                               foreach($data_time2 as $data_time)
+//                                               { ?>
+<!--                                                <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                               --><?php //}
+//                                               ?>
+<!--                                           </select>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                    <tr valign="top">-->
+<!--                                        <td class="medsubheader">-->
+<!--                                            Sunday-->
+<!--                                        </td>-->
+<!--                                        <td class="field">-->
+<!--                                            <select name="sun_time_frm">-->
+<!--                                                <option value="">From</option>-->
+<!--                                                --><?php
+//                                                foreach($data_time2 as $data_time)
+//                                                { ?>
+<!--                                                    <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                                --><?php //}
+//                                                ?>
+<!--                                            </select>-->
+<!--                                          <select name="sun_time_to">-->
+<!--                                              <option value="">To</option>-->
+<!--                                              --><?php
+//                                              foreach($data_time2 as $data_time)
+//                                              { ?>
+<!--                                                <option>--><?php //echo $data_time['time']; ?><!--</option>-->
+<!--                                              --><?php //}
+//                                              ?>
+<!--                                          </select>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!---->
+<!--                                 -->
+<!--                                </table>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </td>
                 </tr>
                 
@@ -1661,7 +1674,31 @@ $obj_post= mysqli_query($conn,$que_post);
     	</div>
     	</div>
     </div>
+    <div id="eventAdd" title="Add Time" style="display:none;">
+        <?php if( !empty($time_array) ): ?>
+            <form id="add_viewing_time">
+                <label for="viewing_end_time">Start:</label>
+                <select name="viewing_start_time" id="viewing_start_time">
+                    <option value="">From</option>
+                    <?php foreach( $time_array as $time_val ): ?>
+                        <option value="<?php echo $time_val; ?>"><?php echo $time_val; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label for="viewing_end_time">End:</label>
+                <select name="viewing_end_time" id="viewing_end_time">
+                    <option value="">To</option>
+                    <?php foreach( $time_array as $time_val ): ?>
+                        <option value="<?php echo $time_val; ?>"><?php echo $time_val; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <textarea name="event_description"></textarea>
+                <input type="hidden" id="current_day" name="current_day">
+                <input type="hidden" name="property_pid" value="<?php echo $pid; ?>">
 
+                <input type="submit" class="btn btn-info" name="save_viewing_time" value="Save">
+            </form>
+        <?php endif; ?>
+    </div>
 
 
 
@@ -1703,20 +1740,6 @@ $obj_post= mysqli_query($conn,$que_post);
     <script src="../js/ddaaccordion.js" type="text/javascript" language="javascript"></script>
     <!-- Default JavaScript -->
     <script src="../js/new/default.js"></script>
-        
-
-
-
-
-     
-
-
-
-
-
-
-
-
 
 
     <script type="text/javascript">
@@ -1933,10 +1956,89 @@ $obj_post= mysqli_query($conn,$que_post);
  <link rel="stylesheet" href="../css/validationEngine.jquery.css">
      <script src="../js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
      <script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Full Calendar -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
      <script type="text/javascript">
         $(document).ready(function(){
             // alert('hi');
             $("#propForm").validationEngine();
+
+            var calendarOptions = {
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: true,
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+                        if(event.id){
+                            $('a#event-remove').attr('data-eventid', event.id);
+                        }
+
+                        if(event.start){
+                            $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
+                        }
+
+                        if(event.start){
+                            $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
+                        }
+
+                        if(event.description){
+                            $("#eventInfo").html(event.description);
+                        }
+
+                        $("#eventContent").dialog({ modal: true, title: 'Viewing Times', width:350});
+                    });
+                },
+                dayClick: function(date, event, view) {
+                    $('#current_day').val(date.format());
+                    $('#eventAdd').dialog();
+                },
+                events: []
+            }
+
+            $('#calendar').fullCalendar(calendarOptions);
+
+
+            $('#add_viewing_time').submit(function(e){
+                e.preventDefault();
+
+                var eventsList = $('#calendar_events_list').val();
+
+                console.log(eventsList);
+
+                var eventInfo = {
+                    start: $(this).find('#viewing_start_time').val(),
+                    end: $(this).find('#viewing_end_time').val(),
+                    description: $(this).find('textarea').val()
+                }
+
+                if( eventsList.length ){
+                    eventsList = JSON.parse(eventsList);
+                }else{
+                    eventsList = [];
+                }
+
+                eventsList.push(eventInfo);
+                eventsList = JSON.stringify(eventsList);
+
+                $('#calendar_events').val(eventsList);
+                $('#eventAdd').dialog('close');
+
+                if($('#calendar_events_list').val().length){
+                    calendarOptions.events = JSON.parse(calendarEvents.val());
+                }
+
+                $('#calendar').fullCalendar(calendarOptions);
+
+                console.log(eventInfo);
+            });
         });
         $(function() {
             $('.numberonly').keyup(function() {

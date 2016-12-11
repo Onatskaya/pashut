@@ -5,7 +5,6 @@ if(isset($_SESSION['member_logged']))
 	$que_mem="SELECT * FROM members WHERE member_id='$member_id' ";
 	$obj_mem= mysqli_query($conn,$que_mem);
 	$data_mem= mysqli_fetch_assoc($obj_mem);
-
 }
 ?>
 
