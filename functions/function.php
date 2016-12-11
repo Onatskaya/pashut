@@ -256,3 +256,52 @@ function site_url(){
     }
     return $protocol . "://" . $_SERVER['SERVER_NAME'];
 }
+
+
+function get_time_array(){
+    $minutes = 30;
+    $endtime = new DateTime('23:30');
+
+//modified the start value to get something _before_ the endtime:
+    $time = new DateTime('00:00');
+    $interval = new DateInterval('PT' . $minutes . 'M');
+
+    $time_array = array();
+    while($time < $endtime){
+        $time->add($interval);
+//        $time_array[] = $time->format('G:ia');
+        $time_array[] = $time->format('H:i');
+    }
+
+    return $time_array;
+}
+
+function get_viewing_time($property_id){
+    global $conn;
+
+    $que_s="SELECT * FROM `viewing_time_tbl` AS `time`
+      WHERE time.property_id='$property_id'";
+
+    $result=mysqli_query($conn,$que_s);
+
+    if(mysqli_num_rows($result))
+    {
+        while($row=mysqli_fetch_assoc($result))
+        {
+
+            $event_obj = unserialize(base64_decode($row['viewing_time']));
+
+            if( empty($event_obj) || !is_array($event_obj) )
+                continue;
+
+            $event_obj['title'] = sprintf('%s - %s', date('g:ia', strtotime($event_obj['start'])), date('g:ia', strtotime($event_obj['end'])) );
+            $event_obj['id']    = $row['id'];
+
+            $rows[] = $event_obj;
+        }
+
+        return json_encode($rows);
+    }
+
+    return false;
+}

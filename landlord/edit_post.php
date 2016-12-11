@@ -86,6 +86,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     $data_city2[]=$data_city3;
 }
 
+$time_array = get_time_array();
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -106,6 +107,8 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 		<link href="../css/201603/global.css" rel="stylesheet">
 		<link href="../css/201603/section.css" rel="stylesheet">
 		<link href="../css/201603/carousel.css" rel="stylesheet">
+
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 
 	  	<script src="http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk"></script>
 		<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
@@ -1266,195 +1269,42 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class=""> 
-                            <form action="update_time.php" method="POST">
-                                <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-                            <div class="col-md-12">                  
-                                <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                           Monday
-                                        </td>
-                                        <td class="field">
-                                            <select name="mon_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option <?php if($data_time['time']==$data_post['mon_time_frm']){ echo 'selected'; } ?> ><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="mon_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['mon_time_to']){ echo 'selected'; } ?> ><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                        
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                           Tuesday
-                                        </td>
-                                        <td class="field">
-                                            <select name="tue_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['tue_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="tue_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['tue_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                         </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Wednesday
-                                        </td>
-                                        <td class="field">
-                                          <select name="wed_time_frm">
-                                              <option value="">From</option>
-                                              <?php
-                                              foreach($data_time2 as $data_time)
-                                              { ?>
-                                                <option  <?php if($data_time['time']==$data_post['wed_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                              <?php }
-                                              ?>
-                                          </select>
-                                            <select name="wed_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['wed_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Thursday
-                                        </td>
-                                        <td class="field">
-                                            <select name="thu_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['thu_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="thu_time_to">
-                                                <option value="">To</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['thu_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Friday
-                                        </td>
-                                        <td class="field">
-                                            <select name="fri_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option  <?php if($data_time['time']==$data_post['fri_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                           <select name="fri_time_to">
-                                               <option value="">To</option>
-                                               <?php
-                                               foreach($data_time2 as $data_time)
-                                               { ?>
-                                                    <option <?php if($data_time['time']==$data_post['fri_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                               <?php }
-                                               ?>
-                                           </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Saturday
-                                        </td>
-                                        <td class="field">
-                                            <select name="sat_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option <?php if($data_time['time']==$data_post['sat_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                           <select name="sat_time_to">
-                                               <option value="">To</option>
-                                               <?php
-                                               foreach($data_time2 as $data_time)
-                                               { ?>
-                                                    <option <?php if($data_time['time']==$data_post['sat_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                               <?php }
-                                               ?>
-                                           </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            Sunday
-                                        </td>
-                                        <td class="field">
-                                            <select name="sun_time_frm">
-                                                <option value="">From</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option <?php if($data_time['time']==$data_post['sun_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                          <select name="sun_time_to">
-                                              <option value="">To</option>
-                                              <?php
-                                              foreach($data_time2 as $data_time)
-                                              { ?>
-                                                    <option <?php if($data_time['time']==$data_post['sun_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-                                              <?php }
-                                              ?>
-                                          </select>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <div class="col-md-3 col-md-offset-3">
-                                    <input type="submit" class="btn btn-info" align="center" value="Update">
-                                </div>
-                            </div>
-                             </form>    
+                        <div id="calendar"></div>
+                        <div id="eventContent" title="Event Details" style="display:none;">
+                            Start: <span id="startTime"></span><br>
+                            End: <span id="endTime"></span><br><br>
+                            <p id="eventInfo"></p>
+                            <a href="#" class="btn btn-danger" id="event-remove" data-eventid="false" >Remove</a>
                         </div>
+                        <div id="eventAdd" title="Add Time" style="display:none;">
+                            <?php if( !empty($time_array) ): ?>
+                            <form id="add_viewing_time">
+                                <label for="viewing_end_time">Start:</label>
+                                <select name="viewing_start_time" id="viewing_start_time">
+                                    <option value="">From</option>
+                                    <?php foreach( $time_array as $time_val ): ?>
+                                        <option value="<?php echo $time_val; ?>"><?php echo $time_val; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <label for="viewing_end_time">End:</label>
+                                <select name="viewing_end_time" id="viewing_end_time">
+                                    <option value="">To</option>
+                                    <?php foreach( $time_array as $time_val ): ?>
+                                        <option value="<?php echo $time_val; ?>"><?php echo $time_val; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                                <textarea name="event_description"></textarea>
+                                <input type="hidden" id="current_day" name="current_day">
+                                <input type="hidden" name="property_pid" value="<?php echo $post_id; ?>">
+
+                                <input type="submit" class="btn btn-info" name="save_viewing_time" value="Save">
+                            </form>
+                            <?php endif; ?>
+                        </div>
+
+                        <div id="js-event-confirm" title="Add Event" style="display:none;">
+                            <div class="modal-body"></div>
+                        </div><!-- /.modal -->
                     </td>
                 </tr>
                 
@@ -1969,29 +1819,13 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
     <script src="../js/new/jquery.cycle.all.js"></script>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>      
-    <script src="../js/fb_login.js"></script>   
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/fb_login.js"></script>
     <script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>   
     <script src="../js/default.js" type="text/javascript" language="javascript"></script>   
     <script src="../js/ddaaccordion.js" type="text/javascript" language="javascript"></script>
     <!-- Default JavaScript -->
     <script src="../js/new/default.js"></script>
-        
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
   <script type="text/javascript">
     $(document).ready(function(){
         var t=$('#no_id').val();
@@ -2117,20 +1951,17 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
      });
      </script>
 
-
-    
-   
-
-
-
-
-
     <link rel="stylesheet" href="../themes/base/jquery.ui.all.css">
      <link rel="stylesheet" href="../css/demo.css">
 
 
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- Full Calendar -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+
      <script src="../js/jquery.ui.addresspicker.js"></script>
     <script>
      $(function() {
@@ -2250,3 +2081,114 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
             $("#vacancy_descp").validationEngine();
         });
      </script>
+    <?php
+        $events = get_viewing_time($post_id);
+//    print_r($events);
+//    die;
+        $events = ($events);
+        $events = !empty($events) ? $events : '[]';
+    ?>
+    <script>
+        $(document).ready(function() {
+
+            $('#event-remove').on('click', function(){
+                var txt;
+                var eventId = $(this).attr('data-eventid');
+
+                var response = confirm("Are you sure, want to Delete this Event");
+                if (response == true) {
+                    $.ajax({
+                        url: "remove_event.php",
+                        type: "post",
+                        data: {
+                            eventId: eventId
+                        } ,
+                        success: function (response) {
+                              setTimeout(function(){ location.reload(); },500);
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            console.log(textStatus, errorThrown);
+                        }
+
+
+                    });
+                }else{
+                    alert("Try again later, please.");
+                }
+            });
+            var eventsList = <?php echo $events; ?>
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: true,
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+                        if(event.id){
+                            $('a#event-remove').attr('data-eventid', event.id);
+                        }
+
+                        if(event.start){
+                            $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
+                        }
+
+                        if(event.start){
+                            $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
+                        }
+
+                        if(event.description){
+                            $("#eventInfo").html(event.description);
+                        }
+
+                        $("#eventContent").dialog({ modal: true, title: 'Viewing Times', width:350});
+                    });
+                },
+                dayClick: function(date, event, view) {
+                    $('#current_day').val(date.format());
+                    $('#eventAdd').dialog();
+                },
+                events: eventsList
+            });
+
+            $('#add_viewing_time').submit(function(e){
+                e.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: "viewing_time_update.php",
+                    type: "post",
+                    data: formData ,
+                    beforeSend: function( xhr ) {
+                        $('#eventAdd').dialog("close");
+                    },
+                    success: function (response) {
+
+                        if( response.length && response == 'Success'){
+                            var message = 'Time added successfully!';
+                        }else{
+                            var message = 'Try again later';
+                        }
+                        var confirmModal = $('#js-event-confirm');
+                        confirmModal.find('.modal-body').html(message);
+                        confirmModal.dialog({ modal: true, title: 'Viewing Times', width:350});
+                        setTimeout(function(){
+                            location.reload();
+                        }, 1500);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+
+            });
+        });
+
+
+    </script>
+</body>
+</html>
