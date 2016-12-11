@@ -2028,11 +2028,11 @@ $time_array = get_time_array();
                 eventsList.push(eventInfo);
                 eventsList = JSON.stringify(eventsList);
 
-                $('#calendar_events').val(eventsList);
+                $('#calendar_events_list').val(eventsList);
                 $('#eventAdd').dialog('close');
 
                 if($('#calendar_events_list').val().length){
-                    calendarOptions.events = JSON.parse(calendarEvents.val());
+                    calendarOptions.events = JSON.parse($('#calendar_events_list').val());
                 }
 
                 $('#calendar').fullCalendar(calendarOptions);
