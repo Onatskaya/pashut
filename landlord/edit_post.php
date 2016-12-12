@@ -1270,6 +1270,7 @@ $time_array = get_time_array();
                 <tr valign="top">
                     <td colspan="2">
                         <div id="calendar"></div>
+
                         <div id="eventContent" title="Event Details" style="display:none;">
                             Start: <span id="startTime"></span><br>
                             End: <span id="endTime"></span><br><br>
@@ -2116,8 +2117,7 @@ $time_array = get_time_array();
                     alert("Try again later, please.");
                 }
             });
-            var eventsList = <?php echo $events; ?>
-
+            var eventsList = <?php echo $events; ?>;
             $('#calendar').fullCalendar({
                 header: {
                     left: '',
