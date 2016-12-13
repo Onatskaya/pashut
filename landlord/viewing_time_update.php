@@ -22,10 +22,6 @@ if( ! empty( $_POST['viewing_end_time'] ) ) {
     $end_time = $current_day . ' ' . $_POST['viewing_end_time'];
     $end_time = strtotime($end_time);
 }
-//print $start_time;
-//print ' br ';
-//print $end_time;
-//die;
 
 if( ! empty( $_POST['event_description'] ) ) {
     $event_description = trim(htmlspecialchars($_POST['event_description']));
