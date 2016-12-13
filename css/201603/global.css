@@ -1829,3 +1829,5 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
 .btn.btn-danger.upgrade{display:    block; margin: 40px auto 0px; width: 30%; }
 #expirateModal .modal-title, .modal-body > p {text-align: center}
 #calendar td{display: table-cell;}
+.featured-search-block { padding: 10px 5px; display: inline-block; }
+.featured-search-block > input { height: 10px !important; width: 10px !important; }

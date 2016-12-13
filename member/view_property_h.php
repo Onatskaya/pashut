@@ -49,6 +49,12 @@ if(isset($_GET['city']))
         $que_search.=" AND furnished ='$furnished' ";
     }
 
+    // Search only featured
+    if(isset($_SESSION['member_logged'] ) &&  (!empty($_REQUEST['featured_search']) && $_REQUEST['featured_search'] == 'Yes' ))
+    {
+        $que_search.=" AND featured_listing ='Yes' ";
+    }
+
 
     $que_search.="ORDER BY featured_listing DESC";
     // print_r($que_search);die;
@@ -493,6 +499,11 @@ include('header_h.php');
         }
         ?>
     </select>
+    <div class="featured-search-block s_field">
+        <?php $checked = ( !empty( $_REQUEST['featured_search'] ) &&   $_REQUEST['featured_search'] == 'Yes' ) ? 'checked="checked"' : '';  ?>
+        <label for="featured_search">Search only featured</label>
+        <input type="checkbox" name="featured_search" value="Yes" <?php echo $checked; ?>>
+    </div>
 </div>
 <div class="col">
     <input type="hidden" value="g" name="searchType">
