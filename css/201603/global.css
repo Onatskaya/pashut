@@ -1831,3 +1831,5 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
 #calendar td{display: table-cell;}
 .featured-search-block { padding: 10px 5px; display: inline-block; }
 .featured-search-block > input { height: 10px !important; width: 10px !important; }
+#add_viewing_time .select2-container{width: 26% !important;}
+.edit-post-page .dash-top-section{border-right:0;}

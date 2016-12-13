@@ -1725,7 +1725,7 @@ $time_array = get_time_array();
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	 <script type="text/javascript" src="../js/jquery.min.js"></script>      
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript">
       $('select').select2({minimumResultsForSearch: Infinity});
     </script>
