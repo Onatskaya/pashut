@@ -652,7 +652,7 @@ body.nolayout {background:none;}
 	.search-results h2, .search-results .highlight{font-size:18px;}
 	#loading-message{margin-top:80px;}
 	.search-results .search-filters{top:0;left:16px;width:100%;}
-	.search-results .search-filters input, .search-results .search-filters select{display: block; float: left; width:100%!important;font-size:11px;height:30px;margin-right:0;padding:0; margin-bottom: 5px!important;}
+    .search-results .search-filters input, .search-results .search-filters select, #adv_search{display: block; float: left; width:100%!important;font-size:11px;height:30px;margin-right:0;padding:0; margin-bottom: 5px!important;}
 	.search-results .search-filters select[name="priceLow"],
 	.search-results .search-filters select[name="priceHigh"] {
 		width: 48%!important;
@@ -714,6 +714,14 @@ body.nolayout {background:none;}
 	.signup.latest.extend-membership ul{width:auto;}
 
     .clearfixt { position: relative;min-height: 100%;padding-bottom: 200px;}
+
+
+
+    .search-results .search-filters .featured-search-block input{display: inline-block; width: 15px !important; margin: 3px 5px; height: 15px!important;}
+    .search-results .search-filters .featured-search-block { padding: 10px 5px; display: block; }
+    .search-results .search-filters .featured-search-block label { display: inline-block; margin-bottom: 5px; font-weight: 700; float: left; }
+
+    .search-filters { padding-right: 20px;}
 }
 .ll-signup-area .col-md-12 img {max-width: 100%!important; height: auto;}
 
@@ -1105,7 +1113,7 @@ body.nolayout {background:none;}
 .search-results .search-filters .col {
     display: inline;
 }
-.search-results .search-filters input, .search-results .search-filters select {
+.search-results .search-filters input, .search-results .search-filters select, #adv_search {
     background: #eceff4 none repeat scroll 0 0;
     border: 1px solid #cad3df;
     border-radius: 0;
@@ -1116,12 +1124,14 @@ body.nolayout {background:none;}
     padding: 5px;
     width: 27%;
 }
-.search-results input.search {
+.search-results input.search, #adv_search {
     background: #ee2324 none repeat scroll 0 0;
     border: medium none;
     color: #fff;
     width: 100px;
 }
+
+#adv_search{ width: 150px; }
 .search-results .search-filters select.med {
     margin-right: 0;
     width: 14%;
