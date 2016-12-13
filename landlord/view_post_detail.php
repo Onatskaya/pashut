@@ -461,7 +461,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					
 						<div class="col-md-4">
 							
-							<div class="hidden-xs hidden-sm">
+							<div class="sidebar">
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">Back to Previous Page</a>				
 								<br><a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">Instant Viewing</a>
 								<?php if( !empty($_SESSION['member_id']) && !empty($data['member_id']) && $_SESSION['member_id'] == $data['member_id'] ): ?>
@@ -740,7 +740,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                 editable: false,
                 events: eventsList
             });
-        })
+        });
 
 	});
 	</script>

@@ -2011,11 +2011,16 @@ $time_array = get_time_array();
 
                 var eventsList = $('#calendar_events_list').val();
 
-                console.log(eventsList);
-
+                var currentDay = $(this).find('#current_day').val();
+                var startTime = $(this).find('#viewing_start_time').val();
+                var endTime = $(this).find('#viewing_end_time').val();
+                var startTimeDay = currentDay + 'T' + startTime;
+                var endTimeDay = currentDay + 'T' + endTime;
+                var title = startTime + '-' + endTime;
                 var eventInfo = {
-                    start: $(this).find('#viewing_start_time').val(),
-                    end: $(this).find('#viewing_end_time').val(),
+                    title: title,
+                    start: startTimeDay,
+                    end: endTimeDay,
                     description: $(this).find('textarea').val()
                 }
 
@@ -2027,17 +2032,13 @@ $time_array = get_time_array();
 
                 eventsList.push(eventInfo);
                 eventsList = JSON.stringify(eventsList);
-
                 $('#calendar_events_list').val(eventsList);
                 $('#eventAdd').dialog('close');
+//
+                $('#calendar').fullCalendar( 'renderEvent', eventInfo, true );
+                $('#calendar').fullCalendar( 'refresh' );
 
-                if($('#calendar_events_list').val().length){
-                    calendarOptions.events = JSON.parse($('#calendar_events_list').val());
-                }
-
-                $('#calendar').fullCalendar(calendarOptions);
-
-                console.log(eventInfo);
+                console.log($('#calendar_events_list').val(eventsList));
             });
         });
         $(function() {

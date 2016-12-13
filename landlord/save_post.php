@@ -19,6 +19,7 @@ else
 
 
 
+
 $_POST['main_image']="";
 $_POST['image1']="";
 $_POST['image2']="";
@@ -103,6 +104,15 @@ $_POST['property_available']='Available';
 // print_r($_POST);die;
 
 $post_id=insert('post',$_POST,'post_id','post_id');
+
+if( !empty($_POST['calendar_events'])){
+    $save_data = array(
+        'property_id' => $post_id,
+        'viewing_time' => base64_encode(serialize($_POST['calendar_events']))
+    );
+
+    $insert_id = insert('viewing_time_tbl', $save_data);
+}
 
 
 // print_r($_FILES['image']['name'][0]);die;
