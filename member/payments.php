@@ -26,6 +26,7 @@ $amt= check_price($_POST['membership_plan']);
 
 $_SESSION['order_id']=$order_id;
 $_SESSION['membership_plan']= $_POST['membership_plan'];
+$_SESSION['member_id']= $data['member_id'];
 
 // print_r($_POST['membership_plan']);die;
 
@@ -87,8 +88,8 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	//$querystring .= "&custom=".USERID;
 	
 	// Redirect to paypal IPN
-	$final='https://www.paypal.com/cgi-bin/webscr'.$querystring;
-	header('location:https://www.paypal.com/cgi-bin/webscr'.$querystring);
+	$final='https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring;
+	header('location:https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
 	echo "<script>window.location.href = '".$final."';</script>";
 	exit();
 } else {

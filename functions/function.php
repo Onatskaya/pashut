@@ -286,18 +286,36 @@ function get_viewing_time($property_id){
 
     if(mysqli_num_rows($result))
     {
+        $rows = array();
         while($row=mysqli_fetch_assoc($result))
         {
 
-            $event_obj = unserialize(base64_decode($row['viewing_time']));
+            if(is_string($row['viewing_time'])){
+                $event_obj = unserialize(base64_decode($row['viewing_time']));
+                if(is_string($event_obj)){
+                    $event_obj = json_decode($event_obj, true);
 
-            if( empty($event_obj) || !is_array($event_obj) )
-                continue;
+                    if(is_array($event_obj)){
+                        foreach($event_obj as $event){
+                            if( ! empty($event) && is_array($event) ) {
+                                $event['title'] = sprintf('%s - %s', date('g:ia', strtotime($event['start'])), date('g:ia', strtotime($event['end'])) );
+                                $event['id']    = $row['id'];
+                                $rows[] = $event;
+                            }
+                        }
+                        continue;
+                    }
+                }
 
-            $event_obj['title'] = sprintf('%s - %s', date('g:ia', strtotime($event_obj['start'])), date('g:ia', strtotime($event_obj['end'])) );
-            $event_obj['id']    = $row['id'];
+            }else{
+                $event_obj = $row['viewing_time'];
+            }
 
-            $rows[] = $event_obj;
+            if( ! empty($event_obj) && is_array($event_obj) ) {
+                $event_obj['title'] = sprintf('%s - %s', date('g:ia', strtotime($event_obj['start'])), date('g:ia', strtotime($event_obj['end'])) );
+                $event_obj['id']    = $row['id'];
+                $rows[] = $event_obj;
+            }
         }
 
         return json_encode($rows);

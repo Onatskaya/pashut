@@ -3,6 +3,7 @@ include("../functions/function.php");
 
 $pid=$_POST['pid'];
 unset($_POST['pid']);
+unset($_POST['calendar_events']);
 // print_r($pid);die;
 
 if(isset($_POST['submit_feature']))

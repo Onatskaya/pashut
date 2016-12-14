@@ -137,61 +137,61 @@ $(function(){
 
 	// Load results for pagination links
 	
-		$( document ).on( "click", ".pagination ul li a",function(){
-			
-			//scroll to top
-			$('html, body').animate({scrollTop:220}, 400);
-			
-			//show the loading bar
-			showLoading(loading);
-
-			//Highlight current page number
-			pages.removeClass("currentpage");
-			$(this).addClass("currentpage");
-			
-			//Load content
-			var pageNum = $(this).attr("data-pageid");
-			pageNum = parseInt(pageNum) > 0?parseInt(pageNum):1;
-			var location = window.location.href.split("?");
-			var params = location.length == 2?location[1]:'';		
-			var totalrecords = $("#totalrecords").attr("data-value");
-			var resultlayout = $("#result-layout").attr("data-value");
-			var perpage = $("#perpage").attr("data-value");
-			var dataurl = "pagenum=" + pageNum + "&resultlayout=" + resultlayout + "&totalrecords=" + totalrecords + "&perpage=" + perpage + "&" + params;
-			
-			$.ajax({
-			   type: "GET",
-			   cache: true,
-			   url: "/return-guest-results.cfm",		   
-			   data: dataurl,
-			   success: function(msg){
-				   content.empty().html(msg);
-				   hideLoading(loading);
-				   
-				   // Set current page number as hash value			   
-				   if(params.indexOf("#") > -1) {
-					   params = params.substring(0,params.indexOf("#"));
-				   } 
-				   window.location.hash="pagenum=" + pageNum;
-				   
-				   //Set last search value in cookie to use as return link
-				   var lastsearchurl = "http://" + window.location.hostname + window.location.pathname + "?" + params + window.location.hash;			   
-				   $.cookie("lastsearch", lastsearchurl, { path: "/", expires: 60 });
-				   
-				   //Load leasing results
-				   leasingResults();
-				   
-				   //Load featured results
-				   featuredResults();
-				   
-				   $("a[rel^='prettyPhoto']").prettyPhoto({deeplinking:false});
-				   
-				   //Draw Map
-					//mapinit('/return-guest-results-JSON.cfm?'+dataurl);
-			   }
-			});
-			return false;		
-		});
+//		$( document ).on( "click", ".pagination ul li a",function(){
+//
+//			//scroll to top
+//			$('html, body').animate({scrollTop:220}, 400);
+//
+//			//show the loading bar
+//			showLoading(loading);
+//
+//			//Highlight current page number
+//			pages.removeClass("currentpage");
+//			$(this).addClass("currentpage");
+//
+//			//Load content
+//			var pageNum = $(this).attr("data-pageid");
+//			pageNum = parseInt(pageNum) > 0?parseInt(pageNum):1;
+//			var location = window.location.href.split("?");
+//			var params = location.length == 2?location[1]:'';
+//			var totalrecords = $("#totalrecords").attr("data-value");
+//			var resultlayout = $("#result-layout").attr("data-value");
+//			var perpage = $("#perpage").attr("data-value");
+//			var dataurl = "pagenum=" + pageNum + "&resultlayout=" + resultlayout + "&totalrecords=" + totalrecords + "&perpage=" + perpage + "&" + params;
+//
+//			$.ajax({
+//			   type: "GET",
+//			   cache: true,
+//			   url: "/return-guest-results.cfm",
+//			   data: dataurl,
+//			   success: function(msg){
+//				   content.empty().html(msg);
+//				   hideLoading(loading);
+//
+//				   // Set current page number as hash value
+//				   if(params.indexOf("#") > -1) {
+//					   params = params.substring(0,params.indexOf("#"));
+//				   }
+//				   window.location.hash="pagenum=" + pageNum;
+//
+//				   //Set last search value in cookie to use as return link
+//				   var lastsearchurl = "http://" + window.location.hostname + window.location.pathname + "?" + params + window.location.hash;
+//				   $.cookie("lastsearch", lastsearchurl, { path: "/", expires: 60 });
+//
+//				   //Load leasing results
+//				   leasingResults();
+//
+//				   //Load featured results
+//				   featuredResults();
+//
+//				   $("a[rel^='prettyPhoto']").prettyPhoto({deeplinking:false});
+//
+//				   //Draw Map
+//					//mapinit('/return-guest-results-JSON.cfm?'+dataurl);
+//			   }
+//			});
+//			return false;
+//		});
 	
 	
 
