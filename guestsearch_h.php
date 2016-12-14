@@ -517,9 +517,10 @@ include('header_h.php');
         }
         ?>
     </select>
-    <div class="medium right-pad">
-        <label for="featured_search">Featured search</label>
-        <input type="checkbox" name="featured_search" value="Yes">
+    <div class="featured-search-block">
+        <?php $checked = ( !empty( $_REQUEST['featured_search'] ) &&   $_REQUEST['featured_search'] == 'Yes' ) ? 'checked="checked"' : '';  ?>
+        <label for="featured_search">Search only featured</label>
+        <input type="checkbox" name="featured_search" value="Yes" <?php echo $checked; ?>>
     </div>
 </div>
 <div class="col">

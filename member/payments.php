@@ -46,10 +46,12 @@ $pass = ""; //database password
 $db_name = ""; //database name
 
 // PayPal settings
-$paypal_email = 'shalomnimrod@gmail.com ';
-$return_url = 'http://pashutlehaskir.com/member/payment-successful.php';
-$cancel_url = 'http://pashutlehaskir.com/member/payment-cancelled.php';
-$notify_url = 'http://pashutlehaskir.com/member/payments.php';
+//$paypal_email = 'shalomnimrod@gmail.com ';
+$paypal_email = 'ekolmyk@corp.web4pro.com.ua';
+
+$return_url = 'http://pashut/payment-successful.php';
+$cancel_url = 'http://pashut/payment-cancelled.php';
+$notify_url = 'http://pashut/payments.php';
 
 $item_name = 'Membership Price';
 $item_amount = $amt;

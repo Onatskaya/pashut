@@ -50,7 +50,7 @@ if(isset($_GET['city']))
         $que_search.=" AND furnished ='$furnished' ";
     }
 
-	// Featured search
+	// Search only featured
 	if(isset($_SESSION['member_logged'] ) &&  (!empty($_REQUEST['featured_search']) && $_REQUEST['featured_search'] == 'Yes' ))
 	{
 		$que_search.=" AND featured_listing ='Yes' ";
@@ -501,9 +501,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 									}
                                 ?> 
 							</select>
-							<div class="medium right-pad">
-								<label for="featured_search">Featured search</label>
-								<input type="checkbox" name="featured_search" value="Yes">
+							<div class="featured-search-block">
+                                <?php $checked = ( !empty( $_REQUEST['featured_search'] ) &&   $_REQUEST['featured_search'] == 'Yes' ) ? 'checked="checked"' : '';  ?>
+								<label for="featured_search">Search only featured</label>
+								<input type="checkbox" name="featured_search" value="Yes" <?php echo $checked; ?>>
 							</div>
                         </div>
                         <br>
