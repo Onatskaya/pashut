@@ -328,34 +328,52 @@ function get_viewing_time($property_id){
  * Function return pagination,
  */
 
- function get_pagination( $current_page, $per_page, $total_rows ){
-   if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
-   $start=abs($page*$per_page);
+function get_pagination( $current_page, $per_page, $total_rows ){
+    $num_pages=ceil($total_rows/$per_page);
 
-   $num_pages=ceil($total_rows/$per_page);
-
-   if($num_pages < 2)
-     return;
+    if($num_pages < 2)
+        return;
 
     ob_start();
-  ?>
 
-   <div class="pagination pagination-top">
-     <ul>
-       <?php $i=1; ?>
-       <?php while( $i <= $num_pages): ?>
-         <?php $QS = http_build_query(array_merge($_GET, array("page"=>$i))); ?>
-         <li>
-           <?php $class = ($current_page == $i-1) ? 'currentpage' : 'prevnext'; ?>
-           <a class="<?php echo $class; ?>" data-pageid="<?php echo $i; ?>" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>"><?php echo $i; ?></a>
-         </li>
-         <?php $i++; ?>
-       <?php endwhile; ?>
-     </ul>
-   </div>
-  <?php
+    ?>
 
-   $pagination = ob_get_clean();
+    <div class="pagination pagination-top">
+        <ul>
+            <?php $i=1; ?>
+            <?php while( $i <= $num_pages): ?>
+                <?php $QS = http_build_query(array_merge($_GET, array("page"=>$i))); ?>
+                <li>
+                    <?php $class = ($current_page == $i-1) ? 'currentpage' : 'prevnext'; ?>
+                    <a class="<?php echo $class; ?>" data-pageid="<?php echo $i; ?>" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>"><?php echo $i; ?></a>
+                </li>
+                <?php $i++; ?>
+            <?php endwhile; ?>
+        </ul>
+    </div>
+    <?php
 
-   return $pagination;
- }
+    $pagination = ob_get_clean();
+
+    return $pagination;
+}
+
+function checked_price($price, $price_field){
+    if( !empty($_GET[$price_field]))
+        return;
+
+    if( $price == $_GET[$price_field] ) {
+        return 'selected';
+    }
+
+    return;
+}
+
+function slide_image_path($path, $image){
+    $image_path = $path . $image;
+    if( file_exists( $image_path ) ){
+        return $image_path;
+    }
+
+    return;
+}
