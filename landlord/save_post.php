@@ -3,7 +3,11 @@ include("../functions/function.php");
 
 
 $member_id=$_SESSION['member_id'];
-// print_r($member_id);die;
+if(!empty($_POST['calendar_events'])){
+    $calendar_events = $_POST['calendar_events'];
+    unset($_POST['calendar_events']);
+}
+
 $contact=$_POST['contact_a'].'-'.$_POST['contact_b'].'-'.$_POST['contact_c'];
 
 $listing_number=last_id('post','post_id','listing_number');
@@ -105,10 +109,11 @@ $_POST['property_available']='Available';
 
 $post_id=insert('post',$_POST,'post_id','post_id');
 
-if( !empty($_POST['calendar_events'])){
+if( !empty($calendar_events)){
+//    [{"title":"01:30-02:00","start":"2016-12-15T01:30","end":"2016-12-15T02:00","description":""}]
     $save_data = array(
         'property_id' => $post_id,
-        'viewing_time' => base64_encode(serialize($_POST['calendar_events']))
+        'viewing_time' => base64_encode(serialize($calendar_events))
     );
 
     $insert_id = insert('viewing_time_tbl', $save_data);

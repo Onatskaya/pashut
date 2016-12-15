@@ -16,46 +16,56 @@ if(isset($_GET['city']))
 	$city=$_GET['city'];
 	$structure_type= $_GET['structure_type'];
 	$priceLow= $_GET['priceLow'];
-	$priceHigh= $_GET['priceHigh'];  
+	$priceHigh= $_GET['priceHigh'];
 
 
+    $per_page = 3;
+    if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
+    $start=abs($page*$per_page);
+
+    $que_search_count="SELECT COUNT(*) FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
 	$que_search="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
 	if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
 	{
-		$que_search.=" AND rent >=$priceLow ";
+		$que_condition.=" AND rent >=$priceLow ";
 	}
 	if(isset($_REQUEST['priceHigh']) AND !empty($_REQUEST['priceHigh']))
 	{
-		$que_search.=" AND rent <=$priceHigh ";
+        $que_condition.=" AND rent <=$priceHigh ";
 	}
     if(isset($_REQUEST['bedroom']) AND !empty($_REQUEST['bedroom']))
     {
          $bedroom= $_GET['bedroom'];
-        $que_search.=" AND bedroom ='$bedroom' ";
+        $que_condition.=" AND bedroom ='$bedroom' ";
     }
     if(isset($_REQUEST['bathroom']) AND !empty($_REQUEST['bathroom']))
     {
         $bathroom= $_GET['bathroom'];
-        $que_search.=" AND bathroom ='$bathroom' ";
+        $que_condition.=" AND bathroom ='$bathroom' ";
     }
     if(isset($_REQUEST['square_footage']) AND !empty($_REQUEST['square_footage']))
     {
         $square_footage= $_GET['square_footage'];
-        $que_search.=" AND square_footage='$square_footage' ";
+        $que_condition.=" AND square_footage='$square_footage' ";
     }
     if(isset($_REQUEST['furnished']) AND !empty($_REQUEST['furnished']))
     {
         $furnished= $_GET['furnished'];
-        $que_search.=" AND furnished ='$furnished' ";
+        $que_condition.=" AND furnished ='$furnished' ";
     }
 
     // Search only featured
     if(isset($_SESSION['member_logged'] ) &&  (!empty($_REQUEST['featured_search']) && $_REQUEST['featured_search'] == 'Yes' ))
     {
-        $que_search.=" AND featured_listing ='Yes' ";
+        $que_condition.=" AND featured_listing ='Yes' ";
     }
 
+    $que_search_count .= $que_condition;
+    $que_search .= $que_condition;
+
     $que_search.="ORDER BY featured_listing DESC";
+
+    $que_search.= " LIMIT $start,$per_page";
 	// print_r($que_search);die;
 	$obj_search=mysqli_query($conn,$que_search);
 	if($trow=mysqli_num_rows($obj_search))
@@ -524,13 +534,15 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     		</li>		
     	</ul>
 
-    	
-    		<div class="pagination pagination-top">			
-    			<ul>				
+<!--    	    --><?php //if(): ?>
+    		<div class="pagination pagination-top">
+                <?php $QS = http_build_query(array_merge($_GET, array("page"=>2))); ?>
+
+                <ul>
 				
-						<li><a class="currentpage" data-pageid="1" href="#">1</a></li>
+						<li><a class="currentpage" data-pageid="1" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>">1</a></li>
 					
-						<li><a data-pageid="2" href="#" class="prevnext">2</a></li>
+						<li><a data-pageid="2" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>" class="prevnext">2</a></li>
 					
 						<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
 					

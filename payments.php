@@ -15,6 +15,7 @@ $amt= check_price($data['membership_plan']);
 
 $_SESSION['order_id']=$data['order_id'];
 $_SESSION['membership_plan']= $data['membership_plan'];
+//$_SESSION['membership_plan']= $data['membership_plan'];
 
 $_POST['cmd']='_xclick';
 $_POST['no_note']='1';

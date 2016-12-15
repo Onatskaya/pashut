@@ -2088,9 +2088,7 @@ include("footer.php");
 </script>
 <?php
 $events = get_viewing_time($post_id);
-//    print_r($events);
-//    die;
-$events = ($events);
+
 $events = !empty($events) ? $events : '[]';
 ?>
 <script>

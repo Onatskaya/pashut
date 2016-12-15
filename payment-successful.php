@@ -2,8 +2,10 @@
 include('functions/function.php');
 include('check_price.php');
 
-//$order_id=$_SESSION['order_id'];
-$order_id='PLH-20';
+$order_id=$_SESSION['order_id'];
+$member_id=$_SESSION['member_id'];
+
+//$order_id='PLH-20';
 
 $start_date= date('Y-m-d');
 $end_date= check_end_date($_SESSION['membership_plan']);
@@ -11,11 +13,11 @@ $end_date= check_end_date($_SESSION['membership_plan']);
 
 $payment_date=date('Y-m-d h:i:s');
 
-$que="UPDATE plan_tbl SET start_date='$start_date',end_date='$end_date',status='Paid',payment_date='$payment_date',plan_status='Enable' WHERE order_id='$order_id' ";
+$que="UPDATE plan_tbl SET start_date='$start_date',end_date='$end_date',status='Paid',payment_date='$payment_date',plan_status='Enable' WHERE member_id='$member_id' ";
 // print_r($que);die;
 $obj= mysqli_query($conn,$que);
 
-$que2="UPDATE members SET member_status='Enable' WHERE order_id='$order_id' ";
+$que2="UPDATE members SET member_status='Enable' WHERE member_id='$member_id' ";
 $obj2= mysqli_query($conn,$que2);
 
 $que_info="SELECT * FROM members 
