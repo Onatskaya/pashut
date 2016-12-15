@@ -340,17 +340,19 @@ function get_viewing_time($property_id){
     ob_start();
   ?>
 
-      <div class="pagination pagination-top">
-        <ul>
-          <?php for($i=1;$i<=$num_pages;$i++): ?>
-            <?php $QS = http_build_query(array_merge($_GET, array("page"=>$i))); ?>
-            <li>
-              <?php $class = ($current_page == $i) ? 'currentpage' : 'prevnext'; ?>
-              <a class="currentpage" data-pageid="<?php echo $i; ?>" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>"><?php echo $i; ?></a>
-            </li>
-          <?php endfor; ?>
-        </ul>
-      </div>
+   <div class="pagination pagination-top">
+     <ul>
+       <?php $i=1; ?>
+       <?php while( $i <= $num_pages): ?>
+         <?php $QS = http_build_query(array_merge($_GET, array("page"=>$i))); ?>
+         <li>
+           <?php $class = ($current_page == $i-1) ? 'currentpage' : 'prevnext'; ?>
+           <a class="<?php echo $class; ?>" data-pageid="<?php echo $i; ?>" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>"><?php echo $i; ?></a>
+         </li>
+         <?php $i++; ?>
+       <?php endwhile; ?>
+     </ul>
+   </div>
   <?php
 
    $pagination = ob_get_clean();
