@@ -10,6 +10,11 @@ if($_SESSION['language']=='Hebrew')
 	}
 	echo "<script>location.href='view_property_h.php?$getto'</script>";
 }
+
+$per_page = 2;
+if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
+$start=abs($page*$per_page);
+
 if(isset($_GET['city']))
 {
 
@@ -18,12 +23,7 @@ if(isset($_GET['city']))
 	$priceLow= $_GET['priceLow'];
 	$priceHigh= $_GET['priceHigh'];
 
-
-    $per_page = 3;
-    if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
-    $start=abs($page*$per_page);
-
-    $que_search_count="SELECT COUNT(*) FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
+  $que_search_count="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
 	$que_search="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
 	if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
 	{
@@ -75,6 +75,12 @@ if(isset($_GET['city']))
 			$data_search2[]= $data_search3; 
 		}
 	}
+
+  $result = mysqli_query($conn, $que_search_count);
+  $total_rows = mysqli_num_rows($result);
+  $num_pages=ceil($total_rows/$per_page);
+
+
 }
 
 $que_city="SELECT * FROM city ";
@@ -534,29 +540,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     		</li>		
     	</ul>
 
-<!--    	    --><?php //if(): ?>
-    		<div class="pagination pagination-top">
-                <?php $QS = http_build_query(array_merge($_GET, array("page"=>2))); ?>
-
-                <ul>
-				
-						<li><a class="currentpage" data-pageid="1" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>">1</a></li>
-					
-						<li><a data-pageid="2" href="<?php echo htmlspecialchars("$_SERVER[PHP_SELF]?$QS"); ?>" class="prevnext">2</a></li>
-					
-						<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
-					
-						<li><a data-pageid="4" href="#" class="prevnext">4</a></li>
-					
-						<li><a data-pageid="5" href="#" class="prevnext">5</a></li>
-					
-						<li><a data-pageid="6" href="#" class="prevnext">6</a></li>
-					
-						<li><a data-pageid="62" href="#" class="prevnext">Last &gt;&gt;</a></li>
-    				
-    			</ul>				
-    		</div>
-    	
+      <!-- Start pagination-->
+      <?php echo get_pagination($page, $per_page, $total_rows); ?>
+      <!-- End pagination-->
     </div>
 
 
@@ -665,28 +651,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
     		</div>
     	<?php }
     } ?>
-
-    
-
-    	<div class="pagination pagination-bottom">			
-    		<ul>				
-    			
-    					<li><a class="currentpage" data-pageid="1" href="#">1</a></li>
-    				
-    					<li><a data-pageid="2" href="#" class="prevnext">2</a></li>
-    				
-    					<li><a data-pageid="3" href="#" class="prevnext">3</a></li>
-    				
-    					<li><a data-pageid="4" href="#" class="prevnext">4</a></li>
-    				
-    					<li><a data-pageid="5" href="#" class="prevnext">5</a></li>
-    				
-    					<li><a data-pageid="6" href="#" class="prevnext">6</a></li>
-    				
-    				<li><a data-pageid="62" href="#" class="prevnext">Last &gt;&gt;</a></li>
-    			
-    		</ul>				
-    	</div>
+    <?php echo get_pagination($page, $per_page, $total_rows); ?>
     </div>
     		<div class="ad-results">
     			<div class="line"><img src="http://static.westsiderentals.com/images/relocation-expert.png"></div>
