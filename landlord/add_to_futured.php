@@ -22,7 +22,7 @@ $last_id=$_POST['member_id'];
 $que="SELECT * FROM members WHERE member_id='$last_id' ";
 $obj= mysqli_query($conn,$que);
 $data=mysqli_fetch_assoc($obj);
-$amt= '5';
+$amt= '20';
 
 $_SESSION['order_id']=$order_id;
 $_SESSION['post_id']=$_POST['post_id'];

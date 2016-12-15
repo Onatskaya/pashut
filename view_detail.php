@@ -387,77 +387,101 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			</div> -->
 			<div class="row">
 			<link media="screen" type="text/css" href="js/new/slider/flexslider.css" rel="stylesheet">
-				<div class="flexslider" id="slider">
-					<?php
-						if($data['featured_listing']=='Yes')
-						{ ?>
-							<div class="featured-badge"></div>
-					<?php	}
-					?>
-					<div class="flex-viewport" style="overflow: hidden; position: relative;">
-						<ul class="slides" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-							<li style="width: 752px; float: left; display: block;" class="flex-active-slide"><img style="width:85%;" src="home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:85%;" src="home_images/<?php echo $data['image1'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:85%;" src="home_images/<?php echo $data['image2'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:85%;" src="home_images/<?php echo $data['image3'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:85%;" src="home_images/<?php echo $data['image4'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:85%;" src="home_images/<?php echo $data['image5'];?>" draggable="false"></li>
-							<?php
-							if(isset($data_img2))
-							{
-								foreach($data_img2 as $data_img)
-								{ ?>
-									<li style="width: 752px; float: left; display: block;"><img style="width:85%;" src="home_images/<?php echo $data_img['image'];?>" draggable="false"></li>
-							<?php }
-							}
-							?>
-			<!-- 				<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/7.jpg" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/8.jpg" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/9.jpg" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/10.jpg" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/111.jpg" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/12.jpg" draggable="false"></li> -->
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
-						</ul>
-					</div>
-					<ul class="flex-direction-nav">
-						<li><a href="#" class="flex-prev"></a></li>
-						<li><a href="#" class="flex-next"></a></li>
-					</ul>
-				</div>
-				<div class="flexslider" id="carousel">
-					<div class="flex-viewport" style="overflow: hidden; position: relative;">
-						<ul class="slides" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-				          	<li style="width: 210px; float: left; display: block;" class="flex-active-slide"><img src="home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data['image1'];?>" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data['image2'];?>" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data['image3'];?>" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data['image4'];?>" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data['image5'];?>" draggable="false"></li>
-							<?php
-							if(isset($data_img2))
-							{
-								foreach($data_img2 as $data_img)
-								{ ?>
-									<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data_img['image'];?>" draggable="false"></li>
-							<?php }
-							}
-							?>
 
-				<!-- 			<li style="width: 210px; float: left; display: block;"><img src="http://static.westsiderentals.com/photos/featured/photos/201106/7.jpg" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="http://static.westsiderentals.com/photos/featured/photos/201106/8.jpg" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="http://static.westsiderentals.com/photos/featured/photos/201106/9.jpg" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="http://static.westsiderentals.com/photos/featured/photos/201106/10.jpg" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="http://static.westsiderentals.com/photos/featured/photos/201106/111.jpg" draggable="false"></li>
-							<li style="width: 210px; float: left; display: block;"><img src="http://static.westsiderentals.com/photos/featured/photos/201106/12.jpg" draggable="false"></li> -->
-							<li style="width: 210px; float: left; display: block;"><img src="home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
-						</ul>
-					</div>
-					<ul class="flex-direction-nav">
-						<li><a href="#" class="flex-prev"></a></li>
-						<li><a href="#" class="flex-next"></a></li>
-					</ul>
-				</div>
+
+                <div class="flexslider" id="slider">
+                    <?php
+                    if($data['featured_listing']=='Yes')
+                    { ?>
+                        <div class="featured-badge"></div>
+                    <?php	}
+                    ?>
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                        <ul class="slides" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+                            <?php if($main_image = slide_image_path('home_images/', $data['main_image'])): ?>
+                                <li style="width: 752px; float: left; display: block;" class="flex-active-slide"><img style="width:80%;" src="<?php echo $main_image; ?>" draggable="false"></li>
+                            <?php endif; ?>
+
+                            <?php if($image1 = slide_image_path('home_images/', $data['image1'])): ?>
+                                <li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="<?php echo $image1; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image2 = slide_image_path('home_images/', $data['image2'])): ?>
+                                <li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="<?php echo $image2; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image3 = slide_image_path('home_images/', $data['image3'])): ?>
+                                <li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="<?php echo $image3; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image4 = slide_image_path('home_images/', $data['image4'])): ?>
+                                <li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="<?php echo $image4; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image5 = slide_image_path('home_images/', $data['image5'])): ?>
+                                <li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="<?php echo $image5; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php
+                            if(isset($data_img2))
+                            {
+                                foreach($data_img2 as $data_img)
+                                { ?>
+                                    <?php if(!slide_image_path('home_images/', $data_img['image'])) continue; ?>
+                                    <li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data_img['image'];?>" draggable="false"></li>
+                                <?php }
+                            }
+                            ?>
+                            <!--                            --><?php //if($main_image = slide_image_path('home_images/', $data['main_image'])): ?>
+                            <!--							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="--><?php //echo $main_image; ?><!--" draggable="false"></li>-->
+                            <!--                            --><?php //endif; ?>
+                        </ul>
+                    </div>
+                    <ul class="flex-direction-nav">
+                        <li><a href="#" class="flex-prev flex-disabled" tabindex="-1">Previous</a></li>
+                        <li><a href="#" class="flex-next">Next</a></li>
+                    </ul>
+                </div>
+                <div class="flexslider" id="carousel">
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                        <ul class="slides" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+
+                            <?php if($main_image = slide_image_path('home_images/', $data['main_image'])): ?>
+                                <li style="width: 210px; float: left; display: block;" class="flex-active-slide"><img src="<?php echo $main_image; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image1 = slide_image_path('home_images/', $data['image1'])): ?>
+                                <li style="width: 210px; float: left; display: block;"><img src="<?php echo $image1; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image2 = slide_image_path('home_images/', $data['image2'])): ?>
+                                <li style="width: 210px; float: left; display: block;"><img src="<?php echo $image2; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image3 = slide_image_path('home_images/', $data['image3'])): ?>
+                                <li style="width: 210px; float: left; display: block;"><img src="<?php echo $image3; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image4 = slide_image_path('home_images/', $data['image4'])): ?>
+                                <li style="width: 210px; float: left; display: block;"><img src="<?php echo $image4; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php if($image5 = slide_image_path('home_images/', $data['image5'])): ?>
+                                <li style="width: 210px; float: left; display: block;"><img src="<?php echo $image5; ?>" draggable="false"></li>
+                            <?php endif; ?>
+                            <?php
+                            if(isset($data_img2))
+                            {
+                                foreach($data_img2 as $data_img)
+                                { ?>
+                                    <?php if(!slide_image_path('home_images/', $data_img['image'])) continue; ?>
+                                    <li style="width: 210px; float: left; display: block;"><img src="../home_images/<?php echo $data_img['image'];?>" draggable="false"></li>
+                                <?php }
+                            }
+                            ?>
+                            <!--							<li style="width: 210px; float: left; display: block;"><img src="../home_images/--><?php //echo $data['main_image'];?><!--" draggable="false"></li>-->
+                        </ul>
+                    </div>
+                    <ul class="flex-direction-nav">
+                        <li><a href="#" class="flex-prev flex-disabled" tabindex="-1">Previous</a></li>
+                        <li><a href="#" class="flex-next">Next</a></li>
+                    </ul>
+                </div>
+
+
+
+
+
 				
 				
 
@@ -1119,3 +1143,5 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	  	});
 
 	</script>
+    </body>
+</html>

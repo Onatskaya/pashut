@@ -10,6 +10,11 @@ if($_SESSION['language']=='English')
     }
     echo "<script>location.href='view_property.php?$getto'</script>";
 }
+
+$per_page = 20;
+if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
+$start=abs($page*$per_page);
+
 if(isset($_GET['city']))
 {
 
@@ -18,43 +23,45 @@ if(isset($_GET['city']))
     $priceLow= $_GET['priceLow'];
     $priceHigh= $_GET['priceHigh'];
 
-
+    $que_search_count="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
     $que_search="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
     if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
     {
-        $que_search.=" AND rent >=$priceLow ";
+        $que_condition.=" AND rent >=$priceLow ";
     }
     if(isset($_REQUEST['priceHigh']) AND !empty($_REQUEST['priceHigh']))
     {
-        $que_search.=" AND rent <=$priceHigh ";
+        $que_condition.=" AND rent <=$priceHigh ";
     }
     if(isset($_REQUEST['bedroom']) AND !empty($_REQUEST['bedroom']))
     {
         $bedroom= $_GET['bedroom'];
-        $que_search.=" AND bedroom ='$bedroom' ";
+        $que_condition.=" AND bedroom ='$bedroom' ";
     }
     if(isset($_REQUEST['bathroom']) AND !empty($_REQUEST['bathroom']))
     {
         $bathroom= $_GET['bathroom'];
-        $que_search.=" AND bathroom ='$bathroom' ";
+        $que_condition.=" AND bathroom ='$bathroom' ";
     }
     if(isset($_REQUEST['square_footage']) AND !empty($_REQUEST['square_footage']))
     {
         $square_footage= $_GET['square_footage'];
-        $que_search.=" AND square_footage='$square_footage' ";
+        $que_condition.=" AND square_footage='$square_footage' ";
     }
     if(isset($_REQUEST['furnished']) AND !empty($_REQUEST['furnished']))
     {
         $furnished= $_GET['furnished'];
-        $que_search.=" AND furnished ='$furnished' ";
+        $que_condition.=" AND furnished ='$furnished' ";
     }
 
     // Search only featured
     if(isset($_SESSION['member_logged'] ) &&  (!empty($_REQUEST['featured_search']) && $_REQUEST['featured_search'] == 'Yes' ))
     {
-        $que_search.=" AND featured_listing ='Yes' ";
+        $que_condition.=" AND featured_listing ='Yes' ";
     }
 
+    $que_search_count .= $que_condition;
+    $que_search .= $que_condition;
 
     $que_search.="ORDER BY featured_listing DESC";
     // print_r($que_search);die;
@@ -66,6 +73,10 @@ if(isset($_GET['city']))
             $data_search2[]= $data_search3;
         }
     }
+
+    $result = mysqli_query($conn, $que_search_count);
+    $total_rows = mysqli_num_rows($result);
+    $num_pages=ceil($total_rows/$per_page);
 }
 
 $que_city="SELECT * FROM city ";
@@ -539,25 +550,7 @@ include('header_h.php');
     <div id="search-results">
 
         <div class="selection-bar">
-            <div class="pagination pagination-top" style="float:left;">
-                <ul>
-
-                    <li><a class="currentpage" data-pageid="1" href="#">1</a></li>
-
-                    <li><a data-pageid="2" href="#" class="prevnext">2</a></li>
-
-                    <li><a data-pageid="3" href="#" class="prevnext">3</a></li>
-
-                    <li><a data-pageid="4" href="#" class="prevnext">4</a></li>
-
-                    <li><a data-pageid="5" href="#" class="prevnext">5</a></li>
-
-                    <li><a data-pageid="6" href="#" class="prevnext">6</a></li>
-
-                    <li><a data-pageid="62" href="#" class="prevnext">אחרון &gt;&gt;</a></li>
-
-                </ul>
-            </div>
+            <?php echo get_pagination($page, $per_page, $total_rows); ?>
             <ul class="layout-selection list-inline" style="float:right;">
                 <li class="selected" data-layout="photo">
                     <img align="absmiddle" src="../images/new/photo-icon.png">תמונות
@@ -675,28 +668,7 @@ include('header_h.php');
             <?php }
         } ?>
 
-
-
-
-        <div class="pagination pagination-bottom" style="float:left">
-            <ul>
-
-                <li><a class="currentpage" data-pageid="1" href="#">1</a></li>
-
-                <li><a data-pageid="2" href="#" class="prevnext">2</a></li>
-
-                <li><a data-pageid="3" href="#" class="prevnext">3</a></li>
-
-                <li><a data-pageid="4" href="#" class="prevnext">4</a></li>
-
-                <li><a data-pageid="5" href="#" class="prevnext">5</a></li>
-
-                <li><a data-pageid="6" href="#" class="prevnext">6</a></li>
-
-                <li><a data-pageid="62" href="#" class="prevnext">אחרון &gt;&gt;</a></li>
-
-            </ul>
-        </div>
+        <?php echo get_pagination($page, $per_page, $total_rows); ?>
     </div>
     <div class="ad-results">
         <div class="line"><img src="http://static.westsiderentals.com/images/relocation-expert.png"></div>
@@ -704,33 +676,15 @@ include('header_h.php');
     </div>
     <div class="quickview" id="listing-details-modal"></div>
 </div>
-
-
-
-
 </div>
 
-
 <!-- FOOTER -->
-<?php
-include('footer_h.php');
-?>
-
-
-
-
-
-
+<?php include('footer_h.php'); ?>
 
 
 <!-- Bootstrap core JavaScript
 
 <!-- Placed at the end of the document so the pages load faster -->
-
-
-
-
-
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -745,8 +699,6 @@ include('footer_h.php');
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="../js/bootstrap.min.js"></script>
-
-
 
 <script src="../js/fb_login.js"></script>
 <script src="../js/navigation/menu.js" type="text/javascript" language="javascript"></script>
