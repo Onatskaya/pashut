@@ -26,6 +26,11 @@ if(mysqli_num_rows($obj_img))
 }
 
 $events = get_viewing_time($pid);
+
+if( ! $events ){
+    $events = '[]';
+}
+
 ?>
 
 <!DOCTYPE HTML>
