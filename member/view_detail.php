@@ -12,6 +12,13 @@ if($_SESSION['language']=='Hebrew')
 }
 
 $pid= $_GET['pid'];
+
+$events = get_viewing_time($pid);
+
+if(!$events){
+    $events = '[]';
+}
+
 $member_id= $_SESSION['member_id'];
 $que= "SELECT * FROM post WHERE post_id='$pid' ";
 $obj= mysqli_query($conn,$que);
@@ -127,6 +134,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="../css/201603/global.css" rel="stylesheet">
 				<link href="../css/201603/section.css" rel="stylesheet">
 				<link href="../css/201603/carousel.css" rel="stylesheet">
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 
 					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 
@@ -642,7 +650,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 
 					<div class="col-md-4">
-							<div class="hidden-xs hidden-sm">
+							<div class="">
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">Back to Previous Page</a>
 								<?php
 								if(!isset($_SESSION['member_logged']))
@@ -792,48 +800,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		        </div>
 		        <div class="modal-body">
 		          <!-- <p ><span id="p">Are you sure, want to Delete this Reminder ?</span></p> -->
-		          <table class="table table-striped">
-		          	<tr class="mt">
-		          		<th>Day</th>
-		          		<th>Time From</th>
-		          		<th>Time To</th>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Monday</td>
-		          		<td><?php echo $data['mon_time_frm'];?></td>
-		          		<td><?php echo $data['mon_time_to'];?></td>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Tueday</td>
-		          		<td><?php echo $data['tue_time_frm'];?></td>
-		          		<td><?php echo $data['tue_time_to'];?></td>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Wednesday</td>
-		          		<td><?php echo $data['wed_time_frm'];?></td>
-		          		<td><?php echo $data['wed_time_to'];?></td>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Thursday</td>
-		          		<td><?php echo $data['thu_time_frm'];?></td>
-		          		<td><?php echo $data['thu_time_to'];?></td>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Friday</td>
-		          		<td><?php echo $data['fri_time_frm'];?></td>
-		          		<td><?php echo $data['fri_time_to'];?></td>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Saturday</td>
-		          		<td><?php echo $data['sat_time_frm'];?></td>
-		          		<td><?php echo $data['sat_time_to'];?></td>
-		          	</tr>
-		          	<tr class="mt">
-		          		<td>Sunday</td>
-		          		<td><?php echo $data['sun_time_frm'];?></td>
-		          		<td><?php echo $data['sun_time_to'];?></td>
-		          	</tr>
-		          </table>
+                    <div id="calendar"></div>
 		        </div>
 		        <div class="modal-footer">
 		          	<!-- <button type="button" class="btn btn-default" id="yes">Yes</button> -->
@@ -913,7 +880,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	<script src="../js/ddaaccordion.js" type="text/javascript" language="javascript"></script>
 
-
+    <!-- Full Calendar -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
 
 	<!-- Default JavaScript -->
 	<script src="../js/new/default.js"></script>
@@ -934,6 +903,21 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		{
 			$("#color_s").css("color", "red");
 		}
+
+        $('#myModal').on('shown.bs.modal', function() {
+            var eventsList = <?php echo $events; ?>;
+            $('#calendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: false,
+                events: eventsList
+            });
+        });
 	});
 	</script>
 	<script type="text/javascript">
