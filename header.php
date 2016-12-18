@@ -66,7 +66,7 @@ $obj_up_date=mysqli_query($conn,$que_up_date);
 								<?php 
 								} 
 								?>
-								<li class="find"><em></em><a href="guestsearch.php">Featured Listings</a></li>
+								<li class="find"><em></em><a href="featured_listings.php">Featured Listings</a></li>
 								
 								
 								<li class="dropdown">

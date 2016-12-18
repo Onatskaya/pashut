@@ -496,7 +496,7 @@ include('header.php');
                     </a>
                     <input type="hidden" name="post_id" value="<?php echo $data['post_id']; ?>">
                     <input type="hidden" name="member_id" value="<?php echo $data['member_id']; ?>">
-                    <input type="submit" class="payrentLink" name="add-futured" value="Add Futured">
+                    <input type="submit" class="btn btn-danger add-futured" name="add-futured" value="Featured Listing Upgrade">
                 </form>
             <?php endif; ?>
         <?php endif; ?>
