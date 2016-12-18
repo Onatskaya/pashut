@@ -1368,7 +1368,7 @@ body.nolayout {background:none;}
 
 
 .listing-details .signupLink {
-    background: #090 none repeat scroll 0 0;
+    background: #6CB25B none repeat scroll 0 0;
     color: #fff;
     display: block;
     font-size: 16px;
@@ -1379,6 +1379,11 @@ body.nolayout {background:none;}
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.listing-details .signupLink:hover{
+    background: #73CE5C none repeat scroll 0 0;
+}
+
 .listing-details .applyLink {
     background: #6ac954 none repeat scroll 0 0;
     color: #fff;
@@ -1854,7 +1859,6 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
     white-space: normal;
 }
 
-#6AC954
 .js-add-to-featured .glyphicon-question-sign{
     color: #d9534f;
 }
@@ -1862,6 +1866,3 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
 .listing-details .payrentLink:hover{
 background: #434BEF none repeat scroll 0 0;
 }
-
-#71CE5C
-#
