@@ -482,7 +482,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 										<a href="#" class="js-add-to-featured" data-toggle="tooltip" data-placement="left" title="Featured Listings: Upgrading your property to a featured listing creates higher visibility  and a surge in demand for your listing. Renters see featured listings on the top of their searches. Click the 'Upgrade' button below to purchase" >
 											<i class='glyphicon glyphicon-question-sign'></i>
 										</a>
-										<input type="submit" class="payrentLink" name="add-futured" value="Add Futured">
+										<input type="submit" class="btn btn-danger add-futured" name="add-futured" value="לשדרג את הרישום המומלץ">
 									</form>
 								<?php endif; ?>
 								<div class="walkscore">
