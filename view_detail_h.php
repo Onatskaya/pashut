@@ -926,6 +926,43 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			$("#color_s").css("color", "red");
 		}
 
+        <?php if( $member_id && $_SESSION['member_logged'] ): ?>
+        $('#myModal').on('shown.bs.modal', function() {
+            var eventsList = <?php echo $events; ?>;
+            $('#calendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: false,
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+
+                        if(event.start){
+                            $("#confirm_day").val(moment(event.start).format('dddd'));
+                        }
+
+                        if(event.start){
+                            $("#time_from").val(moment(event.start).format('h:mm'));
+                        }
+
+                        if(event.end){
+                            $("#time_to").val(moment(event.end).format('h:mm'));
+                        }
+
+                        $('#myModal').modal('hide');
+                        $('#confirm_modal').modal('show');
+
+                    });
+                },
+                events: eventsList
+            });
+        });
+        <?php else: ?>
         $('#myModal').on('shown.bs.modal', function() {
             var eventsList = <?php echo $events; ?>;
             $('#calendar').fullCalendar({
@@ -940,6 +977,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                 events: eventsList
             });
         });
+        <?php endif; ?>
 	});
 	</script>
 	<script type="text/javascript">

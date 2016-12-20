@@ -915,6 +915,28 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                 displayEventTime: false,
                 defaultView: 'month',
                 editable: false,
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+
+                        if(event.start){
+                            $("#confirm_day").val(moment(event.start).format('dddd'));
+                        }
+
+                        if(event.start){
+                            $("#time_from").val(moment(event.start).format('h:mm'));
+                        }
+
+                        if(event.end){
+                            $("#time_to").val(moment(event.end).format('h:mm'));
+                        }
+
+                        $('#myModal').modal('hide');
+                        $('#confirm_modal').modal('show');
+
+//                        $("#eventContent").dialog({ modal: true, title: 'Viewing Times', width:350});
+                    });
+                },
                 events: eventsList
             });
         });
