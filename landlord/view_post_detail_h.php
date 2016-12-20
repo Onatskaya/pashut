@@ -477,14 +477,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<div class="sidebar">
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">חזרה לעמוד הקודם</a>				
 								<br><a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">צפייה מיידית</a>
-								<?php if( !empty($_SESSION['member_id']) && !empty($data['member_id']) && $_SESSION['member_id'] == $data['member_id'] ): ?>
-									<form id="add-to-featured" action="add_to_futured.php">
-										<a href="#" class="js-add-to-featured" data-toggle="tooltip" data-placement="left" title="Featured Listings: Upgrading your property to a featured listing creates higher visibility  and a surge in demand for your listing. Renters see featured listings on the top of their searches. Click the 'Upgrade' button below to purchase" >
-											<i class='glyphicon glyphicon-question-sign'></i>
-										</a>
-										<input type="submit" class="btn btn-danger add-futured" name="add-futured" value="לשדרג את הרישום המומלץ">
-									</form>
-								<?php endif; ?>
+
 								<div class="walkscore">
 										<div class="top">WALKSCORE</div>
 										<div class="body">
@@ -497,7 +490,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 											</div><h3></h3></div>
 							</div>  
 								
-							<div class="hidden-xs hidden-sm">	
+							<div class="">
 								<div class="soundscore">
 									<div class="top">Soundscore: <span style="color: #EE583F" id="color_s"><?php $WHERE_SOUND['id']=$data['soundscore']; echo select('soundscore',$WHERE_SOUND)[0]['soundscore_he'];?></span></div>
 									<div class="body">
@@ -517,7 +510,15 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 											</div>
 										</div>
 									</div><h3></h3>
-								</div>			
+								</div>
+                                <?php if( !empty($_SESSION['member_id']) && !empty($data['member_id']) && $_SESSION['member_id'] == $data['member_id'] ): ?>
+                                    <form id="add-to-featured" action="add_to_futured.php">
+                                        <a href="#" class="js-add-to-featured" data-toggle="tooltip" data-placement="left" title="Featured Listings: Upgrading your property to a featured listing creates higher visibility  and a surge in demand for your listing. Renters see featured listings on the top of their searches. Click the 'Upgrade' button below to purchase" >
+                                            <i class='glyphicon glyphicon-question-sign'></i>
+                                        </a>
+                                        <input type="submit" class="btn btn-danger add-futured" name="add-futured" value="לשדרג את הרישום המומלץ">
+                                    </form>
+                                <?php endif; ?>
 								<div class="listing-map">									
 									<div style="width: 280px; height: 230px; margin: 0px auto 15px; position: relative;">
 										<script src='http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false&language=he'></script>

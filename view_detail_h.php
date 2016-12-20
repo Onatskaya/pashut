@@ -1,6 +1,12 @@
 <?php
 include('functions/function.php');
 $pid= $_GET['pid'];
+$events = get_viewing_time($pid);
+
+if(!$events){
+    $events = '[]';
+}
+
 if($_SESSION['language']=='English')
 {
 	$getto='';
@@ -124,6 +130,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/global.css" rel="stylesheet">
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
+                <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 			
 					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
@@ -810,99 +817,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	        </div>
 	        <div class="modal-body">
 	          <!-- <p ><span id="p">Are you sure, want to Delete this Reminder ?</span></p> -->
-	          <?php
-	          if(isset($_SESSION['member_logged']))
-	          { ?>
-	      			<table class="table ">
-	      				<tr>
-							<th style="text-align:right">יְוֹם</th>
-							<th style="text-align:right">זמן שעובר</th>
-							<th style="text-align:right">זמן ל</th>
-						</tr>
-	      				<tr class="mt hov">
-	      					<td>יוֹם שֵׁנִי</td>
-	      					<td><?php echo $data['mon_time_frm'];?></td>
-	      					<td><?php echo $data['mon_time_to'];?></td>
-	      				</tr>
-	      				<tr class="mt hov">
-	      					<td>יוֹם שְׁלִישִׁי</td>
-	      					<td><?php echo $data['tue_time_frm'];?></td>
-	      					<td><?php echo $data['tue_time_to'];?></td>
-	      				</tr>
-	      				<tr class="mt hov">
-	      					<td>יום רביעי</td>
-	      					<td><?php echo $data['wed_time_frm'];?></td>
-	      					<td><?php echo $data['wed_time_to'];?></td>
-	      				</tr>
-	      				<tr class="mt hov">
-	      					<td>יוֹם חֲמִישִׁי</td>
-	      					<td><?php echo $data['thu_time_frm'];?></td>
-	      					<td><?php echo $data['thu_time_to'];?></td>
-	      				</tr>
-	      				<tr class="mt hov">
-	      					<td>יוֹם שִׁישִׁי</td>
-	      					<td><?php echo $data['fri_time_frm'];?></td>
-	      					<td><?php echo $data['fri_time_to'];?></td>
-	      				</tr>
-	      				<tr class="mt hov">
-	      					<td>יום שבת</td>
-	      					<td><?php echo $data['sat_time_frm'];?></td>
-	      					<td><?php echo $data['sat_time_to'];?></td>
-	      				</tr>
-	      				<tr class="mt hov">
-	      					<td>יוֹם רִאשׁוֹן</td>
-	      					<td><?php echo $data['sun_time_frm'];?></td>
-	      					<td><?php echo $data['sun_time_to'];?></td>
-	      				</tr>
-	      			</table>
-	          <?php }
-	          else
-	          { ?>
-
-	         <table class="table ">
-	          	<tr>
-					<th style="text-align:right">יְוֹם</th>
-					<th style="text-align:right">זמן שעובר</th>
-					<th style="text-align:right">זמן ל</th>
-				</tr>
-	          	<tr class="hov">
-	          		<td>יוֹם שֵׁנִי</td>
-	          		<td><?php echo $data['mon_time_frm'];?></td>
-	          		<td><?php echo $data['mon_time_to'];?></td>
-	          	</tr>
-	          	<tr class="hov">
-	          		<td>יוֹם שְׁלִישִׁי</td>
-	          		<td><?php echo $data['tue_time_frm'];?></td>
-	          		<td><?php echo $data['tue_time_to'];?></td>
-	          	</tr>
-	          	<tr class="hov">
-	          		<td>יום רביעי</td>
-	          		<td><?php echo $data['wed_time_frm'];?></td>
-	          		<td><?php echo $data['wed_time_to'];?></td>
-	          	</tr>
-	          	<tr class="hov">
-	          		<td>יוֹם חֲמִישִׁי</td>
-	          		<td><?php echo $data['thu_time_frm'];?></td>
-	          		<td><?php echo $data['thu_time_to'];?></td>
-	          	</tr>
-	          	<tr class="hov">
-	          		<td>יוֹם שִׁישִׁי</td>
-	          		<td><?php echo $data['fri_time_frm'];?></td>
-	          		<td><?php echo $data['fri_time_to'];?></td>
-	          	</tr>
-	          	<tr class="hov">
-	          		<td>יום שבת</td>
-	          		<td><?php echo $data['sat_time_frm'];?></td>
-	          		<td><?php echo $data['sat_time_to'];?></td>
-	          	</tr>
-	          	<tr class="hov">
-	          		<td>יוֹם רִאשׁוֹן</td>
-	          		<td><?php echo $data['sun_time_frm'];?></td>
-	          		<td><?php echo $data['sun_time_to'];?></td>
-	          	</tr>
-	          </table>
-	          <?php }
-	          ?>
+                <div id="calendar"></div>
 	        </div>
 	        <div class="modal-footer">
 	          	<!-- <button type="button" class="btn btn-default" id="yes">Yes</button> -->
@@ -982,7 +897,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			
 	<script src="js/fb_login.js"></script>	
 	<script src="js/navigation/menu.js" type="text/javascript" language="javascript"></script>	
-	<script src="js/default.js" type="text/javascript" language="javascript"></script>	
+	<script src="js/default.js" type="text/javascript" language="javascript"></script>
+    <!-- Full Calendar -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
 
 	<script src="js/ddaaccordion.js" type="text/javascript" language="javascript"></script>
 
@@ -1007,6 +925,59 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		{
 			$("#color_s").css("color", "red");
 		}
+
+        <?php if( $member_id && $_SESSION['member_logged'] ): ?>
+        $('#myModal').on('shown.bs.modal', function() {
+            var eventsList = <?php echo $events; ?>;
+            $('#calendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: false,
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+
+                        if(event.start){
+                            $("#confirm_day").val(moment(event.start).format('dddd'));
+                        }
+
+                        if(event.start){
+                            $("#time_from").val(moment(event.start).format('h:mm'));
+                        }
+
+                        if(event.end){
+                            $("#time_to").val(moment(event.end).format('h:mm'));
+                        }
+
+                        $('#myModal').modal('hide');
+                        $('#confirm_modal').modal('show');
+
+                    });
+                },
+                events: eventsList
+            });
+        });
+        <?php else: ?>
+        $('#myModal').on('shown.bs.modal', function() {
+            var eventsList = <?php echo $events; ?>;
+            $('#calendar').fullCalendar({
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: false,
+                events: eventsList
+            });
+        });
+        <?php endif; ?>
 	});
 	</script>
 	<script type="text/javascript">
