@@ -222,7 +222,7 @@ function check_member_plan( $conn ){
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">You Membership plan is Expire!</h4>
+						<h4 class="modal-title">Your Membership Has Expired!</h4>
 					</div>
 					<div class="modal-body">
 						<p>Thank you for using PashutLehaskir.com. Your membership has expired. Please upgrade your account to continue searching forproperties.</p>
