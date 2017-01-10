@@ -156,11 +156,19 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	    position: relative;
 	    width: 100%;
 	}
-</style>	
-			
-        
 
-	
+    #color_w.average, #color_b.active, #color_a.active, #color_v.active, #color_s.active{
+        color: rgb(255, 192, 0);
+    }
+    #color_w.easy, #color_b.calm, #color_a.calm, #color_v.calm, #color_s.calm{
+        color: #92E342;
+    }
+
+    #color_w.hard, #color_b.busy, #color_a.busy, #color_v.busy, #color_s.busy{
+        color: red;
+    }
+
+</style>
 	<body  class="guest" >
 	
 	
@@ -684,7 +692,8 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 										<div class="top">WALKSCORE</div>
 										<div class="body">
 											<div class="middle">
-												<div class="large"><span id="color_w"><?php $WHERE_WALK['id']=$data['walkscore']; echo select('walkscore',$WHERE_WALK)[0]['walkscore'];?></span></div>
+                                                <?php $WHERE_WALK['id']=$data['walkscore']; $walkscore = select('walkscore',$WHERE_WALK)[0]['walkscore'];?>
+												<div class="large"><span id="color_w" class="<?php echo strtolower($walkscore); ?>" ><?php echo $walkscore; ?></span></div>
 												<div class="small">
 													<span><?php $WHERE_WALK['id']=$data['walkscore_descrp']; echo select('walkscore_desc',$WHERE_WALK)[0]['walkscore_desc'];?></span>
 												</div>
@@ -694,17 +703,21 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			 
 							<div class="">				
 								<div class="soundscore">
-									<div class="top">Soundscore: <span style="color: #EE583F" id="color_s"><?php $WHERE_SOUND['id']=$data['soundscore']; echo select('soundscore',$WHERE_SOUND)[0]['soundscore'];?></span></div>
+                                    <?php $WHERE_SOUND['id']=$data['soundscore']; $soundscore = select('soundscore',$WHERE_SOUND)[0]['soundscore']; ?>
+									<div class="top">Soundscore: <span id="color_s" class="<?php echo strtolower($soundscore); ?>"><?php echo $soundscore;?></span></div>
 									<div class="body">
 										<div class="middle">
+                                            <?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; $vehicle_noise = select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise'];?>
 											<div class="medium">Vehicle Noise: 
-												<span style="color: #EE583F !important" id="color_v"><?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; echo select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise'];?></span>
+												<span id="color_v" class="<?php echo strtolower($vehicle_noise); ?>"><?php echo $vehicle_noise; ?></span>
 											</div>
+                                            <?php $WHERE_AIR['id']=$data['airport_noise']; $airport_noise = select('airport_noise',$WHERE_AIR)[0]['airport_noise'];?>
 											<div class="medium">Airport Noise: 
-												<span style="color: #FFCB3F !important" id="color_a"><?php $WHERE_AIR['id']=$data['airport_noise']; echo select('airport_noise',$WHERE_AIR)[0]['airport_noise'];?></span>
+												<span id="color_a" class="<?php echo strtolower($airport_noise); ?>"><?php echo $airport_noise;?></span>
 											</div>
+                                            <?php $WHERE_BUIS['id']=$data['business_noise']; $businesses = select('businesses',$WHERE_BUIS)[0]['businesses'];?>
 											<div class="medium">Businesses: 
-												<span style="color: #EE583F !important" id="color_b"><?php $WHERE_BUIS['id']=$data['business_noise']; echo select('businesses',$WHERE_BUIS)[0]['businesses'];?></span>
+												<span id="color_b" class="<?php echo strtolower($businesses); ?>"><?php echo $businesses; ?></span>
 											</div>
 											<img width="220" border="0" src="images/soundscore_module-gradient.png">
 											<div class="small">
@@ -922,19 +935,19 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-		var a=$("#color_s").text();
-		if(a=='Calm')
-		{
-			$("#color_s").css("color", "#92E342");
-		}
-		if(a=='Active')
-		{
-			$("#color_s").css("color", "#FFC000");
-		}
-		if(a=='Busy')
-		{
-			$("#color_s").css("color", "red");
-		}
+//		var a=$("#color_s").text();
+//		if(a=='Calm')
+//		{
+//			$("#color_s").css("color", "#92E342");
+//		}
+//		if(a=='Active')
+//		{
+//			$("#color_s").css("color", "#FFC000");
+//		}
+//		if(a=='Busy')
+//		{
+//			$("#color_s").css("color", "red");
+//		}
 
         <?php if( $member_id && $_SESSION['member_logged'] ): ?>
             $('#myModal').on('shown.bs.modal', function() {
@@ -990,78 +1003,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
         <?php endif; ?>
 	});
 	</script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_v").text();
-		if(a=='Calm')
-		{
-			$("#color_v").css("color", "#92E342");
-		}
-		if(a=='Active')
-		{
-			$("#color_v").css("color", "#FFC000");
-		}
-		if(a=='Busy')
-		{
-			$("#color_v").css("color", "red");
-		}
-	});
-	</script>
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_a").text();
-		if(a=='Calm')
-		{
-			$("#color_a").css("color", "#92E342");
-		}
-		if(a=='Active')
-		{
-			$("#color_a").css("color", "#FFC000");
-		}
-		if(a=='Busy')
-		{
-			$("#color_a").css("color", "red");
-		}
-	});
-	</script>
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_b").text();
-		if(a=='Calm')
-		{
-			$("#color_b").css("color", "#92E342");
-		}
-		if(a=='Active')
-		{
-			$("#color_b").css("color", "#FFC000");
-		}
-		if(a=='Busy')
-		{
-			$("#color_b").css("color", "red");
-		}
-	});
-	</script>
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_w").text();
-		if(a=='Easy')
-		{
-			$("#color_w").css("color", "#92E342");
-		}
-		if(a=='Average')
-		{
-			$("#color_w").css("color", "#FFC000");
-		}
-		if(a=='Hard')
-		{
-			$("#color_w").css("color", "red");
-		}
-	});
-	</script>
-
 	<script type="text/javascript">
 	$(document).ready(function(){
 	  $('body').on('click','.mt',function(){
