@@ -36,9 +36,18 @@ $(function(){
 				type: "GET",
 				cache: false,
 				dataType : "json",
-				url: "/update-clipboard.cfm?clipaction=add&listing_id="+listingId,
+				url: "../add_favorite.php?listing_id="+listingId,
 				success: function(msg){
-					$that.empty().html('<strong>Saved!</strong>');				
+					if(msg.succsess == true){
+						if( msg.status ){
+							var message = msg.status;
+						}else{
+							var message = 'Saved!';
+						}
+
+						$that.empty().html('<strong>' + message + '</strong>');
+					}
+									
 				}
 			});
 		

@@ -11,6 +11,9 @@ if($_SESSION['language']=='Hebrew')
     echo "<script>location.href='view_property_h.php?$getto'</script>";
 }
 
+$favorite_link = !isset($_SESSION['member_logged']) ? '/login2.php' : '#';
+$favorite_class = !isset($_SESSION['member_logged']) ? 'gust' : 'member';
+
 $per_page = 20;
 if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
 $start=abs($page*$per_page);
@@ -25,7 +28,9 @@ if(isset($_GET['city']))
     $priceHigh= $_GET['priceHigh'];
 
     $que_search_count="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
-    $que_search="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
+    $que_search="SELECT * FROM post 
+    LEFT JOIN favorite_tbl ON post.post_id = favorite_tbl.property_id
+    WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
     if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
     {
         $que_condition.=" AND rent >=$priceLow ";
@@ -542,7 +547,7 @@ include('header.php');
         if(isset($data_search2))
         {
             foreach($data_search2 as $data_search)
-            { ?>
+            {  ?>
                 <div class="listing-wrapper featured col-md-3 col-lg-3 col-sm-4 col-xs-12">
                     <?php
                     if($data_search['featured_listing']=='Yes')
@@ -623,10 +628,11 @@ include('header.php');
                             <div class="footer-section">
                                 <div class="left"></div>
                                 <div class="right">
-                                    <a href="#">
-    								<span class="favorite-link guest">
-    									<img align="absmiddle" src="../images/2016/icons/heart-listingicon.png">
-    								</span>
+                                    <a href="<?php echo $favorite_link;?>">
+                                        <?php $fav_img = $data_search['status'] !== 'Favorite' ? '../images/2016/icons/heart-listingicon.png': '../images/2016/icons/heartselected-listingicon.png';?>
+        								<span class="favorite-link <?php echo $favorite_class; ?>" data-listingid="<?php echo $data_search['post_id'];?>">
+        									<img align="absmiddle" src="<?php echo $fav_img; ?>">
+        								</span>
                                     </a>
     							<span class="quick-text">
     								<a rel="prettyPhoto" href="view_detail.php?pid=<?php echo $data_search['post_id'];?>">

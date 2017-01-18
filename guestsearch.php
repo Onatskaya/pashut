@@ -10,6 +10,10 @@ if($_SESSION['language']=='Hebrew')
     echo "<script>location.href='guestsearch_h.php?$getto'</script>";
 }
 
+
+$favorite_link = !isset($_SESSION['member_logged']) ? '/login2.php' : '#';
+$favorite_class = !isset($_SESSION['member_logged']) ? 'gust' : '#';
+
 $per_page = 20;
 if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
 $start=abs($page*$per_page);
@@ -652,7 +656,7 @@ include('header.php');
                             <div class="footer-section">
                                 <div class="left"></div>
                                 <div class="right">
-                                    <a href="#">
+                                    <a href="<?php echo $favorite_link; ?>">
     								<span class="favorite-link guest">
     									<img align="absmiddle" src="images/2016/icons/heart-listingicon.png">
     								</span>
