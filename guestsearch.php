@@ -28,7 +28,9 @@ if(isset($_GET['city']))
     $priceHigh= $_GET['priceHigh'];
 
     $que_search_count="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
-    $que_search="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes'  ";
+    $que_search="SELECT * FROM post
+     LEFT JOIN favorite_tbl ON post.post_id = favorite_tbl.property_id
+     WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes'  ";
     // print_r($que_search);die;
     if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
     {
