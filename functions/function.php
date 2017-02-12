@@ -29,7 +29,7 @@ function insert($table,$value,$primarykey=NULL,$colname=NULL)
 	$query.=implode(',',$vals).")";      					
 	//echo $query;die;    //Query check
 	$result=mysqli_query($conn,$query);
-	if(mysqli_affected_rows($conn))
+	if(mysqli_affected_rows($conn) > 0 )
 	{
 		if($primarykey )
 		{	
@@ -376,4 +376,19 @@ function slide_image_path($path, $image){
     }
 
     return;
+}
+
+/**
+ * Return member's data.
+ * @return mixed
+ */
+function getMember(){
+	$member = $_SESSION['member_id'];
+	if( empty($member) )
+//	if( empty($member) || empty( $_SESSION['member_logged'] ) )
+	{
+		return false;
+	}
+	$data = select('members', ['member_id' => $member]);
+	return $data[0];
 }

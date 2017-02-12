@@ -192,3 +192,56 @@ function add_image_logo($image_path, $logo){
     imagepng($im);
     imagedestroy($im);
 }
+
+function saveParsPost($data)
+{
+    if (empty($data)) return false;
+    $post = [];
+    $member = getMember();
+    if ($member) {
+        $post = [
+            'name' => $member['first_name'],
+            'email' => $member['email'],
+            'contact_a' => $member['mem_phone_a'],
+            'contact_b' => $member['mem_phone_b'],
+            'contact_c' => $member['mem_phone_c'],
+            'member_id' => $member['member_id'],
+        ];
+    }
+    $post += [
+        'address' => $data['address']['label'],
+        'state' => 1, //for Israel
+        'city' => 1, // for Tel Aviv,
+        'short_descp' => $data['title'],
+        'rent' => $data['price'],
+        'parking' => $data['parking']['value']?$data['parking']['label']:'',
+        'main_image' => $data['images'][0],
+        'listing_number' => last_id('post','post_id','listing_number'),
+        'elevator' => $data['parking']['value']?'Yes':'No',
+        'balcony' => $data['balcony']['value']?'Yes':'No',
+        'full_descp' => $data['remarks'],
+        'floor' => $data['floor']['label'],
+        'property_available' => 'Available'
+    ];
+
+    $post += [
+        'availability' => date('Y-m-d h:i:s'),
+        'date' => date('Y-m-d h:i:s'),
+        'post_date' => date('Y-m-d h:i:s'),
+    ];
+    $post_id = insert('post', $post, 'post_id','post_id');
+
+    if ($post_id) {
+        foreach ($data['images'] as $i => $image) {
+            if ($i < 5) {
+                update('post', ['image' . $i => $image], ['post_id' => $post_id]);
+            } else {
+                insert('house_image', ['member_id' => $member['member_id'], 'post_id' => $post_id, 'image' => $image]);
+            }
+
+        }
+        return true;
+    } else {
+        return false;
+    }
+}
