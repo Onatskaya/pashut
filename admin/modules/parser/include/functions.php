@@ -9,6 +9,7 @@ function get_rent_ids($type = 'mainresults'){
     // create HTML DOM
     $html = file_get_html(PARSE_URL, false, $context);
 
+
     foreach($html->find($properties_table) as $table) {
         foreach( $table->find("tr.light") as $row){
             $id = $row->getAttribute('id');
@@ -27,6 +28,7 @@ function get_rent_ids($type = 'mainresults'){
 }
 
 function get_property($property_id){
+    header('Content-Type: text/html; charset=utf-8');
     $data = array();
     $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($args);

@@ -10,7 +10,23 @@ include('../lib/simple_html_dom.php');
 include('../config/define.php');
 include('functions.php');
 
+    // $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
+    // $context = stream_context_create($args);
+    // create HTML DOM
+    // $html = file_get_html(PARSE_URL, false, $context);
 
+$properties_id = get_rent_ids();
+foreach ($properties_id as $key => $property_id) {
+	$data[] = get_property($property_id);
+}
+
+
+// $property = get_property($properties_id[0]);
+var_dump($data);
+die;
+// $properties_data = get_property($property_id[0]);
+// var_dump($properties_id);
+// die;
 function scraping_digg() {
     // create HTML DOM
 //    foreach($html->find('table#mainresults') as $table) {
