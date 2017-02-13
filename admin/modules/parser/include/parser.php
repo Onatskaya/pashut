@@ -14,9 +14,9 @@ include($root_dir.'/functions/function.php');
 $properties_id = get_rent_ids();
 
 //test mod, delete this row in production
-$properties_id2[] = $properties_id[0];
-$properties_id2[] = $properties_id[1];
-$properties_id2[] = $properties_id[2];
+for($i = 1; $i<15;$i++){
+    $properties_id2[] = $properties_id[$i];
+}
 unset($properties_id);
 $properties_id = $properties_id2;
 // end test config

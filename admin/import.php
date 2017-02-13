@@ -90,9 +90,10 @@ function pars()
     $count = count($properties_id);
 
 //test mod, delete this row in production
-    $properties_id2[] = $properties_id[0];
-    $properties_id2[] = $properties_id[1];
-    $properties_id2[] = $properties_id[2];
+    $properties_id2 = [];
+    for($i = 1; $i<=15;$i++){
+        $properties_id2[] = $properties_id[$i];
+    }
     unset($properties_id);
     $properties_id = $properties_id2;
     $count = count($properties_id2);

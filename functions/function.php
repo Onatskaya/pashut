@@ -380,15 +380,20 @@ function slide_image_path($path, $image){
 
 /**
  * Return member's data.
+ * @var $id
  * @return mixed
  */
-function getMember(){
+function getMember($id = null){
 	$member = $_SESSION['member_id'];
 	if( empty($member) )
 //	if( empty($member) || empty( $_SESSION['member_logged'] ) )
 	{
 		return false;
 	}
-	$data = select('members', ['member_id' => $member]);
+	if ($id !== null){
+		$data = select('members', ['member_id' => $id]);
+	}else{
+		$data = select('members', ['member_id' => $member]);
+	}
 	return $data[0];
 }

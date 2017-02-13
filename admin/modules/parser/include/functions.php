@@ -117,6 +117,8 @@ function get_property($property_id){
     $price = $main_content->children(25);
     $data['price_field']['label'] = $price->plaintext;
 
+    $root_dir = (dirname(dirname(dirname(dirname(dirname(__FILE__))))));
+    $save_path = $root_dir.'/home_images';
     $path = dirname(__FILE__);
     $logo_imaga = $path . '/logo_mark.png';
 
@@ -127,12 +129,12 @@ function get_property($property_id){
 //            $img = '/var/www/clocal/test/test.jpeg';
             parse_str($element->src, $img_query);
             $filename = $img_query['fn'];
-            $save_filepath = $path . '\images\/' . $filename;
+            $save_filepath = $save_path . '/' . $filename;
 
             file_put_contents($save_filepath, file_get_contents($element->src));
 //            add_image_logo($save_filepath, $logo_imaga);
 
-            $data['images'][] = $save_filepath;
+            $data['images'][] = $filename;
         }
     }
 
@@ -197,7 +199,8 @@ function saveParsPost($data)
 {
     if (empty($data)) return false;
     $post = [];
-    $member = getMember();
+    // in production delete 3 from getMember() function
+    $member = getMember(3);
     if ($member) {
         $post = [
             'name' => $member['first_name'],
