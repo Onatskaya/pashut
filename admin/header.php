@@ -19,6 +19,7 @@
 					<li class="post"><em></em><a href="post_listing.php">Property</a></li>
 					<li class="post"><em></em><a href="landlord.php">Landlords</a></li>
 					<li class="find"><em></em><a href="member.php">Members</a></li>
+					<li class="find"><em></em><a href="import.php">Import</a></li>
 				</ul>
 			  	<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">

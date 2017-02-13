@@ -14,16 +14,21 @@ include($root_dir.'/functions/function.php');
 $properties_id = get_rent_ids();
 
 //test mod, delete this row in production
-$properties_id = $properties_id[0];
-
+$properties_id2[] = $properties_id[0];
+$properties_id2[] = $properties_id[1];
+$properties_id2[] = $properties_id[2];
+unset($properties_id);
+$properties_id = $properties_id2;
+// end test config
 
 
 $error = false;
 foreach ($properties_id as $key => $property_id) {
-    if (!saveParsPost(get_property($properties_id))){
+    if (!saveParsPost(get_property($property_id))){
         $error = true;
     }
 }
+
 if (!$error){
     echo 'Data was saved successfully';
 }else{
