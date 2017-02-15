@@ -124,15 +124,14 @@ function get_property($property_id){
 
     foreach($add_info->find('ul#piccarousel') as $image){
         foreach($image->find('img') as $element){
-//            header('Content-type: image/jpeg');
-//            $data['images'][] = $element->src;
-//            $img = '/var/www/clocal/test/test.jpeg';
             parse_str($element->src, $img_query);
             $filename = $img_query['fn'];
             $save_filepath = $save_path . '/' . $filename;
 
             file_put_contents($save_filepath, file_get_contents($element->src));
-//            add_image_logo($save_filepath, $logo_imaga);
+            chmod($save_filepath, 0777);
+            add_logo($save_filepath,$logo_imaga);
+
 
             $data['images'][] = $filename;
         }
@@ -175,28 +174,27 @@ function view_row($row){
     }
 }
 
-function add_image_logo($image_path, $logo){
-    $stamp = imagecreatefrompng($logo);
-    $im = imagecreatefromjpeg($image_path);
+function add_logo($image_path, $logo){
 
-    $marge_right = 10;
-    $marge_bottom = 10;
-    $sx = imagesx($stamp);
-    // var_dump($sx);
-    $sy = imagesy($stamp);
+    $log = imagecreatefrompng($logo);
+    $image =  imagecreatefromjpeg($image_path);
 
-    // Копирование изображения штампа на фотографию с помощью смещения края
-    // и ширины фотографии для расчета позиционирования штампа.
-    imagecopy($im, $stamp, 0, imagesy($im) - $sy, 0, 0, imagesx($stamp), imagesy($stamp));
+    $w_logo = imagesx($log);
+    $h_logo = imagesy($log);
+    $w_image = imagesx($image);
+    $h_image = imagesy($image);
 
-    // Вывод и освобождение памяти
-    header('Content-type: image/png');
-    imagepng($im);
-    imagedestroy($im);
+    imagecopyresampled($image, $log, 0, $h_image - $h_logo, 0, 0,$w_image, $h_logo,$w_logo,$h_logo);
+    //imagecopyresampled($image, $log, 0, $h_image - $h_logo, 0, 0,$w_image, $h_image*0.2,$w_logo,$h_image*0.2);
+
+    imagejpeg($image,$image_path);
+    imagedestroy($image);
+    imagedestroy($log);
 }
 
-function saveParsPost($data)
+function saveParsPost($id)
 {
+    $data = get_property($id);
     if (empty($data)) return false;
     $post = [];
     // in production delete 3 from getMember() function
@@ -232,7 +230,10 @@ function saveParsPost($data)
         'date' => date('Y-m-d h:i:s'),
         'post_date' => date('Y-m-d h:i:s'),
     ];
+
+    //save post and save data what post was parsed
     $post_id = insert('post', $post, 'post_id','post_id');
+    insert('parsed_data',['parsed_id' => $id]);
 
     if ($post_id) {
         foreach ($data['images'] as $i => $image) {
@@ -247,4 +248,8 @@ function saveParsPost($data)
     } else {
         return false;
     }
+}
+
+function is_already_parsed($id){
+    return select('parsed_data', ['parsed_id' => $id]);
 }

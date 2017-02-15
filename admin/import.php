@@ -53,7 +53,7 @@ include('modules/parser/include/functions.php');
           content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!"/>
     <meta name="robots" content="index,follow"/>
     <meta name="GOOGLEBOT" content="index,follow"/>
-    <meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
+    <meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17">
     <style>
         .hidden {
             display: none;
@@ -74,11 +74,9 @@ include('header.php');
     <div id="results" style="width"></div>
 </div>
 <div id="information" style="width"></div>
-
 <?php
 if (isset($_GET['parse']) && ($_GET['parse'] == true)) {
     pars();
-    die;
 }
 
 function pars()
@@ -86,6 +84,7 @@ function pars()
     echo '<script language="JavaScript">
             document.getElementById("progress").classList.remove(\'hidden\');
          </script>';
+    $already_parsed = 0;
     $properties_id = get_rent_ids();
     $count = count($properties_id);
 
@@ -110,11 +109,18 @@ function pars()
 
         echo str_repeat(' ', 1024 * 64);
         flush();
-        saveParsPost(get_property($property_id));
-
+        if (is_already_parsed($property_id)){
+            $already_parsed++;
+        }else{
+            saveParsPost($property_id);
+        };
     }
-
-    echo '<script language="javascript">document.getElementById("results").innerHTML="Process completed. '.$key.' posts was parsed."</script>';
+    $was_saved = $count-$already_parsed;
+    if($count == $already_parsed){
+        echo '<script language="javascript">document.getElementById("results").innerHTML="Process completed. New posts, no found."</script>';
+    }else{
+        echo '<script language="javascript">document.getElementById("results").innerHTML="Process completed. ',$key,' post(s) was parsed.<br>',$was_saved, ' new post(s) was saved.','"</script>';
+    }
 
 }
 
