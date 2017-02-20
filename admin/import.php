@@ -90,7 +90,7 @@ function pars()
 
 //test mod, delete this row in production
     $properties_id2 = [];
-    for($i = 1; $i<=15;$i++){
+    for($i = 1; $i<=5;$i++){
         $properties_id2[] = $properties_id[$i];
     }
     unset($properties_id);
