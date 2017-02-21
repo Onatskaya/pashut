@@ -29,6 +29,10 @@ function insert($table,$value,$primarykey=NULL,$colname=NULL)
 	$query.=implode(',',$vals).")";      					
 	//echo $query;die;    //Query check
 	$result=mysqli_query($conn,$query);
+	if(!$result){
+		var_dump(mysqli_error_list($conn));
+		die;
+	}
 	if(mysqli_affected_rows($conn) > 0 )
 	{
 		if($primarykey )
@@ -393,4 +397,33 @@ function getMember($id = null){
 		return false;
 	}
 	return $data[0];
+}
+
+/**
+ * @param string $image_path
+ * @param string|null $logo
+ *
+ */
+function add_logo($image_path, $logo){
+
+	$image =  imagecreatefromjpeg($image_path);
+	$w_image = imagesx($image);
+	$h_image = imagesy($image);
+
+	$log = imagecreatefrompng($logo);
+	$w_logo = imagesx($log);
+	$h_logo = imagesy($log);
+
+	$dst_y = $h_image - $h_logo;
+	$dst_h = $h_logo;
+	if ($h_logo > (0.25*$h_image)){
+		$dst_y = 0.75*$h_image;
+		$dst_h = 0.25*$h_image;
+	}
+	$dst_w = $w_logo;
+
+	imagecopyresampled($image, $log, 0, $dst_y, 0, 0,$dst_w, $dst_h,$w_logo,$h_logo);
+	imagejpeg($image,$image_path,100);
+	imagedestroy($image);
+	imagedestroy($log);
 }

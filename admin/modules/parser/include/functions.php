@@ -119,16 +119,16 @@ function get_property($property_id){
 
     $root_dir = (dirname(dirname(dirname(dirname(dirname(__FILE__))))));
     $save_path = $root_dir.'/home_images';
-    $path = dirname(__FILE__);
-    $logo_imaga = $path . '/logo2.png';
+    $logo_imaga = $root_dir . '/images/shot_logo.png';
 
     foreach($add_info->find('ul#piccarousel') as $image){
         foreach($image->find('img') as $element){
             parse_str($element->src, $img_query);
+            $src = substr($element->src, 0, -12);
             $filename = $img_query['fn'];
             $save_filepath = $save_path . '/' . $filename;
 
-            file_put_contents($save_filepath, file_get_contents($element->src));
+            file_put_contents($save_filepath, file_get_contents($src));
             chmod($save_filepath, 0777);
             add_logo($save_filepath,$logo_imaga);
 
@@ -174,28 +174,6 @@ function view_row($row){
     }
 }
 
-function add_logo($image_path, $logo){
-
-    $log = imagecreatefrompng($logo);
-    $image =  imagecreatefromjpeg($image_path);
-    $w_logo = imagesx($log);
-    $h_logo = imagesy($log);
-    $w_image = imagesx($image);
-    $h_image = imagesy($image);
-
-    $dst_y = $h_image - $h_logo;
-    $dst_h = $h_logo;
-    if ($h_logo > (0.25*$h_image)){
-        $dst_y = 0.75*$h_image;
-        $dst_h = 0.25*$h_image;
-    }
-    imagecopyresampled($image, $log, 0, $dst_y, 0, 0,$w_image, $dst_h,$w_logo,$h_logo);
-    //imagecopyresampled($image, $log, 0, $h_image - $h_logo, 0, 0,$w_image, $h_image*0.2,$w_logo,$h_image*0.2);
-
-    imagejpeg($image,$image_path,100);
-    imagedestroy($image);
-    imagedestroy($log);
-}
 
 function saveParsPost($id)
 {
