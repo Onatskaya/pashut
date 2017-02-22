@@ -39,7 +39,7 @@ if($_FILES['main_image']['name'] != "")
   $_POST['main_image']=$main_image;
   move_uploaded_file($_FILES["main_image"]["tmp_name"],"../home_images/".$main_image);
   chmod("../home_images/".$main_image, 0777);
-  add_logo("../home_images/".$main_image,'../images/shot_logo.png');
+  add_logo("../home_images/".$main_image,'../images/img_logo.jpg');
   $_POST['main_image']=$main_image;
 }
 
@@ -52,7 +52,7 @@ if($_FILES['image1']['name'] != "")
   $_POST['image1']=$image1;
   move_uploaded_file($_FILES["image1"]["tmp_name"],"../home_images/".$image1);
   chmod("../home_images/".$image1, 0777);
-  add_logo("../home_images/".$image1,'../images/shot_logo.png');
+  add_logo("../home_images/".$image1,'../images/img_logo.jpg');
   $_POST['image1']=$image1;
 }
 
@@ -65,7 +65,7 @@ if($_FILES['image2']['name'] != "")
   $_POST['image2']=$image2;
   move_uploaded_file($_FILES["image2"]["tmp_name"],"../home_images/".$image2);
   chmod("../home_images/".$image2, 0777);
-  add_logo("../home_images/".$image2,'../images/shot_logo.png');
+  add_logo("../home_images/".$image2,'../images/img_logo.jpg');
   $_POST['image2']=$image2;
 }
 
@@ -78,7 +78,7 @@ if($_FILES['image3']['name'] != "")
   $_POST['image3']=$image3;
   move_uploaded_file($_FILES["image3"]["tmp_name"],"../home_images/".$image3);
   chmod("../home_images/".$image3, 0777);
-  add_logo("../home_images/".$image3,'../images/shot_logo.png');
+  add_logo("../home_images/".$image3,'../images/img_logo.jpg');
   $_POST['image3']=$image3;
 }
 
@@ -91,7 +91,7 @@ if($_FILES['image4']['name'] != "")
   $_POST['image4']=$image4;
   move_uploaded_file($_FILES["image4"]["tmp_name"],"../home_images/".$image4);
   chmod("../home_images/".$image4, 0777);
-  add_logo("../home_images/".$image4,'../images/shot_logo.png');
+  add_logo("../home_images/".$image4,'../images/img_logo.jpg');
   $_POST['image4']=$image4;
 }
 
@@ -104,7 +104,7 @@ if($_FILES['image5']['name'] != "")
   $_POST['image5']=$image5;
   move_uploaded_file($_FILES["image5"]["tmp_name"],"../home_images/".$image5);
   chmod("../home_images/".$image5, 0777);
-  add_logo("../home_images/".$image5,'../images/shot_logo.png');
+  add_logo("../home_images/".$image5,'../images/img_logo.jpg');
   $_POST['image5']=$image5;
 }
 
@@ -143,7 +143,7 @@ if(is_array($_FILES['image']) AND $_FILES['image']['name'][0] != "")
     $img2= $member_id.$n.time().".".$end;
     move_uploaded_file($_FILES['image']["tmp_name"][$n],"../home_images/".$img2);
     chmod("../home_images/".$img2, 0777);
-    add_logo("../home_images/".$img2,'../images/shot_logo');
+    add_logo("../home_images/".$img2,'../images/img_logo.jpg');
     $que_img= "INSERT INTO house_image(member_id,post_id,image) VALUES('$member_id','$post_id','$img2') ";
     $obj_img= mysqli_query($conn,$que_img);
     $n++;

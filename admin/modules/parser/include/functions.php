@@ -119,7 +119,7 @@ function get_property($property_id){
 
     $root_dir = (dirname(dirname(dirname(dirname(dirname(__FILE__))))));
     $save_path = $root_dir.'/home_images';
-    $logo_imaga = $root_dir . '/images/shot_logo.png';
+    $logo_imaga = $root_dir . '/images/img_logo.jpg';
 
     foreach($add_info->find('ul#piccarousel') as $image){
         foreach($image->find('img') as $element){

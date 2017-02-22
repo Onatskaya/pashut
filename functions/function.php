@@ -410,17 +410,22 @@ function add_logo($image_path, $logo){
 	$w_image = imagesx($image);
 	$h_image = imagesy($image);
 
-	$log = imagecreatefrompng($logo);
+	$log = imagecreatefromjpeg($logo);
 	$w_logo = imagesx($log);
 	$h_logo = imagesy($log);
 
-	$dst_y = $h_image - $h_logo;
-	$dst_h = $h_logo;
-	if ($h_logo > (0.25*$h_image)){
+	if($w_logo > $w_image){
+		$dst_w = $w_image;
+	}else{
+		$dst_w = $w_logo;
+	}
+	if ($h_image < 200){
 		$dst_y = 0.75*$h_image;
 		$dst_h = 0.25*$h_image;
+	}else{
+		$dst_y = $h_image - $h_logo;
+		$dst_h = $h_logo;
 	}
-	$dst_w = $w_logo;
 
 	imagecopyresampled($image, $log, 0, $dst_y, 0, 0,$dst_w, $dst_h,$w_logo,$h_logo);
 	imagejpeg($image,$image_path,100);
