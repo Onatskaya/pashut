@@ -182,18 +182,18 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 						?>
 					<div class="flex-viewport" style="overflow: hidden; position: relative;">
 						<ul class="slides" style="width: 2600%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-							<li style="width: 752px; float: left; display: block;" class="flex-active-slide"><img style="width:80%;" src="../home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data['image1'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data['image2'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data['image3'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data['image4'];?>" draggable="false"></li>
-							<li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data['image5'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;" class="flex-active-slide"><img style="width:auto;" src="../home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;"><img style="width:auto;" src="../home_images/<?php echo $data['image1'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;"><img style="width:auto;" src="../home_images/<?php echo $data['image2'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;"><img style="width:auto;" src="../home_images/<?php echo $data['image3'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;"><img style="width:auto;" src="../home_images/<?php echo $data['image4'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;"><img style="width:auto;" src="../home_images/<?php echo $data['image5'];?>" draggable="false"></li>
 							<?php
 							if(isset($data_img2))
 							{
 								foreach($data_img2 as $data_img)
 								{ ?>
-									<li style="width: 752px; float: left; display: block;"><img style="width:80%;" src="../home_images/<?php echo $data_img['image'];?>" draggable="false"></li>
+									<li style="width: 752px; float: left; display: block;"><img style="width:auto;" src="../home_images/<?php echo $data_img['image'];?>" draggable="false"></li>
 							<?php }
 							}
 							?>
@@ -203,7 +203,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/10.jpg" draggable="false"></li>
 							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/111.jpg" draggable="false"></li>
 							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="http://static.westsiderentals.com/photos/featured/photos/201106/12.jpg" draggable="false"></li> -->
-							<li style="width: 752px; float: left; display: block;"><img style="width:60%;" src="../home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
+							<li style="width: 752px; float: left; display: block;"><img style="auto;" src="../home_images/<?php echo $data['main_image'];?>" draggable="false"></li>
 						</ul>
 					</div>
 					<ul class="flex-direction-nav">
