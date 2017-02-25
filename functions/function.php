@@ -406,14 +406,27 @@ function getMember($id = null){
  */
 function add_logo($image_path, $logo){
 
-	$image =  imagecreatefromjpeg($image_path);
+	switch (getExtension($image_path)):
+		case 'JPG':
+		case 'jpg':
+		case 'JPEG':
+		case 'jpeg':
+			$image =  imagecreatefromjpeg($image_path);
+			break;
+		case 'png':
+		case 'PNG':
+			$image = imagecreatefrompng($image_path);
+			break;
+		default:
+			return;
+	endswitch;
+
 	$w_image = imagesx($image);
 	$h_image = imagesy($image);
 
 	$log = imagecreatefromjpeg($logo);
 	$w_logo = imagesx($log);
 	$h_logo = imagesy($log);
-
 	if($w_logo > $w_image){
 		$dst_w = $w_image;
 	}else{
@@ -426,9 +439,18 @@ function add_logo($image_path, $logo){
 		$dst_y = $h_image - $h_logo;
 		$dst_h = $h_logo;
 	}
-
 	imagecopyresampled($image, $log, 0, $dst_y, 0, 0,$dst_w, $dst_h,$w_logo,$h_logo);
 	imagejpeg($image,$image_path,100);
 	imagedestroy($image);
 	imagedestroy($log);
+}
+
+/**
+ *  Return extension of the file
+ * @param $filename string
+ * @return string
+ */
+function getExtension($filename){
+	$extension = pathinfo($filename, PATHINFO_EXTENSION);
+	return $extension;
 }

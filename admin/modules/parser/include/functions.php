@@ -144,7 +144,6 @@ function get_property($property_id){
     $root_dir = (dirname(dirname(dirname(dirname(dirname(__FILE__))))));
     $save_path = $root_dir.'/home_images';
     $logo_imaga = $root_dir . '/images/img_logo.jpg';
-
     foreach($add_info->find('ul#piccarousel') as $image){
         foreach($image->find('img') as $element){
             if ($element->src == '/images/nopic.jpg'){
@@ -154,13 +153,11 @@ function get_property($property_id){
             $src = substr($element->src, 0, -12);
             $filename = $img_query['fn'];
             $save_filepath = $save_path . '/' . $filename;
-
-            file_put_contents($save_filepath, file_get_contents($src));
-            chmod($save_filepath, 0777);
-            add_logo($save_filepath,$logo_imaga);
-
-
-            $data['images'][] = $filename;
+            if(file_put_contents($save_filepath, file_get_contents($src)) !== 0){
+                chmod($save_filepath, 0777);
+                add_logo($save_filepath,$logo_imaga);
+                $data['images'][] = $filename;
+            };
         }
     }
     $page->clear();
