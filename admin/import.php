@@ -69,34 +69,27 @@ include('header.php');
 
 <div class="container import-page">
     <div>Import posts from <a href="http://www.homeless.co.il/">http://www.homeless.co.il</a></div>
-    <button id="start">Start import</button>
+    <div class="change-date">Select date. Ads from now to date will be parse.</div>
     <div id="progress" class="hidden" style="width:500px;border:1px solid #ccc;"></div>
     <div id="results" style="width"></div>
 </div>
 <div id="information" style="width"></div>
+
+<hr>
+
 <?php
-if (isset($_GET['parse']) && ($_GET['parse'] == true)) {
-    pars();
+if (isset($_GET['parse']) && ($_GET['parse'] == true && ($_GET['date'] !== ''))) {
+    pars($_GET['date']);
 }
 
-function pars()
+function pars($date)
 {
     echo '<script language="JavaScript">
             document.getElementById("progress").classList.remove(\'hidden\');
          </script>';
     $already_parsed = 0;
-    $properties_id = get_rent_ids();
+    $properties_id = get_rent_ids($date);
     $count = count($properties_id);
-
-//test mod, delete this row in production
-    $properties_id2 = [];
-    for($i = 1; $i<=5;$i++){
-        $properties_id2[] = $properties_id[$i];
-    }
-    unset($properties_id);
-    $properties_id = $properties_id2;
-    $count = count($properties_id2);
-// end test config
 
 
     foreach ($properties_id as $key => $property_id) {
@@ -131,14 +124,21 @@ function pars()
 include("footer.php");
 ?>
 
-<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/default.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
 <script>
-    $('#start').on('click', function () {
-        window.location.href = 'import.php?parse=true';
-    })
+    $('.change-date').
+        datepicker({
+            changeMonth:true,
+            changeYear:true,
+            onSelect: function(date){
+                window.location.href = 'import.php?parse=true&date='+date;
+            }
+        });
 </script>
+
 
 
 

@@ -1,30 +1,55 @@
 <?php
 
-function get_rent_ids($type = 'mainresults'){
+function get_rent_ids($date, $type = 'mainresults'){
     $properties_table = 'table#' . $type;
     $properties_id = array();
+    $urls = [
+        1 => 'http://www.homeless.co.il/rent/inumber1=1',      //Tel Aviv:
+        176 => 'http://www.homeless.co.il/rent/inumber1=176',    //Netanya:
+        7 =>'http://www.homeless.co.il/rent/inumber1=7',      //Jerusalem:
+        3 => 'http://www.homeless.co.il/rent/inumber1=3'       //Givatayim:
+    ];
 
-    $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
-    $context = stream_context_create($args);
     // create HTML DOM
-    $html = file_get_html(PARSE_URL, false, $context);
-
-
-    foreach($html->find($properties_table) as $table) {
-        foreach( $table->find("tr.light") as $row){
-            $id = $row->getAttribute('id');
-
-
-            $int_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-            if(is_numeric($int_id)){
-                $properties_id[] = $int_id;
+    foreach ($urls as $key => $url) {
+        $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"."Cookie: search_inumber1%3d".$key."_rent={'boardtype':'rent','inumber1':'".$key."'}\r\n"));
+        $context = stream_context_create($args);
+         for ($i = 1; $i<=600;$i++) {
+            $pagination_url =$url.'/'.$i;
+            $html = file_get_html($pagination_url, false, $context);
+            $ids = get_id($html, $properties_table, $date);
+            if(!empty($ids)){
+                $properties_id = array_merge($properties_id,$ids);
+            }else{
+                break;
             }
+        }
+    }
+
+    return $properties_id;
+}
+
+function get_id($html,$properties_table, $date){
+
+    $result = array();
+    $date = DateTime::createFromFormat('m/d/Y', trim($date))->getTimestamp();
+    $table = $html->find($properties_table)[0];
+
+    foreach ($table->find("tr[type=ad]") as $row) {
+        $date_td = DateTime::createFromFormat('d/m/Y', trim($row->children(9)->plaintext))->getTimestamp();
+        if ($date_td >= $date) {
+            $id = $row->getAttribute('id');
+            $int_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+            if (is_numeric($int_id)) {
+                $result[] = $int_id;
+            }
+        } else {
+            break;
         }
     }
     $html->clear();
     unset($html);
-
-    return $properties_id;
+    return $result;
 }
 
 function get_property($property_id){
@@ -35,7 +60,6 @@ function get_property($property_id){
 
     $page = file_get_html(PARSE_URL . '/viewad,' . $property_id . '.aspx', false, $context);
     $add_info = $page->find('div#addetails', 0);
-
 //    foreach($add_info as $info){
     $data['title'] = $add_info->find('h1', 0)->plaintext;
     $data['price'] = trim($add_info->find('div.price', 0)->plaintext, "|");
@@ -123,6 +147,9 @@ function get_property($property_id){
 
     foreach($add_info->find('ul#piccarousel') as $image){
         foreach($image->find('img') as $element){
+            if ($element->src == '/images/nopic.jpg'){
+                break;
+            }
             parse_str($element->src, $img_query);
             $src = substr($element->src, 0, -12);
             $filename = $img_query['fn'];
@@ -136,7 +163,6 @@ function get_property($property_id){
             $data['images'][] = $filename;
         }
     }
-
     $page->clear();
     unset($page);
 
@@ -177,6 +203,7 @@ function view_row($row){
 
 function saveParsPost($id)
 {
+
     $data = get_property($id);
     if (empty($data)) return false;
     $post = [];
@@ -195,7 +222,7 @@ function saveParsPost($id)
     $post += [
         'address' => $data['address']['label'],
         'state' => 1, //for Israel
-        'city' => 1, // for Tel Aviv,
+        'city' => $data['region']['label'],
         'short_descp' => $data['title'],
         'rent' => $data['price'],
         'parking' => $data['parking']['value']?$data['parking']['label']:'',
