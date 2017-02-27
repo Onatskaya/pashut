@@ -131,13 +131,17 @@ function delet($table,$WHERE)
 		return false;
 	}	
 }
-function select($table,$WHERE)
+function select($table,$WHERE,$like = '')
 {
 	global $conn;
 	$query="SELECT * FROM $table WHERE ";
 	foreach($WHERE as $key=>$val)
 	{
-		$wh[]=$key."='".$val."'";
+		if ($like !== ''){
+			$wh[]=$key." ".$like." '".$val."'";
+		}else{
+			$wh[]=$key."='".$val."'";
+		}
 	}
 	$query.=implode(' ',$wh);
     //echo $query; die;

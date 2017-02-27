@@ -88,11 +88,11 @@ function pars($date)
             document.getElementById("progress").classList.remove(\'hidden\');
          </script>';
     $already_parsed = 0;
-    $properties_id = get_rent_ids($date);
-    $count = count($properties_id);
+    $properties = get_rent_ids($date);
+    $count = count($properties);
 
 
-    foreach ($properties_id as $key => $property_id) {
+    foreach ($properties as $key => $property) {
         $key++;
         $percent = intval($key / $count * 100) . "%";
         echo '<script language="javascript">
@@ -102,10 +102,10 @@ function pars($date)
 
         echo str_repeat(' ', 1024 * 64);
         flush();
-        if (is_already_parsed($property_id)){
+        if (is_already_parsed($property['id'])){
             $already_parsed++;
         }else{
-            saveParsPost($property_id);
+            saveParsPost($property);
         };
     }
     $was_saved = $count-$already_parsed;

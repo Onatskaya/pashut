@@ -10,6 +10,14 @@ function get_rent_ids($date, $type = 'mainresults'){
         3 => 'http://www.homeless.co.il/rent/inumber1=3'       //Givatayim:
     ];
 
+    // id's cities from city table
+    $cities = [
+        1 => 1,
+        176 => 4,
+        7 => 11,
+        3 => 3,
+    ];
+
     // create HTML DOM
     foreach ($urls as $key => $url) {
         $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"."Cookie: search_inumber1%3d".$key."_rent={'boardtype':'rent','inumber1':'".$key."'}\r\n"));
@@ -17,7 +25,7 @@ function get_rent_ids($date, $type = 'mainresults'){
          for ($i = 1; $i<=600;$i++) {
             $pagination_url =$url.'/'.$i;
             $html = file_get_html($pagination_url, false, $context);
-            $ids = get_id($html, $properties_table, $date);
+            $ids = get_id($html, $properties_table, $date, $cities[$key]);
             if(!empty($ids)){
                 $properties_id = array_merge($properties_id,$ids);
             }else{
@@ -29,7 +37,7 @@ function get_rent_ids($date, $type = 'mainresults'){
     return $properties_id;
 }
 
-function get_id($html,$properties_table, $date){
+function get_id($html,$properties_table, $date, $city_id){
 
     $result = array();
     $date = DateTime::createFromFormat('m/d/Y', trim($date))->getTimestamp();
@@ -41,7 +49,7 @@ function get_id($html,$properties_table, $date){
             $id = $row->getAttribute('id');
             $int_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
             if (is_numeric($int_id)) {
-                $result[] = $int_id;
+                $result[] = ['id' => $int_id, 'city_id' => $city_id];
             }
         } else {
             break;
@@ -52,13 +60,13 @@ function get_id($html,$properties_table, $date){
     return $result;
 }
 
-function get_property($property_id){
+function get_property($property){
     header('Content-Type: text/html; charset=utf-8');
     $data = array();
     $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($args);
 
-    $page = file_get_html(PARSE_URL . '/viewad,' . $property_id . '.aspx', false, $context);
+    $page = file_get_html(PARSE_URL . '/viewad,' . $property['id'] . '.aspx', false, $context);
     $add_info = $page->find('div#addetails', 0);
 //    foreach($add_info as $info){
     $data['title'] = $add_info->find('h1', 0)->plaintext;
@@ -137,6 +145,9 @@ function get_property($property_id){
     $region = $main_content->children(24);
     $data['region']['label'] = $region->plaintext;
 
+    //City
+    $data['city'] = $property['city_id'];
+
     //Price
     $price = $main_content->children(25);
     $data['price_field']['label'] = $price->plaintext;
@@ -198,10 +209,10 @@ function view_row($row){
 }
 
 
-function saveParsPost($id)
+function saveParsPost($property)
 {
 
-    $data = get_property($id);
+    $data = get_property($property);
     if (empty($data)) return false;
     $post = [];
     // in production delete 3 from getMember() function
@@ -217,9 +228,10 @@ function saveParsPost($id)
         ];
     }
     $post += [
+        'structure_type' => 1, //for apartments
         'address' => $data['address']['label'],
         'state' => 1, //for Israel
-        'city' => $data['region']['label'],
+        'city' => $property['city_id'],
         'short_descp' => $data['title'],
         'rent' => $data['price'],
         'parking' => $data['parking']['value']?$data['parking']['label']:'',
@@ -238,9 +250,9 @@ function saveParsPost($id)
         'post_date' => date('Y-m-d h:i:s'),
     ];
 
-    //save post and save data what post was parsed
+//    save post and save data what post was parsed
     $post_id = insert('post', $post, 'post_id','post_id');
-    insert('parsed_data',['parsed_id' => $id]);
+    insert('parsed_data',['parsed_id' => $property['id']]);
 
     if ($post_id) {
         foreach ($data['images'] as $i => $image) {
