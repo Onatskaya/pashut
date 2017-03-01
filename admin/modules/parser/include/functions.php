@@ -5,9 +5,9 @@ function get_rent_ids($date, $type = 'mainresults'){
     $properties_id = array();
     $urls = [
         1 => 'http://www.homeless.co.il/rent/inumber1=1',      //Tel Aviv:
-        //176 => 'http://www.homeless.co.il/rent/inumber1=176',    //Netanya:
-        //7 =>'http://www.homeless.co.il/rent/inumber1=7',      //Jerusalem:
-        //3 => 'http://www.homeless.co.il/rent/inumber1=3'       //Givatayim:
+        176 => 'http://www.homeless.co.il/rent/inumber1=176',    //Netanya:
+        7 =>'http://www.homeless.co.il/rent/inumber1=7',      //Jerusalem:
+        3 => 'http://www.homeless.co.il/rent/inumber1=3'       //Givatayim:
     ];
 
     // id's cities from city table
@@ -22,7 +22,7 @@ function get_rent_ids($date, $type = 'mainresults'){
     foreach ($urls as $key => $url) {
         $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"."Cookie: search_inumber1%3d".$key."_rent={'boardtype':'rent','inumber1':'".$key."'}\r\n"));
         $context = stream_context_create($args);
-         for ($i = 1; $i<=1;$i++) {
+         for ($i = 1; $i<=600;$i++) {
             $pagination_url =$url.'/'.$i;
             $html = file_get_html($pagination_url, false, $context);
             $ids = get_id($html, $properties_table, $date, $cities[$key]);
