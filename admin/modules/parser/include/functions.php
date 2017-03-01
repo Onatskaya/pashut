@@ -5,9 +5,9 @@ function get_rent_ids($date, $type = 'mainresults'){
     $properties_id = array();
     $urls = [
         1 => 'http://www.homeless.co.il/rent/inumber1=1',      //Tel Aviv:
-        176 => 'http://www.homeless.co.il/rent/inumber1=176',    //Netanya:
-        7 =>'http://www.homeless.co.il/rent/inumber1=7',      //Jerusalem:
-        3 => 'http://www.homeless.co.il/rent/inumber1=3'       //Givatayim:
+        //176 => 'http://www.homeless.co.il/rent/inumber1=176',    //Netanya:
+        //7 =>'http://www.homeless.co.il/rent/inumber1=7',      //Jerusalem:
+        //3 => 'http://www.homeless.co.il/rent/inumber1=3'       //Givatayim:
     ];
 
     // id's cities from city table
@@ -22,7 +22,7 @@ function get_rent_ids($date, $type = 'mainresults'){
     foreach ($urls as $key => $url) {
         $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"."Cookie: search_inumber1%3d".$key."_rent={'boardtype':'rent','inumber1':'".$key."'}\r\n"));
         $context = stream_context_create($args);
-         for ($i = 1; $i<=600;$i++) {
+         for ($i = 1; $i<=1;$i++) {
             $pagination_url =$url.'/'.$i;
             $html = file_get_html($pagination_url, false, $context);
             $ids = get_id($html, $properties_table, $date, $cities[$key]);
@@ -61,12 +61,17 @@ function get_id($html,$properties_table, $date, $city_id){
 }
 
 function get_property($property){
-    header('Content-Type: text/html; charset=utf-8');
+    //header('Content-Type: text/html; charset=utf-8');
     $data = array();
     $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"));
     $context = stream_context_create($args);
 
     $page = file_get_html(PARSE_URL . '/viewad,' . $property['id'] . '.aspx', false, $context);
+    $phone_url = 'http://www.homeless.co.il/webservices/icardos.asmx/IncrementClickesAndGetPhoneNumber?AdID='. $property['id'] . '&boardType=rent';
+    $phones = file_get_html($phone_url, false, $context);
+    $string = $phones->find('string')[0]->plaintext;
+    $phones->clear();
+    $phones = explode(',', $string);
     $add_info = $page->find('div#addetails', 0);
 //    foreach($add_info as $info){
     $data['title'] = $add_info->find('h1', 0)->plaintext;
@@ -136,6 +141,12 @@ function get_property($property){
     //View Phone
     $view_phone = $main_content->children(19);
     $data['view_phone']['label'] = $view_phone->plaintext;
+
+    //Contact
+    $phone = explode('-',$phones[0]);
+    $data['contact_a'] = $phone[0];
+    $data['contact_b'] = substr($phone[1], 0, 3);
+    $data['contact_c'] = substr($phone[1], 3, strlen($phone[1]));
 
     //Address
     $address = $main_content->children(21);
@@ -221,9 +232,9 @@ function saveParsPost($property)
         $post = [
             'name' => $member['first_name'],
             'email' => $member['email'],
-            'contact_a' => $member['mem_phone_a'],
-            'contact_b' => $member['mem_phone_b'],
-            'contact_c' => $member['mem_phone_c'],
+//            'contact_a' => $member['mem_phone_a'],
+//            'contact_b' => $member['mem_phone_b'],
+//            'contact_c' => $member['mem_phone_c'],
             'member_id' => $member['member_id'],
         ];
     }
@@ -232,18 +243,22 @@ function saveParsPost($property)
         'address' => $data['address']['label'],
         'state' => 1, //for Israel
         'city' => $property['city_id'],
-        'short_descp' => $data['title'],
         'rent' => $data['price'],
         'parking' => $data['parking']['value']?$data['parking']['label']:'',
         'main_image' => $data['images'][0],
         'listing_number' => last_id('post','post_id','listing_number'),
         'elevator' => $data['parking']['value']?'Yes':'No',
         'balcony' => $data['balcony']['value']?'Yes':'No',
+        'short_descp' => $data['title'],
+        //'short_descp' => substr($data['remarks'], 0, 250).'...',
         'full_descp' => $data['remarks'],
         'floor' => $data['floor']['label'],
-        'property_available' => 'Available'
+        'property_available' => 'Available',
+        'square_footage' => $data['mr']['label'],
+        'contact_a' => $data['contact_a'],
+        'contact_b' => $data['contact_b'],
+        'contact_c' => $data['contact_c'],
     ];
-
     $post += [
         'availability' => date('Y-m-d h:i:s'),
         'date' => date('Y-m-d h:i:s'),
@@ -253,7 +268,6 @@ function saveParsPost($property)
 //    save post and save data what post was parsed
     $post_id = insert('post', $post, 'post_id','post_id');
     insert('parsed_data',['parsed_id' => $property['id']]);
-
     if ($post_id) {
         foreach ($data['images'] as $i => $image) {
             if ($i < 5) {
