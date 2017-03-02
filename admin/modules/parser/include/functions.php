@@ -17,18 +17,23 @@ function get_rent_ids($date, $type = 'mainresults'){
         7 => 11,
         3 => 3,
     ];
+    $limit = 0;
 
     // create HTML DOM
     foreach ($urls as $key => $url) {
         $args = array('http'=>array('header' => "User-Agent:MyAgent/1.0\r\n"."Cookie: search_inumber1%3d".$key."_rent={'boardtype':'rent','inumber1':'".$key."'}\r\n"));
         $context = stream_context_create($args);
          for ($i = 1; $i<=600;$i++) {
+            $limit++;
             $pagination_url =$url.'/'.$i;
             $html = file_get_html($pagination_url, false, $context);
             $ids = get_id($html, $properties_table, $date, $cities[$key]);
             if(!empty($ids)){
                 $properties_id = array_merge($properties_id,$ids);
             }else{
+                break;
+            }
+            if($limit > 50){
                 break;
             }
         }
