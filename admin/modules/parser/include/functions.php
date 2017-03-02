@@ -33,7 +33,7 @@ function get_rent_ids($date, $type = 'mainresults'){
             }else{
                 break;
             }
-            if($limit > 50){
+            if($limit >= 50){
                 break;
             }
         }
