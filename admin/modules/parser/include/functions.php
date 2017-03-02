@@ -263,7 +263,9 @@ function saveParsPost($property)
         'contact_a' => $data['contact_a'],
         'contact_b' => $data['contact_b'],
         'contact_c' => $data['contact_c'],
-        'property_zoom' => 5,
+        'property_lat' => 31.046051,     // coords for Israel
+        'property_lng' => 34.85161199999993,
+        'property_zoom' => 6,
     ];
     $post += [
         'availability' => date('Y-m-d h:i:s'),
