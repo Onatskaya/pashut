@@ -263,6 +263,7 @@ function saveParsPost($property)
         'contact_a' => $data['contact_a'],
         'contact_b' => $data['contact_b'],
         'contact_c' => $data['contact_c'],
+        'property_zoom' => 5,
     ];
     $post += [
         'availability' => date('Y-m-d h:i:s'),
