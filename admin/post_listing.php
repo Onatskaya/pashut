@@ -7,18 +7,18 @@ $que_post="SELECT * FROM post ORDER BY post_id DESC ";
 $obj_post= mysqli_query($conn,$que_post);
 
 ?>
-<!DOCTYPE HTML> 
+<!DOCTYPE HTML>
 <html lang="en">
-  <head>		
+  <head>
 		<title>Pashutlehaskir.com</title>
 		<link rel="shortcut icon" href="" />
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">				
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 		<meta http-equiv="expires" content="0" />
 		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />				
-		<meta name="apple-itunes-app" content="app-id=509021914">									
+		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8" />
+		<meta name="apple-itunes-app" content="app-id=509021914">
 		<!-- Latest compiled and minified CSS -->
 		<link href="../css/201603/ui-lightness/jquery-ui-1.10.4.css" rel="stylesheet">
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -26,17 +26,17 @@ $obj_post= mysqli_query($conn,$que_post);
 		<link href="../css/201603/global.css" rel="stylesheet">
 		<link href="../css/201603/section.css" rel="stylesheet">
 		<link href="../css/201603/carousel.css" rel="stylesheet">
-	
+
 		<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 		<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
 		<meta name="robots" content="index,follow" />
-		<meta name="GOOGLEBOT" content="index,follow" />		
-		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>		       
+		<meta name="GOOGLEBOT" content="index,follow" />
+		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
 </head>
 
 
 <body  class="guest" >
-	
+
 	<?php
 		include('header.php');
 	?>
@@ -47,7 +47,10 @@ $obj_post= mysqli_query($conn,$que_post);
 	<div class="container locations">
 		<!-- <h3 style="background-color:#3D4D65;color:#fff;text-align:center;">Listing</h3> -->
 		<center><h2>Property</h2></center>
-
+            <div class="remove-all-block" style="float: right; margin: 5px;">
+                <input type="submit" name="remove-all" value="Remove all">
+                <input type="submit" name="remove-checked" value="Remove checked">
+            </div>
 			<div class="row">
 				<table id="myTable" class="table table-striped dataTable table-bordered">                       
 				    <thead>
@@ -59,6 +62,10 @@ $obj_post= mysqli_query($conn,$que_post);
 			               <th class="col-md-2">Structure Type</th>
 			               <th class="col-md-1">Image</th>
 			               <th class="col-md-2">Status</th>
+                           <th class="col-md-2">
+                               <span style="float: left">Select</span>
+                               <input id="check-all-prop" type="checkbox" name="check_all">
+                           </th>
 			               <th class="col-md-1">Actions</th>
 				        </tr>
 				    </thead>
@@ -75,6 +82,7 @@ $obj_post= mysqli_query($conn,$que_post);
 						            <td><?php echo $data_post['structure_type'];?></td>
 						            <td><img src="../home_images/<?php echo $data_post['main_image'];?>" height="60" width="60"></td>
 						        	 <td><?php include('property_status.php');?></td>
+                                    <td><input type="checkbox" class="select-property" name="property_check[]" data-post_id="<?php echo $data_post['post_id'];?>"></td>
 						        	<td>
                                         <a href="view_post_detail.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-eye-open"></a>
                                         <a href="edit_post.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-pencil"></a>
@@ -145,5 +153,81 @@ $obj_post= mysqli_query($conn,$que_post);
 
  jQuery( document ).ready(function( $ ) {
     $('#myTable').dataTable({ "bSort": false});
+
+
+//     $('#check-all-prop').change(function(){
+//        console.log(111111);
+//     });
+
+     $('#check-all-prop').click(function(event) {
+         if(this.checked) {
+             // Iterate each checkbox
+             $(':checkbox', '#myTable').each(function() {
+                 this.checked = true;
+             });
+         }else{
+             $(':checkbox', '#myTable').each(function() {
+                 this.checked = false;
+             });
+         }
+     });
+
+     $('input[name="remove-checked"]').click(function(e){
+         e.preventDefault;
+         var prop_arr = [];
+         $('input:checkbox.select-property', '#myTable').each(function () {
+             if(this.checked){
+                 prop_arr.push($(this).attr('data-post_id'));
+             }
+         });
+         if(confirm('Are you sure?')){
+             $.ajax({
+                 method: 'post',
+                 url: 'remove_properties.php',
+                 dataType: 'json',
+                 data: {
+                     action: 'remove_properties',
+                     id_list: JSON.stringify(prop_arr)
+                 },
+                 success: function(resp) {
+                     if(resp){
+                         if(resp.status == 'success'){
+                            location.reload();
+                         }else{
+                             alert('Try again later');
+                         }
+
+                     }
+                 }
+             });
+         }
+
+     });
+
+     $('input[name="remove-all"]').click(function(e){
+         e.preventDefault;
+         if(confirm('Are you sure?')){
+             $.ajax({
+                 method: 'post',
+                 url: 'remove_properties.php',
+                 dataType: 'json',
+                 data: {
+                     action: 'remove_all_properties'
+                 },
+                 success: function(resp) {
+                     if(resp){
+                         if(resp.status == 'success'){
+                             location.reload();
+                         }else{
+                             alert('Try again later');
+                         }
+
+                     }
+                 }
+             });
+         }
+
+     });
+
 });
 </script>
