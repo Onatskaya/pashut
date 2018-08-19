@@ -20,6 +20,9 @@
                     <li class="post"><em></em><a href="landlord.php">Landlords</a></li>
                     <li class="find"><em></em><a href="member.php">Members</a></li>
                     <li class="find"><em></em><a href="rented.php">Rented</a></li>
+                    <li class="find"><em></em><a href="moving-resources.php">Moving Resources</a></li>
+                    <li class="find"><em></em><a href="cities.php">Cities</a></li>
+                    <li class="find"><em></em><a href="categories.php">Categories</a></li>
                     <li class="find"><em></em><a href="import.php">Import</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
