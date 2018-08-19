@@ -56,6 +56,17 @@ while($data_time3=mysqli_fetch_assoc($obj_time))
 	$data_time2[]=$data_time3;
 }
 
+if(empty($data['property_zoom'])){
+    $data['property_zoom'] = 6;
+}
+
+if(empty($data['property_lat'])){
+    $data['property_lat'] = '31.046051';
+}
+
+if(empty($data['property_lng'])){
+    $data['property_lng'] = '34.85161199999993';
+}
 ?>
    
    <style>
@@ -138,9 +149,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/carousel.css" rel="stylesheet">
                 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 				
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
@@ -149,26 +160,24 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			
 			<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
 	</head>
-		
+  <style type="text/css">
+      .search-results .search-filters {
+          position: relative;
+          width: 100%;
+      }
 
-<style type="text/css">
-	.search-results .search-filters {
-	    position: relative;
-	    width: 100%;
-	}
+      #color_w.average, #color_b.active, #color_a.active, #color_v.active, #color_s.active{
+          color: rgb(255, 192, 0);
+      }
+      #color_w.easy, #color_b.calm, #color_a.calm, #color_v.calm, #color_s.calm{
+          color: #92E342;
+      }
 
-    #color_w.average, #color_b.active, #color_a.active, #color_v.active, #color_s.active{
-        color: rgb(255, 192, 0);
-    }
-    #color_w.easy, #color_b.calm, #color_a.calm, #color_v.calm, #color_s.calm{
-        color: #92E342;
-    }
+      #color_w.hard, #color_b.busy, #color_a.busy, #color_v.busy, #color_s.busy{
+          color: red;
+      }
 
-    #color_w.hard, #color_b.busy, #color_a.busy, #color_v.busy, #color_s.busy{
-        color: red;
-    }
-
-</style>
+  </style>
 	<body  class="guest" >
 	
 	
@@ -643,7 +652,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 							<strong>Vacancy Description</strong><?php echo $data['full_descp'];?>
 						</div>					</div>
 				<?php
-				if(isset($_SESSION['member_logged']))
+				if(isset($_SESSION['member_logged']) && is_active_member_plan( $conn ))
 				{ ?>
 				<div class="row even">
 					<div class="col-md-6">
@@ -655,7 +664,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				</div>
 				<div class="row odd">
 					<div class="col-md-6">
-						<strong>Phone No. </strong><?php echo $data['contact_a'];?>-<?php echo $data['contact_b'];?>-<?php echo $data['contact_c'];?>&nbsp;&nbsp;Ext- <?php echo $data['contact_d'];?>
+						<strong>Phone No. </strong><?php echo $data['contact_a'];?>-<?php echo $data['contact_b'];?>-<?php echo $data['contact_c'];?>&nbsp;&nbsp;
+                        <?php if(!empty($data['contact_d']) && $data['contact_d'] != '' ): ?>
+                            Ext- <?php echo $data['contact_d'];?>
+                        <?php endif; ?>
 					</div>
 					<!-- <div class="col-md-6">
 						<strong>Full Address</strong><?php echo $data['street_no'];?>, <?php echo $data['street_name'];?>, <?php echo $data['city'];?>, <?php echo $data['state'];?>- <?php echo $data['pincode'];?>
@@ -693,42 +705,42 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 										<div class="body">
 											<div class="middle">
                                                 <?php $WHERE_WALK['id']=$data['walkscore']; $walkscore = select('walkscore',$WHERE_WALK)[0]['walkscore'];?>
-												<div class="large"><span id="color_w" class="<?php echo strtolower($walkscore); ?>" ><?php echo $walkscore; ?></span></div>
-												<div class="small">
-													<span><?php $WHERE_WALK['id']=$data['walkscore_descrp']; echo select('walkscore_desc',$WHERE_WALK)[0]['walkscore_desc'];?></span>
-												</div>
+                                                <div class="large"><span id="color_w" class="<?php echo strtolower($walkscore); ?>" ><?php echo $walkscore; ?></span></div>
+                                                <div class="small">
+                                                    <span><?php $WHERE_WALK['id']=$data['walkscore_descrp']; echo select('walkscore_desc',$WHERE_WALK)[0]['walkscore_desc'];?></span>
+                                                </div>
 											</div>
 											</div><h3></h3></div>
 							</div> 
 			 
-							<div class="">				
-								<div class="soundscore">
+							<div class="">
+                                <div class="soundscore">
                                     <?php $WHERE_SOUND['id']=$data['soundscore']; $soundscore = select('soundscore',$WHERE_SOUND)[0]['soundscore']; ?>
-									<div class="top">Soundscore: <span id="color_s" class="<?php echo strtolower($soundscore); ?>"><?php echo $soundscore;?></span></div>
-									<div class="body">
-										<div class="middle">
+                                    <div class="top">Soundscore: <span id="color_s" class="<?php echo strtolower($soundscore); ?>"><?php echo $soundscore;?></span></div>
+                                    <div class="body">
+                                        <div class="middle">
                                             <?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; $vehicle_noise = select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise'];?>
-											<div class="medium">Vehicle Noise: 
-												<span id="color_v" class="<?php echo strtolower($vehicle_noise); ?>"><?php echo $vehicle_noise; ?></span>
-											</div>
+                                            <div class="medium">Vehicle Noise:
+                                                <span id="color_v" class="<?php echo strtolower($vehicle_noise); ?>"><?php echo $vehicle_noise; ?></span>
+                                            </div>
                                             <?php $WHERE_AIR['id']=$data['airport_noise']; $airport_noise = select('airport_noise',$WHERE_AIR)[0]['airport_noise'];?>
-											<div class="medium">Airport Noise: 
-												<span id="color_a" class="<?php echo strtolower($airport_noise); ?>"><?php echo $airport_noise;?></span>
-											</div>
+                                            <div class="medium">Airport Noise:
+                                                <span id="color_a" class="<?php echo strtolower($airport_noise); ?>"><?php echo $airport_noise;?></span>
+                                            </div>
                                             <?php $WHERE_BUIS['id']=$data['business_noise']; $businesses = select('businesses',$WHERE_BUIS)[0]['businesses'];?>
-											<div class="medium">Businesses: 
-												<span id="color_b" class="<?php echo strtolower($businesses); ?>"><?php echo $businesses; ?></span>
-											</div>
-											<img width="220" border="0" src="images/soundscore_module-gradient.png">
-											<div class="small">
-												<span><?php $WHERE_SOUNDD['id']=$data['soundscore_descrp']; echo select('soundscore_desc',$WHERE_SOUNDD)[0]['soundscore_desc'];?></span>
-											</div>
-										</div>
-									</div><h3></h3>
-								</div>
+                                            <div class="medium">Businesses:
+                                                <span id="color_b" class="<?php echo strtolower($businesses); ?>"><?php echo $businesses; ?></span>
+                                            </div>
+                                            <img width="220" border="0" src="images/soundscore_module-gradient.png">
+                                            <div class="small">
+                                                <span><?php $WHERE_SOUNDD['id']=$data['soundscore_descrp']; echo select('soundscore_desc',$WHERE_SOUNDD)[0]['soundscore_desc'];?></span>
+                                            </div>
+                                        </div>
+                                    </div><h3></h3>
+                                </div>
 								<div class="listing-map">									
 									<div style="width: 280px; height: 230px; margin: 0px auto 15px; position: relative;">
-										<script src='http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false'></script>
+										<script src='https://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false'></script>
 										<div style='overflow:hidden;height:230px;width:280px;'>
 											<div id='gmap_canvas' style='height:230px;width:280px;'></div>
 											<div>
@@ -752,7 +764,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 									<a href="#" class="payrentLink">Pay Rent Online</a> -->
 									<!-- <a href="#" class="messageLink"><img width="22" align="absmiddle" src="images/2016/icons/message-center_icon.png"> Send Message</a> -->
 									<!-- <a target="_blank" href="https://www.google.co.in/maps/@<?php echo $data['property_lat'];?>,<?php echo $data['property_lng'];?>,<?php echo $data['property_zoom'];?>z" class="gMapLink"><img width="22" align="absmiddle" src="images/2016/icons/pin-listingicon.png"> Open in Google Maps</a> -->
-									<a target="_blank" href="http://maps.google.com/maps?q=loc:<?php echo $data['property_lat'];?>,<?php echo $data['property_lng'];?>" class="gMapLink"> Open in Google Maps</a>
+									<a target="_blank" href="https://maps.google.com/maps?q=loc:<?php echo $data['property_lat'];?>,<?php echo $data['property_lng'];?>" class="gMapLink"> Open in Google Maps</a>
 									<?php
 									if(isset($_SESSION['member_logged']))
 									{ ?>
@@ -935,20 +947,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-//		var a=$("#color_s").text();
-//		if(a=='Calm')
-//		{
-//			$("#color_s").css("color", "#92E342");
-//		}
-//		if(a=='Active')
-//		{
-//			$("#color_s").css("color", "#FFC000");
-//		}
-//		if(a=='Busy')
-//		{
-//			$("#color_s").css("color", "red");
-//		}
-
         <?php if( $member_id && $_SESSION['member_logged'] ): ?>
             $('#myModal').on('shown.bs.modal', function() {
                 var eventsList = <?php echo $events; ?>;
@@ -1056,5 +1054,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	  	});
 
 	</script>
+    <?php include_once('member/member_init.php'); ?>
     </body>
 </html>

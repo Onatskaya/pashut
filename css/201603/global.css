@@ -1866,3 +1866,7 @@ ul.flex-direction-nav .flex-next,ul.flex-direction-nav .flex-prev {color: transp
 .listing-details .payrentLink:hover{
 background: #434BEF none repeat scroll 0 0;
 }
+
+.ui-datepicker-title{
+    color: #000;
+}

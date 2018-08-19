@@ -86,6 +86,18 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 	$data_city2[]=$data_city3;
 }
 
+if(empty($data_post['property_zoom'])){
+    $data_post['property_zoom'] = 6;
+}
+
+if(empty($data_post['property_lat'])){
+    $data_post['property_lat'] = '31.046051';
+}
+
+if(empty($data_post['property_lng'])){
+    $data_post['property_lng'] = '34.85161199999993';
+}
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -106,8 +118,9 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 	<link href="../css/201603/global.css" rel="stylesheet">
 	<link href="../css/201603/section.css" rel="stylesheet">
 	<link href="../css/201603/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 
-	<script src="http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk"></script>
+	<script src="https://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk"></script>
 	<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 	<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
 	<meta name="robots" content="index,follow" />
@@ -493,7 +506,7 @@ include('header.php');
 		Listing Type:
 	</td>
 	<td class="field">
-		<select name="listing_type" id="listing_type" class="input validate[required] ">
+		<select name="listing_type" id="listing_type" class="input">
 			<option value="">Select</option>
 			<?php
 			$listQ='SELECT * FROM listing_type';
@@ -506,7 +519,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -514,7 +526,7 @@ include('header.php');
 		Unit Type:
 	</td>
 	<td class="field">
-		<select name="unit_type" id="unit_type" class="input validate[required] ">
+		<select name="unit_type" id="unit_type" class="input">
 			<option value="">Select</option>
 			<?php
 			while($data_unit=mysqli_fetch_assoc($obj_unit))
@@ -525,7 +537,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -534,7 +545,6 @@ include('header.php');
 	</td>
 	<td class="field">
 		<input type="text" class="text" style="width:40px;" name="unit_no" id="unit_no" maxlength="20" value="<?php echo $data_post['unit_no']; ?>">
-		<img src="../images/info.gif" border="0" align="absmiddle" class=""/>
 		<!--  <input type="checkbox" class="noborder" name="dontshowunitno" value="1" > <span style="font-size: 10px;">Do not show to Members</span> -->
 	</td>
 </tr>
@@ -543,7 +553,7 @@ include('header.php');
 		Bedrooms:
 	</td>
 	<td class="field">
-		<select name="bedroom" id="bedroom" class="input validate[required]">
+		<select name="bedroom" id="bedroom" class="input">
 			<option value="">Select</option>
 			<?php
 			while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
@@ -555,7 +565,6 @@ include('header.php');
 			?>
 
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -563,7 +572,7 @@ include('header.php');
 		Bathrooms:
 	</td>
 	<td class="field">
-		<select name="bathroom" id="bathroom" class="input validate[required] ">
+		<select name="bathroom" id="bathroom" class="input">
 			<?php
 			while($data_bath=mysqli_fetch_assoc($obj_bath))
 			{
@@ -573,7 +582,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -581,7 +589,7 @@ include('header.php');
 		Furnished:
 	</td>
 	<td class="field">
-		<select name="furnished" id="furnished" class="input validate[required] ">
+		<select name="furnished" id="furnished" class="input">
 			<option value="">Select</option>
 			<?php
 			$FurQ='SELECT * FROM furnished';
@@ -594,7 +602,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -614,7 +621,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -630,7 +636,7 @@ include('header.php');
 		City:
 	</td>
 	<td class="field">
-		<select name="city" id="city" class="input validate[required] form-control">
+		<select name="city" id="city" class="input form-control">
 			<option value="">Select</option>
 			<?php
 			foreach($data_city2 as $data_city)
@@ -642,7 +648,6 @@ include('header.php');
 			?>
 
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -658,7 +663,7 @@ include('header.php');
 		Walkscore:
 	</td>
 	<td class="field">
-		<select name="walkscore" id="walkscore" class="input validate[required] form-control">
+		<select name="walkscore" id="walkscore" class="input form-control">
 			<option value="">Select</option>
 			<?php
 			$WalkQ='SELECT * FROM walkscore';
@@ -671,7 +676,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -679,7 +683,7 @@ include('header.php');
 		Soundscore:
 	</td>
 	<td class="field">
-		<select name="soundscore" id="soundscore" class="input validate[required] form-control">
+		<select name="soundscore" id="soundscore" class="input form-control">
 			<option value="">Select</option>
 			<?php
 			$SoundQ='SELECT * FROM soundscore';
@@ -692,7 +696,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -700,7 +703,7 @@ include('header.php');
 		Vehicle Noise:
 	</td>
 	<td class="field">
-		<select name="vehicle_noise" id="vehicle_noise" class="input validate[required] form-control">
+		<select name="vehicle_noise" id="vehicle_noise" class="input form-control">
 			<option value="">Select</option>
 			<?php
 			$VNQ='SELECT * FROM vehicle_noise';
@@ -714,7 +717,6 @@ include('header.php');
 			?>
 
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <tr valign="top">
@@ -722,7 +724,7 @@ include('header.php');
 		Businesses:
 	</td>
 	<td class="field">
-		<select name="business_noise" id="business_noise" class="input validate[required] form-control">
+		<select name="business_noise" id="business_noise" class="input form-control">
 			<?php
 			$BuisQ='SELECT * FROM businesses';
 			$BuisR=mysqli_query($conn,$BuisQ);
@@ -734,7 +736,6 @@ include('header.php');
 			}
 			?>
 		</select>
-		<span style="font-size:16px;color:#C30">*</span>
 	</td>
 </tr>
 <!-- <tr valign="top">
@@ -755,10 +756,7 @@ include('header.php');
 			Rent:
 		</td>
 		<td class="field">
-			₪<input type="text" class="input validate[required] numberonly text" style="width:60px;" id="rent" name="rent" maxlength="10" value="<?php echo $data_post['rent'];?>" >
-
-			<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
-
+			₪<input type="text" class="input numberonly text" style="width:60px;" id="rent" name="rent" maxlength="10" value="<?php echo $data_post['rent'];?>" >
 		</td>
 	</tr>
 	<tr valign="top">
@@ -766,7 +764,7 @@ include('header.php');
 			Deposit:
 		</td>
 		<td class="field">
-			₪<input type="text" class="input validate[required] numberonly text" style="width:100px;" id="deposit" name="deposit" maxlength="50" value="<?php echo $data_post['deposit'];?>">
+			₪<input type="text" class="input numberonly text" style="width:100px;" id="deposit" name="deposit" maxlength="50" value="<?php echo $data_post['deposit'];?>">
 		</td>
 	</tr>
 	<tr valign="top">
@@ -774,7 +772,7 @@ include('header.php');
 			Lease:
 		</td>
 		<td class="field">
-			<select name="lease_type" id="lease_type" class="input validate[required]">
+			<select name="lease_type" id="lease_type" class="input">
 				<option value="">Select</option>
 				<?php
 				while($data_lease=mysqli_fetch_assoc($obj_lease))
@@ -792,8 +790,7 @@ include('header.php');
 		</td>
 		<td class="field">
 			<!-- <select name="availmo"><option value=""></option><option value="1" >Jan</option><option value="2" >Feb</option><option value="3" >Mar</option><option value="4" >Apr</option><option value="5" >May</option><option value="6" >Jun</option><option value="7" >Jul</option><option value="8" >Aug</option><option value="9" >Sep</option><option value="10" >Oct</option><option value="11" >Nov</option><option value="12" >Dec</option></select><input type="hidden" name="reqFld" value="1" >&nbsp;/&nbsp;<select name="availday"><option value=""></option><option value="1" >1</option><option value="2" >2</option><option value="3" >3</option><option value="4" >4</option><option value="5" >5</option><option value="6" >6</option><option value="7" >7</option><option value="8" >8</option><option value="9" >9</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option><option value="25" >25</option><option value="26" >26</option><option value="27" >27</option><option value="28" >28</option><option value="29" >29</option><option value="30" >30</option><option value="31" >31</option></select><input type="hidden" name="reqFld" value="1" >&nbsp;/&nbsp;<select name="availyr"><option value=""></option><option value="2016" >2016</option><option value="2017" >2017</option></select> <input type="hidden" name="reqFld" value="1" ><span style="font-size:16px;color:#C30">*</span> <span style="font-size: 10px;">(<A href="javascript:availToday()">Now</A>)</span>  -->
-			<input type="text" class="input validate[required] text date_p" style="width:180px;" name="availability" maxlength="500" value="<?php echo date('d-m-Y',strtotime($data_post['availability']));  ?>" >
-			<img src="../images/info.gif" border="0" align="absmiddle" class=""/>
+			<input type="text" class="input text date_p" style="width:180px;" name="availability" maxlength="500" value="<?php echo date('d-m-Y',strtotime($data_post['availability']));  ?>" >
 		</td>
 	</tr>
 	<tr valign="top">
@@ -801,7 +798,7 @@ include('header.php');
 			Floors:
 		</td>
 		<td class="field">
-			<select name="floor" id="floor" class="input validate[required]" style="width: 184px;">
+			<select name="floor" id="floor" class="input" style="width: 184px;">
 				<option value="">Select</option>
 				<?php
 				while($data_floor=mysqli_fetch_assoc($obj_floor))
@@ -819,7 +816,7 @@ include('header.php');
 			Parking Type:
 		</td>
 		<td class="field">
-			<select name="parking" id="parking" class="input validate[required]">
+			<select name="parking" id="parking" class="input">
 				<option value="">Select</option>
 				<?php
 				while($data_parking=mysqli_fetch_assoc($obj_parking))
@@ -863,7 +860,7 @@ include('header.php');
 			State:
 		</td>
 		<td class="field">
-			<select name="state" id="state" class="input validate[required] form-control">
+			<select name="state" id="state" class="input form-control">
 				<?php
 				$StateQ='SELECT * FROM state';
 				$StateR=mysqli_query($conn,$StateQ);
@@ -875,7 +872,6 @@ include('header.php');
 				}
 				?>
 			</select>
-			<span style="font-size:16px;color:#C30">*</span>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -883,8 +879,7 @@ include('header.php');
 			Full Address:
 		</td>
 		<td class="field">
-			<textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;"><?php echo $data_post['address']; ?></textarea>
-			<span style="font-size:16px;color:#C30">*</span>
+			<textarea name="address" class="input mb" id="address" style="width:auto;height:62px;"><?php echo $data_post['address']; ?></textarea>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -892,7 +887,7 @@ include('header.php');
 			Walkscore Description:
 		</td>
 		<td class="field">
-			<select name="walkscore_descrp" id="walkscore_descrp" class="input validate[required] form-control">
+			<select name="walkscore_descrp" id="walkscore_descrp" class="input form-control">
 				<option value="">Select</option>
 				<?php
 				$WalkDQ='SELECT * FROM walkscore_desc';
@@ -905,7 +900,6 @@ include('header.php');
 				}
 				?>
 			</select>
-			<span style="font-size:16px;color:#C30">*</span>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -913,7 +907,7 @@ include('header.php');
 			Soundscore Description:
 		</td>
 		<td class="field">
-			<select name="soundscore_descrp" id="soundscore_descrp" class="input validate[required] form-control">
+			<select name="soundscore_descrp" id="soundscore_descrp" class="input form-control">
 				<?php
 				$SoundDQ='SELECT * FROM soundscore_desc';
 				$SoundDR=mysqli_query($conn,$SoundDQ);
@@ -925,7 +919,6 @@ include('header.php');
 				}
 				?>
 			</select>
-			<span style="font-size:16px;color:#C30">*</span>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -933,7 +926,7 @@ include('header.php');
 			Airport Noise:
 		</td>
 		<td class="field">
-			<select name="airport_noise" id="airport_noise" class="input validate[required] form-control">
+			<select name="airport_noise" id="airport_noise" class="input form-control">
 				<?php
 				$airQ='SELECT * FROM airport_noise';
 				$airR=mysqli_query($conn,$airQ);
@@ -945,7 +938,6 @@ include('header.php');
 				}
 				?>
 			</select>
-			<span style="font-size:16px;color:#C30">*</span>
 		</td>
 	</tr>
 </table>
@@ -1265,197 +1257,20 @@ include('header.php');
 	</td>
 </tr>
 <tr valign="top">
-	<td colspan="2">
-		<div class="">
-			<form action="update_time.php" method="POST">
-				<input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
-				<div class="col-md-12">
-					<table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
-						<tr valign="top">
-							<td class="medsubheader">
-								Monday
-							</td>
-							<td class="field">
-								<select name="mon_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option <?php if($data_time['time']==$data_post['mon_time_frm']){ echo 'selected'; } ?> ><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="mon_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['mon_time_to']){ echo 'selected'; } ?> ><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
+    <td colspan="2">
+        <div id="calendar"></div>
 
-						</tr>
-						<tr valign="top">
-							<td class="medsubheader">
-								Tuesday
-							</td>
-							<td class="field">
-								<select name="tue_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['tue_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="tue_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['tue_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
-						</tr>
-						<tr valign="top">
-							<td class="medsubheader">
-								Wednesday
-							</td>
-							<td class="field">
-								<select name="wed_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['wed_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="wed_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['wed_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
-						</tr>
+        <div id="eventContent" title="Event Details" style="display:none;">
+            Start: <span id="startTime"></span><br>
+            End: <span id="endTime"></span><br><br>
+            <p id="eventInfo"></p>
+            <a href="#" class="btn btn-danger" id="event-remove" data-eventid="false" >Remove</a>
+        </div>
 
-						<tr valign="top">
-							<td class="medsubheader">
-								Thursday
-							</td>
-							<td class="field">
-								<select name="thu_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['thu_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="thu_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['thu_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
-						</tr>
-						<tr valign="top">
-							<td class="medsubheader">
-								Friday
-							</td>
-							<td class="field">
-								<select name="fri_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option  <?php if($data_time['time']==$data_post['fri_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="fri_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option <?php if($data_time['time']==$data_post['fri_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
-						</tr>
-						<tr valign="top">
-							<td class="medsubheader">
-								Saturday
-							</td>
-							<td class="field">
-								<select name="sat_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option <?php if($data_time['time']==$data_post['sat_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="sat_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option <?php if($data_time['time']==$data_post['sat_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
-						</tr>
-						<tr valign="top">
-							<td class="medsubheader">
-								Sunday
-							</td>
-							<td class="field">
-								<select name="sun_time_frm">
-									<option value="">From</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option <?php if($data_time['time']==$data_post['sun_time_frm']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-								<select name="sun_time_to">
-									<option value="">To</option>
-									<?php
-									foreach($data_time2 as $data_time)
-									{ ?>
-										<option <?php if($data_time['time']==$data_post['sun_time_to']){ echo 'selected'; } ?>><?php echo $data_time['time']; ?></option>
-									<?php }
-									?>
-								</select>
-							</td>
-						</tr>
-					</table>
-					<div class="col-md-3 col-md-offset-3">
-						<input type="submit" class="btn btn-info" align="center" value="Update">
-					</div>
-				</div>
-			</form>
-		</div>
-	</td>
+        <div id="js-event-confirm" title="Add Event" style="display:none;">
+            <div class="modal-body"></div>
+        </div><!-- /.modal -->
+    </td>
 </tr>
 
 
@@ -1597,7 +1412,6 @@ include('header.php');
 		</td>
 		<td class="field">
 			<input type="text" class="input validate[required] text mb" style="width:auto;" name="short_descp" maxlength="100" value="<?php echo $data_post['short_descp'];?>" ><span style="font-size:16px;color:#C30">*</span>
-			<img src="../images/info.gif" border="0" align="absmiddle" class=""/>
 		</td>
 	</tr>
 
@@ -1608,7 +1422,6 @@ include('header.php');
 		</td>
 		<td class="field">
 			<textarea name="full_descp" class="mb" style="width:auto;height:150px;" ><?php echo $data_post['full_descp'];?></textarea>
-			<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
 			<br><span style="color: red;font-size:11px;"><strong>NO PHONE NUMBERS, ADDRESS, WEBSITE OR LANDLORD CONTACT ALLOWED IN THIS BOX.</strong></span>
 		</td>
 	</tr>
@@ -1763,57 +1576,6 @@ include('header.php');
 		</div>
 	</td>
 </tr>
-
-
-<tr valign="top" class="sign-request-wrapper">
-	<td colspan="2">
-		<div class="grayline"></div>
-		<h3>9. Get Free 'FOR RENT' Sign</h3>
-	</td>
-</tr>
-
-
-<form action="update_post_driver.php" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="pid" value="<?php echo $post_id; ?>">
-	<tr valign="top" class="sign-request-wrapper">
-		<td colspan="2">
-			<div style="font-size: 18px; float: left; width: auto;">
-
-
-
-				<input type="checkbox" id="signRequest" name="for_rent_check1" value="Yes" class="noborder" <?php if($data_post['for_rent_check1']=='Yes'){ echo 'checked'; } ?>>
-
-
-				&nbsp;<b>Free <span style="color:red;">FOR RENT</span> Sign</b> - We will place a large "FOR RENT" sign (like the one at right) outside your property. Please use the "Driver Instructions" field below to provide any instructions to our driver. <br />
-				<br /><b>Driver Instructions:</b> <span class="smallgray">(e.g. - Place Sign in the front yard)</span><br />
-				<textarea class="mb" name="driver_instr" style="width:auto;height:100px;"><?php echo $data_post['driver_instr']; ?></textarea>
-			</div>
-			<div style="float: left; width: 130px;">
-				<!-- <img src="http://static.westsiderentals.com/images/sign_m.gif" style="border: 1px solid black;"> -->
-			</div>
-			<div class="clearboth"></div>
-		</td>
-	</tr>
-	<!-- <tr valign="top">
-		<td colspan="2">
-			<div style="margin:10px 0px;width: 600px; height:100px;overflow:auto;border:1px solid #A9A9A9; background: #efefef; padding:0px 8px 8px 8px;">
-				<h3>Fair Housing Act Notice</h3>
-				All submissions are subject to the federal and California fair housing laws which make it illegal to indicate in any advertisement &quot;any preference, limitation, or discrimination because of race, color, religion, sex, physical or mental disability, familial status&quot; (e.g. &quot;No children&quot; or &quot;Not suitable for Children&quot;), sexual orientation, ancestry, marital status, or source of income (e.g. &quot;No Section 8&quot; is prohibited). Your local jurisdiction may impose additional requirements. <br />
-				<br />
-				If you have questions about the fair housing laws and housing discrimination, please call the Southern California Housing Rights Center (formerly the Fair Housing Council of San Gabriel Valley) at (800) 477-5977 or go to HRCâ€™s website at <A href="http://www.hrc-la.org" target="_blank">www.hrc-la.org</a>.
-			</div>
-			<input type="Checkbox" value="Yes" name="for_rent_check2" class="noborder" checked="checked"> &nbsp; I have read and agree to the terms of the Fair Housing Act
-		</td>
-	</tr> -->
-	<tr valign="top" class="sign-request-wrapper">
-		<td colspan="2">
-			<input type="submit" class="btn btn-info" value="Update">
-		</td>
-	</tr>
-
-</form>
-
-
 
 <!--
     					<tr valign="top">
@@ -2117,11 +1879,11 @@ include("footer.php");
 	});
 </script>
 
+<?php
+$events = get_viewing_time($post_id);
 
-
-
-
-
+$events = !empty($events) ? $events : '[]';
+?>
 
 
 
@@ -2129,8 +1891,13 @@ include("footer.php");
 <link rel="stylesheet" href="../css/demo.css">
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+<!-- Full Calendar -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+
 <script src="../js/jquery.ui.addresspicker.js"></script>
 <script>
 	$(function() {
@@ -2189,7 +1956,107 @@ include("footer.php");
 </script>
 
 
+<script>
+    $(document).ready(function() {
 
+        $('#event-remove').on('click', function(){
+            var txt;
+            var eventId = $(this).attr('data-eventid');
+
+            var response = confirm("Are you sure, want to Delete this Event");
+            if (response == true) {
+                $.ajax({
+                    url: "remove_event.php",
+                    type: "post",
+                    data: {
+                        eventId: eventId
+                    } ,
+                    success: function (response) {
+                        setTimeout(function(){ location.reload(); },500);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+
+
+                });
+            }else{
+                alert("Try again later, please.");
+            }
+        });
+        var eventsList = <?php echo $events; ?>;
+        $('#calendar').fullCalendar({
+            header: {
+                left: '',
+                center: 'prev title next',
+                right: ''
+            },
+            displayEventTime: false,
+            defaultView: 'month',
+            editable: true,
+            eventRender: function (event, element) {
+                element.attr('href', 'javascript:void(0);');
+                element.click(function() {
+                    if(event.id){
+                        $('a#event-remove').attr('data-eventid', event.id);
+                    }
+
+                    if(event.start){
+                        $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
+                    }
+
+                    if(event.start){
+                        $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
+                    }
+
+                    if(event.description){
+                        $("#eventInfo").html(event.description);
+                    }
+
+                    $("#eventContent").dialog({ modal: true, title: 'Viewing Times', width:350});
+                });
+            },
+            dayClick: function(date, event, view) {
+                $('#current_day').val(date.format());
+                $('#eventAdd').dialog();
+            },
+            events: eventsList
+        });
+
+        $('#add_viewing_time').submit(function(e){
+            e.preventDefault();
+            var formData = $(this).serialize();
+            $.ajax({
+                url: "viewing_time_update.php",
+                type: "post",
+                data: formData ,
+                beforeSend: function( xhr ) {
+                    $('#eventAdd').dialog("close");
+                },
+                success: function (response) {
+
+                    if( response.length && response == 'Success'){
+                        var message = 'Time added successfully!';
+                    }else{
+                        var message = 'Try again later';
+                    }
+                    var confirmModal = $('#js-event-confirm');
+                    confirmModal.find('.modal-body').html(message);
+                    confirmModal.dialog({ modal: true, title: 'Viewing Times', width:350});
+                    setTimeout(function(){
+                        location.reload();
+                    }, 1500);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+            });
+
+        });
+    });
+
+
+</script>
 <link rel="stylesheet" href="../css/validationEngine.jquery.css">
 <script src="../js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>

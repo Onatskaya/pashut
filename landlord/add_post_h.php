@@ -48,7 +48,7 @@ while($data_city3=mysqli_fetch_assoc($obj_city))
 
 $que_post="SELECT * FROM post INNER JOIN structure_type on post.structure_type=structure_type.struct_id  WHERE member_id='$member_id' ";
 $obj_post= mysqli_query($conn,$que_post);
-
+$time_array = get_time_array();
 ?>
 <!DOCTYPE HTML> 
 <html lang="en">
@@ -76,7 +76,8 @@ $obj_post= mysqli_query($conn,$que_post);
 		<meta name="robots" content="index,follow" />
 		<meta name="GOOGLEBOT" content="index,follow" />		
 		<meta name="google-translate-customization" content="954d153704cc37f5-fac58c9bb4d3c842-g115d03cfb1ac5d23-17"></meta>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />		       
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 		<style>
 			input{
 				float:right!important;
@@ -387,16 +388,6 @@ $obj_post= mysqli_query($conn,$que_post);
                     </tr>
     			<tr valign="top">
     				<td class="subheader">
-    					פַקס:
-    				</td>
-    				<td class="field small-marg">
-                        <input type="text" class="numberonly text quater smalltext" name="contact_fax_a" maxlength="3">
-    					<input type="text" class="numberonly text quater smalltext" name="contact_fax_b"  value="" maxlength="3" > 
-    					<input type="text" class="numberonly text quater" name="contact_fax_c" value="" maxlength="4" >
-                    </td>
-    			</tr>
-    			<tr valign="top">
-    				<td class="subheader">
     					דוא"ל ליצירת קשר:
     				</td>
     				<td class="field">
@@ -432,10 +423,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											השכרה:
     										</td>
     										<td class="field">
-    											₪<input type="text" class="input validate[required] numberonly text" style="width:60px;" id="rent" name="rent" maxlength="10" > 
-    		
-                                                <img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
-    	
+    											₪<input type="text" class="input numberonly text" style="width:60px;" id="rent" name="rent" maxlength="10" > 
     										</td>
     									</tr>
     									<tr valign="top">
@@ -443,7 +431,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											לְהַפְקִיד:
     										</td>
     										<td class="field">
-    											₪<input type="text" class="input validate[required] numberonly text" style="width:100px;" id="deposit" name="deposit" maxlength="50">
+    											₪<input type="text" class="input numberonly text" style="width:100px;" id="deposit" name="deposit" maxlength="50">
     										</td>
     									</tr>
     									<tr valign="top">
@@ -451,7 +439,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											חוזה שכירות:
     										</td>
     										<td class="field">											
-    											<select name="lease_type" id="lease_type" class="input validate[required]">
+    											<select name="lease_type" id="lease_type" class="input">
     												<option value="">בחר</option>
     												<?php
     												    while($data_lease=mysqli_fetch_assoc($obj_lease))
@@ -468,8 +456,7 @@ $obj_post= mysqli_query($conn,$que_post);
     										</td>
     										<td class="field">
     											<!-- <select name="availmo"><option value=""></option><option value="1" >Jan</option><option value="2" >Feb</option><option value="3" >Mar</option><option value="4" >Apr</option><option value="5" >May</option><option value="6" >Jun</option><option value="7" >Jul</option><option value="8" >Aug</option><option value="9" >Sep</option><option value="10" >Oct</option><option value="11" >Nov</option><option value="12" >Dec</option></select><input type="hidden" name="reqFld" value="1" >&nbsp;/&nbsp;<select name="availday"><option value=""></option><option value="1" >1</option><option value="2" >2</option><option value="3" >3</option><option value="4" >4</option><option value="5" >5</option><option value="6" >6</option><option value="7" >7</option><option value="8" >8</option><option value="9" >9</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option><option value="25" >25</option><option value="26" >26</option><option value="27" >27</option><option value="28" >28</option><option value="29" >29</option><option value="30" >30</option><option value="31" >31</option></select><input type="hidden" name="reqFld" value="1" >&nbsp;/&nbsp;<select name="availyr"><option value=""></option><option value="2016" >2016</option><option value="2017" >2017</option></select> <input type="hidden" name="reqFld" value="1" ><span style="font-size:16px;color:#C30">*</span> <span style="font-size: 10px;">(<A href="javascript:availToday()">Now</A>)</span>  -->
-   		                                      <input type="text" class="input validate[required] text date_p" style="width:180px;" name="availability" maxlength="500" >
-                                                <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
+   		                                      <input type="text" class="input text date_p" style="width:180px;" name="availability" maxlength="500" >
     	                                   </td>
     									</tr>
     									<tr valign="top">
@@ -477,7 +464,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											קומות:
     										</td>
     										<td class="field">
-    											<select name="floor" id="floor" class="input validate[required]" style="width: 184px;">
+    											<select name="floor" id="floor" class="input" style="width: 184px;">
     												<option value="">בחר</option>
     											     <?php
                                                      while($data_floor=mysqli_fetch_assoc($obj_floor))
@@ -493,7 +480,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											סוג חניה :
     										</td>
     										<td class="field">
-    											<select name="parking" id="parking" class="input validate[required]">
+    											<select name="parking" id="parking" class="input">
     												<option value="">בחר</option>
     											     <?php
                                                      while($data_parking=mysqli_fetch_assoc($obj_parking))
@@ -534,7 +521,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                מדינה:
                                             </td>
                                             <td class="field">
-                                                <select name="state" id="state" class="input validate[required] form-control">
+                                                <select name="state" id="state" class="input form-control">
                                                     <?php
 													$StateQ='SELECT * FROM state';
 													$StateR=mysqli_query($conn,$StateQ);
@@ -546,7 +533,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -554,8 +540,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                כתובת מלאה:
                                             </td>
                                             <td class="field">
-                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;" ></textarea>
-                                                <span style="font-size:16px;color:#C30">*</span>
+                                                <textarea name="address" class="input mb" id="address" style="width:auto;height:62px;" ></textarea>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -563,7 +548,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                               תיאור:  Walkscore
                                             </td>
                                             <td class="field">
-                                                <select name="walkscore_descrp" id="walkscore_descrp" class="input validate[required] form-control">
+                                                <select name="walkscore_descrp" id="walkscore_descrp" class="input form-control">
                                                     <option value="">בחר</option>
                                                     <?php
 													$WalkDQ='SELECT * FROM walkscore_desc';
@@ -576,7 +561,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -584,7 +568,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                               תיאור: Soundscore 
                                             </td>
                                             <td class="field">
-                                               <select name="soundscore_descrp" id="soundscore_descrp" class="input validate[required] form-control">
+                                               <select name="soundscore_descrp" id="soundscore_descrp" class="input form-control">
                                                     <option value="">בחר</option>
 													<?php
 													$SoundDQ='SELECT * FROM soundscore_desc';
@@ -597,7 +581,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -605,7 +588,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                רעש משדה תעופה :
                                             </td>
                                             <td class="field">
-                                               <select name="airport_noise" id="airport_noise" class="input validate[required] form-control">
+                                               <select name="airport_noise" id="airport_noise" class="input form-control">
                                                     <option value="">בחר</option>
                                                    <?php
 													$airQ='SELECT * FROM airport_noise';
@@ -618,7 +601,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                </select>
-                                               <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
     								</table>
@@ -661,7 +643,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											סוג רישום :
     										</td>
     										<td class="field">
-    											<select name="listing_type" id="listing_type" class="input validate[required] ">
+    											<select name="listing_type" id="listing_type" class="input">
                                                     <option value="">בחר</option>
                                                     <?php
 													$listQ='SELECT * FROM listing_type';
@@ -674,7 +656,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -682,7 +663,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											יחידת סוג:
     										</td>
     										<td class="field">
-    											<select name="unit_type" id="unit_type" class="input validate[required] ">
+    											<select name="unit_type" id="unit_type" class="input">
                                                     <option value="">בחר</option>
                                                     <?php
                                                     while($data_unit=mysqli_fetch_assoc($obj_unit))
@@ -691,7 +672,6 @@ $obj_post= mysqli_query($conn,$que_post);
                                                    <?php }
                                                     ?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -700,7 +680,6 @@ $obj_post= mysqli_query($conn,$que_post);
     										</td>
     										<td class="field">
     											<input type="text" class="text" style="width:40px;" name="unit_no" id="unit_no" maxlength="20"> 
-    		                                      <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
     	<!--  <input type="checkbox" class="noborder" name="dontshowunitno" value="1" > <span style="font-size: 10px;">Do not show to Members</span> -->
     										</td>
     									</tr>
@@ -709,7 +688,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											חדרי שינה :
     										</td>
     										<td class="field">
-    											<select name="bedroom" id="bedroom" class="input validate[required] ">
+    											<select name="bedroom" id="bedroom" class="input">
                                                     <option value="">בחר</option>
                                                     <?php
                                                     while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
@@ -720,7 +699,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
                                                     ?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -728,7 +706,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											חדרי אמבטיה:
     										</td>
     										<td class="field">
-    											<select name="bathroom" id="bathroom" class="input validate[required] ">
+    											<select name="bathroom" id="bathroom" class="input">
                                                     <option value="">בחר</option>
 													<?php
                                                     while($data_bath=mysqli_fetch_assoc($obj_bath))
@@ -739,7 +717,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
                                                     ?> 
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -747,7 +724,7 @@ $obj_post= mysqli_query($conn,$que_post);
     											מרוהט:
     										</td>
     										<td class="field">
-    											<select name="furnished" id="furnished" class="input validate[required] ">
+    											<select name="furnished" id="furnished" class="input">
                                                     <option value="">בחר</option>
 													<?php
 													$FurQ='SELECT * FROM furnished';
@@ -760,7 +737,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -780,7 +756,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -796,7 +771,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                               עִיר:
                                             </td>
                                             <td class="field">
-                                                <select name="city" id="city" class="input validate[required] form-control">
+                                                <select name="city" id="city" class="input form-control">
                                                     <option value="">בחר</option>
                                                     <?php
                                                         foreach($data_city2 as $data_city)
@@ -805,7 +780,6 @@ $obj_post= mysqli_query($conn,$que_post);
                                                     <?php }
                                                     ?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -821,7 +795,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                Walkscore:
                                             </td>
                                             <td class="field">
-                                                <select name="walkscore" id="walkscore" class="input validate[required] form-control">
+                                                <select name="walkscore" id="walkscore" class="input form-control">
                                                     <option value="">בחר</option>
                                                     <?php
 													$WalkQ='SELECT * FROM walkscore';
@@ -834,7 +808,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -842,7 +815,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                Soundscore:
                                             </td>
                                             <td class="field">
-                                               <select name="soundscore" id="soundscore" class="input validate[required] form-control">
+                                               <select name="soundscore" id="soundscore" class="input form-control">
                                                     <option value="">בחר</option>
                                                     <?php
 													$SoundQ='SELECT * FROM soundscore';
@@ -855,7 +828,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -863,7 +835,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                                רעש רכב :
                                             </td>
                                             <td class="field">
-                                               <select name="vehicle_noise" id="vehicle_noise" class="input validate[required] form-control">
+                                               <select name="vehicle_noise" id="vehicle_noise" class="input form-control">
                                                     <option value="">בחר</option>
                                                     <?php
 													$VNQ='SELECT * FROM vehicle_noise';
@@ -876,7 +848,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -884,7 +855,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                               עסקים :
                                             </td>
                                             <td class="field">
-                                               <select name="business_noise" id="business_noise" class="input validate[required] form-control">
+                                               <select name="business_noise" id="business_noise" class="input form-control">
                                                 <option value="">בחר</option>
                                                  <?php
 													$BuisQ='SELECT * FROM businesses';
@@ -897,7 +868,6 @@ $obj_post= mysqli_query($conn,$que_post);
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -936,6 +906,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                             <input type="text" name="f_credit_card_no" class="input validate[required] form-control" maxlength="16">
                                          </td>
                                     </tr> -->
+                                    <!--
                                     <tr valign="top">
                                         <td class="medsubheader">
                                             תאריך תפוגה *
@@ -958,11 +929,12 @@ $obj_post= mysqli_query($conn,$que_post);
                                            </select>
                                            <select name="f_credit_exp_yr" class="input validate[required] form-control">
                                                 <option value="">שָׁנָה</option>
-                                                <?php
+                                                <?php /*
                                                 for($i=2016;$i<=2050;$i++)
                                                 { ?>
                                                     <option><?php echo $i; ?></option>
                                                 <?php }
+ */
                                                 ?>
                                            </select>
                                         </td>
@@ -976,7 +948,7 @@ $obj_post= mysqli_query($conn,$que_post);
                                             <input name="f_credit_card_cvv" class="input validate[required] form-control" maxlength="4" type="text">
                                         </td>
                                     </tr>
-                                 
+                                 -->
                                 </table>
                             </div>
                            
@@ -1085,192 +1057,17 @@ $obj_post= mysqli_query($conn,$que_post);
                 </tr>
                 <tr valign="top">
                     <td colspan="2">
-                        <div class=""> 
-                            <div class="col-sm-offset-8 col-md-4">                  
-                            
-                                <table style="width:auto;" cellspacing="0" cellpadding="0" border="0">
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                           יוֹם שֵׁנִי
-                                        </td>
-                                        <td class="field">
-                                            <select name="mon_time_frm">
-                                                <option value="">מ</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="mon_time_to">
-                                                <option value="">ל</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                        
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                           יוֹם שְׁלִישִׁי
-                                        </td>
-                                        <td class="field">
-                                            <select name="tue_time_frm">
-                                                <option value="">מ</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="tue_time_to">
-                                                <option value="">ל</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                         </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            יום רביעי
-                                        </td>
-                                        <td class="field">
-                                          <select name="wed_time_frm">
-                                              <option value="">מ</option>
-                                              <?php
-                                              foreach($data_time2 as $data_time)
-                                              { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                              <?php }
-                                              ?>
-                                          </select>
-                                            <select name="wed_time_to">
-                                                <option value="">ל</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            יוֹם חֲמִישִׁי
-                                        </td>
-                                        <td class="field">
-                                            <select name="thu_time_frm">
-                                                <option value="">מ</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                            <select name="thu_time_to">
-                                                <option value="">ל</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            יוֹם שִׁישִׁי
-                                        </td>
-                                        <td class="field">
-                                            <select name="fri_time_frm">
-                                                <option value="">מ</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                           <select name="fri_time_to">
-                                               <option value="">ל</option>
-                                               <?php
-                                               foreach($data_time2 as $data_time)
-                                               { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                               <?php }
-                                               ?>
-                                           </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            יום שבת
-                                        </td>
-                                        <td class="field">
-                                            <select name="sat_time_frm">
-                                                <option value="">מ</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                           <select name="sat_time_to">
-                                               <option value="">ל</option>
-                                               <?php
-                                               foreach($data_time2 as $data_time)
-                                               { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                               <?php }
-                                               ?>
-                                           </select>
-                                        </td>
-                                    </tr>
-                                    <tr valign="top">
-                                        <td class="medsubheader">
-                                            יוֹם רִאשׁוֹן
-                                        </td>
-                                        <td class="field">
-                                            <select name="sun_time_frm">
-                                                <option value="">מ</option>
-                                                <?php
-                                                foreach($data_time2 as $data_time)
-                                                { ?>
-                                                    <option><?php echo $data_time['time']; ?></option>
-                                                <?php }
-                                                ?>
-                                            </select>
-                                          <select name="sun_time_to">
-                                              <option value="">ל</option>
-                                              <?php
-                                              foreach($data_time2 as $data_time)
-                                              { ?>
-                                                <option><?php echo $data_time['time']; ?></option>
-                                              <?php }
-                                              ?>
-                                          </select>
-                                        </td>
-                                    </tr>
-
-                                 
-                                </table>
-                            </div>
+                        <div id="calendar"></div>
+                        <input type="hidden" id="calendar_events_list" name="calendar_events" value="">
+                        <div id="eventContent" title="Event Details" style="display:none;">
+                            Start: <span id="startTime"></span><br>
+                            End: <span id="endTime"></span><br><br>
+                            <p id="eventInfo"></p>
+                            <a href="#" class="btn btn-danger" id="event-remove" data-eventid="false" >Remove</a>
                         </div>
+                        <div id="js-event-confirm" title="Add Event" style="display:none;">
+                            <div class="modal-body"></div>
+                        </div><!-- /.modal -->
                     </td>
                 </tr>
                 
@@ -1421,7 +1218,6 @@ $obj_post= mysqli_query($conn,$que_post);
     				</td>
     				<td class="field">
     					<input type="text" class="input validate[required] text mb" style="width:430px;" name="short_descp" maxlength="100" ><span style="font-size:16px;color:#C30">*</span> 
-    		            <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
     	            </td>
     			</tr>
     			
@@ -1432,7 +1228,6 @@ $obj_post= mysqli_query($conn,$que_post);
     				</td>
     				<td class="field">
     					<textarea name="full_descp" class="mb" style="width:430px;height:150px;" ></textarea>
-    					<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
     	               <br><span style="color: red;font-size:11px;"><strong>אין מספרי טלפון , כתובת , אתר או בעל בית לתקשר מותרי קופסא זו .</STRONG></span>
     				</td>
     			</tr>
@@ -1548,49 +1343,19 @@ $obj_post= mysqli_query($conn,$que_post);
     						<input type="radio" name="post_date_confirm" value="no" id="post_save" class="input validate[required] noborder"> אל תפרסמו חברה , לשמור כקובץ רישום שכורה לשימוש עתידי .
     				</td>
     			</tr>
-
-    			
-    				<tr valign="top" class="sign-request-wrapper">
-    					<td colspan="2">
-    						<div class="grayline"></div>
-    						<h3>9. קבל חינם ' להשכרה ' סִימָן</h3>
-    					</td>
-    				</tr>
-
-    				
-    				
-    				<tr valign="top" class="sign-request-wrapper">
-    					<td colspan="2">
-    						<div style="font-size: 18px;  width: auto;">
-    							
-    															
-    								
-    								<input type="checkbox" id="signRequest" name="for_rent_check1" value="Yes" class="noborder" checked="checked">
-    							
-    							
-    							 &nbsp;<b>חופשי <span style="color:red;">להשכרה</span> סִימָן</b> - נו נוסיף גדול " להשכרה" סימן ( כמו אחד מימין) מחוץ הנכס שלך . השתמש בשדה "הוראות התקן " למטה כדי לספק את כל הוראות לנהג שלנו . <br />
-    							<br /><b>הוראות התקן :</b> <span class="smallgray">(למשל - היכנס מקום בחצר הקדמית )</span><br />
-    							<textarea class="mb" name="driver_instr" style="width:470px;height:100px;"></textarea>
-    						</div>
-    						<div style="float: left; width: 130px;">
-    							<!-- <img src="http://static.westsiderentals.com/images/sign_m.gif" style="border: 1px solid black;"> -->
-    						</div>
-    						<div class="clearboth"></div>
-    					</td>
-    				</tr>
-    			
-
+<!--
     			<tr valign="top">
     				<td colspan="2">
-    					<!-- <div style="margin:10px 0px;width: 600px; height:100px;overflow:auto;border:1px solid #A9A9A9; background: #efefef; padding:0px 8px 8px 8px;">
+    					 <div style="margin:10px 0px;width: 600px; height:100px;overflow:auto;border:1px solid #A9A9A9; background: #efefef; padding:0px 8px 8px 8px;">
     						<h3>Fair Housing Act Notice</h3>
     						All submissions are subject to the federal and California fair housing laws which make it illegal to indicate in any advertisement &quot;any preference, limitation, or discrimination because of race, color, religion, sex, physical or mental disability, familial status&quot; (e.g. &quot;No children&quot; or &quot;Not suitable for Children&quot;), sexual orientation, ancestry, marital status, or source of income (e.g. &quot;No Section 8&quot; is prohibited). Your local jurisdiction may impose additional requirements. <br />
     						<br />
     						If you have questions about the fair housing laws and housing discrimination, please call the Southern California Housing Rights Center (formerly the Fair Housing Council of San Gabriel Valley) at (800) 477-5977 or go to HRCâ€™s website at <A href="http://www.hrc-la.org" target="_blank">www.hrc-la.org</a>.
-    					</div> -->
+    					</div>
     					<input type="Checkbox" value="Yes" name="for_rent_check2" class="noborder" checked="checked"> &nbsp; קראתי ואני מסכים לתנאי החוק ההוגן והשיכון
     				</td>
     			</tr>
+    			-->
 
     			
     					
@@ -1709,7 +1474,31 @@ $obj_post= mysqli_query($conn,$que_post);
     	</div>
     	</div>
     </div>
+    <div id="eventAdd" title="Add Time" style="display:none;">
+        <?php if( !empty($time_array) ): ?>
+            <form id="add_viewing_time">
+                <label for="viewing_end_time">Start:</label>
+                <select name="viewing_start_time" id="viewing_start_time">
+                    <option value="">From</option>
+                    <?php foreach( $time_array as $time_val ): ?>
+                        <option value="<?php echo $time_val; ?>"><?php echo $time_val; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label for="viewing_end_time">End:</label>
+                <select name="viewing_end_time" id="viewing_end_time">
+                    <option value="">To</option>
+                    <?php foreach( $time_array as $time_val ): ?>
+                        <option value="<?php echo $time_val; ?>"><?php echo $time_val; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <textarea name="event_description"></textarea>
+                <input type="hidden" id="current_day" name="current_day">
+                <input type="hidden" name="property_pid" value="<?php echo $pid; ?>">
 
+                <input type="submit" class="btn btn-info" name="save_viewing_time" value="Save">
+            </form>
+        <?php endif; ?>
+    </div>
 
 
 
@@ -1920,10 +1709,10 @@ $obj_post= mysqli_query($conn,$que_post);
 
     <link rel="stylesheet" href="../themes/base/jquery.ui.all.css">
      <link rel="stylesheet" href="../css/demo.css">
-     <script src="http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false&language=he"></script>
+     <script src="https://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false&language=he"></script>
 
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
      <script src="../js/jquery.ui.addresspicker.js"></script>
      <script>
      $(function() {
@@ -1981,10 +1770,91 @@ $obj_post= mysqli_query($conn,$que_post);
  <link rel="stylesheet" href="../css/validationEngine.jquery.css">
      <script src="../js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
      <script src="../js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Full Calendar -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js"></script>
+
      <script type="text/javascript">
         $(document).ready(function(){
             // alert('hi');
             $("#propForm").validationEngine();
+
+            var calendarOptions = {
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                displayEventTime: false,
+                defaultView: 'month',
+                editable: true,
+                eventRender: function (event, element) {
+                    element.attr('href', 'javascript:void(0);');
+                    element.click(function() {
+                        if(event.id){
+                            $('a#event-remove').attr('data-eventid', event.id);
+                        }
+
+                        if(event.start){
+                            $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
+                        }
+
+                        if(event.start){
+                            $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
+                        }
+
+                        if(event.description){
+                            $("#eventInfo").html(event.description);
+                        }
+
+                        $("#eventContent").dialog({ modal: true, title: 'Viewing Times', width:350});
+                    });
+                },
+                dayClick: function(date, event, view) {
+                    $('#current_day').val(date.format());
+                    $('#eventAdd').dialog();
+                },
+                events: []
+            }
+
+            $('#calendar').fullCalendar(calendarOptions);
+
+
+            $('#add_viewing_time').submit(function(e){
+                e.preventDefault();
+
+                var eventsList = $('#calendar_events_list').val();
+
+                var currentDay = $(this).find('#current_day').val();
+                var startTime = $(this).find('#viewing_start_time').val();
+                var endTime = $(this).find('#viewing_end_time').val();
+                var startTimeDay = currentDay + 'T' + startTime;
+                var endTimeDay = currentDay + 'T' + endTime;
+                var title = startTime + '-' + endTime;
+                var eventInfo = {
+                    title: title,
+                    start: startTimeDay,
+                    end: endTimeDay,
+                    description: $(this).find('textarea').val()
+                }
+
+                if( eventsList.length ){
+                    eventsList = JSON.parse(eventsList);
+                }else{
+                    eventsList = [];
+                }
+
+                eventsList.push(eventInfo);
+                eventsList = JSON.stringify(eventsList);
+                $('#calendar_events_list').val(eventsList);
+                $('#eventAdd').dialog('close');
+//
+                $('#calendar').fullCalendar( 'renderEvent', eventInfo, true );
+                $('#calendar').fullCalendar( 'refresh' );
+
+                console.log($('#calendar_events_list').val(eventsList));
+            });
         });
         $(function() {
             $('.numberonly').keyup(function() {

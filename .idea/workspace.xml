@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="18639b1d-0333-4b55-b4c0-3ea89793e8f8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHBUP13_09_16.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ftpquota" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aboutus.php" beforeDir="false" afterPath="$PROJECT_DIR$/aboutus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aboutus_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/aboutus_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/edit_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/edit_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post_listing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/view_post_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/view_post_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/contactus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contactus_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/contactus_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/201603/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/201603/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error_log" beforeDir="false" afterPath="$PROJECT_DIR$/error_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/faq.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faq_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/faq_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/featured_listings.php" beforeDir="false" afterPath="$PROJECT_DIR$/featured_listings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/featured_listings_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/featured_listings_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback.php" beforeDir="false" afterPath="$PROJECT_DIR$/feedback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filminglocations.php" beforeDir="false" afterPath="$PROJECT_DIR$/filminglocations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find.php" beforeDir="false" afterPath="$PROJECT_DIR$/find.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/find_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/location.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guestsearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/guestsearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guestsearch_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/guestsearch_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/header_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotels.php" beforeDir="false" afterPath="$PROJECT_DIR$/hotels.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/index_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_h2.php" beforeDir="false" afterPath="$PROJECT_DIR$/index_h2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index_h_bup.php" beforeDir="false" afterPath="$PROJECT_DIR$/index_h_bup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobs.php" beforeDir="false" afterPath="$PROJECT_DIR$/jobs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/join.php" beforeDir="false" afterPath="$PROJECT_DIR$/join.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/join_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/join_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/add_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/add_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/add_post_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/add_post_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/add_to_futured.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/add_to_futured.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/dashboard_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/dashboard_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/edit_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/edit_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/edit_post_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/edit_post_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/post_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/post_listing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/post_listing_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/post_listing_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/save_post.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/save_post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/view_post_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/view_post_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlord/view_post_detail_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlord/view_post_detail_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/landlordsignup2.php" beforeDir="false" afterPath="$PROJECT_DIR$/landlordsignup2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legal.php" beforeDir="false" afterPath="$PROJECT_DIR$/legal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login2.php" beforeDir="false" afterPath="$PROJECT_DIR$/login2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login2_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/login2_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/check.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/error_log" beforeDir="false" afterPath="$PROJECT_DIR$/member/error_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/member_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/member_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/member_detail_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/member_detail_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/member_init.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/member_init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/payment-cancelled.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/payment-cancelled.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/payments.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/payments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/send_confirm_mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/send_confirm_mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/update_plan.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/update_plan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/update_plan_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/update_plan_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/view_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/view_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/view_detail_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/view_detail_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/view_property.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/view_property.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/member/view_property_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/member/view_property_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pashutlehaskir.com.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-cancelled.php" beforeDir="false" afterPath="$PROJECT_DIR$/payment-cancelled.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-successful.php" beforeDir="false" afterPath="$PROJECT_DIR$/payment-successful.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payments.php" beforeDir="false" afterPath="$PROJECT_DIR$/payments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/post_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/press.php" beforeDir="false" afterPath="$PROJECT_DIR$/press.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privacy.php" beforeDir="false" afterPath="$PROJECT_DIR$/privacy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privacy_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/privacy_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_confirm_mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/send_confirm_mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send_mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/send_mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitemap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/termsofuse.php" beforeDir="false" afterPath="$PROJECT_DIR$/termsofuse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/termsofuse_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/termsofuse_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view_detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view_detail_h.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_detail_h.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watts-apartments.php" beforeDir="false" afterPath="$PROJECT_DIR$/watts-apartments.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="219076897">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="1" />
+          <entry key="php" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="4" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="2" />
+          <entry key="php" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/member.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/landlord.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="70" column="64" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>CREATE</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/functions/config.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pashutlocal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pashutlocal" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="18639b1d-0333-4b55-b4c0-3ea89793e8f8" name="Default Changelist" comment="" />
+      <created>1534692890114</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534692890114</updated>
+      <workItem from="1534692891564" duration="1560000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1560000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2498618" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.33054394" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/functions/config.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/admin/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/member.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/landlord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="70" column="64" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>

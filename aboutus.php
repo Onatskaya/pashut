@@ -80,9 +80,9 @@ if($_SESSION['language']=='Hebrew')
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
 			
-				<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+				<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 			
-				<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+				<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 			
 				<meta name="robots" content="index,follow" />
 				<meta name="GOOGLEBOT" content="index,follow" />
@@ -151,17 +151,6 @@ if($_SESSION['language']=='Hebrew')
 		<div class="col-md-8">
 					<p>
 						<b>PashutLeHaskir.com</b> is a revolutionary online property rental service platform connecting prospective renters and property owners with currently available properties in Israel. PashutLeHaskir.com offers both tenants and renters the tools necessary to find and fill rental vacancies in a timely and efficient manner while aggressively focusing on up-to-date property information, approved and accurate photos of listings, comprehensive property metrics and building information while providing an easy to navigate user interface.
-					</p>
-					<br><br>
-					<p>
-						<b>Compared to traditional Real Estate Agents in Israel, PashutLeHaskir.com renters <span style="color:#D84A38;"> save an average of 70% </span>in fees when using our service.</b>
-					</p>
-					<br><br>
-					<p>
-						<b>For Property Owners,</b> PashutLeHaskir.com provides an <span style="color:#D84A38;">income with every listing,</span> ensures higher quality tenants, instant scheduling/viewing options and in-house photography of the property for rent.
-					</p>
-					<p>
-						<b>For Renters,</b> PashutLeHaskir.com combines the most accurate property information on the real estate marketplace, pre-approved & screened photos and videos, instant scheduling/viewing options for convenience with an easy to navigate, time saving platform for easy access to locate suitable properties.
 					</p>
 					<br><br>
 					<p>

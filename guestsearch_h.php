@@ -9,8 +9,11 @@ if($_SESSION['language']=='English')
     }
     echo "<script>location.href='guestsearch.php?$getto'</script>";
 }
+$member_id= $_SESSION['member_id'];
+
 $favorite_link = !isset($_SESSION['member_logged']) ? '/login2.php' : '#';
 $favorite_class = !isset($_SESSION['member_logged']) ? 'gust' : 'member';
+
 
 $per_page = 20;
 if (isset($_GET['page'])) $page=($_GET['page']-1); else $page=0;
@@ -24,9 +27,9 @@ if(isset($_GET['city']))
     $priceLow= $_GET['priceLow'];
     $priceHigh= $_GET['priceHigh'];
 
+    $favorite_query = "SELECT property_id FROM favorite_tbl WHERE member_id='$member_id' AND status='Favorite'";
     $que_search_count="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
     $que_search="SELECT * FROM post
-     LEFT JOIN favorite_tbl ON post.post_id = favorite_tbl.property_id
      WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes'  ";
     // print_r($que_search);die;
     if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
@@ -68,7 +71,8 @@ if(isset($_GET['city']))
 
     $que_search_count .= $que_condition;
 
-    $que_condition.= "ORDER BY featured_listing DESC";
+    $que_condition.= " ORDER BY `featured_listing`, `post_date` DESC";
+//    $que_condition.= "ORDER BY featured_listing DESC";
     $que_condition.= " LIMIT $start,$per_page";
     $que_search .= $que_condition;
 
@@ -109,7 +113,16 @@ $obj_fur=mysqli_query($conn,$que_fur);
 $que_bedroom="SELECT * FROM bedroom_tbl";
 $obj_bedroom=mysqli_query($conn,$que_bedroom);
 
-
+$fav_list = array();
+if( !empty($member_id)){
+    $obj_fav = mysqli_query($conn,$favorite_query);
+    while($fav_item=mysqli_fetch_assoc($obj_fav))
+    {
+        if(!empty($fav_item["property_id"])){
+            $fav_list[]=$fav_item["property_id"];
+        }
+    }
+}
 ?>
 
 <!DOCTYPE HTML>
@@ -232,9 +245,9 @@ $obj_bedroom=mysqli_query($conn,$que_bedroom);
     <link href="css/201603/section.css" rel="stylesheet">
     <link href="css/201603/carousel.css" rel="stylesheet">
 
-    <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+    <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 
-    <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+    <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 
     <meta name="robots" content="index,follow" />
     <meta name="GOOGLEBOT" content="index,follow" />
@@ -318,9 +331,9 @@ include('header_h.php');
     תוצאות חיפוש
 			  <span class="highlight"><em>
                       <?php
-                      if(isset($rows))
+                      if(isset($total_rows))
                       {
-                          echo $rows;
+                          echo $total_rows;
                       }
                       else
                       {
@@ -337,199 +350,202 @@ include('header_h.php');
 <form action="#" method="GET">
 <div class="search-filters-span">
 <div class="col">
+    <?php $city_val = !empty($_GET['city']) ?$_GET['city'] :'';?>
     <select name="city" style="width:32%;" class="medium right-pad">
         <?php
         foreach($data_city2 as $data_city)
         { ?>
-            <option value='<?php echo $data_city['city_id'];?>'><?php echo $data_city['city_name_he'];?></option>
+            <option value='<?php echo $data_city['city_id'];?>' <?php checked($data_city['city_id'], $city_val ); ?>><?php echo $data_city['city_name_he'];?></option>
         <?php }
         ?>
     </select>
 </div>
 <div class="col">
+    <?php $priceLow = !empty($_GET['priceLow']) ? $_GET['priceLow'] : 0  ?>
     <select class="med" name="priceLow">
         <option value="0">מסכום</option>
-
-        <option value="">₪0</option>
-        <option value="500">₪500</option>
-        <option value="1000">₪1000</option>
-        <option value="1500">₪1500</option>
-        <option value="2000">₪2000</option>
-        <option value="2500">₪2500</option>
-        <option value="3000">₪3000</option>
-        <option value="3500">₪3500</option>
-        <option value="4000">₪4000</option>
-        <option value="4500">₪4500</option>
-        <option value="5000">₪5000</option>
-        <option value="5500">₪5500</option>
-        <option value="6000">₪6000</option>
-        <option value="6500">₪6500</option>
-        <option value="7000">₪7000</option>
-        <option value="7500">₪7500</option>
-        <option value="8000">₪8000</option>
-        <option value="8500">₪8500</option>
-        <option value="9000">₪9000</option>
-        <option value="9500">₪9500</option>
-        <option value="10000">₪10000</option>
-        <option value="10500">₪10500</option>
-        <option value="11000">₪11000</option>
-        <option value="11500">₪11500</option>
-        <option value="12000">₪12000</option>
-        <option value="12500">₪12500</option>
-        <option value="13000">₪13000</option>
-        <option value="13500">₪13500</option>
-        <option value="14000">₪14000</option>
-        <option value="14500">₪14500</option>
-        <option value="15000">₪15000</option>
-        <option value="15500">₪15500</option>
-        <option value="16000">₪16000</option>
-        <option value="16500">₪16500</option>
-        <option value="17000">₪17000</option>
-        <option value="17500">₪17500</option>
-        <option value="18000">₪18000</option>
-        <option value="18500">₪18500</option>
-        <option value="19000">₪19000</option>
-        <option value="19500">₪19500</option>
-        <option value="20000">₪20000</option>
-        <option value="20500">₪20500</option>
-        <option value="21000">₪21000</option>
-        <option value="21500">₪21500</option>
-        <option value="22000">₪22000</option>
-        <option value="22500">₪22500</option>
-        <option value="23000">₪23000</option>
-        <option value="23500">₪23500</option>
-        <option value="24000">₪24000</option>
-        <option value="24500">₪24500</option>
-        <option value="25000">₪25000</option>
-        <option value="25500">₪25500</option>
-        <option value="26000">₪26000</option>
-        <option value="26500">₪26500</option>
-        <option value="27000">₪27000</option>
-        <option value="27500">₪27500</option>
-        <option value="28000">₪28000</option>
-        <option value="28500">₪28500</option>
-        <option value="29000">₪29000</option>
-        <option value="29500">₪29500</option>
-        <option value="30000">₪30000</option>
-
+        <option value="0" <?php checked( $priceLow, 0 ); ?> >₪0</option>
+        <option value="500" <?php checked( $priceLow, 500 ); ?> >₪500</option>
+        <option value="1000" <?php checked( $priceLow, 1000 ); ?>>₪1000</option>
+        <option value="1500" <?php checked( $priceLow, 1500 ); ?>>₪1500</option>
+        <option value="2000" <?php checked( $priceLow, 2000 ); ?>>₪2000</option>
+        <option value="2500" <?php checked( $priceLow, 2500 ); ?>>₪2500</option>
+        <option value="3000" <?php checked( $priceLow, 3000 ); ?>>₪3000</option>
+        <option value="3500" <?php checked( $priceLow, 3500 ); ?>>₪3500</option>
+        <option value="4000" <?php checked( $priceLow, 4000 ); ?>>₪4000</option>
+        <option value="4500" <?php checked( $priceLow, 4500 ); ?>>₪4500</option>
+        <option value="5000" <?php checked( $priceLow, 5000 ); ?>>₪5000</option>
+        <option value="5500" <?php checked( $priceLow, 5500 ); ?>>₪5500</option>
+        <option value="6000" <?php checked( $priceLow, 6000 ); ?>>₪6000</option>
+        <option value="6500" <?php checked( $priceLow, 6500 ); ?>>₪6500</option>
+        <option value="7000" <?php checked( $priceLow, 7000 ); ?>>₪7000</option>
+        <option value="7500" <?php checked( $priceLow, 7500 ); ?>>₪7500</option>
+        <option value="8000" <?php checked( $priceLow, 8000 ); ?>>₪8000</option>
+        <option value="8500" <?php checked( $priceLow, 8500 ); ?>>₪8500</option>
+        <option value="9000" <?php checked( $priceLow, 9000 ); ?>>₪9000</option>
+        <option value="9500" <?php checked( $priceLow, 9500 ); ?>>₪9500</option>
+        <option value="10000" <?php checked( $priceLow, 10000 ); ?>>₪10000</option>
+        <option value="10500" <?php checked( $priceLow, 10500 ); ?>>₪10500</option>
+        <option value="11000" <?php checked( $priceLow, 11000 ); ?>>₪11000</option>
+        <option value="11500" <?php checked( $priceLow, 11500 ); ?>>₪11500</option>
+        <option value="12000" <?php checked( $priceLow, 12000 ); ?>>₪12000</option>
+        <option value="12500" <?php checked( $priceLow, 12500 ); ?>>₪12500</option>
+        <option value="13000" <?php checked( $priceLow, 13000 ); ?>>₪13000</option>
+        <option value="13500" <?php checked( $priceLow, 13500 ); ?>>₪13500</option>
+        <option value="14000" <?php checked( $priceLow, 14000 ); ?>>₪14000</option>
+        <option value="15000" <?php checked( $priceLow, 15000 ); ?>>₪15000</option>
+        <option value="15500" <?php checked( $priceLow, 15500 ); ?>>₪15500</option>
+        <option value="16000" <?php checked( $priceLow, 16000 ); ?>>₪16000</option>
+        <option value="16500" <?php checked( $priceLow, 16500 ); ?>>₪16500</option>
+        <option value="17000" <?php checked( $priceLow, 17000 ); ?>>₪17000</option>
+        <option value="17500" <?php checked( $priceLow, 17500 ); ?>>₪17500</option>
+        <option value="18000" <?php checked( $priceLow, 18000 ); ?>>₪18000</option>
+        <option value="18500" <?php checked( $priceLow, 18500 ); ?>>₪18500</option>
+        <option value="19000" <?php checked( $priceLow, 19000 ); ?>>₪19000</option>
+        <option value="19500" <?php checked( $priceLow, 19500 ); ?>>₪19500</option>
+        <option value="20000" <?php checked( $priceLow, 20000 ); ?>>₪20000</option>
+        <option value="20500" <?php checked( $priceLow, 20500 ); ?>>₪20500</option>
+        <option value="21000" <?php checked( $priceLow, 21000 ); ?>>₪21000</option>
+        <option value="21500" <?php checked( $priceLow, 21500 ); ?>>₪21500</option>
+        <option value="22000" <?php checked( $priceLow, 22000 ); ?>>₪22000</option>
+        <option value="22500" <?php checked( $priceLow, 22500 ); ?>>₪22500</option>
+        <option value="23000" <?php checked( $priceLow, 23000 ); ?>>₪23000</option>
+        <option value="23500" <?php checked( $priceLow, 23500 ); ?>>₪23500</option>
+        <option value="24000" <?php checked( $priceLow, 24000 ); ?>>₪24000</option>
+        <option value="24500" <?php checked( $priceLow, 24500 ); ?>>₪24500</option>
+        <option value="25000" <?php checked( $priceLow, 25000 ); ?>>₪25000</option>
+        <option value="25500" <?php checked( $priceLow, 25500 ); ?>>₪25500</option>
+        <option value="26000" <?php checked( $priceLow, 26000 ); ?>>₪26000</option>
+        <option value="26500" <?php checked( $priceLow, 26500 ); ?>>₪26500</option>
+        <option value="27000" <?php checked( $priceLow, 27000 ); ?>>₪27000</option>
+        <option value="27500" <?php checked( $priceLow, 27500 ); ?>>₪27500</option>
+        <option value="28000" <?php checked( $priceLow, 28000 ); ?>>₪28000</option>
+        <option value="28500" <?php checked( $priceLow, 28500 ); ?>>₪28500</option>
+        <option value="29000" <?php checked( $priceLow, 29000 ); ?>>₪29000</option>
+        <option value="29500" <?php checked( $priceLow, 29500 ); ?>>₪29500</option>
+        <option value="30000" <?php checked( $priceLow, 30000 ); ?>>₪30000</option>
     </select>
     <span class="selectDesh">-</span>
+    <?php $priceHigh = !empty($_GET['priceHigh']) ? $_GET['priceHigh'] : 0  ?>
     <select class="med pad" name="priceHigh">
         <option value="0">עד</option>
-
-        <option value="500">₪500</option>
-        <option value="1000">₪1000</option>
-        <option value="1500">₪1500</option>
-        <option value="2000">₪2000</option>
-        <option value="2500">₪2500</option>
-        <option value="3000">₪3000</option>
-        <option value="3500">₪3500</option>
-        <option value="4000">₪4000</option>
-        <option value="4500">₪4500</option>
-        <option value="5000">₪5000</option>
-        <option value="5500">₪5500</option>
-        <option value="6000">₪6000</option>
-        <option value="6500">₪6500</option>
-        <option value="7000">₪7000</option>
-        <option value="7500">₪7500</option>
-        <option value="8000">₪8000</option>
-        <option value="8500">₪8500</option>
-        <option value="9000">₪9000</option>
-        <option value="9500">₪9500</option>
-        <option value="10000">₪10000</option>
-        <option value="10500">₪10500</option>
-        <option value="11000">₪11000</option>
-        <option value="11500">₪11500</option>
-        <option value="12000">₪12000</option>
-        <option value="12500">₪12500</option>
-        <option value="13000">₪13000</option>
-        <option value="13500">₪13500</option>
-        <option value="14000">₪14000</option>
-        <option value="14500">₪14500</option>
-        <option value="15000">₪15000</option>
-        <option value="15500">₪15500</option>
-        <option value="16000">₪16000</option>
-        <option value="16500">₪16500</option>
-        <option value="17000">₪17000</option>
-        <option value="17500">₪17500</option>
-        <option value="18000">₪18000</option>
-        <option value="18500">₪18500</option>
-        <option value="19000">₪19000</option>
-        <option value="19500">₪19500</option>
-        <option value="20000">₪20000</option>
-        <option value="20500">₪20500</option>
-        <option value="21000">₪21000</option>
-        <option value="21500">₪21500</option>
-        <option value="22000">₪22000</option>
-        <option value="22500">₪22500</option>
-        <option value="23000">₪23000</option>
-        <option value="23500">₪23500</option>
-        <option value="24000">₪24000</option>
-        <option value="24500">₪24500</option>
-        <option value="25000">₪25000</option>
-        <option value="25500">₪25500</option>
-        <option value="26000">₪26000</option>
-        <option value="26500">₪26500</option>
-        <option value="27000">₪27000</option>
-        <option value="27500">₪27500</option>
-        <option value="28000">₪28000</option>
-        <option value="28500">₪28500</option>
-        <option value="29000">₪29000</option>
-        <option value="29500">₪29500</option>
-        <option value="30000">₪30000</option>
-
+        <option value="500" <?php checked( $priceHigh, 500 ); ?> >₪500</option>
+        <option value="1000" <?php checked( $priceHigh, 1000 ); ?>>₪1000</option>
+        <option value="1500" <?php checked( $priceHigh, 1500 ); ?>>₪1500</option>
+        <option value="2000" <?php checked( $priceHigh, 2000 ); ?>>₪2000</option>
+        <option value="2500" <?php checked( $priceHigh, 2500 ); ?>>₪2500</option>
+        <option value="3000" <?php checked( $priceHigh, 3000 ); ?>>₪3000</option>
+        <option value="3500" <?php checked( $priceHigh, 3500 ); ?>>₪3500</option>
+        <option value="4000" <?php checked( $priceHigh, 4000 ); ?>>₪4000</option>
+        <option value="4500" <?php checked( $priceHigh, 4500 ); ?>>₪4500</option>
+        <option value="5000" <?php checked( $priceHigh, 5000 ); ?>>₪5000</option>
+        <option value="5500" <?php checked( $priceHigh, 5500 ); ?>>₪5500</option>
+        <option value="6000" <?php checked( $priceHigh, 6000 ); ?>>₪6000</option>
+        <option value="6500" <?php checked( $priceHigh, 6500 ); ?>>₪6500</option>
+        <option value="7000" <?php checked( $priceHigh, 7000 ); ?>>₪7000</option>
+        <option value="7500" <?php checked( $priceHigh, 7500 ); ?>>₪7500</option>
+        <option value="8000" <?php checked( $priceHigh, 8000 ); ?>>₪8000</option>
+        <option value="8500" <?php checked( $priceHigh, 8500 ); ?>>₪8500</option>
+        <option value="9000" <?php checked( $priceHigh, 9000 ); ?>>₪9000</option>
+        <option value="9500" <?php checked( $priceHigh, 9500 ); ?>>₪9500</option>
+        <option value="10000" <?php checked( $priceHigh, 10000 ); ?>>₪10000</option>
+        <option value="10500" <?php checked( $priceHigh, 10500 ); ?>>₪10500</option>
+        <option value="11000" <?php checked( $priceHigh, 11000 ); ?>>₪11000</option>
+        <option value="11500" <?php checked( $priceHigh, 11500 ); ?>>₪11500</option>
+        <option value="12000" <?php checked( $priceHigh, 12000 ); ?>>₪12000</option>
+        <option value="12500" <?php checked( $priceHigh, 12500 ); ?>>₪12500</option>
+        <option value="13000" <?php checked( $priceHigh, 13000 ); ?>>₪13000</option>
+        <option value="13500" <?php checked( $priceHigh, 13500 ); ?>>₪13500</option>
+        <option value="14000" <?php checked( $priceHigh, 14000 ); ?>>₪14000</option>
+        <option value="15000" <?php checked( $priceHigh, 15000 ); ?>>₪15000</option>
+        <option value="15500" <?php checked( $priceHigh, 15500 ); ?>>₪15500</option>
+        <option value="16000" <?php checked( $priceHigh, 16000 ); ?>>₪16000</option>
+        <option value="16500" <?php checked( $priceHigh, 16500 ); ?>>₪16500</option>
+        <option value="17000" <?php checked( $priceHigh, 17000 ); ?>>₪17000</option>
+        <option value="17500" <?php checked( $priceHigh, 17500 ); ?>>₪17500</option>
+        <option value="18000" <?php checked( $priceHigh, 18000 ); ?>>₪18000</option>
+        <option value="18500" <?php checked( $priceHigh, 18500 ); ?>>₪18500</option>
+        <option value="19000" <?php checked( $priceHigh, 19000 ); ?>>₪19000</option>
+        <option value="19500" <?php checked( $priceHigh, 19500 ); ?>>₪19500</option>
+        <option value="20000" <?php checked( $priceHigh, 20000 ); ?>>₪20000</option>
+        <option value="20500" <?php checked( $priceHigh, 20500 ); ?>>₪20500</option>
+        <option value="21000" <?php checked( $priceHigh, 21000 ); ?>>₪21000</option>
+        <option value="21500" <?php checked( $priceHigh, 21500 ); ?>>₪21500</option>
+        <option value="22000" <?php checked( $priceHigh, 22000 ); ?>>₪22000</option>
+        <option value="22500" <?php checked( $priceHigh, 22500 ); ?>>₪22500</option>
+        <option value="23000" <?php checked( $priceHigh, 23000 ); ?>>₪23000</option>
+        <option value="23500" <?php checked( $priceHigh, 23500 ); ?>>₪23500</option>
+        <option value="24000" <?php checked( $priceHigh, 24000 ); ?>>₪24000</option>
+        <option value="24500" <?php checked( $priceHigh, 24500 ); ?>>₪24500</option>
+        <option value="25000" <?php checked( $priceHigh, 25000 ); ?>>₪25000</option>
+        <option value="25500" <?php checked( $priceHigh, 25500 ); ?>>₪25500</option>
+        <option value="26000" <?php checked( $priceHigh, 26000 ); ?>>₪26000</option>
+        <option value="26500" <?php checked( $priceHigh, 26500 ); ?>>₪26500</option>
+        <option value="27000" <?php checked( $priceHigh, 27000 ); ?>>₪27000</option>
+        <option value="27500" <?php checked( $priceHigh, 27500 ); ?>>₪27500</option>
+        <option value="28000" <?php checked( $priceHigh, 28000 ); ?>>₪28000</option>
+        <option value="28500" <?php checked( $priceHigh, 28500 ); ?>>₪28500</option>
+        <option value="29000" <?php checked( $priceHigh, 29000 ); ?>>₪29000</option>
+        <option value="29500" <?php checked( $priceHigh, 29500 ); ?>>₪29500</option>
+        <option value="30000" <?php checked( $priceHigh, 30000 ); ?>>₪30000</option>
     </select>
 </div>
 <div class="col">
+    <?php $structure_type_val = !empty($_GET['structure_type']) ?$_GET['structure_type'] :'';?>
     <select name="structure_type" style="width:32%;" class="medium right-pad">
         <?php
         foreach($data_struct2 as $data_struct)
         {
             ?>
-            <option value="<?php echo $data_struct['struct_id'];?>"><?php echo $data_struct['name_he'];?></option>
+            <option value='<?php echo $data_struct['struct_id'];?>' <?php checked($data_struct['struct_id'],$structure_type_val ); ?>><?php echo $data_struct['name_en'];?></option>
+<!--            <option value="--><?php //echo $data_struct['struct_id'];?><!--">--><?php //echo $data_struct['name_he'];?><!--</option>-->
         <?php
         }
         ?>
     </select>
 </div>
 <div class="col s_field">
+    <?php $bedroom_val = !empty($_GET['bedroom']) ?$_GET['bedroom'] :'';?>
     <select name="bedroom" style="width:24%;" class="medium right-pad">
         <option value="">חדרי שינה בחר</option>
         <?php
         while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
         { ?>
-            <option value="<?php echo $data_bedroom['id']; ?>"><?php echo $data_bedroom['bedroom_he']; ?></option>
+            <option value="<?php echo $data_bedroom['id']; ?>" <?php checked($data_bedroom['id'],$bedroom_val ); ?>><?php echo $data_bedroom['bedroom_he']; ?></option>
         <?php }
         ?>
     </select>
+    <?php $bathroom_val = !empty($_GET['bathroom']) ?$_GET['bathroom'] :'';?>
     <select name="bathroom" style="width:14%;" class="medium right-pad">
         <option value="">בחלק מחדרי הרחצה</option>
         <?php
         while($data_bath=mysqli_fetch_assoc($obj_bath))
         { ?>
-            <option value="<?php echo $data_bath['id'];?>"><?php echo $data_bath['bath_he'];?></option>
+            <option value="<?php echo $data_bath['id'];?>" <?php checked($data_bath['id'],$bathroom_val ); ?>><?php echo $data_bath['bath_he'];?></option>
         <?php }
         ?>
 
     </select>&nbsp;
+    <?php $square_footage_val = !empty($_GET['square_footage']) ?$_GET['square_footage'] :'';?>
     <select name="square_footage" style="width:14%;" class="medium right-pad">
         <option value="">מטר בחר</option>
         <?php
         for($i=1;$i<=200;$i++)
         { ?>
-            <option><?php echo $i;?></option>
+            <option value="<?php echo $i; ?>" <?php checked($square_footage_val, $i ); ?> ><?php echo $i;?></option>
         <?php }
         ?>
 
     </select>
     <!-- <input type="text" placeholder="Enter meters" style="width:14%;" name="square_footage" class="s_field"> -->
+    <?php $furnished_val = !empty($_GET['furnished']) ?$_GET['furnished'] :'';?>
     <select name="furnished" style="width:24%;" class="medium right-pad">
         <option value="">בחר מרוהט</option>
         <?php
         while($data_fur=mysqli_fetch_assoc($obj_fur))
         {
             ?>
-            <option value='<?php echo $data_fur['id'];?>'><?php echo $data_fur['furnished_he'];?></option>
+            <option value='<?php echo $data_fur['id'];?>' <?php checked($data_fur['id'], $furnished_val ); ?>><?php echo $data_fur['furnished_he'];?></option>
         <?php
         }
         ?>
@@ -602,9 +618,11 @@ include('header_h.php');
                     }
                     ?>
                     <div class="image-wrapper">
-                        <a href="view_detail.php?pid=<?php echo $data_search['post_id'];?>">
-                            <img alt="Santa Monica Apartments"  src="home_images/<?php echo $data_search['main_image'];?>">
-                        </a>
+                        <?php if( !empty($data_search['main_image'] )): ?>
+                            <a href="view_detail.php?pid=<?php echo $data_search['post_id'];?>">
+                                <img alt=""  src="home_images/<?php echo $data_search['main_image'];?>">
+                            </a>
+                        <?php endif; ?>
                         <div class="detail-link">
                             <!-- <a href="/listingdetail/1298189/santa-monica/eco-friendly-1920s-charm-near-expo-rail-stop-utilities-included/"></a> -->
                             <a href="view_detail.php?pid=<?php echo $data_search['post_id'];?>">הצג פרטים</a>
@@ -674,7 +692,7 @@ include('header_h.php');
                                 <div class="left"></div>
                                 <div class="left">
                                     <a href="<?php echo $favorite_link; ?>">
-                                        <?php $fav_img = $data_search['status'] !== 'Favorite' ? '../images/2016/icons/heart-listingicon.png': '../images/2016/icons/heartselected-listingicon.png';?>
+                                        <?php $fav_img = in_array($data_search['post_id'], $fav_list) ? '../images/2016/icons/heartselected-listingicon.png' : '../images/2016/icons/heart-listingicon.png';?>
                                         <span class="favorite-link <?php echo $favorite_class; ?>" data-listingid="<?php echo $data_search['post_id'];?>">
         									<img align="absmiddle" src="<?php echo $fav_img; ?>">
         								</span>

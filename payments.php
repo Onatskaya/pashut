@@ -35,11 +35,10 @@ $pass = ""; //database password
 $db_name = ""; //database name
 
 // PayPal settings
-//$paypal_email = 'nimshalom25@gmail.com';
-$paypal_email = 'ekolmyk@corp.web4pro.com.ua';
-$return_url = 'http://localhost/pashut/payment-successful.php';
-$cancel_url = 'http://localhost/pashut/payment-cancelled.php';
-$notify_url = 'http://localhost/pashut/payments.php';
+$paypal_email = 'nimshalom25@gmail.com';
+$return_url = 'http://pashutlehaskir.com/payment-successful.php';
+$cancel_url = 'http://pashutlehaskir.com/payment-cancelled.php';
+$notify_url = 'http://pashutlehaskir.com/payments.php';
 
 $item_name = 'Membership Price';
 $item_amount = $amt;
@@ -76,9 +75,8 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	//$querystring .= "&custom=".USERID;
 	
 	// Redirect to paypal IPN
-//		$final='https://www.paypal.com/cgi-bin/webscr'.$querystring;
-		$final='https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring;
-		header('location:https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
+		$final='https://www.paypal.com/cgi-bin/webscr'.$querystring;
+		header('location:https://www.paypal.com/cgi-bin/webscr'.$querystring);
 		echo "<script>window.location.href = '".$final."';</script>";
 	exit();
 } else {
@@ -112,7 +110,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 	$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
 	
-	$fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+	$fp = fsockopen ('ssl://www.paypal.com', 443, $errno, $errstr, 30);
 	
 	if (!$fp) {
 		// HTTP ERROR

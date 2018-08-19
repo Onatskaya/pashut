@@ -47,12 +47,11 @@ $pass = ""; //database password
 $db_name = ""; //database name
 
 // PayPal settings
-//$paypal_email = 'shalomnimrod@gmail.com ';
-$paypal_email = 'ekolmyk@corp.web4pro.com.ua';
+$paypal_email = 'shalomnimrod@gmail.com ';
 
-$return_url = 'http://pashut/payment-successful.php';
-$cancel_url = 'http://pashut/payment-cancelled.php';
-$notify_url = 'http://pashut/payments.php';
+$return_url = 'http://pashutlehaskir.com/member/payment-successful.php';
+$cancel_url = 'http://pashutlehaskir.com/member/payment-cancelled.php';
+$notify_url = 'http://pashutlehaskir.com/member/payments.php';
 
 $item_name = 'Membership Price';
 $item_amount = $amt;
@@ -88,8 +87,8 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 	//$querystring .= "&custom=".USERID;
 	
 	// Redirect to paypal IPN
-	$final='https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring;
-	header('location:https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
+	$final='https://www.paypal.com/cgi-bin/webscr'.$querystring;
+	header('location:https://www.paypal.com/cgi-bin/webscr'.$querystring);
 	echo "<script>window.location.href = '".$final."';</script>";
 	exit();
 } else {

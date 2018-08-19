@@ -81,9 +81,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 				
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
@@ -153,9 +153,6 @@ This policy will let you know:<br/>
 
 <ul style="margin-left:20px;">
 <li>
-What personally identifiable information is collected from you 
-</li>
-<li>
 What cookies are and how they are used 
 </li>
 <li>
@@ -171,37 +168,12 @@ With whom your information may be shared
 What choices are available to you regarding collection, use, and distribution of your information 
 </li>
 <li>
-How you can access or update your information 
-</li>
-<li>
 The kind of security precautions that are in place to protect the loss, misuse, or alteration of your information 
 </li>
 <li>
 What else you should know about your online privacy 
 </li>
 </ul>
-
-<h2>
-What personally identifiable information is collected from you? 
-</h2>
-
-pashutlehaskir.com collects information in several ways from different parts of our web site.
-<br/>
-During registration, some personal information will be requested. We ask for your name, email
-address, street address, city, state/province, zip/postal code, country, and telephone number.
-Although, only fields that are marked with an asterisk (*) on the registration form are required.
-This information is used solely to assist you in navigating the system by automatically filling
-in certain forms (such as the vacancy posting form) so you do not have to continually re-enter
-your information. Once you register you are no longer anonymous to pashutlehaskir.com.
-The username and password created during registration will allow you to have access to all of
-pashutlehaskir.com services and resources.
-<br/>
-In addition to information collected during registration, we may ask you for additional personal
-information at other times, including (but not limited to) when you post vacancies or take
-advantage of the other features of pashutlehaskir.com. If you contact us, we may keep a record
-of that correspondence. Every page within the pashutlehaskir.com includes a link to this
-Privacy Policy Statement.
-<br/>
 
 <h2>
 What cookies are and how they are used
@@ -276,10 +248,6 @@ services.
 What choices are available to you regarding collection, use and distribution of
 your information?
 </h2>
-If you choose not to register or provide personal information, you can still use most of the
-services provided by pashutlehaskir.com, but you will not be able to access areas or use
-features that require registration.
-<br/>
 You also have choices with respect to cookies. By modifying your browser preferences,
 you have the choice to accept all cookies, to be notified when a cookie is set, or to reject
 all cookies. If you choose to reject all cookies you will be unable to use those services and
@@ -287,42 +255,6 @@ features of pashutlehaskir.com that require registration in order to participate
 include the identification of new vacancies that have been posted since your last visit, auto-
 filling of the logon form, and the Favorites feature. You can still use most of the features of
 pashutlehaskir.com even if you do not accept cookies.
-<br/>
-
-<h2>
-How you can access or update your information
-</h2>
-We will provide you with the means to ensure that your personal information is correct and
-current. You may edit your user profile at any time by clicking on the "My Profile" link
-or graphic provided by the system once you are logged in. Once you have logged onto the system
-during a given session, wherever you go on pashutlehaskir.com, your information will stay
-with you until or unless you click on the "Logoff" link, which is accessible from within the "My
-Account" screen.
-<br/>
-If you are a previously registered user and you have lost or forgotten your password, you may
-obtain it by email by using our "Forgot Password" feature. Click the button on any login page to
-request that your password be emailed to you. We cannot provide your password by any other
-means.
-<br/>
-The kind of security precautions that are in place to protect the loss, misuse, or
-alteration of your information
-<br/>
-Other than the administrator of pashutlehaskir.com or other authorized personnel of
-pashutlehaskir.com, you are the only person who has access to your personal information. Your
-user registration is password-protected to prevent unauthorized access.
-<br/>
-We recommend that you do not divulge your password to anyone. pashutlehaskir.com will
-never ask you for your password in an unsolicited phone call or in an unsolicited email. As
-an extra security precaution, you may want to logoff once you have completed a session in
-pashutlehaskir.com. This is to ensure that others cannot access your personal information and
-correspondence if you share a computer with someone else or are using a computer in a public
-place like a library or Internet cafe.
-<br/>
-Unfortunately, no data transmission over the internet can be guaranteed to be 100% secure. As a
-result, while we strive to protect your personal information, pashutlehaskir.com cannot ensure
-or warrant the security of any information you transmit to us or from our online services, and you
-do so at your own risk. Once we receive your transmission, we make our best effort to ensure its
-security on our systems.
 <br/>
 
 <H2>

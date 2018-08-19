@@ -37,7 +37,7 @@ $body="<table width='100%' height='100%' style='min-width:348px' border='0' cell
                       <tr>
                         <td></td>
                         <td height='72px' colspan='2'>
-                          <img width='150' height='50' src='http://www.laabhaa.co.in/pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'>
+                          <img width='150' height='50' src='http://pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'>
                         </td>
                       </tr>
                       <tr>
@@ -107,7 +107,7 @@ $body="<table width='100%' height='100%' style='min-width:348px' border='0' cell
                                 <td style='font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:13px;color:red;line-height:1.5'>If you have any questions regarding your account please contact our help desk at info@pashutlehaskir.com<br></td>
                               </tr>
                               <tr height='16px'>
-                                  <td style='background-color:red';><img width='150' height='50' src='http://www.laabhaa.co.in/pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'></td>
+                                  <td style='background-color:red';><img width='150' height='50' src='http://pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'></td>
                               </tr>
                               
                             </tbody>
@@ -173,7 +173,7 @@ $body2="<table width='100%' height='100%' style='min-width:348px' border='0' cel
                       <tr>
                         <td></td>
                         <td height='72px' colspan='2'>
-                          <img width='150' height='50' src='http://www.laabhaa.co.in/pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'>
+                          <img width='150' height='50' src='http://pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'>
                         </td>
                       </tr>
                       <tr>
@@ -241,7 +241,7 @@ $body2="<table width='100%' height='100%' style='min-width:348px' border='0' cel
                               </tr>
                               
                               <tr height='16px'>
-                                  <td style='background-color:red';><img width='150' height='50' src='http://www.laabhaa.co.in/pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'></td>
+                                  <td style='background-color:red';><img width='150' height='50' src='http://pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'></td>
                               </tr>
                               
                             </tbody>

@@ -1,7 +1,10 @@
 <?php
 include_once('functions/function.php');
+$to = "info@pashutlehaskir.com";
+$subject = "Request from the user";
 
-$email_to = "info@pashutlehaskir.com";
+
+//$email_to = "info@pashutlehaskir.com";
 $email_subject = "Enquiry from User";
 $phone=$_POST['phone_a'].$_POST['phone_b'].$_POST['phone_c'];
 // print_r($phone);die;
@@ -95,15 +98,29 @@ $body= '
 </html>
 ';
 
-// To send HTML mail, the Content-type header must be set
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers .= 'From: Enquiry <info@pashutlehaskir.com>' . "\r\n";
+
+if (mail($to,$subject,$body, $headers )){
+echo "<script>setTimeout(function(){window.location.href='contactus.php'},2000);</script><h4 style='background-color:green;width:50%; top:105px; left:25%; position: absolute; padding:6px 6px; color: #fff; text-align:center; font-size:18px;font-family: Georgia;font-style: italic;'>Mail Sent successfully</h4>";
+} else {
+echo "<script>setTimeout(function(){window.location.href='contactus.php'},2000);</script><h4 style='background-color:red;width:50%; top:105px; left:25%; position: absolute; padding:6px 6px; color: #fff; text-align:center; font-size:18px;font-family: Georgia;font-style: italic;'>Mail not sent. Try againe later</h4>";
+}
+
+exit;
+
+// To send HTML mail, the Content-type header must be set
+//$headers  = 'MIME-Version: 1.0' . "\r\n";
+//$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
 // Additional headers
-$headers .= 'From: Enquiry <info@pashutlehaskir.com>' . "\r\n";
+//$headers .= 'From: Enquiry <info@pashutlehaskir.com>' . "\r\n";
 //$headers .= 'Cc:'.$user_email. "\r\n";
-@mail($email_to, $email_subject, $body, $headers);
-echo "<script>setTimeout(function(){window.location.href='contactus.php'},2000);</script><h4 style='background-color:green;width:50%; top:105px; left:25%; position: absolute; padding:6px 6px; color: #fff; text-align:center; font-size:18px;font-family: Georgia;font-style: italic;'>Mail Sent successfully</h4>";
+//@mail($email_to, $email_subject, $body, $headers);
+
+
+
 
 
 

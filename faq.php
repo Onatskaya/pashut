@@ -79,9 +79,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 				
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
@@ -141,14 +141,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	 
 
 <h2>
-How do I join?
-</h2>
-Simply click "Join Now", select the membership plan suitable to your needs and enter the required
-information. Property Owners can list their properties for free, daily.
-<br/>
-
-
-<h2>
 Are all listings on PL accurate and available to rent?
 </h2>
 Yes! All live listings are updated in real time. Each listing, includes pre-approved photos/videos and
@@ -160,26 +152,13 @@ How do I schedule a viewing or showing of a property I like?
 </h2>
 Each individual property listing will have the option to set a viewing time directly on the property
 page. Property owners set specific times to allow both parties convenience and quick access to the
-property. Confirmation emails are sent to both parties during an Instant Viewing request.
+property. Confirmation emails are sent to both parties during an Instant Viewing request.<br/>
 
 <h2>
 How much does it cost to join?
 </h2>
-Single monthly memberships for renters costs 99NIS for 30 days and receive unlimited access to all
-listings and includes additional comprehensive resources and moving solutions. Other membership
-plans are also available to better match your needs.
-<br/><h2>Are membership payments secure?</h2>All payments are processed and secured directly through Paypal.<br/>
-
-<h2>Can I cancel my membership if I find a property before my monthly membership expires?</h2>
-No. All memberships are given access to property information for 30 days.
-<br/>
-
-<h2>
-What happens when I rent the property?
-</h2>
-Congratulations! If you search, find and rent an available property through PashutLeHaskir, a onetime
-25% service fee of the monthly rent amount is charged to your account. There are no other fees
-associated with PL other than membership fees and and a one time service fee.
+All Listings and property details on pashutlehaskir.com are free to search, post
+and schedule a time to view the property.
 <br/>
 
 <h2>
@@ -220,10 +199,10 @@ All members of PL have access to each property you list.
 <br>
 <h2>If I rent out my property, is my property still listed on PL?</h2>
 Congratulations! Once your property is taken by a renter, simply click the “Rented” button on the
-bottom of your property page to remove your listing.<span style="color:red;font-weight:bold;"> Renting your property on
-PashutLehaskir.com entitles you to a one-time 12.5% credit of the amount your property is
+bottom of your property page to remove your listing. Renting your property on
+PashutLehaskir.com entitles you to a one-time 10% credit of the amount your property is
 listed for. Property Owners that list with PashutLeHaskir create an income with each
-property listed!</span>
+property listed!
 
 	
 		

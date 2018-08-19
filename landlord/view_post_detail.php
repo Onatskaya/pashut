@@ -107,9 +107,9 @@ if( ! $events ){
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css">
 
-    <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+    <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 
-    <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+    <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 
     <meta name="robots" content="index,follow" />
     <meta name="GOOGLEBOT" content="index,follow" />
@@ -121,7 +121,19 @@ if( ! $events ){
 
 
 </head>
+<style type="text/css">
+    #color_w.average, #color_b.active, #color_a.active, #color_v.active, #color_s.active{
+        color: rgb(255, 192, 0);
+    }
+    #color_w.easy, #color_b.calm, #color_a.calm, #color_v.calm, #color_s.calm{
+        color: #92E342;
+    }
 
+    #color_w.hard, #color_b.busy, #color_a.busy, #color_v.busy, #color_s.busy{
+        color: red;
+    }
+
+</style>
 
 <body  class="guest" >
 
@@ -508,17 +520,21 @@ include('header.php');
 
     <div class="hidden-xs hidden-sm">
         <div class="soundscore">
-            <div class="top">Soundscore: <span style="color: #EE583F" id="color_s"><?php $WHERE_SOUND['id']=$data['soundscore']; echo select('soundscore',$WHERE_SOUND)[0]['soundscore'];?></span></div>
+            <?php $WHERE_SOUND['id']=$data['soundscore']; $soundscore = select('soundscore',$WHERE_SOUND)[0]['soundscore']; ?>
+            <div class="top">Soundscore: <span id="color_s" class="<?php echo strtolower($soundscore); ?>"><?php echo $soundscore;?></span></div>
             <div class="body">
                 <div class="middle">
+                    <?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; $vehicle_noise = select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise'];?>
                     <div class="medium">Vehicle Noise:
-                        <span style="color: #EE583F !important" id="color_v"><?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; echo select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise'];?></span>
+                        <span id="color_v" class="<?php echo strtolower($vehicle_noise); ?>"><?php echo $vehicle_noise; ?></span>
                     </div>
+                    <?php $WHERE_AIR['id']=$data['airport_noise']; $airport_noise = select('airport_noise',$WHERE_AIR)[0]['airport_noise'];?>
                     <div class="medium">Airport Noise:
-                        <span style="color: #FFCB3F !important" id="color_a"><?php $WHERE_AIR['id']=$data['airport_noise']; echo select('airport_noise',$WHERE_AIR)[0]['airport_noise'];?></span>
+                        <span id="color_a" class="<?php echo strtolower($airport_noise); ?>"><?php echo $airport_noise;?></span>
                     </div>
+                    <?php $WHERE_BUIS['id']=$data['business_noise']; $businesses = select('businesses',$WHERE_BUIS)[0]['businesses'];?>
                     <div class="medium">Businesses:
-                        <span style="color: #EE583F !important" id="color_b"><?php $WHERE_BUIS['id']=$data['business_noise']; echo select('businesses',$WHERE_BUIS)[0]['businesses'];?></span>
+                        <span id="color_b" class="<?php echo strtolower($businesses); ?>"><?php echo $businesses; ?></span>
                     </div>
                     <img width="220" border="0" src="../images/soundscore_module-gradient.png">
                     <div class="small">
@@ -776,95 +792,5 @@ include('footer.php');
             });
         });
 
-    });
-</script>
-
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        var a=$("#color_s").text();
-        if(a=='Calm')
-        {
-            $("#color_s").css("color", "#92E342");
-        }
-        if(a=='Active')
-        {
-            $("#color_s").css("color", "#FFC000");
-        }
-        if(a=='Busy')
-        {
-            $("#color_s").css("color", "red");
-        }
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        var a=$("#color_v").text();
-        if(a=='Calm')
-        {
-            $("#color_v").css("color", "#92E342");
-        }
-        if(a=='Active')
-        {
-            $("#color_v").css("color", "#FFC000");
-        }
-        if(a=='Busy')
-        {
-            $("#color_v").css("color", "red");
-        }
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        var a=$("#color_a").text();
-        if(a=='Calm')
-        {
-            $("#color_a").css("color", "#92E342");
-        }
-        if(a=='Active')
-        {
-            $("#color_a").css("color", "#FFC000");
-        }
-        if(a=='Busy')
-        {
-            $("#color_a").css("color", "red");
-        }
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        var a=$("#color_b").text();
-        if(a=='Calm')
-        {
-            $("#color_b").css("color", "#92E342");
-        }
-        if(a=='Active')
-        {
-            $("#color_b").css("color", "#FFC000");
-        }
-        if(a=='Busy')
-        {
-            $("#color_b").css("color", "red");
-        }
-    });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        var a=$("#color_w").text();
-        if(a=='Easy')
-        {
-            $("#color_w").css("color", "#92E342");
-        }
-        if(a=='Average')
-        {
-            $("#color_w").css("color", "#FFC000");
-        }
-        if(a=='Hard')
-        {
-            $("#color_w").css("color", "red");
-        }
     });
 </script>

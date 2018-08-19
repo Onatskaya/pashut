@@ -1,9 +1,10 @@
 <?php
+    error_reporting(0);
+
 	$host = "localhost";
 	$username = "root";
-	// $pass = "pashutle@2016";
-	$pass = "";
-	$database = "pashutlehaskir";
+	$pass = "dev01";
+	$database = "pashut";
 
 	$conn = mysqli_connect($host, $username, $pass, $database);
 	mysqli_query($conn,"SET NAMES utf8");
@@ -24,9 +25,6 @@
 	
 	if(!isset($_SESSION['language']))
 	{	
-		$_SESSION['language']='English';
+		$_SESSION['language']='Hebrew';
 	}
-
-	error_reporting(0);
-@ini_set('display_errors', 0);
 ?>

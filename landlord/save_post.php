@@ -5,20 +5,20 @@ include("../functions/function.php");
 $member_id=$_SESSION['member_id'];
 if(!empty($_POST['calendar_events'])){
     $calendar_events = $_POST['calendar_events'];
-    unset($_POST['calendar_events']);
 }
+unset($_POST['calendar_events']);
 
 $contact=$_POST['contact_a'].'-'.$_POST['contact_b'].'-'.$_POST['contact_c'];
 
 $listing_number=last_id('post','post_id','listing_number');
 if($listing_number=="")
 {
-	$_POST['listing_number']= '1';
+    $_POST['listing_number']= '1';
 }
 else
 {
-	$listing_number++;
-	$_POST['listing_number']= $listing_number;
+    $listing_number++;
+    $_POST['listing_number']= $listing_number;
 }
 
 
@@ -32,68 +32,80 @@ $_POST['image4']="";
 $_POST['image5']="";
 if($_FILES['main_image']['name'] != "")
 {
-	$main_image= $_FILES['main_image']['name'];
-	$ext= explode(".",$main_image);
-	$end_m= end($ext);
-	$main_image= "m".$member_id.time().".".$end_m;
-	$_POST['main_image']=$main_image;
-	move_uploaded_file($_FILES["main_image"]["tmp_name"],"../home_images/".$main_image);
-	$_POST['main_image']=$main_image;
+    $main_image= $_FILES['main_image']['name'];
+    $ext= explode(".",$main_image);
+    $end_m= end($ext);
+    $main_image= "m".$member_id.time().".".$end_m;
+    $_POST['main_image']=$main_image;
+    move_uploaded_file($_FILES["main_image"]["tmp_name"],"../home_images/".$main_image);
+    chmod("../home_images/".$main_image, 0777);
+    add_logo("../home_images/".$main_image,'../images/img_logo.jpg');
+    $_POST['main_image']=$main_image;
 }
 
 if($_FILES['image1']['name'] != "")
 {
-	$image1= $_FILES['image1']['name'];
-	$ext1= explode(".",$image1);
-	$end1= end($ext1);
-	$image1= "a".$member_id.time().".".$end1;
-	$_POST['image1']=$image1;
-	move_uploaded_file($_FILES["image1"]["tmp_name"],"../home_images/".$image1);
-	$_POST['image1']=$image1;
+    $image1= $_FILES['image1']['name'];
+    $ext1= explode(".",$image1);
+    $end1= end($ext1);
+    $image1= "a".$member_id.time().".".$end1;
+    $_POST['image1']=$image1;
+    move_uploaded_file($_FILES["image1"]["tmp_name"],"../home_images/".$image1);
+    chmod("../home_images/".$image1, 0777);
+    add_logo("../home_images/".$image1,'../images/img_logo.jpg');
+    $_POST['image1']=$image1;
 }
 
 if($_FILES['image2']['name'] != "")
 {
-	$image2= $_FILES['image2']['name'];
-	$ext2= explode(".",$image2);
-	$end2= end($ext2);
-	$image2= "b".$member_id.time().".".$end2;
-	$_POST['image2']=$image2;
-	move_uploaded_file($_FILES["image2"]["tmp_name"],"../home_images/".$image2);
-	$_POST['image2']=$image2;
+    $image2= $_FILES['image2']['name'];
+    $ext2= explode(".",$image2);
+    $end2= end($ext2);
+    $image2= "b".$member_id.time().".".$end2;
+    $_POST['image2']=$image2;
+    move_uploaded_file($_FILES["image2"]["tmp_name"],"../home_images/".$image2);
+    chmod("../home_images/".$image2, 0777);
+    add_logo("../home_images/".$image2,'../images/img_logo.jpg');
+    $_POST['image2']=$image2;
 }
 
 if($_FILES['image3']['name'] != "")
 {
-	$image3= $_FILES['image3']['name'];
-	$ext3= explode(".",$image3);
-	$end3= end($ext3);
-	$image3= "c".$member_id.time().".".$end3;
-	$_POST['image3']=$image3;
-	move_uploaded_file($_FILES["image3"]["tmp_name"],"../home_images/".$image3);
-	$_POST['image3']=$image3;
+    $image3= $_FILES['image3']['name'];
+    $ext3= explode(".",$image3);
+    $end3= end($ext3);
+    $image3= "c".$member_id.time().".".$end3;
+    $_POST['image3']=$image3;
+    move_uploaded_file($_FILES["image3"]["tmp_name"],"../home_images/".$image3);
+    chmod("../home_images/".$image3, 0777);
+    add_logo("../home_images/".$image3,'../images/img_logo.jpg');
+    $_POST['image3']=$image3;
 }
 
 if($_FILES['image4']['name'] != "")
 {
-	$image4= $_FILES['image4']['name'];
-	$ext4= explode(".",$image4);
-	$end4= end($ext4);
-	$image4= "d".$member_id.time().".".$end4;
-	$_POST['image4']=$image4;
-	move_uploaded_file($_FILES["image4"]["tmp_name"],"../home_images/".$image4);
-	$_POST['image4']=$image4;
+    $image4= $_FILES['image4']['name'];
+    $ext4= explode(".",$image4);
+    $end4= end($ext4);
+    $image4= "d".$member_id.time().".".$end4;
+    $_POST['image4']=$image4;
+    move_uploaded_file($_FILES["image4"]["tmp_name"],"../home_images/".$image4);
+    chmod("../home_images/".$image4, 0777);
+    add_logo("../home_images/".$image4,'../images/img_logo.jpg');
+    $_POST['image4']=$image4;
 }
 
 if($_FILES['image5']['name'] != "")
 {
-	$image5= $_FILES['image5']['name'];
-	$ext5= explode(".",$image5);
-	$end5= end($ext5);
-	$image5= "e".$member_id.time().".".$end5;
-	$_POST['image5']=$image5;
-	move_uploaded_file($_FILES["image5"]["tmp_name"],"../home_images/".$image5);
-	$_POST['image5']=$image5;
+    $image5= $_FILES['image5']['name'];
+    $ext5= explode(".",$image5);
+    $end5= end($ext5);
+    $image5= "e".$member_id.time().".".$end5;
+    $_POST['image5']=$image5;
+    move_uploaded_file($_FILES["image5"]["tmp_name"],"../home_images/".$image5);
+    chmod("../home_images/".$image5, 0777);
+    add_logo("../home_images/".$image5,'../images/img_logo.jpg');
+    $_POST['image5']=$image5;
 }
 
 date_default_timezone_set('Asia/Kolkata');
@@ -123,18 +135,20 @@ if( !empty($calendar_events)){
 // print_r($_FILES['image']['name'][0]);die;
 if(is_array($_FILES['image']) AND $_FILES['image']['name'][0] != "")
 {
-	$n=0;
- 	foreach ($_FILES['image']['name'] as $img) 
-	{
-		$ext= explode(".",$img);
-		$end= end($ext);
-		$img2= $member_id.$n.time().".".$end;
-		move_uploaded_file($_FILES['image']["tmp_name"][$n],"../home_images/".$img2);
-		$que_img= "INSERT INTO house_image(member_id,post_id,image) VALUES('$member_id','$post_id','$img2') ";
-		$obj_img= mysqli_query($conn,$que_img);
-		$n++;
-		// print_r($que_img);die;
-	}
+    $n=0;
+    foreach ($_FILES['image']['name'] as $img)
+    {
+        $ext= explode(".",$img);
+        $end= end($ext);
+        $img2= $member_id.$n.time().".".$end;
+        move_uploaded_file($_FILES['image']["tmp_name"][$n],"../home_images/".$img2);
+        chmod("../home_images/".$img2, 0777);
+        add_logo("../home_images/".$img2,'../images/img_logo.jpg');
+        $que_img= "INSERT INTO house_image(member_id,post_id,image) VALUES('$member_id','$post_id','$img2') ";
+        $obj_img= mysqli_query($conn,$que_img);
+        $n++;
+        // print_r($que_img);die;
+    }
 }
 
 

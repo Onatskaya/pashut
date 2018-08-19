@@ -53,7 +53,7 @@ else
 								  <tr>
 									<td></td>
 									<td height='72px' colspan='2'>
-									  <img width='150' height='50' src='http://www.laabhaa.co.in/pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'>
+									  <img width='150' height='50' src='http://pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'>
 									</td>
 								  </tr>
 								  <tr>
@@ -94,7 +94,7 @@ else
 										  </tr>
 										  
 										  <tr height='16px'>
-											  <td style='background-color:red';><img width='150' height='50' src='http://www.laabhaa.co.in/pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'></td>
+											  <td style='background-color:red';><img width='150' height='50' src='http://pashutlehaskir.com/images/logo.png' style='display:block;width:300px;min-height:32px' class='CToWUd'></td>
 										  </tr>
 										  
 										</tbody>

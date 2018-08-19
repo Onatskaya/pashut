@@ -85,7 +85,11 @@ $obj_post= mysqli_query($conn,$que_post);
 						            <td><?php echo $data_post['email'];?></td>
 						            <td><?php echo $data_post['city'];?></td>
 						            <td><?php echo $data_post['structure_type'];?></td>
-						            <td><img src="../home_images/<?php echo $data_post['main_image'];?>" height="60" width="60"></td>
+						            <td>
+                                        <?php if(!empty($data_post['main_image'])): ?>
+                                            <img src="../home_images/<?php echo $data_post['main_image'];?>" height="60" width="60">
+                                        <?php endif; ?>
+                                    </td>
 						        	<td><?php include('property_status_h.php');?></td>
 						        	<td><a href="view_post_detail.php?pid=<?php echo $data_post['post_id'];?>" class="btn btn-danger">צפה בפרטים</a> </td>
 						        </tr>

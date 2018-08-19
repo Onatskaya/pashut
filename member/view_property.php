@@ -10,7 +10,7 @@ if($_SESSION['language']=='Hebrew')
     }
     echo "<script>location.href='view_property_h.php?$getto'</script>";
 }
-
+$member_id= $_SESSION['member_id'];
 $favorite_link = !isset($_SESSION['member_logged']) ? '/login2.php' : '#';
 $favorite_class = !isset($_SESSION['member_logged']) ? 'gust' : 'member';
 
@@ -27,9 +27,9 @@ if(isset($_GET['city']))
     $priceLow= $_GET['priceLow'];
     $priceHigh= $_GET['priceHigh'];
 
+    $favorite_query = "SELECT property_id FROM favorite_tbl WHERE member_id='$member_id' AND status='Favorite'";
     $que_search_count="SELECT * FROM post WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
     $que_search="SELECT * FROM post 
-    LEFT JOIN favorite_tbl ON post.post_id = favorite_tbl.property_id
     WHERE city='$city' AND structure_type='$structure_type' AND property_available='Available' AND post_date_confirm='yes' ";
     if(isset($_REQUEST['priceLow']) AND !empty($_REQUEST['priceLow']))
     {
@@ -106,7 +106,18 @@ while($data_struct3=mysqli_fetch_assoc($obj_struct))
 {
     $data_struct2[]=$data_struct3;
 }
-
+$fav_list = array();
+if( !empty($member_id)){
+    $obj_fav = mysqli_query($conn,$favorite_query);
+    if($obj_fav){
+        while($fav_item=mysqli_fetch_assoc($obj_fav))
+        {
+            if(!empty($fav_item["property_id"])){
+                $fav_list[]=$fav_item["property_id"];
+            }
+        }
+    }
+}
 
 ?>
 
@@ -227,9 +238,9 @@ while($data_struct3=mysqli_fetch_assoc($obj_struct))
     <link href="../css/201603/section.css" rel="stylesheet">
     <link href="../css/201603/carousel.css" rel="stylesheet">
 
-    <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+    <meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 
-    <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+    <meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 
     <meta name="robots" content="index,follow" />
     <meta name="GOOGLEBOT" content="index,follow" />
@@ -629,7 +640,7 @@ include('header.php');
                                 <div class="left"></div>
                                 <div class="right">
                                     <a href="<?php echo $favorite_link;?>">
-                                        <?php $fav_img = $data_search['status'] !== 'Favorite' ? '../images/2016/icons/heart-listingicon.png': '../images/2016/icons/heartselected-listingicon.png';?>
+                                        <?php $fav_img = in_array($data_search['post_id'], $fav_list) ? '../images/2016/icons/heartselected-listingicon.png' : '../images/2016/icons/heart-listingicon.png';?>
         								<span class="favorite-link <?php echo $favorite_class; ?>" data-listingid="<?php echo $data_search['post_id'];?>">
         									<img align="absmiddle" src="<?php echo $fav_img; ?>">
         								</span>

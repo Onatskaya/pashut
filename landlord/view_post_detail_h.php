@@ -105,9 +105,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="../css/201603/section.css" rel="stylesheet">
 				<link href="../css/201603/carousel.css" rel="stylesheet">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 				
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
@@ -120,8 +120,20 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
         
 	</head>
 
-	
-	<body  class="guest" >
+  <style type="text/css">
+      #color_w.average, #color_b.active, #color_a.active, #color_v.active, #color_s.active{
+          color: rgb(255, 192, 0);
+      }
+      #color_w.easy, #color_b.calm, #color_a.calm, #color_v.calm, #color_s.calm{
+          color: #92E342;
+      }
+
+      #color_w.hard, #color_b.busy, #color_a.busy, #color_v.busy, #color_s.busy{
+          color: red;
+      }
+
+  </style>
+  <body  class="guest" >
 	
 	
 	<!-- Google Tag Manager -->
@@ -478,39 +490,44 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">חזרה לעמוד הקודם</a>				
 								<br><a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">צפייה מיידית</a>
 
-								<div class="walkscore">
-										<div class="top">WALKSCORE</div>
-										<div class="body">
-											<div class="middle">
-												<div class="large"><span id="color_w"><?php $WHERE_WALK['id']=$data['walkscore']; echo select('walkscore',$WHERE_WALK)[0]['walkscore_he'];?></span></div>
-												<div class="small">
-													<span><?php $WHERE_WALK['id']=$data['walkscore_descrp']; echo select('walkscore_desc',$WHERE_WALK)[0]['walkscore_desc_he'];?></span>
-												</div>
-											</div>
-											</div><h3></h3></div>
+                                <div class="walkscore">
+                                    <div class="top">Walkscore</div>
+                                    <div class="body">
+                                        <div class="middle">
+                                            <?php $WHERE_WALK['id']=$data['walkscore']; $walkscore = select('walkscore',$WHERE_WALK)[0];?>
+                                            <div class="large"><span id="color_w" class="<?php echo strtolower($walkscore['walkscore']); ?>" ><?php echo $walkscore['walkscore_he']; ?></span></div>
+                                            <div class="small">
+                                                <span><?php $WHERE_WALK['id']=$data['walkscore_descrp']; echo select('walkscore_desc',$WHERE_WALK)[0]['walkscore_desc_he'];?></span>
+                                            </div>
+                                        </div>
+                                    </div><h3></h3></div>
 							</div>  
 								
 							<div class="">
-								<div class="soundscore">
-									<div class="top">Soundscore: <span style="color: #EE583F" id="color_s"><?php $WHERE_SOUND['id']=$data['soundscore']; echo select('soundscore',$WHERE_SOUND)[0]['soundscore_he'];?></span></div>
-									<div class="body">
-										<div class="middle">
-											<div class="medium">רעש תחבורתי:
-												<span style="color: #EE583F !important" id="color_v"><?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; echo select('vehicle_noise',$WHERE_VEHICAL)[0]['vehicle_noise_he'];?></span>
-											</div>
-											<div class="medium">רעש נמל תעופה: 
-												<span style="color: #FFCB3F !important" id="color_a"><?php $WHERE_AIR['id']=$data['airport_noise']; echo select('airport_noise',$WHERE_AIR)[0]['airport_noise_he'];?></span>
-											</div>
-											<div class="medium">בתי עסק: 
-												<span style="color: #EE583F !important" id="color_b"><?php $WHERE_BUIS['id']=$data['business_noise']; echo select('businesses',$WHERE_BUIS)[0]['businesses_he'];?></span>
-											</div>
-											<img width="220" border="0" src="../images/soundscore_module-gradient.png">
-											<div class="small">
-												<span><?php $WHERE_SOUNDD['id']=$data['soundscore_descrp']; echo select('soundscore_desc',$WHERE_SOUNDD)[0]['soundscore_desc_he'];?></span>
-											</div>
-										</div>
-									</div><h3></h3>
-								</div>
+                                <div class="soundscore">
+                                    <?php $WHERE_SOUND['id']=$data['soundscore']; $soundscore = select('soundscore',$WHERE_SOUND)[0]; ?>
+                                    <div class="top">Soundscore : <span id="color_s" class="<?php echo strtolower($soundscore['soundscore']); ?>"><?php echo $soundscore['soundscore_he'];?></span></div>
+                                    <div class="body">
+                                        <div class="middle">
+                                            <?php $WHERE_VEHICAL['id']=$data['vehicle_noise']; $vehicle_noise = select('vehicle_noise',$WHERE_VEHICAL)[0];?>
+                                            <div class="medium">רעש תחבורתי:
+                                                <span style="color: #EE583F !important" id="color_v" class="<?php echo strtolower($vehicle_noise['vehicle_noise']); ?>"><?php echo $vehicle_noise['vehicle_noise_he']; ?></span>
+                                            </div>
+                                            <?php $WHERE_AIR['id']=$data['airport_noise']; $airport_noise = select('airport_noise',$WHERE_AIR)[0];?>
+                                            <div class="medium">רעש נמל תעופה:
+                                                <span id="color_a" class="<?php echo strtolower($airport_noise['airport_noise']); ?>"><?php echo $airport_noise['airport_noise_he'];?></span>
+                                            </div>
+                                            <?php $WHERE_BUIS['id']=$data['business_noise']; $businesses = select('businesses',$WHERE_BUIS)[0];?>
+                                            <div class="medium">בתי עסק:
+                                                <span id="color_b" class="<?php echo strtolower($businesses['businesses']); ?>"><?php echo $businesses['businesses_he']; ?></span>
+                                            </div>
+                                            <img width="220" border="0" src="../images/soundscore_module-gradient.png">
+                                            <div class="small">
+                                                <span><?php $WHERE_SOUNDD['id']=$data['soundscore_descrp']; echo select('soundscore_desc',$WHERE_SOUNDD)[0]['soundscore_desc_he'];?></span>
+                                            </div>
+                                        </div>
+                                    </div><h3></h3>
+                                </div>
                                 <?php if( !empty($_SESSION['member_id']) && !empty($data['member_id']) && $_SESSION['member_id'] == $data['member_id'] ): ?>
                                     <form id="add-to-featured" action="add_to_futured.php">
                                         <a href="#" class="js-add-to-featured" data-toggle="tooltip" data-placement="left" title="Featured Listings: Upgrading your property to a featured listing creates higher visibility  and a surge in demand for your listing. Renters see featured listings on the top of their searches. Click the 'Upgrade' button below to purchase" >
@@ -521,7 +538,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                                 <?php endif; ?>
 								<div class="listing-map">									
 									<div style="width: 280px; height: 230px; margin: 0px auto 15px; position: relative;">
-										<script src='http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false&language=he'></script>
+										<script src='https://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false&language=he'></script>
 										<div style='overflow:hidden;height:230px;width:280px;'>
 											<div id='gmap_canvas' style='height:230px;width:280px;'></div>
 											<div>
@@ -684,12 +701,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<!-- Bootstrap core JavaScript
 	
 	<!-- Placed at the end of the document so the pages load faster -->
-	
-	
-		
-		
-	
-	
+
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -771,96 +783,5 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                 events: eventsList
             });
         });
-	});
-	</script>
-
-
-	
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_s").text();
-		if(a=='לְהַרְגִיעַ')
-		{
-			$("#color_s").css("color", "#92E342");
-		}
-		if(a=='פָּעִיל')
-		{
-			$("#color_s").css("color", "#FFC000");
-		}
-		if(a=='עסוק')
-		{
-			$("#color_s").css("color", "red");
-		}
-	});
-	</script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_v").text();
-		if(a=='לְהַרְגִיעַ')
-		{
-			$("#color_v").css("color", "#92E342");
-		}
-		if(a=='פָּעִיל')
-		{
-			$("#color_v").css("color", "#FFC000");
-		}
-		if(a=='עסוק')
-		{
-			$("#color_v").css("color", "red");
-		}
-	});
-	</script>
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_a").text();
-		if(a=='לְהַרְגִיעַ')
-		{
-			$("#color_a").css("color", "#92E342");
-		}
-		if(a=='פָּעִיל')
-		{
-			$("#color_a").css("color", "#FFC000");
-		}
-		if(a=='עסוק')
-		{
-			$("#color_a").css("color", "red");
-		}
-	});
-	</script>
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_b").text();
-		if(a=='לְהַרְגִיעַ')
-		{
-			$("#color_b").css("color", "#92E342");
-		}
-		if(a=='פָּעִיל')
-		{
-			$("#color_b").css("color", "#FFC000");
-		}
-		if(a=='עסוק')
-		{
-			$("#color_b").css("color", "red");
-		}
-	});
-	</script>
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		var a=$("#color_w").text();
-		if(a=='קַל')
-		{
-			$("#color_w").css("color", "#92E342");
-		}
-		if(a=='מְמוּצָע')
-		{
-			$("#color_w").css("color", "#FFC000");
-		}
-		if(a=='קָשֶׁה')
-		{
-			$("#color_w").css("color", "red");
-		}
 	});
 	</script>

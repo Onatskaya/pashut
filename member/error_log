@@ -16,3 +16,59 @@
 [07-Nov-2016 18:00:11 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
 [07-Nov-2016 18:00:13 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
 [07-Nov-2016 18:00:23 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 471
+[06-Jan-2017 14:16:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[06-Jan-2017 14:56:30 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[06-Jan-2017 15:18:03 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[07-Jan-2017 17:53:33 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[11-Jan-2017 18:59:33 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[11-Jan-2017 18:59:41 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[11-Jan-2017 18:59:44 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[11-Jan-2017 19:07:08 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[11-Jan-2017 19:08:08 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 488
+[25-Jan-2017 00:27:02 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:27:02 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/pladmin1/public_html/member/view_property.php on line 112
+[25-Jan-2017 00:27:02 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:31:17 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:31:17 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/pladmin1/public_html/member/view_property.php on line 112
+[25-Jan-2017 00:31:17 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:31:26 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:31:29 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:31:35 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:31:51 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:31:55 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:31:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/pladmin1/public_html/member/view_property.php on line 112
+[25-Jan-2017 00:31:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 502
+[25-Jan-2017 00:33:09 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:33:09 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 504
+[25-Jan-2017 00:33:11 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:33:11 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 504
+[25-Jan-2017 00:33:52 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:33:52 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 504
+[25-Jan-2017 00:33:55 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property.php on line 111
+[25-Jan-2017 00:33:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property.php on line 504
+[25-Jan-2017 00:33:55 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:33:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[25-Jan-2017 00:33:55 Asia/Kolkata] PHP Warning:  include(member/member_init.php): failed to open stream: No such file or directory in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:33:55 Asia/Kolkata] PHP Warning:  include(): Failed opening 'member/member_init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:33:57 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:33:57 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[25-Jan-2017 00:33:57 Asia/Kolkata] PHP Warning:  include(member/member_init.php): failed to open stream: No such file or directory in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:33:57 Asia/Kolkata] PHP Warning:  include(): Failed opening 'member/member_init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:33:59 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:33:59 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[25-Jan-2017 00:33:59 Asia/Kolkata] PHP Warning:  include(member/member_init.php): failed to open stream: No such file or directory in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:33:59 Asia/Kolkata] PHP Warning:  include(): Failed opening 'member/member_init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:34:54 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:34:54 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[25-Jan-2017 00:34:54 Asia/Kolkata] PHP Warning:  include(member/member_init.php): failed to open stream: No such file or directory in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:34:54 Asia/Kolkata] PHP Warning:  include(): Failed opening 'member/member_init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:34:55 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:34:55 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[25-Jan-2017 00:34:55 Asia/Kolkata] PHP Warning:  include(member/member_init.php): failed to open stream: No such file or directory in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:34:55 Asia/Kolkata] PHP Warning:  include(): Failed opening 'member/member_init.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pladmin1/public_html/member/view_property_h.php on line 758
+[25-Jan-2017 00:34:59 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:34:59 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[25-Jan-2017 00:35:04 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/pladmin1/public_html/member/view_property_h.php on line 108
+[25-Jan-2017 00:35:04 Asia/Kolkata] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/pladmin1/public_html/member/view_property_h.php on line 521
+[08-Sep-2017 14:16:43 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/pladmin1/public_html/member/view_detail_h.php on line 992
+[08-Sep-2017 14:16:45 America/Chicago] PHP Parse error:  syntax error, unexpected end of file in /home/pladmin1/public_html/member/view_detail_h.php on line 992

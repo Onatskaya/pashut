@@ -1,6 +1,6 @@
 <?php
 
-$que_pet_count= "SELECT *  FROM  post WHERE pet !='No pets' ";
+$que_pet_count= "SELECT *  FROM  post WHERE pet !=2 ";
 // print_r($que_pet_count);die;
 $obj_pet_count= mysqli_query($conn,$que_pet_count);
 $total_pet=mysqli_num_rows($obj_pet_count);

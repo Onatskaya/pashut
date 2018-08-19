@@ -3,237 +3,245 @@ include_once('config.php');
 
 function insert($table,$value,$primarykey=NULL,$colname=NULL)
 {
-	global $conn;
-	$query="INSERT INTO $table(";
+    global $conn;
+    $query="INSERT INTO $table(";
     if(is_array($value))
     {
-     	foreach ($value as $key => $val) 
-		{
-			{
-				$keys[]=str_replace('"','',(str_replace("'","",$key)));
-			}
-		}
-		$query.=implode(',',$keys);
+        foreach ($value as $key => $val)
+        {
+            {
+                $keys[]=str_replace('"','',(str_replace("'","",$key)));
+            }
+        }
+        $query.=implode(',',$keys);
     }
-	$query.=") VALUES(";
-	foreach($value as $key => $val) {
-	if(is_array($val))
-	{
-		$vals[]="'".implode(',',$val)."'";
-	}
-	else
-	{
-		$vals[]="'".str_replace('"','',(str_replace("'","",$val)))."'";
-	}
-	}
-	$query.=implode(',',$vals).")";      					
-	//echo $query;die;    //Query check
-	$result=mysqli_query($conn,$query);
-	if(mysqli_affected_rows($conn))
-	{
-		if($primarykey )
-		{	
-			if(!$colname)
-			{
-				$colname=$primarykey;
-			}	
-			$last_id=last_id($table,$primarykey,$colname);
-			return $last_id;
-		}
-		else
-		{
-			return true;
-		}	
-	}
-	else
-	{
-		return false;
-	}	
+    $query.=") VALUES(";
+    foreach($value as $key => $val) {
+        if(is_array($val))
+        {
+            $vals[]="'".implode(',',$val)."'";
+        }
+        else
+        {
+            $vals[]="'".str_replace('"','',(str_replace("'","",$val)))."'";
+        }
+    }
+    $query.=implode(',',$vals).")";
+    //echo $query;die;    //Query check
+    $result=mysqli_query($conn,$query);
+    if(!$result){
+        var_dump(mysqli_error_list($conn));
+        die;
+    }
+    if(mysqli_affected_rows($conn) > 0 )
+    {
+        if($primarykey )
+        {
+            if(!$colname)
+            {
+                $colname=$primarykey;
+            }
+            $last_id=last_id($table,$primarykey,$colname);
+            return $last_id;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    else
+    {
+        return false;
+    }
 }
 
 function last_id($table,$primarykey,$colname)
 {
-	global $conn;
-	$query="SELECT $colname FROM $table ORDER BY $primarykey DESC";
-	$result=mysqli_query($conn,$query);
-	return mysqli_fetch_assoc($result)[$colname];
+    global $conn;
+    $query="SELECT $colname FROM $table ORDER BY $primarykey DESC";
+    $result=mysqli_query($conn,$query);
+    return mysqli_fetch_assoc($result)[$colname];
 }
 
 function isExist($table,$value)
 {
-	global $conn;
-	$query="SELECT * FROM $table WHERE ";
+    global $conn;
+    $query="SELECT * FROM $table WHERE ";
     if(is_array($value))
     {
-     	foreach ($value as $key => $val) 
-		{
-     		
-     	     	$WHERE[]=$key." = '".$val."'";
-     	}
-		$query.=implode(' ',$WHERE);     
-		//echo $query; die;
+        foreach ($value as $key => $val)
+        {
+
+            $WHERE[]=$key." = '".$val."'";
+        }
+        $query.=implode(' ',$WHERE);
+        //echo $query; die;
     }
-	$result=mysqli_query($conn,$query);
+    $result=mysqli_query($conn,$query);
     if(mysqli_num_rows($result))
-	{
-		return true;
-	}	
+    {
+        return true;
+    }
     else
-	{
-		return false;
-	}
-}    
+    {
+        return false;
+    }
+}
 
 function update($table,$value,$WHERE)
 {
-	global $conn;
-	$query="UPDATE $table SET ";
-	foreach($value as $key => $val) 
-	{
-		$up[]=$key."='".str_replace('"','',(str_replace("'","",$val)))."'";
-	}
-	$query.=implode(', ',$up)." WHERE ";
-	foreach($WHERE as $key=>$val)
-	{
-		$wh[]=$key."='".str_replace('"','',(str_replace("'","",$val)))."'";
-	}
-	$query.=implode(' ',$wh);
+    global $conn;
+    $query="UPDATE $table SET ";
+    foreach($value as $key => $val)
+    {
+        $up[]=$key."='".str_replace('"','',(str_replace("'","",$val)))."'";
+    }
+    $query.=implode(', ',$up)." WHERE ";
+    foreach($WHERE as $key=>$val)
+    {
+        $wh[]=$key."='".str_replace('"','',(str_replace("'","",$val)))."'";
+    }
+    $query.=implode(' ',$wh);
     $result=mysqli_query($conn,$query);
     if(mysqli_affected_rows($conn))
     {
-		return true;
-	}
-	else
-	{
-		return false;
-	}	
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 function delet($table,$WHERE)
 {
-	global $conn;
-	$query="DELETE FROM $table WHERE";
-	foreach($WHERE as $key=>$val)
-	{
-		$wh[]=$key."='".$val."'";
-	}
-	$query.=implode(' ',$wh);
+    global $conn;
+    $query="DELETE FROM $table WHERE";
+    foreach($WHERE as $key=>$val)
+    {
+        $wh[]=$key."='".$val."'";
+    }
+    $query.=implode(' ',$wh);
     $result=mysqli_query($conn,$query);
     if(mysqli_affected_rows($conn))
     {
-		return true;
-	}
-	else
-	{
-		return false;
-	}	
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
-function select($table,$WHERE)
+function select($table,$WHERE,$like = '')
 {
-	global $conn;
-	$query="SELECT * FROM $table WHERE ";
-	foreach($WHERE as $key=>$val)
-	{
-		$wh[]=$key."='".$val."'";
-	}
-	$query.=implode(' ',$wh);
+    global $conn;
+    $query="SELECT * FROM $table WHERE ";
+    foreach($WHERE as $key=>$val)
+    {
+        if ($like !== ''){
+            $wh[]=$key." ".$like." '".$val."'";
+        }else{
+            $wh[]=$key."='".$val."'";
+        }
+    }
+    $query.=implode(' ',$wh);
     //echo $query; die;
-	$result=mysqli_query($conn,$query);
+    $result=mysqli_query($conn,$query);
     if(mysqli_num_rows($result))
     {
-		while($row=mysqli_fetch_assoc($result))
-		{
-			$rows[]=$row;
-		}	
-		return $rows;
-	}
-	else
-	{
-		return false;
-	}	
+        while($row=mysqli_fetch_assoc($result))
+        {
+            $rows[]=$row;
+        }
+        return $rows;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 function Send_SMS($mobileNumber,$message,$route='1')
 {
-	global $smskey;
-	global $senderName;
-	$serverUrl='msg.msgclub.net';
-	$senderId=$senderName;
-	$routeId=$route;
-	$authKey=$smskey;
-	$postData = array(
-						'mobileNumbers' => $mobileNumber,        
-						'smsContent' => $message,
-						'senderId' => $senderId,
-						'routeId' => $routeId,		
-						"smsContentType" =>'Unicode'
-					);
-	$data_json = json_encode($postData);
-	$url="http://msg.msgclub.net/rest/services/sendSMS/sendGroupSms?AUTH_KEY=".$authKey;
-	$ch = curl_init();
-	curl_setopt_array($ch, array(
-									CURLOPT_URL => $url,
-									CURLOPT_HTTPHEADER => array('Content-Type: application/json','Content-Length: ' . strlen($data_json)),
-									CURLOPT_RETURNTRANSFER => true,
-									CURLOPT_POST => true,
-									CURLOPT_POSTFIELDS => $data_json,
-									CURLOPT_SSL_VERIFYHOST => 0,
-									CURLOPT_SSL_VERIFYPEER => 0
-								)
-					);
-	$output = curl_exec($ch);
-	if(curl_errno($ch))
-	{
-		echo 'error:' . curl_error($ch);
-	}
-	curl_close($ch);
-	return $output;
+    global $smskey;
+    global $senderName;
+    $serverUrl='msg.msgclub.net';
+    $senderId=$senderName;
+    $routeId=$route;
+    $authKey=$smskey;
+    $postData = array(
+        'mobileNumbers' => $mobileNumber,
+        'smsContent' => $message,
+        'senderId' => $senderId,
+        'routeId' => $routeId,
+        "smsContentType" =>'Unicode'
+    );
+    $data_json = json_encode($postData);
+    $url="http://msg.msgclub.net/rest/services/sendSMS/sendGroupSms?AUTH_KEY=".$authKey;
+    $ch = curl_init();
+    curl_setopt_array($ch, array(
+            CURLOPT_URL => $url,
+            CURLOPT_HTTPHEADER => array('Content-Type: application/json','Content-Length: ' . strlen($data_json)),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $data_json,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_SSL_VERIFYPEER => 0
+        )
+    );
+    $output = curl_exec($ch);
+    if(curl_errno($ch))
+    {
+        echo 'error:' . curl_error($ch);
+    }
+    curl_close($ch);
+    return $output;
 }
 
 function check_member_plan( $conn ){
 
-	if( empty($_SESSION['member_id']) || empty( $_SESSION['member_logged'] ) )
-		return;
+    if( empty($_SESSION['member_id']) || empty( $_SESSION['member_logged'] ) )
+        return;
 
-	$today_date= date('Y-m-d');
-	$member_id = $_SESSION['member_id'];
+    $today_date= date('Y-m-d');
+    $member_id = $_SESSION['member_id'];
 
-	$que_s="SELECT * FROM members m
+    $que_s="SELECT * FROM members m
 		INNER JOIN plan_tbl p on m.member_id = p.member_id
 		WHERE m.member_id='$member_id' AND m.order_id= p.order_id ";
 
-	$obj_s=mysqli_query($conn,$que_s);
-	$data_s= mysqli_fetch_assoc($obj_s);
-	if($data_s['end_date'] < $today_date){
+    $obj_s=mysqli_query($conn,$que_s);
+    $data_s= mysqli_fetch_assoc($obj_s);
+    if($data_s['end_date'] < $today_date){
 
-		if( $data_s['member_status'] == 'Enable' ){
-			$que_pt="UPDATE plan_tbl SET plan_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
-			$obj_pt= mysqli_query($conn,$que_pt);
-			$que_mm="UPDATE members SET member_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
-			$obj_mm= mysqli_query($conn,$que_mm);
-		}
-	}
+        if( $data_s['member_status'] == 'Enable' ){
+            $que_pt="UPDATE plan_tbl SET plan_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
+            $obj_pt= mysqli_query($conn,$que_pt);
+            $que_mm="UPDATE members SET member_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
+            $obj_mm= mysqli_query($conn,$que_mm);
+        }
+    }
 
-	if( $data_s['end_date'] < $today_date || $data_s['member_status'] == 'Disable' ){
+    if( $data_s['end_date'] < $today_date || $data_s['member_status'] == 'Disable' ){
 
-?>
-		<div class="modal fade" id="expirateModal" role="dialog">
-			<div class="modal-dialog">
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h4 class="modal-title">Your Membership Has Expired!</h4>
-					</div>
-					<div class="modal-body">
-						<p>Thank you for using PashutLehaskir.com. Your membership has expired. Please upgrade your account to continue searching forproperties.</p>
+        ?>
+        <div class="modal fade" id="expirateModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">You Membership plan is Expire!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Thank you for using PashutLehaskir.com. Your membership has expired. Please upgrade your account to continue searching forproperties.</p>
                         <a href="<?php echo site_url(); ?>/join.php" class="btn btn-danger upgrade" >Upgrade</a>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal" id="no" >Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="no" >Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#expirateModal').modal('show');
@@ -243,8 +251,40 @@ function check_member_plan( $conn ){
                 });
             });
         </script>
-	<?php
-	}
+    <?php
+    }
+}
+
+
+function is_active_member_plan( $conn ){
+
+    if( empty($_SESSION['member_id']) || empty( $_SESSION['member_logged'] ) )
+        return;
+
+    $today_date= date('Y-m-d');
+    $member_id = $_SESSION['member_id'];
+
+    $que_s="SELECT * FROM members m
+		INNER JOIN plan_tbl p on m.member_id = p.member_id
+		WHERE m.member_id='$member_id' AND m.order_id= p.order_id ";
+
+    $obj_s=mysqli_query($conn,$que_s);
+    $data_s= mysqli_fetch_assoc($obj_s);
+    if($data_s['end_date'] < $today_date){
+
+        if( $data_s['member_status'] == 'Enable' ){
+            $que_pt="UPDATE plan_tbl SET plan_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
+            $obj_pt= mysqli_query($conn,$que_pt);
+            $que_mm="UPDATE members SET member_status='Disable' WHERE order_id='".$data_s['order_id']."' ";
+            $obj_mm= mysqli_query($conn,$que_mm);
+        }
+    }
+
+    if( $data_s['end_date'] < $today_date || $data_s['member_status'] == 'Disable' ){
+        return false;
+    }else{
+        return true;
+    }
 }
 
 function site_url(){
@@ -376,4 +416,88 @@ function slide_image_path($path, $image){
     }
 
     return;
+}
+
+/**
+ * Return member's data.
+ * @var $id
+ * @return mixed
+ */
+function getMember($id = null){
+    $member = $_SESSION['member_id'];
+    if ($id !== null){
+        $data = select('members', ['member_id' => $id]);
+    }elseif(!empty($member) || !empty( $_SESSION['member_logged'])){
+        $data = select('members', ['member_id' => $member]);
+    }else{
+        return false;
+    }
+    return $data[0];
+}
+
+/**
+ * @param string $image_path
+ * @param string|null $logo
+ *
+ */
+function add_logo($image_path, $logo){
+
+    switch (getExtension($image_path)):
+        case 'JPG':
+        case 'jpg':
+        case 'JPEG':
+        case 'jpeg':
+            $image =  imagecreatefromjpeg($image_path);
+            break;
+        case 'png':
+        case 'PNG':
+            $image = imagecreatefrompng($image_path);
+            break;
+        default:
+            return;
+    endswitch;
+
+    $w_image = imagesx($image);
+    $h_image = imagesy($image);
+
+    $log = imagecreatefromjpeg($logo);
+    $w_logo = imagesx($log);
+    $h_logo = imagesy($log);
+    if($w_logo > $w_image){
+        $dst_w = $w_image;
+    }else{
+        $dst_w = $w_logo;
+    }
+    if ($h_image < 200){
+        $dst_y = 0.75*$h_image;
+        $dst_h = 0.25*$h_image;
+    }else{
+        $dst_y = $h_image - $h_logo;
+        $dst_h = $h_logo;
+    }
+    imagecopyresampled($image, $log, 0, $dst_y, 0, 0,$dst_w, $dst_h,$w_logo,$h_logo);
+    imagejpeg($image,$image_path,100);
+    imagedestroy($image);
+    imagedestroy($log);
+}
+
+/**
+ *  Return extension of the file
+ * @param $filename string
+ * @return string
+ */
+function getExtension($filename){
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+    return $extension;
+}
+
+/**
+ * Make current option checked.
+ * @param $checked
+ * @param bool $current
+ */
+function checked($checked, $current = true){
+    if( $checked == $current ){
+        echo "selected='selected'";
+    }
 }

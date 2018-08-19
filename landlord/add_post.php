@@ -365,17 +365,6 @@ $time_array = get_time_array();
 						<input type="hidden" class="numberonly text quater input" name="alt_contact_c"  value="" maxlength="4">
                     </td>
     			</tr>
-
-    			<tr valign="top">
-    				<td class="subheader">
-    					Contact Fax:
-    				</td>
-    				<td class="field">
-                        <input type="text" class="numberonly text quater smalltext input" name="contact_fax_a" maxlength="3">
-    					<input type="text" class="numberonly text quater smalltext input" name="contact_fax_b"  value="" maxlength="3" > 
-    					<input type="text" class="numberonly text quater input" name="contact_fax_c" value="" maxlength="4" >
-                    </td>
-    			</tr>
     			<tr valign="top">
     				<td class="subheader">
     					Contact Email:
@@ -442,7 +431,7 @@ $time_array = get_time_array();
     											Listing Type:
     										</td>
     										<td class="field">
-    											<select name="listing_type" id="listing_type" class="input validate[required] ">
+    											<select name="listing_type" id="listing_type">
                                                     <option value="">Select</option>
                                                     <?php
 													$listQ='SELECT * FROM listing_type';
@@ -455,7 +444,7 @@ $time_array = get_time_array();
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
+
     										</td>
     									</tr>
     									<tr valign="top">
@@ -463,7 +452,7 @@ $time_array = get_time_array();
     											Unit Type:
     										</td>
     										<td class="field">
-    											<select name="unit_type" id="unit_type" class="input validate[required] ">
+    											<select name="unit_type" id="unit_type">
                                                     <option value="">Select</option>
                                                     <?php
                                                     while($data_unit=mysqli_fetch_assoc($obj_unit))
@@ -472,7 +461,6 @@ $time_array = get_time_array();
                                                    <?php }
                                                     ?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -481,7 +469,7 @@ $time_array = get_time_array();
     										</td>
     										<td class="field">
     											<input type="text" class="text" style="width:40px;" name="unit_no" id="unit_no" maxlength="20"> 
-    		                                      <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
+<!--    		                                      <img src="../images/info.gif" border="0" align="absmiddle" class=""/>-->
     	<!--  <input type="checkbox" class="noborder" name="dontshowunitno" value="1" > <span style="font-size: 10px;">Do not show to Members</span> -->
     										</td>
     									</tr>
@@ -490,7 +478,7 @@ $time_array = get_time_array();
     											Bedrooms:
     										</td>
     										<td class="field">
-    											<select name="bedroom" id="bedroom" class="input validate[required] ">
+    											<select name="bedroom" id="bedroom">
                                                     <option value="">Select</option>
                                                     <?php
                                                     while($data_bedroom=mysqli_fetch_assoc($obj_bedroom))
@@ -501,7 +489,6 @@ $time_array = get_time_array();
 													}
                                                     ?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -509,7 +496,7 @@ $time_array = get_time_array();
     											Bathrooms:
     										</td>
     										<td class="field">
-    											<select name="bathroom" id="bathroom" class="input validate[required] ">
+    											<select name="bathroom" id="bathroom" class="input">
                                                     <option value="">Select</option>
 													<?php
                                                     while($data_bath=mysqli_fetch_assoc($obj_bath))
@@ -520,7 +507,6 @@ $time_array = get_time_array();
 													}
                                                     ?> 
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -528,7 +514,7 @@ $time_array = get_time_array();
     											Furnished:
     										</td>
     										<td class="field">
-    											<select name="furnished" id="furnished" class="input validate[required] ">
+    											<select name="furnished" id="furnished">
                                                     <option value="">Select</option>
 													<?php
 													$FurQ='SELECT * FROM furnished';
@@ -541,7 +527,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -561,7 +546,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
     										</td>
     									</tr>
     									<tr valign="top">
@@ -577,7 +561,7 @@ $time_array = get_time_array();
                                                City:
                                             </td>
                                             <td class="field">
-                                                <select name="city" id="city" class="input validate[required] form-control">
+                                                <select name="city" id="city" class="input form-control">
                                                     <option value="">Select</option>
                                                     <?php
                                                         foreach($data_city2 as $data_city)
@@ -586,7 +570,6 @@ $time_array = get_time_array();
                                                     <?php }
                                                     ?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -602,7 +585,7 @@ $time_array = get_time_array();
                                                Walkscore:
                                             </td>
                                             <td class="field">
-                                                <select name="walkscore" id="walkscore" class="input validate[required] form-control">
+                                                <select name="walkscore" id="walkscore" class="form-control">
                                                     <option value="">Select</option>
                                                     <?php
 													$WalkQ='SELECT * FROM walkscore';
@@ -615,7 +598,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -623,7 +605,7 @@ $time_array = get_time_array();
                                                Soundscore:
                                             </td>
                                             <td class="field">
-                                               <select name="soundscore" id="soundscore" class="input validate[required] form-control">
+                                               <select name="soundscore" id="soundscore" class="input form-control">
                                                     <option value="">Select</option>
                                                     <?php
 													$SoundQ='SELECT * FROM soundscore';
@@ -636,7 +618,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -644,7 +625,7 @@ $time_array = get_time_array();
                                                Vehicle Noise:
                                             </td>
                                             <td class="field">
-                                               <select name="vehicle_noise" id="vehicle_noise" class="input validate[required] form-control">
+                                               <select name="vehicle_noise" id="vehicle_noise" class="input form-control">
                                                     <option value="">Select</option>
                                                     <?php
 													$VNQ='SELECT * FROM vehicle_noise';
@@ -657,7 +638,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -665,7 +645,7 @@ $time_array = get_time_array();
                                                Businesses:
                                             </td>
                                             <td class="field">
-                                               <select name="business_noise" id="business_noise" class="input validate[required] form-control">
+                                               <select name="business_noise" id="business_noise" class="input form-control">
                                                 <option value="">Select</option>
                                                  <?php
 													$BuisQ='SELECT * FROM businesses';
@@ -678,7 +658,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -699,9 +678,9 @@ $time_array = get_time_array();
     											Rent:
     										</td>
     										<td class="field">
-    											₪<input type="text" class="input validate[required] numberonly text" style="width:60px;" id="rent" name="rent" maxlength="10" > 
+    											₪<input type="text" class="input numberonly text" style="width:60px;" id="rent" name="rent" maxlength="10" > 
     		
-                                                <img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
+<!--                                                <img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>-->
     	
     										</td>
     									</tr>
@@ -710,7 +689,7 @@ $time_array = get_time_array();
     											Deposit:
     										</td>
     										<td class="field">
-    											₪<input type="text" class="input validate[required] numberonly text" style="width:100px;" id="deposit" name="deposit" maxlength="50">
+    											₪<input type="text" class="input numberonly text" style="width:100px;" id="deposit" name="deposit" maxlength="50">
     										</td>
     									</tr>
     									<tr valign="top">
@@ -718,7 +697,7 @@ $time_array = get_time_array();
     											Lease:
     										</td>
     										<td class="field">											
-    											<select name="lease_type" id="lease_type" class="input validate[required]">
+    											<select name="lease_type" id="lease_type" class="input">
     												<option value="">Select</option>
     												<?php
     												    while($data_lease=mysqli_fetch_assoc($obj_lease))
@@ -735,8 +714,8 @@ $time_array = get_time_array();
     										</td>
     										<td class="field">
     											<!-- <select name="availmo"><option value=""></option><option value="1" >Jan</option><option value="2" >Feb</option><option value="3" >Mar</option><option value="4" >Apr</option><option value="5" >May</option><option value="6" >Jun</option><option value="7" >Jul</option><option value="8" >Aug</option><option value="9" >Sep</option><option value="10" >Oct</option><option value="11" >Nov</option><option value="12" >Dec</option></select><input type="hidden" name="reqFld" value="1" >&nbsp;/&nbsp;<select name="availday"><option value=""></option><option value="1" >1</option><option value="2" >2</option><option value="3" >3</option><option value="4" >4</option><option value="5" >5</option><option value="6" >6</option><option value="7" >7</option><option value="8" >8</option><option value="9" >9</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option><option value="25" >25</option><option value="26" >26</option><option value="27" >27</option><option value="28" >28</option><option value="29" >29</option><option value="30" >30</option><option value="31" >31</option></select><input type="hidden" name="reqFld" value="1" >&nbsp;/&nbsp;<select name="availyr"><option value=""></option><option value="2016" >2016</option><option value="2017" >2017</option></select> <input type="hidden" name="reqFld" value="1" ><span style="font-size:16px;color:#C30">*</span> <span style="font-size: 10px;">(<A href="javascript:availToday()">Now</A>)</span>  -->
-   		                                      <input type="text" class="input validate[required] text date_p" style="width:180px;" name="availability" maxlength="500" >
-                                                <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
+   		                                      <input type="text" class="input text date_p" style="width:180px;" name="availability" maxlength="500" >
+<!--                                                <img src="../images/info.gif" border="0" align="absmiddle" class=""/>-->
     	                                   </td>
     									</tr>
     									<tr valign="top">
@@ -744,7 +723,7 @@ $time_array = get_time_array();
     											Floors:
     										</td>
     										<td class="field">
-    											<select name="floor" id="floor" class="input validate[required]" style="width: 184px;">
+    											<select name="floor" id="floor" class="input" style="width: 184px;">
     												<option value="">Select</option>
     											     <?php
                                                      while($data_floor=mysqli_fetch_assoc($obj_floor))
@@ -760,7 +739,7 @@ $time_array = get_time_array();
     											Parking Type:
     										</td>
     										<td class="field">
-    											<select name="parking" id="parking" class="input validate[required]">
+    											<select name="parking" id="parking">
     												<option value="">Select</option>
     											     <?php
                                                      while($data_parking=mysqli_fetch_assoc($obj_parking))
@@ -801,7 +780,7 @@ $time_array = get_time_array();
                                                State:
                                             </td>
                                             <td class="field">
-                                                <select name="state" id="state" class="input validate[required] form-control">
+                                                <select name="state" id="state" class="input form-control">
                                                      <?php
 													$StateQ='SELECT * FROM state';
 													$StateR=mysqli_query($conn,$StateQ);
@@ -813,7 +792,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -821,8 +799,7 @@ $time_array = get_time_array();
                                                Full Address:
                                             </td>
                                             <td class="field">
-                                                <textarea name="address" class="input validate[required] mb" id="address" style="width:auto;height:62px;" ></textarea>
-                                                <span style="font-size:16px;color:#C30">*</span>
+                                                <textarea name="address" class="input mb" id="address" style="width:auto;height:62px;" ></textarea>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -830,7 +807,7 @@ $time_array = get_time_array();
                                                Walkscore Description:
                                             </td>
                                             <td class="field">
-                                                <select name="walkscore_descrp" id="walkscore_descrp" class="input validate[required] form-control">
+                                                <select name="walkscore_descrp" id="walkscore_descrp" class="input form-control">
                                                     <option value="">Select</option>
                                                     <?php
 													$WalkDQ='SELECT * FROM walkscore_desc';
@@ -843,7 +820,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                 </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -851,7 +827,7 @@ $time_array = get_time_array();
                                                Soundscore Description:
                                             </td>
                                             <td class="field">
-                                               <select name="soundscore_descrp" id="soundscore_descrp" class="input validate[required] form-control">
+                                               <select name="soundscore_descrp" id="soundscore_descrp" class="input form-control">
                                                     <option value="">Select</option>
 													<?php
 													$SoundDQ='SELECT * FROM soundscore_desc';
@@ -864,7 +840,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                </select>
-                                                <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
                                         <tr valign="top">
@@ -872,7 +847,7 @@ $time_array = get_time_array();
                                                Airport Noise:
                                             </td>
                                             <td class="field">
-                                               <select name="airport_noise" id="airport_noise" class="input validate[required] form-control">
+                                               <select name="airport_noise" id="airport_noise" class="input form-control">
                                                     <option value="">Select</option>
                                                    <?php
 													$airQ='SELECT * FROM airport_noise';
@@ -885,7 +860,6 @@ $time_array = get_time_array();
 													}
 													?>
                                                </select>
-                                               <span style="font-size:16px;color:#C30">*</span>
                                             </td>
                                         </tr>
     								</table>
@@ -914,6 +888,8 @@ $time_array = get_time_array();
                                             <input type="text" name="f_credit_card_no" class="input validate[required] form-control" maxlength="16">
                                          </td>
                                     </tr> -->
+
+                                    <!--
                                     <tr valign="top">
                                         <td class="medsubheader">
                                             Expiration Date *
@@ -936,16 +912,17 @@ $time_array = get_time_array();
                                            </select>
                                            <select name="f_credit_exp_yr" class="input validate[required] form-control">
                                                 <option value="">Year</option>
-                                                <?php
+                                                <?php /*
                                                 for($i=2016;$i<=2050;$i++)
                                                 { ?>
                                                     <option><?php echo $i; ?></option>
                                                 <?php }
+ */
                                                 ?>
                                            </select>
                                         </td>
                                     </tr>
-                                    
+
                                     <tr valign="top">
                                         <td class="medsubheader">
                                             CVV*
@@ -954,6 +931,7 @@ $time_array = get_time_array();
                                             <input name="f_credit_card_cvv" class="input validate[required] form-control" maxlength="4" type="text">
                                         </td>
                                     </tr>
+                                    -->
                                  
                                 </table>
                             </div>
@@ -1395,7 +1373,7 @@ $time_array = get_time_array();
     				</td>
     				<td class="field">
     					<input type="text" class="input validate[required] text mb" style="width:auto;" name="short_descp" maxlength="100" ><span style="font-size:16px;color:#C30">*</span> 
-    		            <img src="../images/info.gif" border="0" align="absmiddle" class=""/>
+<!--    		            <img src="../images/info.gif" border="0" align="absmiddle" class=""/>-->
     	            </td>
     			</tr>
     			
@@ -1406,7 +1384,7 @@ $time_array = get_time_array();
     				</td>
     				<td class="field">
     					<textarea name="full_descp" class="mb" style="width:auto;height:150px;" ></textarea>
-    					<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>
+<!--    					<img src="../images/info.gif" border="0" align="absmiddle" class=""/></a>-->
     	               <br><span style="color: red;font-size:11px;"><strong>NO PHONE NUMBERS, ADDRESS, WEBSITE OR LANDLORD CONTACT ALLOWED IN THIS BOX.</STRONG></span>
     				</td>
     			</tr>
@@ -1513,51 +1491,20 @@ $time_array = get_time_array();
     						<input type="radio" name="post_date_confirm" value="no" id="post_save" class="input validate[required] noborder"> Do not post now, save as rented listing for future use.
     				</td>
     			</tr>
-
-    			
-    				<tr valign="top" class="sign-request-wrapper">
-    					<td colspan="2">
-    						<div class="grayline"></div>
-    						<h3>9. Get Free 'FOR RENT' Sign</h3>
-    					</td>
-    				</tr>
-
-    				
-    				
-    				<tr valign="top" class="sign-request-wrapper">
-    					<td colspan="2">
-    						<div style="font-size: 18px; float: left; width: auto;">
-    							
-    															
-    								
-    								<input type="checkbox" id="signRequest" name="for_rent_check1" value="Yes" class="noborder" checked="checked">
-    							
-    							
-    							 &nbsp;<b>Free <span style="color:red;">FOR RENT</span> Sign</b> - We will place a large "FOR RENT" sign (like the one at right) outside your property. Please use the "Driver Instructions" field below to provide any instructions to our driver. <br />
-    							<br /><b>Driver Instructions:</b> <span class="smallgray">(e.g. - Place Sign in the front yard)</span><br />
-    							<textarea class="mb" name="driver_instr" style="width:auto;height:100px;"></textarea>
-    						</div>
-    						<div style="float: left; width: 130px;">
-    							<!-- <img src="http://static.westsiderentals.com/images/sign_m.gif" style="border: 1px solid black;"> -->
-    						</div>
-    						<div class="clearboth"></div>
-    					</td>
-    				</tr>
-    			
-
+<!--
     			<tr valign="top">
     				<td colspan="2">
-    					<!-- <div style="margin:10px 0px;width: 600px; height:100px;overflow:auto;border:1px solid #A9A9A9; background: #efefef; padding:0px 8px 8px 8px;">
+    					 <div style="margin:10px 0px;width: 600px; height:100px;overflow:auto;border:1px solid #A9A9A9; background: #efefef; padding:0px 8px 8px 8px;">
     						<h3>Fair Housing Act Notice</h3>
     						All submissions are subject to the federal and California fair housing laws which make it illegal to indicate in any advertisement &quot;any preference, limitation, or discrimination because of race, color, religion, sex, physical or mental disability, familial status&quot; (e.g. &quot;No children&quot; or &quot;Not suitable for Children&quot;), sexual orientation, ancestry, marital status, or source of income (e.g. &quot;No Section 8&quot; is prohibited). Your local jurisdiction may impose additional requirements. <br />
     						<br />
     						If you have questions about the fair housing laws and housing discrimination, please call the Southern California Housing Rights Center (formerly the Fair Housing Council of San Gabriel Valley) at (800) 477-5977 or go to HRCâ€™s website at <A href="http://www.hrc-la.org" target="_blank">www.hrc-la.org</a>.
-    					</div> -->
+    					</div>
     					<input type="Checkbox" value="Yes" name="for_rent_check2" class="noborder" checked="checked"> &nbsp; I have read and agree to the terms of the Fair Housing Act
     				</td>
     			</tr>
 
-    			
+    			-->
     					
     									
     					<!-- <tr valign="top">
@@ -1895,10 +1842,10 @@ $time_array = get_time_array();
 
     <link rel="stylesheet" href="../themes/base/jquery.ui.all.css">
      <link rel="stylesheet" href="../css/demo.css">
-     <script src="http://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false"></script>
+     <script src="https://maps.google.com/maps/api/js?key=AIzaSyACWUZ9OL8BQVQC-4cSsSFmEo71SLDzvlk&sensor=false"></script>
 
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
      <script src="../js/jquery.ui.addresspicker.js"></script>
      <script>
      $(function() {

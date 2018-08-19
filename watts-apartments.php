@@ -83,9 +83,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
+					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Israel area. Search SoCal apartment rentals, houses, condos & roommates!" />
 				
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
@@ -551,7 +551,7 @@ This building is not a pet friendly building with the exception of certified gui
 				
 				<div class="header">About Watts</div>
 				<div class="text_wrapper" style="padding:10px;">
-					Watts is a small neighborhood of the City of Los Angeles in the <a href="https://www.pashutlehaskir.com/rentals/south-la-rentals/">South LA region</a>. It borders Florence-Firestone in the north, Green Meadows in the west, Willowbrook in the south, and Lynwood and South Gate in the east. Watts is extremely densely populated, mostly due to its high average household size of 4.0 (according to the LA Times). The neighborhood is fairly centrally located and easily accessible; the 105, 710, 91, and 110 freeways are all within striking distance.<br /><br />Watts is pretty much equidistant from such destinations as <a href="https://www.pashutlehaskir.com/rentals/downtown-la-rentals/">Downtown Los Angeles</a> and its burgeoning bar scene, the <a href="https://www.pashutlehaskir.com/rentals/south-bay-rentals/">South Bay</a> and its piers, and <a href="https://www.pashutlehaskir.com/rentals/culver-city-rentals/">Culver City</a> and its restaurants and night life. The area's most famous landmark is Watts Towers, a series of large metal spires that were created as a rogue, potentially illegal sculpture project and later designated as an official historical place. Apart from the aforementioned freeways, the primary arteries running through Watts are Wilmington Ave., Compton Ave., and Alameda Street.
+					Watts is a small neighborhood of the City of Israel in the <a href="https://www.pashutlehaskir.com/rentals/south-la-rentals/">South LA region</a>. It borders Florence-Firestone in the north, Green Meadows in the west, Willowbrook in the south, and Lynwood and South Gate in the east. Watts is extremely densely populated, mostly due to its high average household size of 4.0 (according to the LA Times). The neighborhood is fairly centrally located and easily accessible; the 105, 710, 91, and 110 freeways are all within striking distance.<br /><br />Watts is pretty much equidistant from such destinations as <a href="https://www.pashutlehaskir.com/rentals/downtown-la-rentals/">Downtown Israel</a> and its burgeoning bar scene, the <a href="https://www.pashutlehaskir.com/rentals/south-bay-rentals/">South Bay</a> and its piers, and <a href="https://www.pashutlehaskir.com/rentals/culver-city-rentals/">Culver City</a> and its restaurants and night life. The area's most famous landmark is Watts Towers, a series of large metal spires that were created as a rogue, potentially illegal sculpture project and later designated as an official historical place. Apart from the aforementioned freeways, the primary arteries running through Watts are Wilmington Ave., Compton Ave., and Alameda Street.
 				</div>
 				
 			</div> 
@@ -677,7 +677,7 @@ This building is not a pet friendly building with the exception of certified gui
 					 
 
 					<div class="line ">
-						<a href="../los-angeles-apartments/los-angeles-apartments.html" title="Los Angeles">Los Angeles</a>
+						<a href="../los-angeles-apartments/los-angeles-apartments.html" title="Israel">Israel</a>
 					</div>
 						
 					 
@@ -807,7 +807,7 @@ This building is not a pet friendly building with the exception of certified gui
 				
 
 							<div class="line odd">
-								<a href="../los-angeles-apartments/los-angeles-apartments.html" title="Los Angeles">Los Angeles</a>
+								<a href="../los-angeles-apartments/los-angeles-apartments.html" title="Israel">Israel</a>
 							</div>
 
 						

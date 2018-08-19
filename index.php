@@ -100,10 +100,10 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 				<link href="css/201603/section.css" rel="stylesheet">
 				<link href="css/201603/carousel.css" rel="stylesheet">
 			
-					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Los Angeles rentals, Santa Monica House, South Bay Rentals, Los Angeles Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Los Angeles, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Los Angeles, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
+					<meta name="keywords" content="pashutlehaskir.com | Rent SoCal Houses, Apartments & More, Israel rentals, Santa Monica House, South Bay Rentals, Israel Apartments, Orange County Rentals, San Diego Apartments, Hermosa Beach Apartments, Hollywood For Rent, Burbank Apartments, Glendale Homes, Studio City Rentals, Apartments for Rent, Houses for Rent, Condos for Rent, Apartments in Israel, Apartments in LA, USC, University of Southern California, Cal State, California State University, UCLA, University of California, University of California Israel, Loyola Marymount University, Pepperdine, Pepperdine University, USC Student Housing, USC Housing, USC Apartments, Cal State Housing, Cal State Student Housing, Cal State Apartments, UCLA Housing, UCLA Student Housing, UCLA Apartments, LMU Housing, LMU Student Housing, LMU Apartments, Pepperdine Housing, Pepperdine Student Housing, Pepperdine Apartments" />
 				
-					<meta name="description" content="pashutlehaskir.com is the #1 home finding service in the Los Angeles area. Search SoCal apartment rentals, houses, condos & roommates!" />
-				
+					<meta name="description" content="Pashutlehaskir.com is the #1 apartment and office space finding service in Israel. Search apartment rentals, houses, office spaces, condos & roommates!" />
+
 					<meta name="robots" content="index,follow" />
 					<meta name="GOOGLEBOT" content="index,follow" />
 				
@@ -1931,11 +1931,11 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 	<!--<div class="container popular-areas" style="display:none;" data-status="hide">
 		<div class="col-md-8">
 			<h1>Rent Easier with pashutlehaskir.com</h1>
-			<p>pashutlehaskir.com is Southern California's leading rental property listing service, serving over one million customers since 1996. We offer thousands of exclusive apartment, condo, house, guesthouse, office, storage and roommate listings throughout Santa Barbara, San Diego, and the greater Los Angeles area. Our dynamic and easy-to-use Member search system allows members of pashutlehaskir.com to sort and filter existing listings, as well as receive alerts when new matching listings are posted. Sign up on pashutlehaskir.com today to gain access to our exclusive database of rental listings and find your ideal SoCal home!</p>
+			<p>pashutlehaskir.com is Southern California's leading rental property listing service, serving over one million customers since 1996. We offer thousands of exclusive apartment, condo, house, guesthouse, office, storage and roommate listings throughout Santa Barbara, San Diego, and the greater Israel area. Our dynamic and easy-to-use Member search system allows members of pashutlehaskir.com to sort and filter existing listings, as well as receive alerts when new matching listings are posted. Sign up on pashutlehaskir.com today to gain access to our exclusive database of rental listings and find your ideal SoCal home!</p>
 		</div>
 		<div class="col-md-2 col-xs-6 area-links">
 			
-			<a href="apartments/los-angeles-apartments/los-angeles-apartments.html">All Los Angeles</a>
+			<a href="apartments/los-angeles-apartments/los-angeles-apartments.html">All Israel</a>
 			<a href="apartments/santa-monica-apartments/santa-monica-apartments.html">Santa Monica</a>
 			<a href="apartments/west-hollywood-apartments/west-hollywood-apartments.html">West Hollywood</a>
 			<a href="apartments/west-la-apartments/west-la-apartments.html">West LA</a>
@@ -1959,13 +1959,13 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			<div class="ft col-md-12" style="background-image: url('images/2016/plh-homepage_brokeragebanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
 				<ul>
 					<li>No Agent Fees</li>
-					<li ><span style="color:red;">Property Owners Get Paid With Each Listing! </span></li>
+					<li ><span style="color:red;">Find And List Properties for Free!</span></li>
 					<li>Instant Property Scheduling & Viewing</li>
 					<li>Pre-Approved Listings & Photos</li>
-					<li>Updated Hourly</li>
+					<li>Real Time Listings</li>
 				</ul>
 				<div class="img_a padd">
-					<a href="sitemap.php">
+					<a href="join.php">
 						READ MORE
 					</a>
 				</div>
@@ -2026,14 +2026,14 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		<ul>
 			<li>PL provides to members the most comprehensive and accurate property information within Israel. Our primary focus is to create a high level of satisfaction for renters seeking to find a property and for property owners that seek to fill vacancies.</li>
 			<li>Renters that join PL engage in a simplified and highly organized interface, comfortable user experience, easy to navigate listings and accurate property information.</li>
-			<li>Membership includes monthly access to all available properties, instant scheduling and viewing options, hourly updated listings and comprehensive resources for moving. Monthly membership costs 99NIS for 30 days.</li>
+			<li>Renters have free, unlimited access to all properties and property details.</li>
 		</ul>
-		<h2>How it works – Property Owners</h2>
+		<h2>How It Works - Property Owners</h2>
 		<ul>
 			<li>Property Owners may list their available properties for free, daily. All property pages are required to include clear accurate photos of each room, bedroom, bathroom and balcony spaces. </li>
 			<li>A minimum of 5 photos and 1 photo of the building from the outside (video optional) is required to list a property on PashutLehaskir.</li>
 			<li>All Property Owners are required to set their own scheduling/viewing times on each listing or property page to allow renters convenient access to view the property.</li>
-			<li>Once an apartment is rented, Owners can remove their listing by clicking the unavailable button on the bottom of their property page.
+			<li>Once an apartment is rented, Owners can remove their listing by clicking the Property Rented button on the bottom of their property page.
 </li>
 		</ul>
 		</div>
