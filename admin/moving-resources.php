@@ -1,7 +1,7 @@
 <?php
-include('../../functions/function.php');
+include('../functions/function.php');
 
-$que_post="SELECT * FROM moving_resources ORDER BY id DESC ";
+$que_post="SELECT * FROM `moving_resources` ORDER BY `id` DESC";
 $obj_post= mysqli_query($conn,$que_post);
 
 ?>
@@ -58,7 +58,6 @@ include('header.php');
                     <th class="col-md-2">Name</th>
                     <th class="col-md-2">Email</th>
                     <th class="col-md-1">Image</th>
-                    <th class="col-md-2">Status</th>
                     <th class="col-md-2">
                         <span style="float: left">Select</span>
                         <input id="check-all-prop" type="checkbox" name="check_all">
@@ -80,12 +79,11 @@ include('header.php');
                                 <img src="../home_images/<?php echo $data_post['main_image'];?>" height="60" width="60">
                             <?php endif; ?>
                         </td>
-                        <td><?php include('property_status.php');?></td>
-                        <td><input type="checkbox" class="select-property" name="property_check[]" data-post_id="<?php echo $data_post['post_id'];?>"></td>
+                        <td><input type="checkbox" class="select-property" name="property_check[]" data-post_id="<?php echo $data_post['id'];?>"></td>
                         <td>
-                            <a href="view_post_detail.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-eye-open"></a>
-                            <a href="edit_post.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-pencil"></a>
-                            <a href="delete_post.php?pid=<?php echo $data_post['post_id'];?>" data-href="delete_post.php?pid=<?php echo $data_post['post_id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
+                            <a href="view_post_detail.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-eye-open"></a>
+                            <a href="edit_post.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-pencil"></a>
+                            <a href="delete_post.php?pid=<?php echo $data_post['id'];?>" data-href="delete_post.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
                         </td>
                     </tr>
 

@@ -1,10 +1,9 @@
 <?php
 include("../functions/function.php");
-include('check_login.php');
 
 $mvResource = null;
 
-
+//
 if($_POST['add-category'] && $_POST['category_id'] && is_numeric($_POST['category_id'])){
     //Update Item.
     $que_post=sprintf("UPDATE `moving_resources` SET `name`='%s',`name_he`='%s' WHERE `id` = '%s'",
@@ -14,10 +13,10 @@ if($_POST['add-category'] && $_POST['category_id'] && is_numeric($_POST['categor
 
     $obj_post= mysqli_query($conn,$que_post);
     if($obj_post){
-        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
-                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Updated Successfully!</h4>";
+//        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
+//                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Updated Successfully!</h4>";
     }
-}elseif( $_POST['add-category'] && htmlspecialchars($_POST['category-name']) && htmlspecialchars($_POST['category-name-he'])){
+}elseif( $_POST['add-mvr'] && htmlspecialchars($_POST['name'])){
     //Insert Item.
     $que_post=sprintf("INSERT INTO `moving_resources`(`name`, `email`, `image`) VALUES ('%s', '%s', '%s')",
         $_POST['name'],
@@ -28,18 +27,29 @@ if($_POST['add-category'] && $_POST['category_id'] && is_numeric($_POST['categor
     $obj_post= mysqli_query($conn,$que_post);
 
     if($obj_post){
-        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
-                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Category Added Successfully!</h4>";
+//        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
+//                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Category Added Successfully!</h4>";
     }
 }
 
-//Get Item.
-if($_GET['category_id'] && is_numeric($_GET['category_id'])){
+function saveImage(){
+    if(!empty($_FILES)){
+        $image= $_FILES['new_image']['name'];
+        $new_name= time(). "_" . $end;
+//        $que="UPDATE house_image SET image='$new_name' where image_id='$image_id' ";
+//        $obj= mysqli_query($conn,$que);
+        move_uploaded_file($_FILES["new_image"]["tmp_name"],"../images/moving_resources/".$new_name);
+    }
+}
+
+////Get Item.
+if($_GET['id'] && is_numeric($_GET['id'])){
     $que_post=sprintf("SELECT * FROM `moving_resources` WHERE `id` = %s  ORDER BY `name`", (int)$_GET['category_id']);
     $obj_post= mysqli_query($conn,$que_post);
     $mvResource = $obj_post->fetch_assoc();
 }
 
+var_dump($_FILES);
 
 
 ?>
@@ -91,7 +101,7 @@ include('header.php');
         <div class="col-md-12">
 
             <div class="center-mod">
-                <form action="edit_category.php" method="post" name="propForm" id="propForm" enctype="multipart/form-data">
+                <form action="moving-resources-edit.php" method="post" name="propForm" id="propForm" enctype="multipart/form-data">
                     <table class="table_type_4" cellspacing="0" cellpadding="0" border="0">
                         <tr valign="top">
                             <td colspan="2">
@@ -123,7 +133,7 @@ include('header.php');
                             </td>
                             <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_a">
 <!--                                <input type="hidden" name="pid" value="--><?php //echo $post_id; ?><!--">-->
-                                <?php if( $mvResource && $mvResource['image'] ): ?>
+                                <?php if( !empty($mvResource) && !empty($mvResource['image']) ): ?>
                                     <td class="field" align="center">
                                         <img src="../moving_images/<?php echo $mvResource['image'];?>" height="80" width="90">
                                     </td>
