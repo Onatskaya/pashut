@@ -47,8 +47,8 @@ include('header.php');
         <center><h2>Moving Resources</h2></center>
         <div class="remove-all-block" style="float: right; margin: 5px;">
             <a href="moving-resources-edit.php" class="btn btn-success" value="Add New">Add New</a>
-            <input type="submit" name="remove-all" value="Remove all">
-            <input type="submit" name="remove-checked" value="Remove checked">
+<!--            <input type="submit" name="remove-all" value="Remove all">-->
+<!--            <input type="submit" name="remove-checked" value="Remove checked">-->
         </div>
         <div class="row">
             <table id="myTable" class="table table-striped dataTable table-bordered">
@@ -75,15 +75,15 @@ include('header.php');
                         <td class="js-prop-name"><?php echo $data_post['name'];?></td>
                         <td><?php echo $data_post['email'];?></td>
                         <td>
-                            <?php if(!empty($data_post['main_image'])): ?>
-                                <img src="../home_images/<?php echo $data_post['main_image'];?>" height="60" width="60">
+                            <?php if(!empty($data_post['image'])): ?>
+                                <img src="../images/moving_resources/<?php echo $data_post['image'];?>" height="60" width="60">
                             <?php endif; ?>
                         </td>
                         <td><input type="checkbox" class="select-property" name="property_check[]" data-post_id="<?php echo $data_post['id'];?>"></td>
                         <td>
-                            <a href="view_post_detail.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-eye-open"></a>
-                            <a href="edit_post.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-pencil"></a>
-                            <a href="delete_post.php?pid=<?php echo $data_post['id'];?>" data-href="delete_post.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
+<!--                            <a href="moving-resources-edit.php?pid=--><?php //echo $data_post['id'];?><!--" class="glyphicon glyphicon-eye-open"></a>-->
+                            <a href="moving-resources-edit.php?id=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-pencil"></a>
+                            <a href="delete_mvr.php?id=<?php echo $data_post['id'];?>" data-href="delete_post.php?pid=<?php echo $data_post['id'];?>" class="glyphicon glyphicon-trash js-property-remove"></a>
                         </td>
                     </tr>
 
