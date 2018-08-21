@@ -22,6 +22,7 @@ $sql .= "CREATE TABLE IF NOT EXISTS moving_resources (
          `id` INT AUTO_INCREMENT PRIMARY KEY,
          `name` VARCHAR (255) NOT NULL,
          `email` VARCHAR (255) DEFAULT NULL,
+         `content` TEXT DEFAULT NULL,
          `image` VARCHAR (255) NOT NULL
           );";
 try{

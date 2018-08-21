@@ -4,12 +4,14 @@ include("../functions/function.php");
 $mvResource = null;
 
 //
-if($_POST['add-category'] && $_POST['category_id'] && is_numeric($_POST['category_id'])){
+if($_POST['add-category'] && $_POST['id'] && is_numeric($_POST['id'])){
     //Update Item.
-    $que_post=sprintf("UPDATE `moving_resources` SET `name`='%s',`name_he`='%s' WHERE `id` = '%s'",
-        $_POST['category-name'],
-        $_POST['category-name-he'],
-        (int)$_POST['category_id']);
+    $que_post=sprintf("UPDATE `moving_resources` SET `name`='%s',`email`='%s',`content`='%s',`image`='%s' WHERE `id` = '%s'",
+        $_POST['name'],
+        $_POST['email'],
+        $_POST['content'],
+        $_POST['image'],
+        (int)$_POST['id']);
 
     $obj_post= mysqli_query($conn,$que_post);
     if($obj_post){
@@ -18,10 +20,19 @@ if($_POST['add-category'] && $_POST['category_id'] && is_numeric($_POST['categor
     }
 }elseif( $_POST['add-mvr'] && htmlspecialchars($_POST['name'])){
     //Insert Item.
-    $que_post=sprintf("INSERT INTO `moving_resources`(`name`, `email`, `image`) VALUES ('%s', '%s', '%s')",
+    var_dump($_POST);
+     $imageName = '';
+
+     $image = saveMvRImage();
+     if(!empty($image)){
+         $imageName = $image;
+     }
+
+    $que_post=sprintf("INSERT INTO `moving_resources`(`name`, `email`, `content`, `image`) VALUES ('%s', '%s', '%s',  '%s')",
         $_POST['name'],
         $_POST['email'],
-        $_POST['image']
+        $_POST['content'],
+        $imageName
     );
 
     $obj_post= mysqli_query($conn,$que_post);
@@ -32,13 +43,16 @@ if($_POST['add-category'] && $_POST['category_id'] && is_numeric($_POST['categor
     }
 }
 
-function saveImage(){
+function saveMvRImage(){
     if(!empty($_FILES)){
-        $image= $_FILES['new_image']['name'];
-        $new_name= time(). "_" . $end;
-//        $que="UPDATE house_image SET image='$new_name' where image_id='$image_id' ";
-//        $obj= mysqli_query($conn,$que);
-        move_uploaded_file($_FILES["new_image"]["tmp_name"],"../images/moving_resources/".$new_name);
+        var_dump($_FILES);
+        $image = $_FILES['image']['name'];
+        $path = "../images/moving_resources/";
+        $new_name = time(). "_" . $image;
+
+        move_uploaded_file($_FILES["image"]["tmp_name"], $path . $new_name);
+
+        return $new_name;
     }
 }
 
@@ -48,10 +62,6 @@ if($_GET['id'] && is_numeric($_GET['id'])){
     $obj_post= mysqli_query($conn,$que_post);
     $mvResource = $obj_post->fetch_assoc();
 }
-
-var_dump($_FILES);
-
-
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -124,6 +134,16 @@ include('header.php');
                             </td>
                             <td class="field">
                                 <input type="email" class="input text" name="email" id="email" size="50" value="<?php if($mvResource['email']) { echo  $mvResource['email']; } ?>">
+                            </td>
+                        </tr>
+
+                        <tr valign="top">
+                            <td class="subheader">
+                                Content:
+                            </td>
+                            <td class="field">
+<!--                                <input type="email" class="input text" name="email" id="email" size="50" value="--><?php //if($mvResource['email']) { echo  $mvResource['email']; } ?><!--">-->
+                                <textarea name="content" class="input text"><?php if($mvResource['content']) { echo  $mvResource['content']; } ?></textarea>
                             </td>
                         </tr>
 
