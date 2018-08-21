@@ -3,6 +3,27 @@ include("../functions/function.php");
 
 $mvResource = null;
 
+//Cities
+$cities = array();
+$que_city = "SELECT * FROM `city` ORDER BY `city_name`";
+$obj_city = mysqli_query($conn,$que_city);
+
+while($data_city=mysqli_fetch_assoc($obj_city))
+{
+    $cities[]=$data_city;
+}
+
+
+//Categories
+$categories = [];
+$que_category = "SELECT * FROM `category` ORDER BY `name`";
+$obj_category= mysqli_query($conn,$que_category);
+//$categories = $obj_category->fetch_all();
+while($data_category=mysqli_fetch_assoc($obj_category))
+{
+    $categories[]=$data_category;
+}
+
 //
 if($_POST['add-category'] && $_POST['id'] && is_numeric($_POST['id'])){
     //Update Item.
@@ -15,12 +36,11 @@ if($_POST['add-category'] && $_POST['id'] && is_numeric($_POST['id'])){
 
     $obj_post= mysqli_query($conn,$que_post);
     if($obj_post){
-//        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
-//                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Updated Successfully!</h4>";
+        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
+                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Updated Successfully!</h4>";
     }
 }elseif( $_POST['add-mvr'] && htmlspecialchars($_POST['name'])){
     //Insert Item.
-    var_dump($_POST);
      $imageName = '';
 
      $image = saveMvRImage();
@@ -38,14 +58,13 @@ if($_POST['add-category'] && $_POST['id'] && is_numeric($_POST['id'])){
     $obj_post= mysqli_query($conn,$que_post);
 
     if($obj_post){
-//        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
-//                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Category Added Successfully!</h4>";
+        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
+                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Category Added Successfully!</h4>";
     }
 }
 
 function saveMvRImage(){
     if(!empty($_FILES)){
-        var_dump($_FILES);
         $image = $_FILES['image']['name'];
         $path = "../images/moving_resources/";
         $new_name = time(). "_" . $image;
@@ -152,7 +171,6 @@ include('header.php');
                                 Image
                             </td>
                             <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_a">
-<!--                                <input type="hidden" name="pid" value="--><?php //echo $post_id; ?><!--">-->
                                 <?php if( !empty($mvResource) && !empty($mvResource['image']) ): ?>
                                     <td class="field" align="center">
                                         <img src="../moving_images/<?php echo $mvResource['image'];?>" height="80" width="90">
@@ -168,14 +186,38 @@ include('header.php');
                             </form>
                         </tr>
 
-
+                        <tr valign="top">
+                            <td class="field">
+                                <?php if(!empty($cities)): ?>
+                                    <select name="city" class="input">
+                                        <option value="">-- Select city --</option>
+                                        <?php foreach ($cities as $city): ?>
+                                            <option value="<?php echo $city['city_id']; ?>" <?php if(!empty($mvResource['city']) && $mvResource['city'] == $city['city_id']) { echo 'selected'; } ?>>
+                                                <?php echo $city['city_name']; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                <?php endif; ?>
+                            </td>
+                            <td class="field">
+                                <?php if(!empty($categories)): ?>
+                                    <select name="city" class="input">
+                                        <option value="">-- Select category --</option>
+                                        <?php foreach ($categories as $category): ?>
+                                            <option value="<?php echo $category['id']; ?>" <?php if(!empty($mvResource['city']) && $mvResource['city'] == $category['id']) { echo 'selected'; } ?>>
+                                                <?php echo $category['name']; ?>
+                                            </option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
 
                         <tr valign="top">
                             <td class="field">
                                 <?php if($_GET['id'] && is_numeric($_GET['id'])): ?>
                                     <input type="hidden" name="mvr_id" value="<?php echo $_GET['id']; ?>">
                                 <?php endif; ?>
-
                                 <input type="submit" class="btn btn-primary" name="add-mvr" value="Save">
                             </td>
                         </tr>
