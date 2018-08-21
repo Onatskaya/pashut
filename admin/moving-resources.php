@@ -1,8 +1,30 @@
 <?php
 include('../functions/function.php');
+include('check_login.php');
+$que_post="SELECT mvr.id, mvr.name, mvr.email, mvr.image, cat.name AS cat_name, c.city_name AS city FROM `moving_resources` AS `mvr` LEFT JOIN `city` AS `c` ON c.city_id = mvr.city LEFT JOIN `category` AS `cat` ON cat.id = mvr.category WHERE 1";
 
-$que_post="SELECT * FROM `moving_resources` ORDER BY `id` DESC";
+
 $obj_post= mysqli_query($conn,$que_post);
+
+//Cities
+$cities = array();
+$que_city = "SELECT * FROM `city` ORDER BY `city_name`";
+$obj_city = mysqli_query($conn,$que_city);
+
+while($data_city=mysqli_fetch_assoc($obj_city))
+{
+    $cities[]=$data_city;
+}
+
+
+//Categories
+$categories = [];
+$que_category = "SELECT * FROM `category` ORDER BY `name`";
+$obj_category= mysqli_query($conn,$que_category);
+while($data_category=mysqli_fetch_assoc($obj_category))
+{
+    $categories[]=$data_category;
+}
 
 ?>
 <!DOCTYPE HTML>
@@ -57,6 +79,8 @@ include('header.php');
                     <th class="col-md-1">S.No.</th>
                     <th class="col-md-2">Name</th>
                     <th class="col-md-2">Email</th>
+                    <th class="col-md-2">City</th>
+                    <th class="col-md-2">Category</th>
                     <th class="col-md-1">Image</th>
                     <th class="col-md-2">
                         <span style="float: left">Select</span>
@@ -74,6 +98,8 @@ include('header.php');
                         <td><?php echo $n; ?></td>
                         <td class="js-prop-name"><?php echo $data_post['name'];?></td>
                         <td><?php echo $data_post['email'];?></td>
+                        <td><?php echo $data_post['city'];?></td>
+                        <td><?php echo $data_post['cat_name'];?></td>
                         <td>
                             <?php if(!empty($data_post['image'])): ?>
                                 <img src="../images/moving_resources/<?php echo $data_post['image'];?>" height="60" width="60">
@@ -149,7 +175,13 @@ include("footer.php");
 <script type="text/javascript">
 
     jQuery( document ).ready(function( $ ) {
-        $('#myTable').dataTable({ "bSort": false});
+        var table = $('#myTable').dataTable({ "bSort": false});
+        table.api().columns(0).visible( false );
+        //
+        table.api()
+            .columns( 3 )
+            .search( 'Arad' )
+            .draw();
 
         $('#check-all-prop').click(function(event) {
             if(this.checked) {

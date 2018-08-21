@@ -1,6 +1,6 @@
 <?php
 include("../functions/function.php");
-
+include('check_login.php');
 $mvResource = null;
 
 //Cities
@@ -18,7 +18,6 @@ while($data_city=mysqli_fetch_assoc($obj_city))
 $categories = [];
 $que_category = "SELECT * FROM `category` ORDER BY `name`";
 $obj_category= mysqli_query($conn,$que_category);
-//$categories = $obj_category->fetch_all();
 while($data_category=mysqli_fetch_assoc($obj_category))
 {
     $categories[]=$data_category;
@@ -33,11 +32,13 @@ if($_POST['add-mvr'] && $_POST['mvr_id'] && is_numeric($_POST['mvr_id'])){
 		$imageName = $image;
 	}
 
-    $que_post=sprintf("UPDATE `moving_resources` SET `name`='%s',`email`='%s',`content`='%s',`image`='%s' WHERE `id` = '%s'",
+    $que_post=sprintf("UPDATE `moving_resources` SET `name`='%s',`email`='%s',`content`='%s',`image`='%s', `category`='%s', `city`='%s' WHERE `id` = '%s'",
         $_POST['name'],
         $_POST['email'],
         $_POST['content'],
 	    $imageName,
+        $_POST['category'],
+        $_POST['city'],
         (int)$_POST['mvr_id']);
 
     $obj_post= mysqli_query($conn,$que_post);
@@ -54,11 +55,13 @@ if($_POST['add-mvr'] && $_POST['mvr_id'] && is_numeric($_POST['mvr_id'])){
          $imageName = $image;
      }
 
-    $que_post=sprintf("INSERT INTO `moving_resources`(`name`, `email`, `content`, `image`) VALUES ('%s', '%s', '%s',  '%s')",
+    $que_post=sprintf("INSERT INTO `moving_resources`(`name`, `email`, `content`, `image`, `category`, `city`) VALUES ('%s', '%s', '%s',  '%s', '%s', '%s')",
         $_POST['name'],
         $_POST['email'],
         $_POST['content'],
-        $imageName
+        $imageName,
+        $_POST['category'],
+        $_POST['city']
     );
 
     $obj_post= mysqli_query($conn,$que_post);
@@ -75,9 +78,9 @@ function saveMvRImage(){
         $path = "../images/moving_resources/";
         $new_name = time(). "_" . $image;
 
-        move_uploaded_file($_FILES["image"]["tmp_name"], $path . $new_name);
-
-        return $new_name;
+        if(move_uploaded_file($_FILES["image"]["tmp_name"], $path . $new_name)){
+            return $new_name;
+        }
     }
 
     return;
@@ -210,10 +213,10 @@ include('header.php');
                             </td>
                             <td class="field">
                                 <?php if(!empty($categories)): ?>
-                                    <select name="city" class="input">
+                                    <select name="category" class="input">
                                         <option value="">-- Select category --</option>
                                         <?php foreach ($categories as $category): ?>
-                                            <option value="<?php echo $category['id']; ?>" <?php if(!empty($mvResource['city']) && $mvResource['city'] == $category['id']) { echo 'selected'; } ?>>
+                                            <option value="<?php echo $category['id']; ?>" <?php if(!empty($mvResource['category']) && $mvResource['category'] == $category['id']) { echo 'selected'; } ?>>
                                                 <?php echo $category['name']; ?>
                                             </option>
                                         <?php endforeach; ?>

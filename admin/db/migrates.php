@@ -23,7 +23,9 @@ $sql .= "CREATE TABLE IF NOT EXISTS moving_resources (
          `name` VARCHAR (255) NOT NULL,
          `email` VARCHAR (255) DEFAULT NULL,
          `content` TEXT DEFAULT NULL,
-         `image` VARCHAR (255) NOT NULL
+         `image` VARCHAR (255) NOT NULL,
+         `category` VARCHAR (10) DEFAULT NULL,
+         `city` VARCHAR (10) DEFAULT NULL
           );";
 try{
     $query = mysqli_query($conn, $sql);
