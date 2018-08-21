@@ -2,26 +2,29 @@
 include("../functions/function.php");
 
 $mvResource = null;
-
+$imageName = null;
 //
-if($_POST['add-category'] && $_POST['id'] && is_numeric($_POST['id'])){
+if($_POST['add-mvr'] && $_POST['mvr_id'] && is_numeric($_POST['mvr_id'])){
     //Update Item.
+	$image = saveMvRImage();
+	if(!empty($image)){
+		$imageName = $image;
+	}
+
     $que_post=sprintf("UPDATE `moving_resources` SET `name`='%s',`email`='%s',`content`='%s',`image`='%s' WHERE `id` = '%s'",
         $_POST['name'],
         $_POST['email'],
         $_POST['content'],
-        $_POST['image'],
-        (int)$_POST['id']);
+	    $imageName,
+        (int)$_POST['mvr_id']);
 
     $obj_post= mysqli_query($conn,$que_post);
     if($obj_post){
-//        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
-//                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Updated Successfully!</h4>";
+        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
+                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Updated Successfully!</h4>";
     }
 }elseif( $_POST['add-mvr'] && htmlspecialchars($_POST['name'])){
     //Insert Item.
-    var_dump($_POST);
-     $imageName = '';
 
      $image = saveMvRImage();
      if(!empty($image)){
@@ -38,14 +41,13 @@ if($_POST['add-category'] && $_POST['id'] && is_numeric($_POST['id'])){
     $obj_post= mysqli_query($conn,$que_post);
 
     if($obj_post){
-//        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
-//                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Category Added Successfully!</h4>";
+        echo "<script>setTimeout(function(){window.location.href='moving-resources.php'},1000);</script>
+                <h4 style='z-index:99; background-color:#7292DA;width:50%; top:45%; left:25%; position: absolute; padding:15px 15px; color: #fff; text-align:center; font-size:18px;'>Added Successfully!</h4>";
     }
 }
 
 function saveMvRImage(){
-    if(!empty($_FILES)){
-        var_dump($_FILES);
+    if(!empty($_FILES['image']['name'])){
         $image = $_FILES['image']['name'];
         $path = "../images/moving_resources/";
         $new_name = time(). "_" . $image;
@@ -54,11 +56,13 @@ function saveMvRImage(){
 
         return $new_name;
     }
+
+    return;
 }
 
 ////Get Item.
 if($_GET['id'] && is_numeric($_GET['id'])){
-    $que_post=sprintf("SELECT * FROM `moving_resources` WHERE `id` = %s  ORDER BY `name`", (int)$_GET['category_id']);
+    $que_post=sprintf("SELECT * FROM `moving_resources` WHERE `id` = %s  ORDER BY `name`", (int)$_GET['id']);
     $obj_post= mysqli_query($conn,$que_post);
     $mvResource = $obj_post->fetch_assoc();
 }
@@ -116,7 +120,11 @@ include('header.php');
                         <tr valign="top">
                             <td colspan="2">
                                 <div class="grayline"></div>
-                                <h3>Add New Moving Resource</h3>
+                                <?php if(empty($mvResource)): ?>
+                                    <h3>Add New Moving Resource</h3>
+                                <?php else: ?>
+                                    <h3>Edit Moving Resource</h3>
+                                <?php endif; ?>
                             </td>
                         </tr>
                         <tr valign="top">
@@ -142,7 +150,6 @@ include('header.php');
                                 Content:
                             </td>
                             <td class="field">
-<!--                                <input type="email" class="input text" name="email" id="email" size="50" value="--><?php //if($mvResource['email']) { echo  $mvResource['email']; } ?><!--">-->
                                 <textarea name="content" class="input text"><?php if($mvResource['content']) { echo  $mvResource['content']; } ?></textarea>
                             </td>
                         </tr>
@@ -152,13 +159,10 @@ include('header.php');
                                 Image
                             </td>
                             <form action="update_image_m.php" method="POST" enctype="multipart/form-data" id="image_a">
-<!--                                <input type="hidden" name="pid" value="--><?php //echo $post_id; ?><!--">-->
                                 <?php if( !empty($mvResource) && !empty($mvResource['image']) ): ?>
-                                    <td class="field" align="center">
-                                        <img src="../moving_images/<?php echo $mvResource['image'];?>" height="80" width="90">
-                                    </td>
-                                    <td class="field">
-                                        <a href="delete_image.php?img=main_image&post_id=<?php echo $post_id;?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
+                                    <td class="field" align="left">
+                                        <img src="../images/moving_resources/<?php echo $mvResource['image'];?>" height="80" width="90">
+                                        <a href="delete_mvr_image.php?&id=<?php echo $mvResource['id'];?>" onclick="return confirm('Are you sure, want to Delete this Image')" class="btn btn-danger">Delete</a>
                                     </td>
                                 <?php else: ?>
                                     <td class="field">
@@ -177,6 +181,7 @@ include('header.php');
                                 <?php endif; ?>
 
                                 <input type="submit" class="btn btn-primary" name="add-mvr" value="Save">
+                                <a href="moving-resources.php" class="btn btn-success">Return to List</a>
                             </td>
                         </tr>
                     </table>
