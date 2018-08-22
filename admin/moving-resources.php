@@ -178,10 +178,10 @@ include("footer.php");
         var table = $('#myTable').dataTable({ "bSort": false});
         table.api().columns(0).visible( false );
         //
-        table.api()
-            .columns( 3 )
-            .search( 'Arad' )
-            .draw();
+        // table.api()
+        //     .columns( 3 )
+        //     .search( 'Arad' )
+        //     .draw();
 
         $('#check-all-prop').click(function(event) {
             if(this.checked) {
