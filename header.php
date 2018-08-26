@@ -67,8 +67,99 @@ $obj_up_date=mysqli_query($conn,$que_up_date);
 								} 
 								?>
 								<li class="find"><em></em><a href="featured_listings.php">Featured Listings</a></li>
-								<li class="find"><em></em><a href="moving_resources_listings.php">Moving Resources Page</a></li>
-
+								<li class="find dropdown"><em></em><a href="moving_resources_listings.php" class="dropdown-toggle" data-toggle="dropdown">Moving Resources Page</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="images/moving_resources/1534956004_1534926030_birth-of-a-galaxy-800x600.jpg" class="img-responsive">
+                                                <h5>test</h5>
+                                                <h5>test1</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="http://pashut.local/images/moving_resources/1534956038_1534926403_CMS_Creative_164657191_Kingfisher-825x510.jpg" class="img-responsive">
+                                                <h5>Heading</h5>
+                                                <h5>Heading test 22222</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A temporibus voluptas?</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="images/moving_resources/1534956004_1534926030_birth-of-a-galaxy-800x600.jpg" class="img-responsive">
+                                                <h5>testtestnkjnkml</h5>
+                                                <h5>test1 323263 fbgfdhfgh</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipelit.isicing Lorem ipsum dolor sit amet, consectetur adipelit.</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="http://pashut.local/images/moving_resources/1534956038_1534926403_CMS_Creative_164657191_Kingfisher-825x510.jpg" class="img-responsive">
+                                                <h5>Heading</h5>
+                                                <h5>Heading test 22222</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A temporibus voluptas?</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="images/moving_resources/1534956004_1534926030_birth-of-a-galaxy-800x600.jpg" class="img-responsive">
+                                                <h5>testtestnkjnkml</h5>
+                                                <h5>test1 323263 fbgfdhfgh</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetlor sit amet, consectetur adipelit.isicing</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="images/moving_resources/1534956004_1534926030_birth-of-a-galaxy-800x600.jpg" class="img-responsive">
+                                                <h5>test</h5>
+                                                <h5>test1</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="http://pashut.local/images/moving_resources/1534956038_1534926403_CMS_Creative_164657191_Kingfisher-825x510.jpg" class="img-responsive">
+                                                <h5>Heading</h5>
+                                                <h5>Heading test 22222</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A temporibus voluptas?</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="images/moving_resources/1534956004_1534926030_birth-of-a-galaxy-800x600.jpg" class="img-responsive">
+                                                <h5>testtestnkjnkml</h5>
+                                                <h5>test1 323263 fbgfdhfgh</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipelit.isicing Lorem ipsum dolor sit amet, consectetur adipelit.</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="http://pashut.local/images/moving_resources/1534956038_1534926403_CMS_Creative_164657191_Kingfisher-825x510.jpg" class="img-responsive">
+                                                <h5>Heading</h5>
+                                                <h5>Heading test 22222</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A temporibus voluptas?</p>
+                                            </a></li>
+                                        <li><a href="#" class="menu-preview">
+                                                <img alt="" src="images/moving_resources/1534956004_1534926030_birth-of-a-galaxy-800x600.jpg" class="img-responsive">
+                                                <h5>testtestnkjnkml</h5>
+                                                <h5>test1 323263 fbgfdhfgh</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetlor sit amet, consectetur adipelit.isicing</p>
+                                            </a></li>
+                                    </ul>
+                                </li>
+                                <style>
+                                    ul.nav li.dropdown:hover > ul.dropdown-menu {
+                                        display: block;
+                                        column-count: 3;
+                                        max-height: 660px;
+                                        overflow: auto;
+                                    }
+                                    @media screen and (max-width: 768px) {
+                                        ul.nav li.dropdown:hover > ul.dropdown-menu {
+                                            display: none;
+                                        }
+                                    }
+                                    .menu-preview {
+                                        display: block;
+                                        width: 200px;
+                                        height: 315px;
+                                        overflow: hidden;
+                                        text-decoration: none;
+                                    }
+                                    .menu-preview:hover {
+                                        text-decoration: none!important;
+                                    }
+                                    .menu-preview p {
+                                        white-space: normal;
+                                    }
+                                    .menu-preview img {
+                                        margin: 5px auto;
+                                    }
+                                </style>
 								
 								<li class="dropdown">
 								  <ul class="dropdown-menu">
