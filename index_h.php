@@ -31,7 +31,7 @@ while($data_struct3=mysqli_fetch_assoc($obj_struct))
 				<link rel="shortcut icon" href="" />
 				<meta charset="utf-8">
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
-				<html dir="rtl" lang="he">
+<!--				<html dir="rtl" lang="he">-->
 				<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
 				<meta http-equiv="expires" content="0" />
 				<meta http-equiv="Pragma" content="no-cache" />
@@ -2007,7 +2007,7 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 			<div class="ft col-md-12" style="padding-right: 20px; background-image: url('images/2016/plh-homepage_brokeragebanner.png'); min-height: 255px; background-size: cover; background-repeat: no-repeat;">
 				<ul style="text-align:right!important;">
 					<li style="text-align:right!important;">אין עמלות סוכן</li>
-					<li style="text-align:right!important;"><span style="color:red;">בעלי הקניין קבלו תשלום באמצעות כל אחת מרשומות!</span></li>
+					<li style="text-align:right!important;"><span style="color:red;">חיפוש ורשימה בחינם</span></li>
 					<li style="text-align:right!important;">תזמון & צופים נכס מידיים</li>
 					<li style="text-align:right!important;">רישומים טרום מאושר & תמונות</li>
 					<li style="text-align:right!important;">עודכן לפי שעה</li>

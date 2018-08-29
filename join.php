@@ -164,301 +164,9 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 		
 		<input name="fblogin" id="fblogin" value="" type="hidden">
 		<input name="mem_email" id="mem_email" value="" type="hidden">
-		
-		
-		<div class="row">
-			<div class="col-md-12 regular">
-				<!-- <div class="logo-wrapper" align="center"><a href="https://www.pashutlehaskir.com/"><img src="images/join_logo.png" class="logo"></a></div> -->
-				<h1>Experience everything PashutLeHaskir.com has to offer!</h1>
-				
-				<div role="tabpanel">
-				  <!-- Nav tabs -->
-				  <ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#single-membership" class="tab" aria-controls="single-membership" role="tab" data-toggle="tab">Single Membership</a></li>
-					<li class="" role="presentation"><a href="#dual-membership" aria-controls="dual-membership" class="tab" role="tab" data-toggle="tab">Dual Membership</a></li>
-					<li class="" role="presentation"><a href="#corporate" aria-controls="corporate" class="tab" role="tab" data-toggle="tab">Corporate Memberships</a></li> 
-					
-				  </ul>
 
-				  <!-- Tab panes -->
-				  <div class="tab-content">
-					
-					
-					<div role="tabpanel" class="tab-pane row active" id="single-membership">
-						<h3 class="header">Our Single Membership allows you to access our listings and apply for rentals from one account. <a href="#" class="features-link">Learn more</a>.</h3>
-						
-						<div class="col-md-3 plan regular">
-							<div class="detail">
-								<div class="top-level">
-									<div class="radiobutton">
-										<input id="radio-1323" name="member_type_id" class="plan-radio" value="1323" type="radio">
-									</div>
-									<div class="amount">									 
-										<span class="dollar">₪ 99 NIS</span>
-										<span class="timeframe">PER MONTH</span>
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">Single Membership for</div>
-										<div class="hd2">1 month</div>
-										<div class="hd3">Billed in 1 payment of ₪ 99 NIS</div>
-									</div>
-									<div class="savings">
-										&nbsp; 
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1323" value="s1">SELECT</button>
-									</div>
-								</div>
-							</div>							
-						</div>
-						
-						<div class="col-md-3 plan regular">
-							<div class="detail">
-								<div class="top-level">
-									<div class="radiobutton">
-										<input id="radio-1319" name="member_type_id" class="plan-radio" value="1319" type="radio">
-									</div>
-									<div class="amount">									 
-										<span class="dollar">₪ 79 NIS</span>
-										<span class="timeframe">PER MONTH</span>
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">Single Membership for</div>
-										<div class="hd2">2 months</div>
-										<div class="hd3">Billed in 1 payment of ₪ 158 NIS</div>
-									</div>
-									<div class="savings">
-										SAVE 21%
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1319" value="s2">SELECT</button>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-3 plan special">
-							<div class="detail">
-								<div class="top-level">									
-									<div class="offer-badge"></div>
-									<div class="radiobutton">
-										<input id="radio-1318" name="member_type_id" class="plan-radio" value="1318" type="radio">
-									</div>
-									<div class="amount">									  
-										<span class="dollar">₪ 59 NIS</span>
-										<span class="timeframe">PER MONTH</span>		
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">Single Membership for</div>
-										<div class="hd2">3 months</div>
-										<div class="hd3">Billed in 1 payment of ₪ 177 NIS</div>
-									</div>								
-									<div class="savings">
-										SAVE 41%
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1318" value="s3">SELECT</button>
-									</div>
-								</div>
-							</div>							
-						</div>
-												
-					</div>
-				
-					
-					<div role="tabpanel" class="tab-pane" id="dual-membership">
-						<h3 class="header">Our Dual Membership allows access to our listings and applications for two separate users. <a href="#" class="features-link">Learn more</a>.</h3>
-						<div class="col-md-3 plan regular">
-							<div class="detail">
-								<div class="top-level">
-									<div class="radiobutton">
-										<input id="radio-1320" name="member_type_id" class="plan-radio" value="1320" type="radio">
-									</div>
-									<div class="amount">									  
-										<span class="dollar">₪ 89 NIS</span>
-										<span class="timeframe">PER MONTH</span>
-										<span class="timeframe">PER PERSON</span>
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">Dual Membership for</div>
-										<div class="hd2">1 month</div>
-										<div class="hd3">Billed in 1 payment of ₪ 178 NIS</div>
-									</div>
-									<div class="savings">
-										&nbsp;
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1320" value="d1">Select Plan</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-3 plan regular">
-							<div class="detail">
-								<div class="top-level">
-									<div class="radiobutton">
-										<input id="radio-1317" name="member_type_id" class="plan-radio" value="1317" type="radio">
-									</div>
-									<div class="amount">
-										<span class="dollar">₪ 69 NIS</span>											
-										<span class="timeframe">PER MONTH</span>
-										<span class="timeframe">PER PERSON</span>										
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">Dual Membership for</div>
-										<div class="hd2">2 months</div>
-										<div class="hd3">Billed in 1 payment of  ₪ 276 NIS</div>
-									</div>
-									<div class="savings">
-										SAVE 23%								
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1317" value="d2">Select Plan</button>
-									</div>
-								</div>
-							</div>
-						</div>	
-
-						<div class="col-md-3 plan special">							
-							<div class="detail">
-								<div class="top-level"> 
-									<div class="offer-badge"></div>
-									<div class="radiobutton">
-										<input id="radio-1316" name="member_type_id" class="plan-radio" value="1316" type="radio">
-									</div>
-									<div class="amount">										
-										<span class="dollar">₪ 49 NIS</span>										
-										<span class="timeframe">PER MONTH</span>
-										<span class="timeframe">PER PERSON</span>
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term"> 
-										<div class="hd1">Dual Membership for</div>
-										<div class="hd2">3 months</div>
-										<div class="hd3">Billed in 1 payment of ₪ 294 NIS</div>
-									</div>
-									<div class="savings">
-										SAVE 45%
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1316" value="d3">Select Plan</button>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					
-					</div>
-					
-					
-					
-					<div role="tabpanel" class="tab-pane" id="corporate">
-						<h3 class="header">Address your corporate housing needs and improve the productivity of your workforce with our Corporate Packages. <a href="#" class="features-link">Learn more</a>.</h3>
-											
-						<div class="col-md-3 plan regular">
-							<div class="detail">
-								<div class="top-level">
-									<div class="radiobutton">
-										<input id="radio-1252" name="member_type_id" class="plan-radio" value="1252" type="radio">
-									</div>
-									<div class="amount">
-										<span class="dollar" style="font-size: 50px;">₪ 129 NIS</span>
-										<span class="timeframe">PER ACCOUNT</span>	
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">1 month Memberships </div>
-										<div class="hd2">25 Accounts</div>
-										<div class="hd3">Billed in one payment of  ₪ 3225 NIS</div>
-									</div>
-									<div class="savings">
-										SAVE 18%								
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1252" value="c1">Select Plan</button>
-									</div>
-								</div>
-							</div>							
-						</div>				
-
-						<div class="col-md-3 plan regular">
-							<div class="detail">
-								<div class="top-level">
-									<div class="radiobutton">
-										<input id="radio-1253" name="member_type_id" class="plan-radio" value="1253" type="radio">
-									</div>
-									<div class="amount">
-										<span class="dollar">₪ 99 NIS</span>
-										<span class="timeframe">PER ACCOUNT</span>	
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">2 months Memberships</div>
-										<div class="hd2">50 Accounts</div>
-										<div class="hd3">Billed in one payment of ₪ 4950 NIS</div>
-									</div>
-									<div class="savings">
-										SAVE 37%
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1253" value="c2">Select Plan</button>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-md-3 plan special">							
-							<div class="detail">
-								<div class="top-level">
-									<div class="offer-badge"></div>
-									<div class="radiobutton">
-										<input id="radio-1254" name="member_type_id" class="plan-radio" value="1254" checked="checked" type="radio">
-									</div>
-									<div class="amount">
-										<span class="dollar">₪ 89 NIS</span>
-										<span class="timeframe">PER ACCOUNT</span>	
-									</div>
-								</div>
-								<div class="bottom-level">
-									<div class="term">
-										<div class="hd1">3 months Memberships</div>
-										<div class="hd2">100 Accounts</div>
-										<div class="hd3">Billed in one payment of ₪ 8900 NIS</div>
-									</div>
-									<div class="savings">
-										SAVE 43%
-									</div>
-									<div class="cta">
-										<button class="planid btn-primary-cta" data-action="select-subscription" data-plan-id="1254" value="c3">Select Plan</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					
-				  </div>
-				</div>
-				
-			</div>
-			
-		</div>
-		
 		<div id="features">
+            <h1>Experience Everything PashutLeHaskir.com has to Offer!</h1>
             <div class="wrapper">
                 <h2>See why people join Pashutlehaskir.com</h2>
                 <table class=" ">
@@ -495,97 +203,93 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
                         </tr>
 						<tr>
                             <td><b>Apply to Properties Directly</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                         </tr>
 						<tr>
                             <td><b>Unlimited Access to Verified Property Owners</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                         </tr>
                         <tr>
                             <td><b>View Property Address + Contact Info</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
-                            <td class="basic"><img src="js/checkmark-latest.png"></td>
-                        </tr>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>                        </tr>
                         <tr>
                             <td><b>Advanced Search + Map Search + Walk Score Details</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                         </tr>
 						 <tr>
                             <td><b>Sound and Noise Level Scores</b></td>
-                            <td class="free"></td>
-                            <td class="basic"><img src="js/checkmark-latest.png"></td>
-                            <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
-                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                             <td class="free"><img src="js/checkmark-latest.png"></td>
+                             <td class="basic"><img src="js/checkmark-latest.png"></td>
+                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
+                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                         </tr>
 						<tr>
                             <!-- <td><b>Instant Email + Text Alerts</b></td> -->
                             <td><b>Email Alerts</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
-                            <td class="basic"><img src="js/checkmark-latest.png"></td>
-                        </tr>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>                        </tr>
 						<tr>
                             <td><b>Saved Searches + Favorite Listings</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
-                            <td class="basic"><img src="js/checkmark-latest.png"></td>
-                        </tr>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>                        </tr>
                         <tr>
                             <td><b>Property Owners</b></td>
-                            <td class="free"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                            <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>                        </tr>
+						<tr class="totalconnect rely-id">
+							<td><b>Access for 2 Individual Users</b></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                             <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
                             <td class="basic"><img src="js/checkmark-latest.png"></td>
                         </tr>
 						<tr class="totalconnect rely-id">
-							<td><b>Access for 2 Individual Users</b></td>
-							<td class="free"></td>
-							<td class="basic"></td>
-							<td class="totalconnect"><img src="js/checkmark-latest.png"></td>
-							<td class="basic"></td>
-						</tr>
-						<tr class="totalconnect rely-id">
 							<td><b>Apply to Properties Individually</b></td>
-							<td class="free"></td>
-							<td class="basic"></td>
-							<td class="totalconnect"><img src="js/checkmark-latest.png"></td>
-							<td class="basic"></td>
-						</tr>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                            <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                        </tr>
 
 						<tr class="totalconnect rely-id">
 							<td><b>A Pool of Memberships to Dispense As Needed</b></td>
-							<td class="free"></td>
-							<td class="basic"></td>
-							<td class="totalconnect"></td>
-							<td class="basic"><img src="js/checkmark-latest.png"></td>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                            <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
 						</tr>
 						<tr class="totalconnect rely-id">
 							<td><b>"Employment Verified" Status Gives Employees an Edge</b></td>
-							<td class="free"></td>
-							<td class="basic"></td>
-							<td class="totalconnect"></td>
-							<td class="basic"><img src="js/checkmark-latest.png"></td>
-						</tr>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                            <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                        </tr>
 						<tr class="totalconnect rely-id">
 							<td><b>Corporate Memberships are Tax Deductible</b></td>
-							<td class="free"></td>
-							<td class="basic"></td>
-							<td class="totalconnect"></td>
-							<td class="basic"><img src="js/checkmark-latest.png"></td>
-						</tr>
+                            <td class="free"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                            <td class="totalconnect"><img src="js/checkmark-latest.png"></td>
+                            <td class="basic"><img src="js/checkmark-latest.png"></td>
+                        </tr>
 						<!-- <tr class="totalconnect rely-id">
 							<td><b>Offer Access to the #1 Home Rental Service in SoCal</b></td>
 							<td class="free"></td>

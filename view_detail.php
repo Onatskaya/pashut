@@ -635,25 +635,15 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					<div class="col-md-6">
 						<strong>Meters: </strong><?php echo $data['square_footage'];?>
 					</div>					
-					<?php
-					if(isset($_SESSION['member_logged']))
-					{ ?>
 						<div class="col-md-6">
 							<strong>Address</strong><?php echo $data['address'];?>
 						</div>				</div>
-					<?php	
-					}
-					else
-					{
-					?>							<div class="col-md-6">													</div>											</div>				<?php 					}				?>	
+
 					<div class="row odd">						<div class="col-md-6">
 							<strong>Vacancy Heading</strong><?php echo $data['short_descp'];?>
 						</div>						<div class="col-md-6">
 							<strong>Vacancy Description</strong><?php echo $data['full_descp'];?>
 						</div>					</div>
-				<?php
-				if(isset($_SESSION['member_logged']) && is_active_member_plan( $conn ))
-				{ ?>
 				<div class="row even">
 					<div class="col-md-6">
 						<strong>Name</strong><?php echo $data['name'];?>
@@ -673,15 +663,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 						<strong>Full Address</strong><?php echo $data['street_no'];?>, <?php echo $data['street_name'];?>, <?php echo $data['city'];?>, <?php echo $data['state'];?>- <?php echo $data['pincode'];?>
 					</div> -->
 				</div>
-				<!-- <div class="row odd">
-					<div class="col-md-6">
-						<strong>Open House: </strong>
-						KEYS AVAILABLE FOR CHECKOUT @ 1020 WILSHIRE BLVD. SANTA MONICA CA, FROM 8AM-4PM 7-DAYS-A-WEEK!
-					</div>
-				</div> -->
-				<?php	
-				}
-				?>
 			</div>
 		</div>
 								
@@ -693,12 +674,6 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 						<div class="col-md-4 col-xs-12">
 							<div class="">	
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">Back to Previous Page</a>	
-								<?php
-								if(!isset($_SESSION['member_logged']))
-								{ ?>
-								<br><a href="join.php" class="signupLink">JOIN TO VIEW CONTACT INFO</a>
-								<?php }
-								?>
 									<a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">Instant Viewing</a>
 									<div class="walkscore">
 										<div class="top">WALKSCORE</div>

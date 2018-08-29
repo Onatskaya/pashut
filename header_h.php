@@ -58,19 +58,15 @@ $obj_up_date=mysqli_query($conn,$que_up_date);
 					  <ul class="nav navbar-nav">
 							
 								<li class="home"><em></em><a href="index_h.php">ראשי</a></li>
-								<?php
-								if(!isset($_SESSION['member_logged']))
-								{ ?>
 								<li class="post"><em></em><a href="join_h.php">הצטרפות</a></li>
 								<li class="post"><em></em><a href="post_h.php">פרסום מודעה</a></li>
-								<?php } ?>
 								<li class="find"><em></em><a href="guestsearch_h.php">מודעות נבחרות</a></li>
-								
+                                <li class="find"><em></em><a href="featured_listings.php">בעלי מקצוע</a></li>
 								
 								<li class="dropdown">
 								  <ul class="dropdown-menu">
 									<li class="home"><em></em><a href="index_h.php">ראשי</a></li>
-									<li class="post"><em></em><a href="join_h.php">הצטרפות</a></li>
+									<li class="post"><em></em><a href="contactus_h.php">הצטרפות</a></li>
 									<li class="post"><em></em><a href="post_h.php">פרסום מודעה</a></li>
 									<li class="find"><em></em><a href="find_h.php">Find Office</a></li>
 								  </ul>								

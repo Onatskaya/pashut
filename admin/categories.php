@@ -45,7 +45,7 @@ $obj_post= mysqli_query($conn,$que_post);
 <div class="container">
 	<div class="container locations">
 		<!-- <h3 style="background-color:#3D4D65;color:#fff;text-align:center;">Listing</h3> -->
-		<center><h2>Cities</h2></center>
+		<center><h2>Categories</h2></center>
             <div class="remove-all-block" style="float: right; margin: 5px;">
                 <a href="edit_category.php" class="btn btn-success" value="Add New">Add New</a>
 <!--                <input type="submit" name="remove-all" class="btn btn-danger" value="Remove all">-->

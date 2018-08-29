@@ -622,25 +622,17 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 					<div class="col-md-6">
 						<strong>מטרים:</strong><?php echo $data['square_footage'];?>
 					</div>					
-					<?php
-					if(isset($_SESSION['member_logged']))
-					{ ?>
-						<div class="col-md-6">
-							<strong>כתובת</strong><?php echo $data['address'];?>
-						</div>				</div>
-					<?php	
-					}
-					else
-					{
-					?>							<div class="col-md-6">													</div>											</div>				<?php 					}				?>	
-					<div class="row odd">						<div class="col-md-6">
-							<strong>כותרת דירה</strong><?php echo $data['short_descp'];?>
-						</div>						<div class="col-md-6">
-							<strong>תיאור דירה</strong><?php echo $data['full_descp'];?>
-						</div>					</div>
-				<?php
-                if(isset($_SESSION['member_logged']) && is_active_member_plan( $conn ))
-				{ ?>
+
+                    <div class="col-md-6">
+                        <strong>כתובת</strong><?php echo $data['address'];?>
+                    </div>
+                </div>
+
+                <div class="row odd">						<div class="col-md-6">
+                    <strong>כותרת דירה</strong><?php echo $data['short_descp'];?>
+                </div>						<div class="col-md-6">
+                    <strong>תיאור דירה</strong><?php echo $data['full_descp'];?>
+                </div>					</div>
 				<div class="row even">
 					<div class="col-md-6">
 						<strong>שֵׁם</strong><?php echo $data['name'];?>
@@ -663,26 +655,12 @@ var _prum = [['id', '56a93ecdabe53ddd5a18ddad'],
 						KEYS AVAILABLE FOR CHECKOUT @ 1020 WILSHIRE BLVD. SANTA MONICA CA, FROM 8AM-4PM 7-DAYS-A-WEEK!
 					</div>
 				</div> -->
-				<?php	
-				}
-				?>
 			</div>
 		</div>
-								
-								
 
-								
-							
-					
 						<div class="col-md-4 col-xs-12">
 							<div class="">	
 								<br><a href="#" onclick="history.back();" class="btn btn-danger form-control">חזרה לעמוד הקודם</a>	
-								<?php
-								if(!isset($_SESSION['member_logged']))
-								{ ?>
-								<br><a href="join.php" class="signupLink">הירשם כדי לצפות בפרטי יצירת קשר</a>
-								<?php }
-								?>
 									<a href="#" class="payrentLink" data-toggle="modal" data-target="#myModal">צפייה מיידית</a>
 									<div class="walkscore">
 										<div class="top">Walkscore</div>
