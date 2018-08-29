@@ -3,7 +3,7 @@
 .show {display: block;}
 .clearboth {overflow: hidden;height:1px;display:block;}
 .bold, .strong {font-weight: bold;}
-.line{margin:0 0 20px 0;}
+/*.line{margin:0 0 20px 0;}*/
 .bottom-padding{margin-bottom:15px;}
 .feature-divider{border:1px solid #e1e1e1;}
 /*body{font-family: "Lato";}
@@ -574,7 +574,7 @@ body.nolayout {background:none;}
 	.hero {display: none;}
 	.contact-banner {display: none;}
 	.home-banner{display:none;}
-	.mobile-join-now{display:block;margin-top:110px;}
+	.mobile-join-now{display:block;margin-top:255px;}
 	.popular-areas .area-links{margin-top:10px;}
 	.join-banner.small{font-size:16px;}
 	.googleSpace{ padding: 10px; }

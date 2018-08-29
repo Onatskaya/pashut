@@ -156,10 +156,7 @@
 
 	</div>
 	<input type="submit" name="search-submit" class="search" value="SEARCH" align="absmiddle" />
-
-
 	<input type="hidden" name="searchType" value="g" />
-
 </form>
 
 <div class="text-search">

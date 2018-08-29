@@ -17,32 +17,33 @@ while($data_struct3=mysqli_fetch_assoc($obj_struct))
 
 //var_dump($data_struct2);
 ?>
-
-<form action="../moving_resources_listings.php" method="GET">
+<h4 style="color:#E92324;font-weight:bold;">חפש משאבים נעים</h4>
+<form action="../moving_resources_listings.php" method="GET" class="mvr-search">
     <div class="line">
         <select name="city" style="width:32%;" class="medium right-pad">
-            <option value=''> Select City </option>
+            <option value=''> בחר עיר</option>
             <?php
             foreach($data_city2 as $data_city)
             { ?>
                 <option value='<?php echo $data_city['city_id'];?>' <?php if(isset($_GET['city']) && $_GET['city'] == $data_city['city_id']){ echo 'selected'; } ?>>
-                    <?php echo $data_city['city_name'];?>
+                    <?php echo $data_city['city_name_he'];?>
                 </option>
             <?php }
             ?>
         </select>
 
             <select name="category" style="width:32%;" class="medium right-pad">
-                <option value=''> Select Category </option>
+                <option value=''> בחר קטגוריה</option>
 				<?php
 				foreach($data_struct2 as $data_struct)
 				{ ?>
                     <option value='<?php echo $data_struct['id'];?>' <?php if(isset($_GET['category']) && $_GET['category'] == $data_struct['id']){ echo 'selected'; } ?>>
-						<?php echo $data_struct['name_en'];?>
+						<?php echo $data_struct['name_he'];?>
                     </option>
 				<?php }
 				?>
             </select>
+            <br>
 
             <input type="hidden" value="g" name="searchType">
 <!--            <input type="submit" align="absmiddle" value="Search" class="search" name="search-submit">-->

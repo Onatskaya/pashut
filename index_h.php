@@ -245,8 +245,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-                                include( 'blocks/guestsearch-form.php' );
-                                include( 'blocks/moving-resorces-form.php' );
+                                include( 'blocks/guestsearch-form_h.php' );
+                                include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -293,8 +293,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-	                        include( 'blocks/guestsearch-form.php' );
-	                        include( 'blocks/moving-resorces-form.php' );
+	                        include( 'blocks/guestsearch-form_h.php' );
+	                        include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -341,8 +341,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-	                        include( 'blocks/guestsearch-form.php' );
-	                        include( 'blocks/moving-resorces-form.php' );
+	                        include( 'blocks/guestsearch-form_h.php' );
+	                        include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -389,8 +389,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-	                        include( 'blocks/guestsearch-form.php' );
-	                        include( 'blocks/moving-resorces-form.php' );
+	                        include( 'blocks/guestsearch-form_h.php' );
+	                        include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -437,8 +437,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-                                include( 'blocks/guestsearch-form.php' );
-                                include( 'blocks/moving-resorces-form.php' );
+                                include( 'blocks/guestsearch-form_h.php' );
+                                include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -485,8 +485,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-                                include( 'blocks/guestsearch-form.php' );
-                                include( 'blocks/moving-resorces-form.php' );
+                                include( 'blocks/guestsearch-form_h.php' );
+                                include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -533,8 +533,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-                                include( 'blocks/guestsearch-form.php' );
-                                include( 'blocks/moving-resorces-form.php' );
+                                include( 'blocks/guestsearch-form_h.php' );
+                                include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
@@ -579,8 +579,8 @@ while ( $data_struct3 = mysqli_fetch_assoc( $obj_struct ) ) {
                             <h2>חפשו עכשיו <strong>חינם!</strong></h2>
                             <h4 style="color:#E92324;font-weight:bold;">תגידו שלום לעמלות סוכן!</h4>
 	                        <?php
-                                include( 'blocks/guestsearch-form.php' );
-                                include( 'blocks/moving-resorces-form.php' );
+                                include( 'blocks/guestsearch-form_h.php' );
+                                include( 'blocks/moving-resorces-form_h.php' );
 	                        ?>
                         </div>
 
