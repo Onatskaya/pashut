@@ -339,11 +339,8 @@ include('header.php');
         </div>
 
 
-        <?php
-        if(isset($data_search2))
-        {
-            foreach($data_search2 as $data_search)
-            { ?>
+        <?php if(isset($data_search2)): ?>
+            <?php foreach($data_search2 as $data_search): ?>
                 <div class="listing-wrapper featured col-md-3 col-lg-3 col-sm-4 col-xs-12">
                     <div class="image-wrapper">
                             <img alt=""  src="images/moving_resources/<?php echo $data_search['image'];?>">
@@ -357,8 +354,8 @@ include('header.php');
                         </div>
                     </div>
                 </div>
-            <?php }
-        } ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
 
         <?php echo get_pagination($page, $per_page, $total_rows); ?>
     </div>
@@ -374,6 +371,21 @@ include('header.php');
 <?php include('footer.php');  ?>
 
 <style>
+    .listing-wrapper.featured {
+        height: auto;
+        margin-bottom: 25px;
+        padding: 15px;
+        transition: transform .2s;
+    }
+    .listing-wrapper.featured:hover {
+        transform: scale(1.1);
+    }
+    .listing-wrapper.featured:hover .image-wrapper,
+    .listing-wrapper.featured:hover .text-wrapper {
+        -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+    }
     .select2-container {
         margin-bottom: 5px;
     }
